@@ -1,0 +1,139 @@
+\nomenclatureentry{ZEMSO@[{EMSO}]\begingroup Environment for Modeling, Simulation and Optimization\nomeqref {1.0}|nompageref}{6}
+\nomenclatureentry{a$e$@[{$e$}]\begingroup Eficiência de Murphree representada em \citeonline{Elgue:2004}\nomeqref {2.0}|nompageref}{8}
+\nomenclatureentry{a$\hat{f}^L_i$@[{$\hat{f}^L_i$}]\begingroup Fugacidade da espécie $i$ em solução líquida\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{a$f^L_i$@[{$f^L_i$}]\begingroup Fugacidade da espécie $i$, líquido puro\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{a$\hat{f}^V_i$@[{$\hat{f}^V_i$}]\begingroup Fugacidade da espécie $i$ em solução gasosa\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{G$\gamma_i$@[{$\gamma_i$}]\begingroup Coeficiente de atividade da espécie $i$ em solução líquida\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{G$\gamma_{i,\infty}$@[{$\gamma_{i,\infty}$}]\begingroup Coeficiente de atividade da espécie $i$ à diluição infinita\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{a$H_i$@[{$H_i$}]\begingroup Constante de Henry da espécie $i$\nomeqref {2.1}|nompageref}{8}
+\nomenclatureentry{G$\hat{\phi}^L_i$@[{$\hat{\phi}^L_i$}]\begingroup Coeficiente de fugacidade da espécie $i$ em solução líquida\nomeqref {2.2}|nompageref}{9}
+\nomenclatureentry{G$\hat{\phi}^V_i$@[{$\hat{\phi}^V_i$}]\begingroup Coeficiente de fugacidade da espécie $i$ em solução gasosa\nomeqref {2.2}|nompageref}{9}
+\nomenclatureentry{a$N^V_{ij}$@[{$N^V_{ij}$}]\begingroup Taxa de transferência molar do componente $i$ na fase vapor, no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$N^L_{ij}$@[{$N^L_{ij}$}]\begingroup Taxa de transferência molar do componente $i$ na fase líquida, no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$J^V_{ij}$@[{$J^V_{ij}$}]\begingroup Fluxo molar difusivo do componente $i$ no vapor, no estágio $j$ \nomunit{mol/(m^2\ s)}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$J^L_{ij}$@[{$J^L_{ij}$}]\begingroup Fluxo molar difusivo do componente $i$ no líquido, no estágio $j$ \nomunit{mol/(m^2\ s)}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$y_{ij}$@[{$y_{ij}$}]\begingroup Fração molar no vapor do componente $i$ no estágio $j$\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$x_{ij}$@[{$x_{ij}$}]\begingroup Fração molar no líquido do componente $i$ no estágio $j$\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$a^I_j$@[{$a^I_j$}]\begingroup Área interfacial total no estágio $j$ \nomunit{m^2}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$N_{tj}$@[{$N_{tj}$}]\begingroup Taxa de transferência de massa total no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$C_t^V$@[{$C_t^V$}]\begingroup Concentração molar total da fase vapor \nomunit{mol/m^3}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$C_t^L$@[{$C_t^L$}]\begingroup Concentração molar total da fase líquida\nomunit{mol/m^3}\nomeqref {2.9}|nompageref}{12}
+\nomenclatureentry{a$C$@[{$C$}]\begingroup Concentração molar \nomunit{mol/m^3}\nomeqref {2.11}|nompageref}{13}
+\nomenclatureentry{a$k^L$@[{$k^L$}]\begingroup Coeficiente binário de transferência de massa na fase líquida \nomunit{m/s}\nomeqref {2.11}|nompageref}{13}
+\nomenclatureentry{a$k^V$@[{$k^V$}]\begingroup Coeficiente binário de transferência de massa na fase vapor \nomunit{m/s}\nomeqref {2.11}|nompageref}{13}
+\nomenclatureentry{a$E^V_j$@[{$E^V_j$}]\begingroup Taxa de transferência de energia na fase vapor no estágio $j$ \nomunit{J/s}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$E^L_j$@[{$E^L_j$}]\begingroup Taxa de transferência de energia na fase líquida no estágio $j$ \nomunit{J/s}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$P^V$@[{$P^V$}]\begingroup Pressão do vapor \nomunit{atm}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$P^L$@[{$P^L$}]\begingroup Pressão do líquido \nomunit{atm}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$T^V$@[{$T^V$}]\begingroup Temperatura do vapor \nomunit{K}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$T^L$@[{$T^L$}]\begingroup Temperatura do líquido \nomunit{K}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$T^I$@[{$T^I$}]\begingroup Temperatura da interface \nomunit{K}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$h^V$@[{$h^V$}]\begingroup Coeficiente de transferência de calor no vapor \nomunit{J/(m^2 K s)}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$h^L$@[{$h^L$}]\begingroup Coeficiente de transferência de calor no líquido \nomunit{J/(m^2\ K\ s)}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$\overline{H}_{ij}$@[{$\overline{H}_{ij}$}]\begingroup Entalpia parcial molar do componente $i$ no estágio $j$ \nomunit{J/mol}\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$c$@[{$c$}]\begingroup Número de componentes\nomeqref {2.14}|nompageref}{13}
+\nomenclatureentry{a$M_j$@[{$M_j$}]\begingroup Acúmulo molar total no estágio j \nomunit{mol}\nomeqref {2.18}|nompageref}{16}
+\nomenclatureentry{a$x$@[{$x$}]\begingroup Fração molar no líquido\nomeqref {2.18}|nompageref}{16}
+\nomenclatureentry{a$L$@[{$L$}]\begingroup Vazão molar de líquido\nomunit{mol/s}\nomeqref {2.18}|nompageref}{16}
+\nomenclatureentry{a$V$@[{$V$}]\begingroup Vazão molar de vapor \nomunit{mol/s}\nomeqref {2.18}|nompageref}{16}
+\nomenclatureentry{a$N$@[{$N$}]\begingroup Número de pratos da coluna\nomeqref {2.18}|nompageref}{16}
+\nomenclatureentry{a$z$@[{$z$}]\begingroup Distância ao longo do comprimento da coluna \nomunit{m}\nomeqref {2.20}|nompageref}{16}
+\nomenclatureentry{a$l_k(z)$@[{$l_k(z)$}]\begingroup Polinômios de Lagrange\nomeqref {2.20}|nompageref}{16}
+\nomenclatureentry{a$n$@[{$n$}]\begingroup Grau do polinômio\nomeqref {2.20}|nompageref}{16}
+\nomenclatureentry{G$\Delta z$@[{$\Delta z$}]\begingroup Distância entre pratos \nomunit{m}\nomeqref {2.20}|nompageref}{16}
+\nomenclatureentry{a$F_{in}$@[{$F_{in}$}]\begingroup Vazão molar que entra no equipamento \nomunit{mol/s}\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$F_{out}$@[{$F_{out}$}]\begingroup Vazão molar que sai do equipamento \nomunit{mol/s}\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$z_{in}$@[{$z_{in}$}]\begingroup Vetor de frações molares dos componentes da corrente que entra no equipamento\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$z_{out}$@[{$z_{out}$}]\begingroup Vetor de frações molares dos componentes da corrente que sai do equipamento\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$z_{in_i}$@[{$z_{in_i}$}]\begingroup Fração molar do componente $i$ na corrente que entra no equipamento\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$z_{out_i}$@[{$z_{out_i}$}]\begingroup Fração molar do componente $i$ na corrente que sai do equipamento\nomeqref {3.2}|nompageref}{22}
+\nomenclatureentry{a$P_{out}$@[{$P_{out}$}]\begingroup Pressão da corrente que sai do equipamento \nomunit{atm}\nomeqref {3.3}|nompageref}{22}
+\nomenclatureentry{a$P_{in}$@[{$P_{in}$}]\begingroup Pressão da corrente que entra do equipamento \nomunit{atm}\nomeqref {3.3}|nompageref}{22}
+\nomenclatureentry{a$T_{out}$@[{$T_{out}$}]\begingroup Temperatura da corrente que sai do equipamento \nomunit{K}\nomeqref {3.5}|nompageref}{23}
+\nomenclatureentry{a$T_{in}$@[{$T_{in}$}]\begingroup Temperatura da corrente que entra do equipamento \nomunit{K}\nomeqref {3.5}|nompageref}{23}
+\nomenclatureentry{G$\rho$@[{$\rho$}]\begingroup Massa específica da corrente \nomunit{kg/m^3}\nomeqref {3.5}|nompageref}{23}
+\nomenclatureentry{a$frac$@[{$frac$}]\begingroup Fração de \textit{split} da vazão\nomeqref {3.7}|nompageref}{25}
+\nomenclatureentry{a$h_{out}$@[{$h_{out}$}]\begingroup Entalpia da corrente que sai do equipamento \nomunit{J/mol}\nomeqref {3.17}|nompageref}{25}
+\nomenclatureentry{a$h_{in}$@[{$h_{in}$}]\begingroup Entalpia da corrente que entra no equipamento \nomunit{J/mol}\nomeqref {3.17}|nompageref}{25}
+\nomenclatureentry{a$M_i$@[{$M_i$}]\begingroup Acúmulo molar do componente $i$ \nomunit{mol}\nomeqref {3.18}|nompageref}{27}
+\nomenclatureentry{a$M_k$@[{$M_k$}]\begingroup Acúmulo molar do componente $k$ \nomunit{mol}\nomeqref {3.18}|nompageref}{27}
+\nomenclatureentry{a$E$@[{$E$}]\begingroup Energia interna do sistema \nomunit{J}\nomeqref {3.19}|nompageref}{27}
+\nomenclatureentry{a$Q$@[{$Q$}]\begingroup Taxa de calor \nomunit{J/s}\nomeqref {3.19}|nompageref}{27}
+\nomenclatureentry{a$v^L$@[{$v^L$}]\begingroup Volume molar da fase líquida \nomunit{m^3/mol}\nomeqref {3.23}|nompageref}{27}
+\nomenclatureentry{a$v^V$@[{$v^V$}]\begingroup Volume molar da fase vapor \nomunit{m^3/mol}\nomeqref {3.23}|nompageref}{27}
+\nomenclatureentry{a$v$@[{$v$}]\begingroup Fração vaporizada da corrente\nomeqref {3.23}|nompageref}{27}
+\nomenclatureentry{a$Level$@[{$Level$}]\begingroup Nível de líquido \nomunit{m}\nomeqref {3.23}|nompageref}{27}
+\nomenclatureentry{a$A_{cross}$@[{$A_{cross}$}]\begingroup Área da seção transversal \nomunit{m^2}\nomeqref {3.23}|nompageref}{27}
+\nomenclatureentry{a$r$@[{$r$}]\begingroup Raio \nomunit{m}\nomeqref {3.31}|nompageref}{30}
+\nomenclatureentry{a$L$@[{$L$}]\begingroup Comprimento do tanque \nomunit{m}\nomeqref {3.31}|nompageref}{30}
+\nomenclatureentry{a$F_{in}^L$@[{$F_{in}^L$}]\begingroup Vazão molar de líquido que entra no equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$F_{out}^L$@[{$F_{out}^L$}]\begingroup Vazão molar de líquido que sai do equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$F_{out}^V$@[{$F_{out}^V$}]\begingroup Vazão molar de vapor que sai do equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$F_{in}^V$@[{$F_{in}^V$}]\begingroup Vazão molar de vapor que entra no equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$x_{in}$@[{$x_{in}$}]\begingroup Vetor de frações molares dos componentes da corrente de líquido que entra no equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$x_{in_i}$@[{$x_{in_i}$}]\begingroup Fração molar do componente \textit{i} na corrente de líquido que entra no equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$x_{out}$@[{$x_{out}$}]\begingroup Vetor de frações molares dos componentes da corrente de líquido que sai do equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$x_{out_i}$@[{$x_{out_i}$}]\begingroup Fração molar do componente \textit{i} na corrente de líquido que sai do equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$y_{in}$@[{$y_{in}$}]\begingroup Vetor de frações molares dos componentes da corrente de vapor que entra no equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$y_{in_i}$@[{$y_{in_i}$}]\begingroup Fração molar do componente \textit{i} na corrente de vapor que entra no equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$y_{out}$@[{$y_{out}$}]\begingroup Vetor de frações molares dos componentes da corrente  de vapor que sai do equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$y_{out_i}$@[{$y_{out_i}$}]\begingroup Fração molar do componente \textit{i} na corrente de vapor que sai do equipamento\nomeqref {3.35}|nompageref}{32}
+\nomenclatureentry{a$h_{out}^L$@[{$h_{out}^L$}]\begingroup Entalpia da corrente de líquido que sai do equipamento \nomunit{J/mol}\nomeqref {3.36}|nompageref}{32}
+\nomenclatureentry{a$h_{out}^V$@[{$h_{out}^V$}]\begingroup Entalpia da corrente de vapor que sai do equipamento \nomunit{J/mol}\nomeqref {3.36}|nompageref}{32}
+\nomenclatureentry{a$h_{in}^L$@[{$h_{in}^L$}]\begingroup Entalpia da corrente de líquido que entra no equipamento \nomunit{J/mol}\nomeqref {3.36}|nompageref}{32}
+\nomenclatureentry{a$h_{in}^V$@[{$h_{in}^V$}]\begingroup Entalpia da corrente de vapor que entra no equipamento \nomunit{J/mol}\nomeqref {3.36}|nompageref}{32}
+\nomenclatureentry{a$M^L$@[{$M^L$}]\begingroup Acúmulo molar de líquido \nomunit{mol}\nomeqref {3.38}|nompageref}{32}
+\nomenclatureentry{a$M^V$@[{$M^V$}]\begingroup Acúmulo molar de vapor \nomunit{mol}\nomeqref {3.38}|nompageref}{32}
+\nomenclatureentry{a$V_{ref}$@[{$V_{ref}$}]\begingroup Volume do refervedor \nomunit{m^3}\nomeqref {3.38}|nompageref}{32}
+\nomenclatureentry{G$\phi_i^L$@[{$\phi_i^L$}]\begingroup Coeficiente de fugacidade da espécie $i$, líquido puro\nomeqref {3.43}|nompageref}{32}
+\nomenclatureentry{G$\phi_i^V$@[{$\phi_i^V$}]\begingroup Coeficiente de fugacidade da espécie $i$, vapor puro\nomeqref {3.43}|nompageref}{32}
+\nomenclatureentry{G$\rho^V$@[{$\rho^V$}]\begingroup Massa específica da fase vapor \nomunit{kg/m^3}\nomeqref {3.52}|nompageref}{33}
+\nomenclatureentry{G$\rho^L$@[{$\rho^L$}]\begingroup Massa específica da fase líquida\nomunit{kg/m^3}\nomeqref {3.52}|nompageref}{33}
+\nomenclatureentry{a$V_{cond}$@[{$V_{cond}$}]\begingroup Volume do condensador \nomunit{m^3}\nomeqref {3.64}|nompageref}{38}
+\nomenclatureentry{a$T_{out}^L$@[{$T_{out}^L$}]\begingroup Temperatura de saída da corrente de líquido \nomunit{K}\nomeqref {3.69}|nompageref}{38}
+\nomenclatureentry{a$T_{out}^V$@[{$T_{out}^V$}]\begingroup Temperatura de saída da corrente de vapor \nomunit{K}\nomeqref {3.69}|nompageref}{38}
+\nomenclatureentry{a$V_{tray}$@[{$V_{tray}$}]\begingroup Volume do prato \nomunit{m^3}\nomeqref {3.86}|nompageref}{43}
+\nomenclatureentry{a$E_{MV}$@[{$E_{MV}$}]\begingroup Eficiência de prato de Murphree\nomeqref {3.92}|nompageref}{43}
+\nomenclatureentry{a$A_p$@[{$A_p$}]\begingroup Área do prato (Área do total do prato -  Área do \textit{downcomer}) \nomunit{m^2}\nomeqref {3.94}|nompageref}{43}
+\nomenclatureentry{a$F^L$@[{$F^L$}]\begingroup Vazão molar de líquido \nomunit{mol/s}\nomeqref {3.96}|nompageref}{44}
+\nomenclatureentry{a$F^V$@[{$F^V$}]\begingroup Vazão molar de vapor \nomunit{mol/s}\nomeqref {3.96}|nompageref}{44}
+\nomenclatureentry{a$g$@[{$g$}]\begingroup Aceleração da gravidade\nomunit{m/s^2}\nomeqref {3.106}|nompageref}{54}
+\nomenclatureentry{a$w$@[{$w$}]\begingroup Constante dependente da geometria do prato presente na \autoref{eq:feehery}\nomeqref {3.115}|nompageref}{54}
+\nomenclatureentry{a$h_{cl}$@[{$h_{cl}$}]\begingroup Altura de líquido claro no prato \nomunit{m}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$u_h$@[{$u_h$}]\begingroup Velocidade do vapor através dos furos do prato \nomunit{m/s}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$u_S$@[{$u_S$}]\begingroup Velocidade superficial do vapor: ($\frac{Q_h}{A_a}$) \nomunit{m/s}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$Q_h$@[{$Q_h$}]\begingroup Vazão volumétrica de vapor através dos furos do prato \nomunit{m^3/s}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\xi$@[{$\xi$}]\begingroup Coeficiente de orifício\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$c_w$@[{$c_w$}]\begingroup Resistência ao escoamento de vapor\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\sigma$@[{$\sigma$}]\begingroup Tensão superficial \nomunit{N/m}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$d_h$@[{$d_h$}]\begingroup Diâmetro do furo \nomunit{m}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\beta^{tray}$@[{$\beta^{tray}$}]\begingroup Constante relacionada com propriedades físicas do prato\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$m\Delta P$@[{$m\Delta P$}]\begingroup Modelo para o cálculo da queda de pressão \nomunit{Pa}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$F_S$@[{$F_S$}]\begingroup Fator superficial \nomunit{kg^{0.5}/m^{0.5}/s}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$A_h$@[{$A_h$}]\begingroup Área total dos furos do prato \nomunit{m^2}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$P_{out}^V$@[{$P_{out}^V$}]\begingroup Pressão da corrente de vapor que sai do equipamento \nomunit{atm}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$P_{out}^L$@[{$P_{out}^L$}]\begingroup Pressão da corrente de líquido que sai do equipamento \nomunit{atm}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$P_{in}^V$@[{$P_{in}^V$}]\begingroup Pressão da corrente de vapor que entra no equipamento \nomunit{atm}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{a$P_{in}^L$@[{$P_{in}^L$}]\begingroup Pressão da corrente de líquido que entra no equipamento \nomunit{atm}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\alpha$@[{$\alpha$}]\begingroup Coeficiente de queda de pressão no prato seco\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\Delta P$@[{$\Delta P$}]\begingroup Diferença de pressão \nomunit{atm}\nomeqref {3.116}|nompageref}{56}
+\nomenclatureentry{G$\varepsilon_l$@[{$\varepsilon_l$}]\begingroup Fração de líquido na espuma\nomeqref {3.117}|nompageref}{57}
+\nomenclatureentry{G$\varepsilon_w$@[{$\varepsilon_w$}]\begingroup Fração de vapor na espuma que escoa sobre o vertedouro\nomeqref {3.117}|nompageref}{57}
+\nomenclatureentry{G$\phi$@[{$\phi$}]\begingroup Densidade relativa da espuma, \autoref{eq:roffel}\nomeqref {3.126}|nompageref}{58}
+\nomenclatureentry{G$\alpha_w$@[{$\alpha_w$}]\begingroup Coeficiente da equação \autoref{eq:wang}, \nomunit{m^{0,5}/s}\nomeqref {3.126}|nompageref}{58}
+\nomenclatureentry{a$k_w$@[{$k_w$}]\begingroup Coeficiente da \autoref{eq:osorio}, \nomunit{mol/(s\ cm^{\frac{5}{2}})}\nomeqref {3.126}|nompageref}{58}
+\nomenclatureentry{a$cf_w$@[{$cf_w$}]\begingroup Resistência ao escoamento de líquido\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$d_w$@[{$d_w$}]\begingroup Diâmetro do vertedouro \nomunit{cm}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$V_{liq}$@[{$V_{liq}$}]\begingroup Volume de líquido no prato \nomunit{m^3}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$A_a$@[{$A_a$}]\begingroup Área ativa do prato \nomunit{m^2}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$P_l$@[{$P_l$}]\begingroup Vazão de produto \nomunit{kmol/s}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$Mw$@[{$Mw$}]\begingroup Massa molar média da mistura\nomunit{g/mol}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$F_W$@[{$F_W$}]\begingroup Correção da altura do vertedouro\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$N_p$@[{$N_p$}]\begingroup Número de passes\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$lw$@[{$lw$}]\begingroup Comprimento do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{G$\beta$@[{$\beta$}]\begingroup Coeficiente de aeração\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$h_w$@[{$h_w$}]\begingroup Altura do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$h_{ow}$@[{$h_{ow}$}]\begingroup Altura de líquido acima do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$Q^L$@[{$Q^L$}]\begingroup Vazão de líquido \nomunit{m^3/s}\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{G$\varepsilon$@[{$\varepsilon$}]\begingroup Fração de vapor na espuma\nomeqref {3.127}|nompageref}{60}
+\nomenclatureentry{a$C_d$@[{$C_d$}]\begingroup Coeficiente de descarga\nomeqref {3.127}|nompageref}{60}
