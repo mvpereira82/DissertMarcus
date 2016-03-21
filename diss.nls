@@ -1,0 +1,93 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$\hat{f}^L_i$}]\begingroup Fugacidade da espécie $i$ em solução líquida\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$\hat{f}^V_i$}]\begingroup Fugacidade da espécie $i$ em solução gasosa\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$\overline{H}_{ij}$}]\begingroup Entalpia parcial molar do componente $i$ no estágio $j$ \nomunit{J/mol}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$a^I_j$}]\begingroup Área interfacial total no estágio $j$ \nomunit{m^2}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$C$}]\begingroup Concentração molar \nomunit{mol/m^3}\nomeqref {2.11}
+		\nompageref{11}
+  \item [{$c$}]\begingroup Número de componentes\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$C_t^L$}]\begingroup Concentração molar total da fase líquida\nomunit{mol/m^3}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$C_t^V$}]\begingroup Concentração molar total da fase vapor \nomunit{mol/m^3}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$e$}]\begingroup Eficiência de Murphree representada em \citeonline{Elgue:2004}\nomeqref {2.0}
+		\nompageref{7}
+  \item [{$E^L_j$}]\begingroup Taxa de transferência de energia na fase líquida no estágio $j$ \nomunit{J/s}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$E^V_j$}]\begingroup Taxa de transferência de energia na fase vapor no estágio $j$ \nomunit{J/s}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$f^L_i$}]\begingroup Fugacidade da espécie $i$, líquido puro\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$h^L$}]\begingroup Coeficiente de transferência de calor no líquido \nomunit{J/(m^2\ K\ s)}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$h^V$}]\begingroup Coeficiente de transferência de calor no vapor \nomunit{J/(m^2 K s)}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$H_i$}]\begingroup Constante de Henry da espécie $i$\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$J^L_{ij}$}]\begingroup Fluxo molar difusivo do componente $i$ no líquido, no estágio $j$ \nomunit{mol/(m^2\ s)}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$J^V_{ij}$}]\begingroup Fluxo molar difusivo do componente $i$ no vapor, no estágio $j$ \nomunit{mol/(m^2\ s)}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$k^L$}]\begingroup Coeficiente binário de transferência de massa na fase líquida \nomunit{m/s}\nomeqref {2.11}
+		\nompageref{11}
+  \item [{$k^V$}]\begingroup Coeficiente binário de transferência de massa na fase vapor \nomunit{m/s}\nomeqref {2.11}
+		\nompageref{11}
+  \item [{$L$}]\begingroup Vazão molar de líquido\nomunit{mol/s}\nomeqref {2.18}
+		\nompageref{15}
+  \item [{$l_k(z)$}]\begingroup Polinômios de Lagrange\nomeqref {2.20}
+		\nompageref{15}
+  \item [{$M_j$}]\begingroup Acúmulo molar total no estágio j \nomunit{mol}\nomeqref {2.18}
+		\nompageref{15}
+  \item [{$N$}]\begingroup Número de pratos da coluna\nomeqref {2.18}
+		\nompageref{15}
+  \item [{$n$}]\begingroup Grau do polinômio\nomeqref {2.20}
+		\nompageref{15}
+  \item [{$N^L_{ij}$}]\begingroup Taxa de transferência molar do componente $i$ na fase líquida, no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$N^V_{ij}$}]\begingroup Taxa de transferência molar do componente $i$ na fase vapor, no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$N_{tj}$}]\begingroup Taxa de transferência de massa total no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$P^L$}]\begingroup Pressão do líquido \nomunit{atm}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$P^V$}]\begingroup Pressão do vapor \nomunit{atm}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$T^I$}]\begingroup Temperatura da interface \nomunit{K}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$T^L$}]\begingroup Temperatura do líquido \nomunit{K}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$T^V$}]\begingroup Temperatura do vapor \nomunit{K}\nomeqref {2.14}
+		\nompageref{12}
+  \item [{$V$}]\begingroup Vazão molar de vapor \nomunit{mol/s}\nomeqref {2.18}
+		\nompageref{15}
+  \item [{$x$}]\begingroup Fração molar no líquido\nomeqref {2.18}
+		\nompageref{15}
+  \item [{$x_{ij}$}]\begingroup Fração molar no líquido do componente $i$ no estágio $j$\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$y_{ij}$}]\begingroup Fração molar no vapor do componente $i$ no estágio $j$\nomeqref {2.9}
+		\nompageref{11}
+  \item [{$z$}]\begingroup Distância ao longo do comprimento da coluna \nomunit{m}\nomeqref {2.20}
+		\nompageref{15}
+
+ \nomgroup{G}
+
+  \item [{$\Delta z$}]\begingroup Distância entre pratos \nomunit{m}\nomeqref {2.20}
+		\nompageref{15}
+  \item [{$\gamma_i$}]\begingroup Coeficiente de atividade da espécie $i$ em solução líquida\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$\gamma_{i,\infty}$}]\begingroup Coeficiente de atividade da espécie $i$ à diluição infinita\nomeqref {2.1}
+		\nompageref{7}
+  \item [{$\hat{\phi}^L_i$}]\begingroup Coeficiente de fugacidade da espécie $i$ em solução líquida\nomeqref {2.2}
+		\nompageref{8}
+  \item [{$\hat{\phi}^V_i$}]\begingroup Coeficiente de fugacidade da espécie $i$ em solução gasosa\nomeqref {2.2}
+		\nompageref{8}
+
+\end{thenomenclature}

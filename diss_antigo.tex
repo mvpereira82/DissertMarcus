@@ -8,8 +8,8 @@
 %% Exemplos de utilização dos comandos podem ser encontrados
 %% nos capítulos que acompanham este pacote.
 %%
-%%  
-\documentclass[mestrado]{ppgeq}
+%%
+\documentclass[mestrado,codelist]{ppgeq}
 %\documentclass[doutorado]{ppgeq}
 %\documentclass[qualify]{ppgeq}
 
@@ -25,19 +25,19 @@ Seletiva de Gasolina de Pirólise}
 \area{Pesquisa e Desenvolvimento de Processos}
 \tyear{2016}
 % verificar o número de páginas do PDF final
-\totalPages{103}
-\advisor{Rafael de Pelegrini Soares, D.Sc.}
+\totalPages{XXX}
+\advisor{Rafael de Pelegrini Soares}
 \advisorCitation{Soares, Rafael de P.}
+%\coadvisor{Beltrano de Tal} % opcional
+%\coadvisorCitation{Tal, Beltrano de}
+% \coadvisorCitation{Tal, Beltrano de}
 \bancai{Prof. Banca 1, D.Sc.}
-\bancaii{Prof. Banca 2, D.Sc.}
-\bancaiii{Prof. Banca 3, D.Sc.}
-
-\pensamento{Pensamento \\ \vspace{0.5cm} \begin{flushright}
-Autor \end{flushright}
-}
-
-\agradecimento{ 
-Agradecimentos
+\bancaii{Prof. Banca 2, Ph.D.}
+\bancaiii{Prof. Banca 3, D.Sc}
+% \bancaiiii{Prof. Banca 4, D.Sc} % opcional
+\pensamento{pensamento.\\ \vspace{0.5cm} \begin{flushright}
+Autor \end{flushright}}
+\agradecimento{Agradecimentos....
 }
 
 \resumo{Neste trabalho, um reator de hidrogenação de nafta de pirólise foi
@@ -54,7 +54,7 @@ com disponíveis na literatura.}
 \palavraschave{1.~Gasolina de Pirólise. 2.~Hidrogenação.
 3.~Reatores de leito fixo 4.~Modelagem. 5.~Simulação}
 
-\abstract{Abstract here.}
+\abstract{In this work,..}
 \keywords{1.~PYGAS 2.~Hydrogenation 3.~Fixed-bed Reactors 4.~Modeling
 5.~Simulation}
 
@@ -65,28 +65,31 @@ com disponíveis na literatura.}
 \include{hyphen}
 
 \maketitle
- 
 
 %\include{CapSymbols}
+
 % Inclusao dos Capítulos
-\include{Chap1}
-\include{Chap2}
-\include{Chap3}  
-\include{Chap4}
-\include{Chap5} 
- 
+ \include{Chap1}
+ \include{Chap2}
+% \include{Chap3}
+%\include{Chap4}
+%\include{Chap5}
+%\include{Chap6}
+%\include{Chap4}
+
 % Comandos para as referencias bibliográficas
 \newdimen\bibindent
 \setlength\bibindent{1.5em} % identaçao das referencias
 { % Um lineskip menor neste contexto de referencias
 \baselineskip 4.3mm
-% Edite o arquivo ppgeq.bib com as suas próprias referências 
-\bibliography{ppgeq}
-} 
+% Edite o arquivo ppgeq.bib com as suas próprias referências
+\bibliography{ppgeq, ppgeq2}
+}
 
-% Inclusao dos Appendices 
+% Inclusao dos Appendices
 \appendix
-%\include{Ap1}
+ \include{Ap1}
 %\include{Ap2}
 
 \end{document}
+

@@ -1,20 +1,54 @@
 %
 % 
 %
-\chapter{Revisão Bibliográfica} \label{chap:revisaobibliografica}
+\chapter{Conceitos Fundamentais e Revisão Bibliográfica}
+\label{chap:revisaobibliografica}
 
+\emph{Este capítulo apresenta algumas definições sobre gasolina de pirólise,
+classificação dos reatores de leito fixo e diferentes abordagens de
+modelagem matemática aplicadas a reatores trifásicos.}
 
-\emph{Isto é uma sinopse de capítulo. A ABNT não traz nenhuma normatização a
-respeito desse tipo de resumo, que é mais comum em romances e livros técnicos.
-}
+\section{Gasolina de Pirólise (\emph{PYGAS})} \label{sec:pygas}
 
-\section{Modelos de Equilíbrio} \label{sec:modequil}
+A gasolina de pirólise é um dos produtos obtidos no processo de craqueamento a
+vapor quando da produção de olefinas. Tipicamente, a gasolina de pirólise
+apresenta curva de destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais.
+Ela é um produto instável, devido à grande quantidade de compostos
+insaturados tais como: monoolefinas, diolefinas conjugadas, estireno e outras
+espécies mais pesadas e também reativas \cite{Cheng1986}.
 
-O modo mais comum de modelagem de colunas de destilação é o equacionamento prato-a-prato. Assim, o modelo dinâmico
-é descrito por um conjunto acoplado de equações diferenciais e algébricas (\emph{Differential-Algebraic Equations} - DAE)
-para cada estágio. As equações diferenciais representam os balanços de energia e os balanços de massa global e por
-componente. As equações algébricas são compostas por equações constitutivas como relações de equilíbrio
-líquido-vapor, restrição de composições, cálculo de propriedades físicas, etc \cite{Elgue:2004}.
+O processo de hidrogenação de gasolina de pirólise pode ser divido,
+genericamente, em duas partes. Para obtenção de uma corrente que comporá a
+gasolina automotiva, apenas o primeiro estágio de hidrogenação é aplicado,
+i.e., hidrogenação seletiva de diolefinas e aromáticos ramificados insaturados,
+preservando-se compostos olefínicos e aromáticos. Por outro lado, se o produto
+se destinar a uma futura extração de aromáticos (onde a hidrogenação total é
+desejada), um segundo estágio de hidrogenação segue-se ao primeiro
+\cite{Authayanun2008}.
+
+Em um reator de hidrogenação, a gasolina de pirólise em fase líquida escoa
+descendentemente em um leito catalítico. Este escoamento se dá na forma de um
+fino filme de líquido, enquanto a fase gasosa (essencialmente hidrogênio)
+também escoa pelo leito catalítico. Existem tanto configurações com o gás
+escoando cocorrente quanto contracorrente (AUTHAYANUN et al., 2008). Esse tipo
+de reator é conhecido como reator de leito gotejante (TBR), que são
+equipamentos de contato gás-líquido-sólido, usados em muitas aplicações nas
+áreas de refino de petróleo, petroquímica, química fina e na indústria
+bioquímica (RANADE; CHAUDHARI; GUNJAL, 2011). O escoamento desse tipo de reator,
+para o caso de escoamento cocorrente, aproxima-se do escoamento empistonado, o
+que proporciona elevadas conversões. Além disso, a baixa perda de carga permite
+uma pressão parcial praticamente constante dos reagentes gasosos no reator. Este
+fato é importante para manter uma concentração de hidrogênio suficiente na
+superfície do catalisador ao longo de todo o reator (ANCHEYTA, 2011; AUTHAYANUN
+et al., 2008). 
+O modo mais comum de modelagem de colunas de destilação é o
+equacionamento prato-a-prato. Assim, o modelo dinâmico é descrito por um
+conjunto acoplado de equações diferenciais e algébricas
+(\emph{Differential-Algebraic Equations} - DAE) para cada estágio. As equações
+diferenciais representam os balanços de energia e os balanços de massa global e
+por componente. As equações algébricas são compostas por equações constitutivas
+como relações de equilíbrio líquido-vapor, restrição de composições, cálculo de
+propriedades físicas, etc \cite{Elgue:2004}.
 
 Um modelo matemático detalhado do comportamento de fluidos em um prato pode se tornar extremamente complexo se não forem realizadas algumas
 suposições. As considerações simplificativas mais comuns, realizadas na maioria dos trabalhos encontrados na literatura
@@ -147,8 +181,7 @@ fornece os coeficientes de fugacidade independentemente do modelo termodinâmico
 em uso, neste trabalho a forma apresentada na \autoref{eq:phiequality} é
 preferida.
 
-\section{Modelos de Taxa de Transferência} \label{sec:modnonequil}
-% \section{Modelos de Não-Equilíbrio} \label{sec:modnonequil}
+\section{Reatores de Leito Fixo} \label{sec:reatoresfixo}
 Geralmente, um estágio de separação de uma coluna de destilação é modelado com a hipótose de equilíbrio  termodinâmico
 entre o vapor e o líquido existentes, mas na realidade, este equilíbrio não é alcançado. A primeira tentativa de corrigir
 esta não-idealidade, ou não-equilíbrio, foi com a introdução de uma eficiência de estágio.
@@ -313,7 +346,7 @@ Apesar das dificuldades, os modelos de não-equilíbrio tendem a representar a r
 modelos de equilíbrio, conforme é relatado no trabalho de \citeonline{Biardi:1989} e de \citeonline{Kooijman:1995}. Por isso,
 são mais utilizados para o projeto de novas unidades.
 
-\section{Modelos Reduzidos} \label{sec:modred}
+\section{Modelagem de Reatores de Leito Gotejante} \label{sec:modred}
 Um modelo rigoroso típico de um prato de uma coluna de destilação consiste em equações que descrevem as
 concentrações das espécies, vazões de líquido e vapor, temperatura, queda de pressão e relações de
 equilíbrio (ou não) entre as
@@ -527,7 +560,7 @@ sistemas de controle \cite{Cho:1984}.
 % 
 % \nomenclature{$K_i$}{Razão de equilíbrio do componente $i$: $K_i=y_i/x_i$}
 
-\section{Considerações Finais}
+\section{Considerações Finais} \label{sec:consideracoesfinais}
 
 Como visto neste capítulo, o aumento da precisão na predição de um modelo é
 acompanhado pelo crescimento da sua complexidade e, consequentemente, dos

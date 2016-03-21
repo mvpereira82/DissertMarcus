@@ -72,12 +72,12 @@
 \usepackage{bookmark}
 
 % pacote padrao ABNT para bibliografia
-% \usepackage[alf]{abntex2cite}
+%\usepackage[alf]{abntex2cite}
 \usepackage[alf, bibjustif, abnt-etal-cite=2,abnt-etal-list=0]{abntex2cite}
 
 % usar apenas se existir o arquivo abnt-alf, caso contrário o pacote abntex2cite
 % fará o resto
-% \bibliographystyle{abntex2cite-alf}
+%\bibliographystyle{abntex2cite-alf}
 
 % pacote para lista de simbolos
 \usepackage[portuguese]{nomencl}
