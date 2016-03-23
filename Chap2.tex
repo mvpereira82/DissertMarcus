@@ -7,73 +7,37 @@
 \emph{Este capítulo apresenta algumas definições sobre gasolina de pirólise,
 classificação dos reatores de leito fixo e diferentes abordagens de
 modelagem matemática aplicadas a reatores trifásicos.}
-
 \section{Gasolina de Pirólise (\emph{PYGAS})} \label{sec:pygas}
-
 A gasolina de pirólise é um dos produtos obtidos no processo de craqueamento a
 vapor quando da produção de olefinas. Tipicamente, a gasolina de pirólise
 apresenta curva de destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais.
 Ela é um produto instável, devido à grande quantidade de compostos
 insaturados tais como: monoolefinas, diolefinas conjugadas, estireno e outras
 espécies mais pesadas e também reativas \cite{Cheng1986}.
-
-O processo de hidrogenação de gasolina de pirólise pode ser divido,
-genericamente, em duas partes. Para obtenção de uma corrente que comporá a
-gasolina automotiva, apenas o primeiro estágio de hidrogenação é aplicado,
-i.e., hidrogenação seletiva de diolefinas e aromáticos ramificados insaturados,
-preservando-se compostos olefínicos e aromáticos. Por outro lado, se o produto
-se destinar a uma futura extração de aromáticos (onde a hidrogenação total é
-desejada), um segundo estágio de hidrogenação segue-se ao primeiro
-\cite{Authayanun2008}.
-
+Para a utilização comercial, a gasolina de pirólise precisa ser hidrogenada. O
+processo de hidrogenação de gasolina de pirólise pode ser divido, genericamente,
+em duas partes. Para obtenção de uma corrente que comporá a gasolina automotiva,
+apenas o primeiro estágio de hidrogenação é aplicado, i.e., hidrogenação
+seletiva de diolefinas e aromáticos ramificados insaturados, preservando-se
+compostos olefínicos e aromáticos. Por outro lado, se o produto se destinar a
+uma futura extração de aromáticos (onde a hidrogenação total é desejada), um
+segundo estágio de hidrogenação segue-se ao primeiro \cite{Authayanun2008}.
+\section{Reatores de Leito Fixo} \label{sec:reatoresfixo}
 Em um reator de hidrogenação, a gasolina de pirólise em fase líquida escoa
 descendentemente em um leito catalítico. Este escoamento se dá na forma de um
 fino filme de líquido, enquanto a fase gasosa (essencialmente hidrogênio)
 também escoa pelo leito catalítico. Existem tanto configurações com o gás
-escoando cocorrente quanto contracorrente (AUTHAYANUN et al., 2008). Esse tipo
-de reator é conhecido como reator de leito gotejante (TBR), que são
-equipamentos de contato gás-líquido-sólido, usados em muitas aplicações nas
-áreas de refino de petróleo, petroquímica, química fina e na indústria
-bioquímica (RANADE; CHAUDHARI; GUNJAL, 2011). O escoamento desse tipo de reator,
-para o caso de escoamento cocorrente, aproxima-se do escoamento empistonado, o
-que proporciona elevadas conversões. Além disso, a baixa perda de carga permite
-uma pressão parcial praticamente constante dos reagentes gasosos no reator. Este
-fato é importante para manter uma concentração de hidrogênio suficiente na
-superfície do catalisador ao longo de todo o reator (ANCHEYTA, 2011; AUTHAYANUN
-et al., 2008). 
-O modo mais comum de modelagem de colunas de destilação é o
-equacionamento prato-a-prato. Assim, o modelo dinâmico é descrito por um
-conjunto acoplado de equações diferenciais e algébricas
-(\emph{Differential-Algebraic Equations} - DAE) para cada estágio. As equações
-diferenciais representam os balanços de energia e os balanços de massa global e
-por componente. As equações algébricas são compostas por equações constitutivas
-como relações de equilíbrio líquido-vapor, restrição de composições, cálculo de
-propriedades físicas, etc \cite{Elgue:2004}.
-
-Um modelo matemático detalhado do comportamento de fluidos em um prato pode se tornar extremamente complexo se não forem realizadas algumas
-suposições. As considerações simplificativas mais comuns, realizadas na maioria dos trabalhos encontrados na literatura
-são \cite{Roffel:2000}:
-\begin{itemize}
-\item o líquido e o vapor estão idealmente misturados;
-\item a pressão e a temperatura no prato são uniformes;
-\item o arraste e o gotejamento de líquido são ignorados;
-\item é considerado um valor de eficiência por prato.
-% \item a eficiência do prato é constante em decorrência da consideração de mistura ideal.
-\end{itemize}
-
-Há ainda a consideração de que o acúmulo molar da fase vapor é negligenciado frente ao acúmulo de líquido. Esta última
-simplificação é razoável para a maioria dos sistemas, que operam em pressões baixas e moderadas, visto que a
-massa específica do vapor é consideravelmente menor que a massa específica do líquido.
-As simplificações de mistura perfeita são utilizadas para a redução da complexidade do problema. Modelos de
-mistura, isto é, modelos que consideram gradientes de concentrações nas fases, são muito complexos e envolvem equações diferenciais parciais. Do mesmo modo, modelos mais
-precisos de cálculo de eficiência ou modelos de não-equilíbrio são mais complicados \cite{Gani:1986}.
-Naturalmente,
-% Uma discussão a cerca de modelos de não equilíbrio pode ser encontrada em \cite{Kooijman:1995}.
-uma maior precisão é alcançada
-com modelos mais completos e complexos, mas devido à maior dimensão do problema, ao maior custo computacional e à maior
-necessidade do fornecimento de dados de propriedades e do sistema, modelos rigorosos com as considerações
-simplificativas acima são geralmente os mais utilizados.
-
+escoando cocorrente quanto contracorrente \cite{Authayanun2008}. Esse tipo de
+reator é conhecido como reator de leito gotejante (TBR - \emph(Trickle Bed
+Reactor)), que são equipamentos de contato gás-líquido-sólido, usados em muitas
+aplicações nas áreas de refino de petróleo, petroquímica, química fina e na
+indústria bioquímica \cite{Ranade2011}. 
+O escoamento nesse tipo de reator, para o caso de escoamento cocorrente,
+aproxima-se do escoamento empistonado, o que proporciona elevadas conversões.
+Além disso, a baixa perda de carga permite uma pressão parcial praticamente
+constante dos reagentes gasosos no reator. Este fato é importante para manter
+uma concentração de hidrogênio suficiente na superfície do catalisador ao longo
+de todo o reator \cite{Authayanun2008}.
 A descrição do comportamento dos fluidos de um prato apresentada na \autoref{fig:eficienciamurphree}
 considera que o líquido do prato
 $j$ escoa para o prato abaixo ($j+1$) através do \textit{downcomer}. O vapor que sobe para o prato $j$ é
@@ -181,7 +145,6 @@ fornece os coeficientes de fugacidade independentemente do modelo termodinâmico
 em uso, neste trabalho a forma apresentada na \autoref{eq:phiequality} é
 preferida.
 
-\section{Reatores de Leito Fixo} \label{sec:reatoresfixo}
 Geralmente, um estágio de separação de uma coluna de destilação é modelado com a hipótose de equilíbrio  termodinâmico
 entre o vapor e o líquido existentes, mas na realidade, este equilíbrio não é alcançado. A primeira tentativa de corrigir
 esta não-idealidade, ou não-equilíbrio, foi com a introdução de uma eficiência de estágio.
