@@ -3,41 +3,52 @@
 %
 \chapter{Conceitos Fundamentais e Revisão Bibliográfica}
 \label{chap:revisaobibliografica}
+%\emph{Texto não obrigatório}
 
-\emph{Este capítulo apresenta algumas definições sobre gasolina de pirólise,
-classificação dos reatores de leito fixo e diferentes abordagens de
-modelagem matemática aplicadas a reatores trifásicos.}
 \section{Gasolina de Pirólise (\emph{PYGAS})} \label{sec:pygas}
-A gasolina de pirólise é um dos produtos obtidos no processo de craqueamento a
-vapor quando da produção de olefinas. Tipicamente, a gasolina de pirólise
-apresenta curva de destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais.
-Ela é um produto instável, devido à grande quantidade de compostos
-insaturados tais como: monoolefinas, diolefinas conjugadas, estireno e outras
-espécies mais pesadas e também reativas \cite{Cheng1986}.
-Para a utilização comercial, a gasolina de pirólise precisa ser hidrogenada. O
-processo de hidrogenação de gasolina de pirólise pode ser divido, genericamente,
-em duas partes. Para obtenção de uma corrente que comporá a gasolina automotiva,
-apenas o primeiro estágio de hidrogenação é aplicado, i.e., hidrogenação
-seletiva de diolefinas e aromáticos ramificados insaturados, preservando-se
-compostos olefínicos e aromáticos. Por outro lado, se o produto se destinar a
-uma futura extração de aromáticos (onde a hidrogenação total é desejada), um
-segundo estágio de hidrogenação segue-se ao primeiro \cite{Authayanun2008}.
-\section{Reatores de Leito Fixo} \label{sec:reatoresfixo}
-Em um reator de hidrogenação, a gasolina de pirólise em fase líquida escoa
-descendentemente em um leito catalítico. Este escoamento se dá na forma de um
-fino filme de líquido, enquanto a fase gasosa (essencialmente hidrogênio)
-também escoa pelo leito catalítico. Existem tanto configurações com o gás
-escoando cocorrente quanto contracorrente \cite{Authayanun2008}. Esse tipo de
-reator é conhecido como reator de leito gotejante (TBR - \emph(Trickle Bed
-Reactor)), que são equipamentos de contato gás-líquido-sólido, usados em muitas
-aplicações nas áreas de refino de petróleo, petroquímica, química fina e na
-indústria bioquímica \cite{Ranade2011}. 
-O escoamento nesse tipo de reator, para o caso de escoamento cocorrente,
-aproxima-se do escoamento empistonado, o que proporciona elevadas conversões.
-Além disso, a baixa perda de carga permite uma pressão parcial praticamente
-constante dos reagentes gasosos no reator. Este fato é importante para manter
-uma concentração de hidrogênio suficiente na superfície do catalisador ao longo
-de todo o reator \cite{Authayanun2008}.
+A gasolina de pirólise (\emph{PYGAS - Pyrolysis Gasoline}) é um dos produtos
+obtidos no processo de craqueamento a vapor quando da produção de olefinas na
+indústria petroquímica. Tipicamente a gasolina de pirólise apresenta curva de
+destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais. Ela é um produto instável
+(térmica e químicamente) devido à grande quantidade de compostos insaturados
+tais como: monoolefinas, diolefinas conjugadas, estireno e outras espécies mais
+pesadas e também reativas \cite{Cheng1986}.
+ 
+A grande quantidade de de compostos insaturados (olefinas e aromáticos) contidos
+na gasolina de pirólise lhe fazem um produto interessante, tanto pela
+sua alta octanagem quanto pela sua quantidade de aromáticos. Contudo, a
+instabilidade (formação de goma, cor) impede sua utilização comercial. Assim,
+processos de refinamento específicos para essa corrente são necessários
+\cite{Derrien1986}.
+
+O esquema de processo a ser utilizado para refinar a gasolina de pirólise
+depende do produto final desejado. Para a produção de uma corrente que
+comporá a gasolina automotiva, atendendo requisitos tais como estabilidade e
+corrosividade, é aplicado a hidrogenação seletiva de diolefinas, também
+conhecido como primeiro estágio de hidrogenação. Já se o propósito for a
+obtenção de aromáticos, segue-se à hidrogenação seletiva o segundo estágio
+de hidrogenação (hidrogenação de olefinas e hidrodessulfurização)
+\cite{Derrien1986}.
+
+\section{Reatores de Leito Gotejante} \label{sec:reatorestbr} 
+
+Por reatores de leito empacotado (PBR - \emph{Packed Bed Reactors}) entende-se
+as colunas que possuem recheios catalíticos fixos, e que são destinadas a
+promover reações entre compostos das fases gasosa e líquida \cite{Froment2011}.
+
+Segundo \citeonline{Ranade2011}, os reatores de leito gotejante (TBR -
+\emph{Trickle Bed Reactor}) compreendem uma familia de PBRs nos quais as fases
+gasosa e líquida escoam através de um leito catalítico, sendo que: 
+\begin{itemize}
+\item A fase líquida escoa em sentido descendente (na direção da gravidade),
+fluindo sob a forma de filmes, filetes (\emph{rivulet}) e gotículas (daí vem o
+nome \emph{trickle}, gotejante);
+\item A fase gasosa pode escoar tanto ascendentemente (contracorrente à
+fase líquida) quando descendentemente (cocorrente à fase líquida)
+\end{itemize}
+
+\subsection {Tipos de Escoamento} \label{sec:tiposdeescoamento}
+
 A descrição do comportamento dos fluidos de um prato apresentada na \autoref{fig:eficienciamurphree}
 considera que o líquido do prato
 $j$ escoa para o prato abaixo ($j+1$) através do \textit{downcomer}. O vapor que sobe para o prato $j$ é

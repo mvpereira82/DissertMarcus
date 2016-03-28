@@ -5,6 +5,7 @@
 %\emph{Isto é uma sinopse de capítulo. A ABNT não traz nenhuma normatização a
 %respeito desse tipo de resumo, que é mais comum em romances e livros técnicos.
 %}
+
 Os catalisadores tem sido aplicados pela humanidade desde a antiquidade
 em atividades tais como produção de vinho, pão e queijo. Em muitos
 casos, percebeu-se que a adição de uma pequena quantidade da batelada anterior
@@ -17,7 +18,7 @@ catalisdores são substâncias que aceleram a taxa de uma reação química, sem
 serem consumidos durante a reação \cite{Oyama1988}.
 
 A descoberta de catalisadores sólidos e suas aplicações a processos químicos no
-início do século 20 causou grandes avanços na industria química. A maior parte
+início do século XX causou grandes avanços na industria química. A maior parte
 dos processos catalíticos consiste em reatores de leito fixo. Na industria
 petroquímica, reatores catalíticos de leito fixo são usados para produção de
 oxido de etileno, butadieno, anidrido maleico, anidrido ftálico, estireno,
@@ -26,56 +27,65 @@ reforma catalítica, isomerização, hidrodessulfurização e hidrocraqueamento
 \cite{Froment2011}.
 
 Dentre os reatores de leito fixo estão os reatores de leito gotejante
-(\emph{Trickle bed reactors}). Os reatores de leito gotejante são
-equipamentos de contato gás-líquido-sólido e compreendem uma família de
-reatores nos quais a fase líquida se move em um escoamento descendente, no
-sendito da força da gravidade, enquanto o gás pode escoar tanto ascendentemente
-(escoamento contracorrente) quanto descendentemente (escoamento cocorrente)
-\cite{Ranade2011}. Uma das aplicações de reatores de leito gotejante é
-hidrogenação de gasolina de pirólise. A gasolina de pirólise é um dos produtos obtidos no processo de
-craqueamento a vapor quando da produção de olefinas \cite{Cheng1986}.
+(TBR - \emph{Trickle Bed Reactors}), que nada mais são do que um tipo de reator
+catalítico multifásico de leito empacotado (PBR - \emph{Packed Bed Reactor}).
+Dentre as diversas aplicações dos reatores tipo PBR está a hidrogenação
+seletiva de gasolina de pirólise.
+
+A gasolina de pirólise (\emph{PYGAS}) é um dos produtos obtidos no processo de
+craqueamento a vapor quando da produção de olefinas \cite{Cheng1986}. Sua
+composição instável a impede de ser utilizada sem processos de refinamento
+adequados \cite{Derrien1986}.
 
 Ao longo dos anos foram desenvolvidos diversos modelos matemáticos para
 entender, projetar, simular ou otimizar o desempenho de reatores, especialmente
 os reatores de leito fixo. Os reatores de leito gotejante figuram entre os
 reatores de leito fixo que mais exigem capacidade computacional em suas
-simulações. Recentemente avanços têm sido realizados com o aumento da capacidade
-computacional disponível nas industrias e universidades.
+simulações. 
+
+Com a hidrogenação seletiva de gasolina de pirólise não
+foi diferente. Vários autores se preocuparam em modelar esse
+processo, adotando premissas e simplificações até hoje consideradas.
+Recentemente, \citeonline{Rojas2014a} apresentaram uma modelagem de
+um reator de hidrogenação seletiva de gasolina de pirólise que aplica novos
+parâmetros termodinâmicos para a solubilidade de hidrogênio \cite{Rojas2014}. 
 
 Este trabalho tem por objetivo geral o desenvolvimento de um modelo
 matemático genérico para reatores de leito fixo, bifásico ou trifásicos,
-aplicando a abordagem de modelagem por rede de células. Espera-se que, com a modelagem por
-rede de células, as simulações de reatores de leito fixo sejam mais completas,
-i.e., que aceitem a incorporação de fenômenos comumente desconsiderados.
+aplicando a abordagem de modelagem por rede de células. Com essa
+abordagem, espera-se incluir fenômenos comumente desconsiderados por
+simplificações.
 
 Como objetivo específico, pretende-se apresentar aqui a modelagem e a
 simulação de um reator de hidrogenação seletiva de gasolina de pirólise,
-utilizando dados publicados na literatura. Além disso, para o reator estudado
-neste trabalho, serão apresentadas algumas respostas dinâmicas, considerando
-algumas situações típicas.
+utilizando dados publicados por \citeonline{Rojas2014a}.
 
-Para realizar os objetivos propostos, será utilizado o simulador genérico de
+Além disso, para o reator estudado neste trabalho, serão
+apresentadas algumas respostas dinâmicas que refletem situações típicas da
+indústria.
+
+Para alcançar os objetivos propostos, será utilizado o simulador genérico de
 processos \emso\ \cite{Soares2003} e seu ambiente de desenvolvimento de
 modelos. O modelo de reator de leito fixo gerado neste estudo fará parte da
-biblioteca EML (EMSO Model Library). A EML é distribuída no conceito de \emph{software} livre,
-disponibilizando todos os modelos via internet e sem custo.
+biblioteca EML (EMSO Model Library). A EML é distribuída no conceito de
+\emph{software} livre, disponibilizando todos os modelos via internet e sem custo.
 
 Esta dissertação está dividida em seis capítulos, como segue:
 
 O \autoref{chap:introduction} (este capítulo) trata da introdução e do objetivo deste trabalho.
 
 O \autoref{chap:revisaobibliografica} apresenta a pesquisa de referências
-realizada, tratando brevemente da gasolina de pirólise, dando mais ênfase nos
-reatores de leito fixo, apresentando as diferentes abordagens de modelagem
-já utilizadas.
+realizada que, inicialmente, trata de maneira breve sobre a gasolina de pirólise
+e sua produção, passa pela descrição e modelagem de reatores de leito
+gotejante e, finalmente, apresenta alguns aspectos da modelagem de
+reatores de hidrogenação de gasolina de pirólise.
 
 O \autoref{chap:moddesenvolvidos} descreve o processo de
-hidrogenação de gasolina de pirólise, a modelagem matemática
-desenvolvida deste processoo processo e, finalmente, a implementação
-deste modelo em \emso\ .
+hidrogenação de gasolina de pirólise e a modelagem matemática
+desenvolvida deste processoo processo neste trabalho.
 
 Os resultados da simulação do estado estacionário e de algumas
 respostas dinâmicas estão no \autoref{chap:resultados}.
 
-Finalmente, no \autoref{chap:conclusoes}, são apresentadas as conclusões do
-trabalho, assim como sugestões para trabalhos posteriores.
+Por fim, no \autoref{chap:conclusoes} são apresentadas as conclusões do
+trabalho bem como sugestões para trabalhos posteriores.

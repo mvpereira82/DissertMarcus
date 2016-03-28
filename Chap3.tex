@@ -4,27 +4,20 @@
 \chapter{Processo Industrial e Metodologia}
 \label{chap:moddesenvolvidos}
 
+\section{Descrição do Processo} \label{sec:descricaoprocesso}
 
-\emph{Modelos matemáticos de colunas de destilação podem ser classificados de acordo com o seu grau de detalhamento:
-se possuem predição da composição, temperatura e vazões para cada prato, são chamados de modelos rigorosos. Se são
-compostos por uma descrição global da coluna utilizando um menor número de variáveis, baseados em algum tipo de
-interpolação, são ditos modelos reduzidos \cite{Fletcher:2000}. Neste trabalho, os modelos desenvolvidos fazem parte do
-primeiro
-grupo, modelos rigorosos, prato-a-prato, baseados na consideração de equilíbrio termodinâmico entre as fases líquida e
-vapor.
-}
+Em um reator de hidrogenação, a gasolina de pirólise em fase líquida escoa
+descendentemente em um leito catalítico. Este escoamento se dá na forma de um
+fino filme de líquido, enquanto a fase gasosa (essencialmente hidrogênio)
+também escoa pelo leito catalítico. Existem tanto configurações com o gás
+escoando cocorrente quanto contracorrente \cite{Authayanun2008}.
 
-\section{Introdução}
-
-Para o desenvolvimento de um modelo de coluna de destilação, diversos modelos
-de equipamentos periféricos são necessários. Exemplos destes equipamentos são:
-bomba, válvula, tanques, condensador e referverdor.
-Neste capítulo, os modelos desenvolvidos são apresentados, com suas
-considerações e equacionamento.
-
-Além dos modelos dos equipamentos individuais, é apresentado um estudo a
-respeito de correlações hidráulicas disponíveis na literatura para o cálculo
-das vazões internas da coluna.
+O escoamento nesse tipo de reator, para o caso de escoamento cocorrente,
+aproxima-se do escoamento empistonado, o que proporciona elevadas conversões.
+Além disso, a baixa perda de carga permite uma pressão parcial praticamente
+constante dos reagentes gasosos no reator. Este fato é importante para manter
+uma concentração de hidrogênio suficiente na superfície do catalisador ao longo
+de todo o reator \cite{Authayanun2008}.
 
 Para a implementação dos modelos e simulações foi utilizado o software \emso\
 (\emsoname) que é uma ferramenta de modelagem, simulação e

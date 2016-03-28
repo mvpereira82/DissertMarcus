@@ -17,9 +17,9 @@
 \nomenclatureentry{a$N_{tj}$@[{$N_{tj}$}]\begingroup Taxa de transferência de massa total no estágio $j$ \nomunit{mol/s}\nomeqref {2.9}|nompageref}{10}
 \nomenclatureentry{a$C_t^V$@[{$C_t^V$}]\begingroup Concentração molar total da fase vapor \nomunit{mol/m^3}\nomeqref {2.9}|nompageref}{10}
 \nomenclatureentry{a$C_t^L$@[{$C_t^L$}]\begingroup Concentração molar total da fase líquida\nomunit{mol/m^3}\nomeqref {2.9}|nompageref}{10}
-\nomenclatureentry{a$C$@[{$C$}]\begingroup Concentração molar \nomunit{mol/m^3}\nomeqref {2.11}|nompageref}{10}
-\nomenclatureentry{a$k^L$@[{$k^L$}]\begingroup Coeficiente binário de transferência de massa na fase líquida \nomunit{m/s}\nomeqref {2.11}|nompageref}{10}
-\nomenclatureentry{a$k^V$@[{$k^V$}]\begingroup Coeficiente binário de transferência de massa na fase vapor \nomunit{m/s}\nomeqref {2.11}|nompageref}{10}
+\nomenclatureentry{a$C$@[{$C$}]\begingroup Concentração molar \nomunit{mol/m^3}\nomeqref {2.11}|nompageref}{11}
+\nomenclatureentry{a$k^L$@[{$k^L$}]\begingroup Coeficiente binário de transferência de massa na fase líquida \nomunit{m/s}\nomeqref {2.11}|nompageref}{11}
+\nomenclatureentry{a$k^V$@[{$k^V$}]\begingroup Coeficiente binário de transferência de massa na fase vapor \nomunit{m/s}\nomeqref {2.11}|nompageref}{11}
 \nomenclatureentry{a$E^V_j$@[{$E^V_j$}]\begingroup Taxa de transferência de energia na fase vapor no estágio $j$ \nomunit{J/s}\nomeqref {2.14}|nompageref}{11}
 \nomenclatureentry{a$E^L_j$@[{$E^L_j$}]\begingroup Taxa de transferência de energia na fase líquida no estágio $j$ \nomunit{J/s}\nomeqref {2.14}|nompageref}{11}
 \nomenclatureentry{a$P^V$@[{$P^V$}]\begingroup Pressão do vapor \nomunit{atm}\nomeqref {2.14}|nompageref}{11}
@@ -51,7 +51,7 @@
 \nomenclatureentry{a$T_{out}$@[{$T_{out}$}]\begingroup Temperatura da corrente que sai do equipamento \nomunit{K}\nomeqref {3.5}|nompageref}{21}
 \nomenclatureentry{a$T_{in}$@[{$T_{in}$}]\begingroup Temperatura da corrente que entra do equipamento \nomunit{K}\nomeqref {3.5}|nompageref}{21}
 \nomenclatureentry{G$\rho$@[{$\rho$}]\begingroup Massa específica da corrente \nomunit{kg/m^3}\nomeqref {3.5}|nompageref}{21}
-\nomenclatureentry{a$frac$@[{$frac$}]\begingroup Fração de \textit{split} da vazão\nomeqref {3.7}|nompageref}{23}
+\nomenclatureentry{a$frac$@[{$frac$}]\begingroup Fração de \textit{split} da vazão\nomeqref {3.7}|nompageref}{22}
 \nomenclatureentry{a$h_{out}$@[{$h_{out}$}]\begingroup Entalpia da corrente que sai do equipamento \nomunit{J/mol}\nomeqref {3.17}|nompageref}{23}
 \nomenclatureentry{a$h_{in}$@[{$h_{in}$}]\begingroup Entalpia da corrente que entra no equipamento \nomunit{J/mol}\nomeqref {3.17}|nompageref}{23}
 \nomenclatureentry{a$M_i$@[{$M_i$}]\begingroup Acúmulo molar do componente $i$ \nomunit{mol}\nomeqref {3.18}|nompageref}{25}
@@ -63,8 +63,8 @@
 \nomenclatureentry{a$v$@[{$v$}]\begingroup Fração vaporizada da corrente\nomeqref {3.23}|nompageref}{25}
 \nomenclatureentry{a$Level$@[{$Level$}]\begingroup Nível de líquido \nomunit{m}\nomeqref {3.23}|nompageref}{25}
 \nomenclatureentry{a$A_{cross}$@[{$A_{cross}$}]\begingroup Área da seção transversal \nomunit{m^2}\nomeqref {3.23}|nompageref}{25}
-\nomenclatureentry{a$r$@[{$r$}]\begingroup Raio \nomunit{m}\nomeqref {3.31}|nompageref}{28}
-\nomenclatureentry{a$L$@[{$L$}]\begingroup Comprimento do tanque \nomunit{m}\nomeqref {3.31}|nompageref}{28}
+\nomenclatureentry{a$r$@[{$r$}]\begingroup Raio \nomunit{m}\nomeqref {3.31}|nompageref}{27}
+\nomenclatureentry{a$L$@[{$L$}]\begingroup Comprimento do tanque \nomunit{m}\nomeqref {3.31}|nompageref}{27}
 \nomenclatureentry{a$F_{in}^L$@[{$F_{in}^L$}]\begingroup Vazão molar de líquido que entra no equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{30}
 \nomenclatureentry{a$F_{out}^L$@[{$F_{out}^L$}]\begingroup Vazão molar de líquido que sai do equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{30}
 \nomenclatureentry{a$F_{out}^V$@[{$F_{out}^V$}]\begingroup Vazão molar de vapor que sai do equipamento \nomunit{mol/s}\nomeqref {3.35}|nompageref}{30}
@@ -91,12 +91,12 @@
 \nomenclatureentry{a$V_{cond}$@[{$V_{cond}$}]\begingroup Volume do condensador \nomunit{m^3}\nomeqref {3.64}|nompageref}{36}
 \nomenclatureentry{a$T_{out}^L$@[{$T_{out}^L$}]\begingroup Temperatura de saída da corrente de líquido \nomunit{K}\nomeqref {3.69}|nompageref}{36}
 \nomenclatureentry{a$T_{out}^V$@[{$T_{out}^V$}]\begingroup Temperatura de saída da corrente de vapor \nomunit{K}\nomeqref {3.69}|nompageref}{36}
-\nomenclatureentry{a$V_{tray}$@[{$V_{tray}$}]\begingroup Volume do prato \nomunit{m^3}\nomeqref {3.86}|nompageref}{41}
+\nomenclatureentry{a$V_{tray}$@[{$V_{tray}$}]\begingroup Volume do prato \nomunit{m^3}\nomeqref {3.86}|nompageref}{40}
 \nomenclatureentry{a$E_{MV}$@[{$E_{MV}$}]\begingroup Eficiência de prato de Murphree\nomeqref {3.92}|nompageref}{41}
 \nomenclatureentry{a$A_p$@[{$A_p$}]\begingroup Área do prato (Área do total do prato -  Área do \textit{downcomer}) \nomunit{m^2}\nomeqref {3.94}|nompageref}{41}
-\nomenclatureentry{a$F^L$@[{$F^L$}]\begingroup Vazão molar de líquido \nomunit{mol/s}\nomeqref {3.96}|nompageref}{42}
-\nomenclatureentry{a$F^V$@[{$F^V$}]\begingroup Vazão molar de vapor \nomunit{mol/s}\nomeqref {3.96}|nompageref}{42}
-\nomenclatureentry{a$g$@[{$g$}]\begingroup Aceleração da gravidade\nomunit{m/s^2}\nomeqref {3.106}|nompageref}{52}
+\nomenclatureentry{a$F^L$@[{$F^L$}]\begingroup Vazão molar de líquido \nomunit{mol/s}\nomeqref {3.96}|nompageref}{41}
+\nomenclatureentry{a$F^V$@[{$F^V$}]\begingroup Vazão molar de vapor \nomunit{mol/s}\nomeqref {3.96}|nompageref}{41}
+\nomenclatureentry{a$g$@[{$g$}]\begingroup Aceleração da gravidade\nomunit{m/s^2}\nomeqref {3.106}|nompageref}{51}
 \nomenclatureentry{a$w$@[{$w$}]\begingroup Constante dependente da geometria do prato presente na \autoref{eq:feehery}\nomeqref {3.115}|nompageref}{52}
 \nomenclatureentry{a$h_{cl}$@[{$h_{cl}$}]\begingroup Altura de líquido claro no prato \nomunit{m}\nomeqref {3.116}|nompageref}{54}
 \nomenclatureentry{a$u_h$@[{$u_h$}]\begingroup Velocidade do vapor através dos furos do prato \nomunit{m/s}\nomeqref {3.116}|nompageref}{54}
@@ -118,21 +118,21 @@
 \nomenclatureentry{G$\Delta P$@[{$\Delta P$}]\begingroup Diferença de pressão \nomunit{atm}\nomeqref {3.116}|nompageref}{54}
 \nomenclatureentry{G$\varepsilon_l$@[{$\varepsilon_l$}]\begingroup Fração de líquido na espuma\nomeqref {3.117}|nompageref}{55}
 \nomenclatureentry{G$\varepsilon_w$@[{$\varepsilon_w$}]\begingroup Fração de vapor na espuma que escoa sobre o vertedouro\nomeqref {3.117}|nompageref}{55}
-\nomenclatureentry{G$\phi$@[{$\phi$}]\begingroup Densidade relativa da espuma, \autoref{eq:roffel}\nomeqref {3.126}|nompageref}{56}
-\nomenclatureentry{G$\alpha_w$@[{$\alpha_w$}]\begingroup Coeficiente da equação \autoref{eq:wang}, \nomunit{m^{0,5}/s}\nomeqref {3.126}|nompageref}{56}
-\nomenclatureentry{a$k_w$@[{$k_w$}]\begingroup Coeficiente da \autoref{eq:osorio}, \nomunit{mol/(s\ cm^{\frac{5}{2}})}\nomeqref {3.126}|nompageref}{56}
-\nomenclatureentry{a$cf_w$@[{$cf_w$}]\begingroup Resistência ao escoamento de líquido\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$d_w$@[{$d_w$}]\begingroup Diâmetro do vertedouro \nomunit{cm}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$V_{liq}$@[{$V_{liq}$}]\begingroup Volume de líquido no prato \nomunit{m^3}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$A_a$@[{$A_a$}]\begingroup Área ativa do prato \nomunit{m^2}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$P_l$@[{$P_l$}]\begingroup Vazão de produto \nomunit{kmol/s}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$Mw$@[{$Mw$}]\begingroup Massa molar média da mistura\nomunit{g/mol}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$F_W$@[{$F_W$}]\begingroup Correção da altura do vertedouro\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$N_p$@[{$N_p$}]\begingroup Número de passes\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$lw$@[{$lw$}]\begingroup Comprimento do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{G$\beta$@[{$\beta$}]\begingroup Coeficiente de aeração\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$h_w$@[{$h_w$}]\begingroup Altura do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$h_{ow}$@[{$h_{ow}$}]\begingroup Altura de líquido acima do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$Q^L$@[{$Q^L$}]\begingroup Vazão de líquido \nomunit{m^3/s}\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{G$\varepsilon$@[{$\varepsilon$}]\begingroup Fração de vapor na espuma\nomeqref {3.127}|nompageref}{58}
-\nomenclatureentry{a$C_d$@[{$C_d$}]\begingroup Coeficiente de descarga\nomeqref {3.127}|nompageref}{58}
+\nomenclatureentry{G$\phi$@[{$\phi$}]\begingroup Densidade relativa da espuma, \autoref{eq:roffel}\nomeqref {3.126}|nompageref}{55}
+\nomenclatureentry{G$\alpha_w$@[{$\alpha_w$}]\begingroup Coeficiente da equação \autoref{eq:wang}, \nomunit{m^{0,5}/s}\nomeqref {3.126}|nompageref}{55}
+\nomenclatureentry{a$k_w$@[{$k_w$}]\begingroup Coeficiente da \autoref{eq:osorio}, \nomunit{mol/(s\ cm^{\frac{5}{2}})}\nomeqref {3.126}|nompageref}{55}
+\nomenclatureentry{a$cf_w$@[{$cf_w$}]\begingroup Resistência ao escoamento de líquido\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$d_w$@[{$d_w$}]\begingroup Diâmetro do vertedouro \nomunit{cm}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$V_{liq}$@[{$V_{liq}$}]\begingroup Volume de líquido no prato \nomunit{m^3}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$A_a$@[{$A_a$}]\begingroup Área ativa do prato \nomunit{m^2}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$P_l$@[{$P_l$}]\begingroup Vazão de produto \nomunit{kmol/s}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$Mw$@[{$Mw$}]\begingroup Massa molar média da mistura\nomunit{g/mol}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$F_W$@[{$F_W$}]\begingroup Correção da altura do vertedouro\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$N_p$@[{$N_p$}]\begingroup Número de passes\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$lw$@[{$lw$}]\begingroup Comprimento do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{G$\beta$@[{$\beta$}]\begingroup Coeficiente de aeração\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$h_w$@[{$h_w$}]\begingroup Altura do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$h_{ow}$@[{$h_{ow}$}]\begingroup Altura de líquido acima do vertedouro \nomunit{m}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$Q^L$@[{$Q^L$}]\begingroup Vazão de líquido \nomunit{m^3/s}\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{G$\varepsilon$@[{$\varepsilon$}]\begingroup Fração de vapor na espuma\nomeqref {3.127}|nompageref}{57}
+\nomenclatureentry{a$C_d$@[{$C_d$}]\begingroup Coeficiente de descarga\nomeqref {3.127}|nompageref}{57}
