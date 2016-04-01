@@ -1,6 +1,4 @@
 %
-% 
-%
 \chapter{Conceitos Fundamentais e Revisão Bibliográfica}
 \label{chap:revisaobibliografica}
 %\emph{Texto não obrigatório}
@@ -13,6 +11,7 @@ destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais. Ela é um produto inst�
 (térmica e químicamente) devido à grande quantidade de compostos insaturados
 tais como: monoolefinas, diolefinas conjugadas, estireno e outras espécies mais
 pesadas e também reativas \cite{Cheng1986}.
+\nomenclature{PYGAS}{Gasolina de pirólise}
  
 A grande quantidade de de compostos insaturados (olefinas e aromáticos) contidos
 na gasolina de pirólise lhe fazem um produto interessante, tanto pela
@@ -32,11 +31,12 @@ de hidrogenação (hidrogenação de olefinas e hidrodessulfurização)
 
 \section{Reatores de Leito Gotejante} \label{sec:reatorestbr}
 
-\subsection{Definição} \label{denicao}
+\subsection{Definição} \label{sec:definicao}
 
 Na literatura encontram-se vários autores que trataram das definições de
 reatores catalíticos multifásicos de leito empacotado (PBR - \emph{Packed Bed
 Reactors}).
+\nomenclature{PBR}{Reator de leito empacotado}
 
 Segundo \citeonline{Froment2011}, por reatores de leito empacotado multifásicos
 entende-se as colunas que possuem recheios catalíticos, e que são destinadas a
@@ -50,10 +50,10 @@ transferência de massa está na fase gasosa; e (ii) em regime de borbulhamento,
 com a fase gás distribuída e a fase líquida contínua, e a principal resistência
 a transferência de massa localiza-se na fase líquida.
 
-De acordo com \citeonline{Ranade2011} e \citeonline{Ancheyta2011}, os reatores
-de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem uma familia de
-PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico,
-sendo que:
+Os reatores de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem uma família de
+PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico fixo, sendo eles assim classificados como reatores de leito fixo (\emph{FBR - Fixed Bed Reactors}). O TBR ainda possui as seguintes características, segundo  \citeonline{Ancheyta2011}:
+\nomenclature{TBR}{Reator de leito gotejante}
+\nomenclature{FBR}{Reator de leito fixo}
 
 \begin{itemize}
 \item A fase líquida escoa em sentido descendente (na direção da gravidade),
@@ -65,7 +65,7 @@ fase líquida) quando descendentemente (cocorrente à fase líquida)
 
 Os PBRs nos quais há escoamento ascendente tanto da fase gasosa quanto da
 fase líquida opera em regime de borbulhamento, não este tipo de reator,
-portanto, classificado entre os TBR \cite{Ancheyta2011}.
+portanto, classificado entre os TBR \cite{Ancheyta2011}. Vale lembrar que
 
 A configuração convencional dos TBRs está representada na
 \autoref{fig:configuracoestbr}.
@@ -75,8 +75,16 @@ A configuração convencional dos TBRs está representada na
  \caption{Regimes de escoamento em reatores de leito gotejante \cite{Gunjal2005}.}
  \label{fig:configuracoestbr}
  \end{figure}
+ 
+ \subsection{Reações em TBR} \label{sec:reacoes}
+ 
+Nos FBRs, a reação química intrínseca é aquela que considera os seguintes fenômenos: 
+\begin{enumerate}
+\item Adsorção dos reagentes na superfície catalítica; 
+\item Reação química propriamente dita entre os reagentes, na superfície do catalisador; e
+\item Desorção  
 
-\subsection {Regimes de Escoamento e Parâmetros Hidrodinâmicos}
+\subsection {Regimes de Escoamento}
 \label{sec:escoamento}
 
 Um TBR pode ser visualizado como um leito de partículas de catalisador, no qual
@@ -116,18 +124,23 @@ O escoamento em regime gotejante ocorre em baixo fluxo de líquido e moderado
 fluxo de gás. Como já foi dito, o líquido escoa em forma de filmes ou filetes
 sobre as partículas do catalisador. Nesse regime de escoamento, a fase contínua
 é a gasosa e a fase líquida escoa dispersa. Esse tipo de escoamento também é
-chamado de regime de baixa interação.
+chamado de regime de baixa interação \cite{Saroha1996}.
 
 Em fluxo moderado de líquido e gás ocorre o escoamento em regime de pulso,
 caracterizado pelo escoamento semicontínuo de ambas as fases. Ante o regime
 por gotejamento, o regime de pulso apresenta maior interação entre as fases.
 Todavia, esse processo faz com que regiões ricas em gás se alternem com regiões
-ricas em líquido.
+ricas em líquido \cite{Saroha1996}.
 
-Os regimes de escoamento extremos são os por borbulhamento e por spray: no
-primeiro a fase contínua é a líquida, enquanto a fase gasosa está dispersa; no
+Os outros dois regimes de escoamento são os tipo borbulhamento e tipo spray: no
+primeiro a fase contínua é a líquida, enquanto que a fase gasosa está dispersa; no
 segundo, a fase contínua é a gasosa, e a líquida é dispersa. Em ambos os casos
-há alta interação entre as fases \cite{Saroha1996}.
+há alta interação entre as duas fases \cite{Saroha1996}.
+
+\subsection{Parâmetros Hidrodinâmicos}
+\label{sec:parametroshidrodinamicos}
+
+Além dos parâmetros 
 
 O equilíbrio termodinâmico é alcançado quando são satisfeitas as condições de equilíbrio químico, térmico e
 mecânico entre as fases:
