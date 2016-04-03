@@ -7,11 +7,11 @@
 A gasolina de pirólise (\emph{PYGAS - Pyrolysis Gasoline}) é um dos produtos
 obtidos no processo de craqueamento a vapor quando da produção de olefinas na
 indústria petroquímica. Tipicamente a gasolina de pirólise apresenta curva de
-destilação entre $30$\si{ºC} e $204$\si{ºC} ou mais. Ela é um produto instável
-(térmica e químicamente) devido à grande quantidade de compostos insaturados
-tais como: monoolefinas, diolefinas conjugadas, estireno e outras espécies mais
-pesadas e também reativas \cite{Cheng1986}.
-\nomenclature{PYGAS}{Gasolina de pirólise}
+destilação entre 303K e 477K ou mais. Ela é um produto instável (térmica e
+químicamente) devido à grande quantidade de compostos insaturados tais como:
+monoolefinas, diolefinas conjugadas, estireno e outras espécies mais pesadas e
+também reativas \cite{Cheng1986}.
+\nomenclature[Z]{PYGAS}{Gasolina de pirólise}
  
 A grande quantidade de de compostos insaturados (olefinas e aromáticos) contidos
 na gasolina de pirólise lhe fazem um produto interessante, tanto pela
@@ -36,7 +36,7 @@ de hidrogenação (hidrogenação de olefinas e hidrodessulfurização)
 Na literatura encontram-se vários autores que trataram das definições de
 reatores catalíticos multifásicos de leito empacotado (PBR - \emph{Packed Bed
 Reactors}).
-\nomenclature{PBR}{Reator de leito empacotado}
+\nomenclature[Z]{PBR}{Reator de leito empacotado}
 
 Segundo \citeonline{Froment2011}, por reatores de leito empacotado multifásicos
 entende-se as colunas que possuem recheios catalíticos, e que são destinadas a
@@ -52,8 +52,8 @@ a transferência de massa localiza-se na fase líquida.
 
 Os reatores de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem uma família de
 PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico fixo, sendo eles assim classificados como reatores de leito fixo (\emph{FBR - Fixed Bed Reactors}). O TBR ainda possui as seguintes características, segundo  \citeonline{Ancheyta2011}:
-\nomenclature{TBR}{Reator de leito gotejante}
-\nomenclature{FBR}{Reator de leito fixo}
+\nomenclature[Z]{TBR}{Reator de leito gotejante}
+\nomenclature[Z]{FBR}{Reator de leito fixo}
 
 \begin{itemize}
 \item A fase líquida escoa em sentido descendente (na direção da gravidade),
@@ -75,14 +75,7 @@ A configuração convencional dos TBRs está representada na
  \caption{Regimes de escoamento em reatores de leito gotejante \cite{Gunjal2005}.}
  \label{fig:configuracoestbr}
  \end{figure}
- 
- \subsection{Reações em TBR} \label{sec:reacoes}
- 
-Nos FBRs, a reação química intrínseca é aquela que considera os seguintes fenômenos: 
-\begin{enumerate}
-\item Adsorção dos reagentes na superfície catalítica; 
-\item Reação química propriamente dita entre os reagentes, na superfície do catalisador; e
-\item Desorção  
+
 
 \subsection {Regimes de Escoamento}
 \label{sec:escoamento}
@@ -132,15 +125,138 @@ por gotejamento, o regime de pulso apresenta maior interação entre as fases.
 Todavia, esse processo faz com que regiões ricas em gás se alternem com regiões
 ricas em líquido \cite{Saroha1996}.
 
-Os outros dois regimes de escoamento são os tipo borbulhamento e tipo spray: no
-primeiro a fase contínua é a líquida, enquanto que a fase gasosa está dispersa; no
-segundo, a fase contínua é a gasosa, e a líquida é dispersa. Em ambos os casos
-há alta interação entre as duas fases \cite{Saroha1996}.
+Os outros dois regimes de escoamento encontrados em TBRs são: borbulhamento e
+tipo spray. No primeiro, a fase contínua é a líquida, enquanto que a fase gasosa
+escoa dispersa; no segundo, a fase contínua é a gasosa, e a fase líquida é
+dispersa. Ambos os casos são classificados como regimes de alta interação entre
+as duas fases \cite{Saroha1996}.
+
+Os reatores industriais operam com frequência na próximos a transição entre os
+regimes gotejante e pulsado. Isso proporciona melhores taxas de transferência de
+massa, utilização do catalisador e aumenta a capacidade produtiva
+\cite{Ancheyta2011}.
 
 \subsection{Parâmetros Hidrodinâmicos}
 \label{sec:parametroshidrodinamicos}
 
-Além dos parâmetros 
+Por natureza, os TBRs possuem uma comlexidade fenomenológica ímpar quando se
+trata de seu comportamento hidrodinâmico. Supera em complexidade tanto os FBRs,
+onde somente há apenas uma fase escoando pelo leito catalítico, quanto colunas
+empacotadas onde não há transferência de massa. 
+
+A compreensão e a previsão, ainda que imprecisamente, dos parâmetros
+hidrodinâmicos dos TBRs são as chaves para o projeto e análise desses complexos
+equipamentos. Os parâmetros que serão discorridos nessa dissertação
+serão: 
+
+\begin{itemize}
+  \item Perda de carga
+  \item Retenção de líquido
+  \item Molhamento das partícutas de catalisador
+  \item Coeficiente de transferência de massa gás-líquido
+  \item Coeficiente de transferência de massa líquido-sólido
+  \item Dispersão axial
+  \item Dispersão radial
+  \item Transferência de calor em TBRs
+\end{itemize}
+
+
+\subsubsection{Perda de Carga}
+\label{sec:perdadecarga}
+
+A capacidade de estimar a perda de carga em TBRs na fase de projeto é de suma
+importância. Ela definirá a capacidade de um dos equipamentos mais custosos do
+sistema, o compressor que fará a recirculação da fase gasosa. A perda de carga
+também é um importante parâmetro a ser acompanhando pelos engenheiros quando o
+TBR está em operação; evoluções abruptas na perda de carga nos leitos
+catalíticos normalmente é um indicador de um problema sério de
+escoamento.
+
+A perda de carga bifásica ao longo do reator está relacionada com: (i) a
+geometria do reator (diâmetro, tamanho e forma do catalisador e geometria dos
+internos, tais como prato distribuidor); parâmetros operacionais tais como vazão
+de gás e líquido (regime de escoamento); e propriedades das fases (densidade,
+viscosidade, tensão superficial etc.). Temperatura e pressão de operação afetam
+indireamente a perda de carga através das propriedades do fluido
+\cite{Ranade2011}.
+
+Normalmente as equações de perda de carga são definidas em termos de perda de
+carga específica $\Delta P/l$, que é definida como a variação da pressão interna
+por unidade de comprimentos do reator. Em reatores cujo regime é de baixa
+interação (regime gotejante de escoamento), a perda de carga tende a ser
+pequena. Para regimes de alta interação, a perda de carga pode chegar a alguns
+atmosferas por metro \cite{Benkrid1997}.
+
+\nomenclature[G]{$\Delta P/l$}{Perda de carga específica \nomunit{kPa/m}} 
+
+Segundo \citeonline{Holub1993}, os modelos hidrodinâmicos podem ser
+classificados em duas categorias. A primeira categoria lança mão do empirismo
+baseado em análise dimensional para produzir correlações de perda de carga e
+retenção de líquido. A segunda categoria utiliza equações tipo Ergun
+\apud{Ergun1952}{Holub1993}, modificando parâmetros para escoamento bifásico.
+Essa abordagem é aplicada especialmente para regimes de escoamento de baixa
+interação.
+
+\citeonline{Holub1993}, por exemplo, desenvolveram uma correlação para perda
+de carga para TBRs operando em regimes de baixa interação. Já
+\citeonline{Benkrid1997} utilizaram dados experimentais para propor modelos
+simples de perda de carga em TBRs que operam em regimes de alta
+interação. Ambos autores citados neste parágrafo também desenvolveram
+correlações para retenção de líquido.
+
+Diferentemente de muitos autores, que propuseram equações utilizando dados
+experimentais coletados em pressões atmosféricas, \citeonline{Larachi1991}
+construiu correlações tanto para perda de carga quanto para retenção de líquido
+, em pressões de até 8.1 MPa.
+
+\subsubsection{Retenção de Líquido}
+\label{sec:retencaodeliquido}
+
+A retenção de líquido (\emph{liquid holdup})em um leito de TBR  pode ser
+expressada de duas maneiras: (i) retenção total ($\epsilon_L$), definida
+como o volume de líquido por unidade de volume de leito e (ii) saturação de líquido
+($\beta_L$), definida como o volume de líquido por unidade de volume vazio
+(ao invés de volume total de leito). A retenção de líquido é composta de duas
+partes: estática ($\epsilon_{Ls}$) e dinâmica ($\epsilon_{Ld}$). Por
+renteção de líquido estática entende-se a porção de líquido que permanece na superfície das
+partículas de catalisador após o leito ser drenado. Aqui é importante destacar 
+\cite{Ranade2011}.
+
+Outros fatores em TBRs são dependentes da retenção de líquido, tais como fator
+de molhabilidade e coefientes de transferência de massa e calor. A retenção de
+líquido também determina o tempo de residência de líquido dentro do reator e,
+portanto, a conversão dos reagentes \cite{Ranade2011}.
+
+\nomenclature[G]{$\epsilon_L$}{Retenção total de líquido}
+\nomenclature[G]{$\epsilon_Ls$}{Retenção estática de líquido}
+\nomenclature[G]{$\epsilon_Ld$}{Retenção dinâmica de líquido}
+\nomenclature[G]{$\beta_L$}{Saturação de líquido}
+\nomenclature[G]{$\beta_Ls$}{Saturação de líquido estática}
+\nomenclature[G]{$\beta_Ld$}{Saturação de líquido dinâmica}
+
+\subsection{Reações Químicas em TBR} \label{sec:reacoes}
+ 
+Os TBRs diferem dos reatores monofásicos de leito fixo exatamente pela presença
+de uma terceira fase. Em outras palavras, uma camada a mais de resistência a
+transferência de massa, tanto de reagentes quanto de produtos, é adicionada
+ao sistema. 
+
+Sendo assim, segundo\ldots, itens sequenciais (figura?)
+
+Nos FBRs, a reação química intrínseca é aquela que considera os
+seguintes fenômenos:
+\begin{enumerate}
+\item Adsorção dos reagentes na superfície catalítica; 
+\item Reação química propriamente dita entre os reagentes; e
+\item Desorção
+\end{enumerate}  
+
+molhamento
+
+modelos cinéticos simplificados que não descrevem o comportamento real na
+superfície do catalisador.
+
+ 
 
 O equilíbrio termodinâmico é alcançado quando são satisfeitas as condições de equilíbrio químico, térmico e
 mecânico entre as fases:
@@ -156,12 +272,6 @@ onde, $\hat{f}_i$ é a fugacidade da espécie ou componente $i$ em solução, o 
 $L$ é utilizado para o líquido e $V$ para o vapor, $T$ e $P$ são a temperatura
 e a pressão, respectivamente.
 
-\nomenclature{$\hat{f}^L_i$}{Fugacidade da espécie $i$ em solução líquida}
-\nomenclature{$f^L_i$}{Fugacidade da espécie $i$, líquido puro}
-\nomenclature{$\hat{f}^V_i$}{Fugacidade da espécie $i$ em solução gasosa}
-\nomenclature[G]{$\gamma_i$}{Coeficiente de atividade da espécie $i$ em solução líquida}
-\nomenclature[G]{$\gamma_{i,\infty}$}{Coeficiente de atividade da espécie $i$ à diluição infinita}
-\nomenclature{$H_i$}{Constante de Henry da espécie $i$}
 
 A igualdade de fugacidades, como apresentada acima, frequentemente é
 representada utilizando coeficientes de fugacidade.
@@ -362,19 +472,6 @@ onde $h^V$ e $h^L$ são os coeficientes convectivos de transferência de calor n
 $T^V$, $T^I$ e $T^L$ são as
 temperaturas do vapor, interface e líquido e $\overline{H}_{ij}$ é a entalpia parcial molar do componente $i$ no estágio $j$.
 
-\nomenclature{$E^V_j$}{Taxa de transferência de energia na fase vapor no
-estágio $j$ \nomunit{J/s}}
-\nomenclature{$E^L_j$}{Taxa de transferência de energia na fase líquida no
-estágio $j$ \nomunit{J/s}}
-\nomenclature{$P^V$}{Pressão do vapor \nomunit{atm}}
-\nomenclature{$P^L$}{Pressão do líquido \nomunit{atm}}
-\nomenclature{$T^V$}{Temperatura do vapor \nomunit{K}}
-\nomenclature{$T^L$}{Temperatura do líquido \nomunit{K}}
-\nomenclature{$T^I$}{Temperatura da interface \nomunit{K}}
-\nomenclature{$h^V$}{Coeficiente de transferência de calor no vapor \nomunit{J/(m^2 K s)}}
-\nomenclature{$h^L$}{Coeficiente de transferência de calor no líquido \nomunit{J/(m^2\ K\ s)}}
-\nomenclature{$\overline{H}_{ij}$}{Entalpia parcial molar do componente $i$ no estágio $j$ \nomunit{J/mol}}
-\nomenclature{$c$}{Número de componentes}
 Além das transferências de massa e energia, é adotada a condição de equilíbrio entre as fases na interface.
 Vale ressaltar que o equilíbrio
 termodinâmico de fases é considerado apenas na interface.
