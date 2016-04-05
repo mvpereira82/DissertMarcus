@@ -51,7 +51,7 @@ com a fase gás distribuída e a fase líquida contínua, e a principal resistê
 a transferência de massa localiza-se na fase líquida.
 
 Os reatores de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem uma família de
-PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico fixo, sendo eles assim classificados como reatores de leito fixo (\emph{FBR - Fixed Bed Reactors}). O TBR ainda possui as seguintes características, segundo  \citeonline{Ancheyta2011}:
+PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico fixo, sendo eles assim classificados como reatores de leito fixo (\emph{FBR - Fixed Bed Reactors}). O TBR ainda possui as seguintes características, segundo \citeonline{Ancheyta2011}.
 \nomenclature[Z]{TBR}{Reator de leito gotejante}
 \nomenclature[Z]{FBR}{Reator de leito fixo}
 
@@ -99,10 +99,10 @@ Segundo \apudonline{Ramachandran1983}{Ranade2011}, quatro
 diferentes regimes de escoamento foram identificados em TBRs:
 
 \begin{itemize}
-\item Gotejamento (\emph{Trickle flow regime)},
-\item de pulso (\emph{Pulse flow regime)},
-\item Spray (\emph{Spray flow regime)}, e
-\item Borbulhamento (\emph{Buble flow regime)}
+	\item Gotejamento (\emph{Trickle flow regime)},
+	\item de pulso (\emph{Pulse flow regime)},
+	\item Spray (\emph{Spray flow regime)}, e
+	\item Borbulhamento (\emph{Buble flow regime)}
 \end{itemize}
 
 Esses regimes de escoamento estão ilustrados na \autoref{fig:regimeescoamento}.
@@ -199,7 +199,7 @@ interação.
 
 \citeonline{Holub1993}, por exemplo, desenvolveram uma correlação para perda
 de carga para TBRs operando em regimes de baixa interação. Já
-\citeonline{Benkrid1997} utilizaram dados experimentais para propor modelos
+\citeonline{Benkrid1997} utilizaram dados experimentais  da literatura para propor modelos
 simples de perda de carga em TBRs que operam em regimes de alta
 interação. Ambos autores citados neste parágrafo também desenvolveram
 correlações para retenção de líquido.
@@ -216,23 +216,42 @@ A retenção de líquido (\emph{liquid holdup})em um leito de TBR  pode ser
 expressada de duas maneiras: (i) retenção total ($\epsilon_L$), definida
 como o volume de líquido por unidade de volume de leito e (ii) saturação de líquido
 ($\beta_L$), definida como o volume de líquido por unidade de volume vazio
-(ao invés de volume total de leito). A retenção de líquido é composta de duas
-partes: estática ($\epsilon_{Ls}$) e dinâmica ($\epsilon_{Ld}$). Por
-renteção de líquido estática entende-se a porção de líquido que permanece na superfície das
-partículas de catalisador após o leito ser drenado. Aqui é importante destacar 
-\cite{Ranade2011}.
+(ao invés de volume total de leito). 
 
-Outros fatores em TBRs são dependentes da retenção de líquido, tais como fator
+A retenção de líquido é composta de duas partes: estática ($\epsilon_{Ls}$) e dinâmica ($\epsilon_{Ld}$). Por
+renteção de líquido estática entende-se a porção de líquido que permanece na superfície das
+partículas de catalisador após o leito ser drenado. A fração removida de líquido é definida como retenção dinâmica \cite{Ranade2011}. Alguns autores utilizam como referência a saturação de líquido estática ($\beta_{Ls}$) e saturação de líquido dinâmica ($\beta_{Ld}$).
+
+Há algumas ténicas para determinação da retenção de líquido em TBRs. De acordo com \cite{Benkrid1997}, a técnica mais comum é a da drenagem, já mencionada. Essa técnica consiste em cessar simultaneamente a alimentação de gás e líquido no reator (topo), coletando o líquido na saída (fundo). O volume de líquido drenado significará diretamente $\epsilon_{Ld}$. Outra técnica é consiste em determinar a massa do reator enquanto seco e em operação, quando gás e líquido estarão escoando pelo leito catalítico. Esse método levará diretamente a determinação de $\beta_L$. \cite{Larachi1991} utiliza a distribuição do tempo de residência para chegar a $\beta_L$.
+
+Vários fatores em TBRs são dependentes da retenção de líquido, tais como fator
 de molhabilidade e coefientes de transferência de massa e calor. A retenção de
 líquido também determina o tempo de residência de líquido dentro do reator e,
 portanto, a conversão dos reagentes \cite{Ranade2011}.
 
-\nomenclature[G]{$\epsilon_L$}{Retenção total de líquido}
-\nomenclature[G]{$\epsilon_Ls$}{Retenção estática de líquido}
-\nomenclature[G]{$\epsilon_Ld$}{Retenção dinâmica de líquido}
+\nomenclature[G]{$\epsilon_{L}$}{Retenção total de líquido}
+\nomenclature[G]{$\epsilon_{Ls}$}{Retenção estática de líquido}
+\nomenclature[G]{$\epsilon_{Ld}$}{Retenção dinâmica de líquido}
 \nomenclature[G]{$\beta_L$}{Saturação de líquido}
-\nomenclature[G]{$\beta_Ls$}{Saturação de líquido estática}
-\nomenclature[G]{$\beta_Ld$}{Saturação de líquido dinâmica}
+\nomenclature[G]{$\beta_{Ls}$}{Saturação de líquido estática}
+\nomenclature[G]{$\beta_{Ld}$}{Saturação de líquido dinâmica}
+
+\subsubsection{Molhamento das Partículas de Catalisador}
+\label{sec:molhamento}
+
+Dentre os difersos tipos de reatores multifásicos, o molhamento das partículas de catalisador é um fenômeno exclusivo em TBR. Levando-se em conta que, em um TBR, a fase líquida escoa de forma não uniforme, a determinação do molhamento do catalisador é uma tarefa muito difícil \cite{Ranade2011}
+
+Na literatura são definidos dois tipos de molhamento. \citeonline{Colombo1976} os descreve assim:
+
+\begin{itemize}
+	\item Molhamento interno ou enchimento de poro: é o volume de líquido dentro dos poros do catalisador. Como as partículas de catalisador são quase sempre porosas, o molhamento interno é considerado total devido ao efeito de capilaridade.
+	\item Molhamento externo: é a área externa à partícula de catalisador efetivamente em contato com o líquido que escoa. Praticamente toda a transferência de massa entre o líquido presente nos poros do catalisador e o líquido que escoa por sobre as partículas ocorre nessa área.
+
+Isso porto, a \emph{eficiência de molhamento} ($\eta_{CE}$) é definida como a porcentagem de molhamento da área superficial externa do catalisador \apud{Schwartz1976}{Ranade2011}.
+
+De uma forma geral, a medição da eficiência de molhamento pode ser direta e indireta. Entre os métodos indiretos  
+
+\nomenclature[G]{$\eta_{CE}$}{Retenção dinâmica de líquido}
 
 \subsection{Reações Químicas em TBR} \label{sec:reacoes}
  
@@ -255,8 +274,6 @@ molhamento
 
 modelos cinéticos simplificados que não descrevem o comportamento real na
 superfície do catalisador.
-
- 
 
 O equilíbrio termodinâmico é alcançado quando são satisfeitas as condições de equilíbrio químico, térmico e
 mecânico entre as fases:
