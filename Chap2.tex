@@ -145,7 +145,8 @@ onde somente há apenas uma fase escoando pelo leito catalítico, quanto colunas
 empacotadas onde não há transferência de massa. 
 
 A compreensão e a previsão, ainda que imprecisamente, dos parâmetros
-hidrodinâmicos dos TBRs são as chaves para o projeto e análise desse tipo de reator. Os parâmetros que serão discorridos a seguir são: 
+hidrodinâmicos dos TBRs são as chaves para o projeto e análise desse tipo de
+reator. Os parâmetros que serão discorridos a seguir são:
 
 \begin{itemize}
   \item Perda de carga
@@ -155,7 +156,6 @@ hidrodinâmicos dos TBRs são as chaves para o projeto e análise desse tipo de 
   \item Dispersões axial e radial de massa
 %  \item Transferência de calor em TBRs
 \end{itemize}
-
 
 \subsubsection{Perda de Carga}
 \label{sec:perdadecarga}
@@ -214,11 +214,22 @@ como o volume de líquido por unidade de volume de leito e (ii) saturação de l
 ($\beta_L$), definida como o volume de líquido por unidade de volume vazio
 (ao invés de volume total de leito). 
 
-A retenção de líquido é composta de duas partes: estática ($\epsilon_{Ls}$) e dinâmica ($\epsilon_{Ld}$). Por
-renteção de líquido estática entende-se a porção de líquido que permanece na superfície das
-partículas de catalisador após o leito ser drenado. A fração removida de líquido é definida como retenção dinâmica \cite{Ranade2011}. Alguns autores utilizam como referência a saturação de líquido estática ($\beta_{Ls}$) e saturação de líquido dinâmica ($\beta_{Ld}$).
+A retenção de líquido é composta de duas partes: estática ($\epsilon_{Ls}$) e
+dinâmica ($\epsilon_{Ld}$). Por renteção de líquido estática entende-se a porção
+de líquido que permanece na superfície das partículas de catalisador após o
+leito ser drenado. A fração removida de líquido é definida como retenção
+dinâmica \cite{Ranade2011}. Alguns autores utilizam como referência a saturação
+de líquido estática ($\beta_{Ls}$) e saturação de líquido dinâmica ($\beta_{Ld}$).
 
-Há algumas ténicas para determinação da retenção de líquido em TBRs. De acordo com \cite{Benkrid1997}, a técnica mais comum é a da drenagem, já mencionada. Essa técnica consiste em cessar simultaneamente a alimentação de gás e líquido no reator (topo), coletando o líquido na saída (fundo). O volume de líquido drenado significará diretamente $\epsilon_{Ld}$. Outra técnica é consiste em determinar a massa do reator enquanto seco e em operação, quando gás e líquido estarão escoando pelo leito catalítico. Esse método levará diretamente a determinação de $\beta_L$. \cite{Larachi1991} utiliza a distribuição do tempo de residência para chegar a $\beta_L$.
+Há algumas ténicas para determinação da retenção de líquido em TBRs. De acordo
+com \cite{Benkrid1997}, a técnica mais comum é a da drenagem, já mencionada.
+Essa técnica consiste em cessar simultaneamente a alimentação de gás e líquido
+no reator (topo), coletando o líquido na saída (fundo). O volume de líquido
+drenado significará diretamente $\epsilon_{Ld}$. Outra técnica é consiste em
+determinar a massa do reator enquanto seco e em operação, quando gás e líquido
+estarão escoando pelo leito catalítico. Esse método levará diretamente a
+determinação de $\beta_L$. \cite{Larachi1991} utiliza a distribuição do tempo de
+residência para chegar a $\beta_L$.
 
 Vários fatores em TBRs são dependentes da retenção de líquido, tais como fator
 de molhabilidade e coefientes de transferência de massa e calor. A retenção de
@@ -235,43 +246,88 @@ portanto, a conversão dos reagentes \cite{Ranade2011}.
 \subsubsection{Molhamento das Partículas de Catalisador}
 \label{sec:molhamento}
 
-Dentre os difersos tipos de reatores multifásicos, o molhamento das partículas de catalisador é um fenômeno exclusivo em TBR. Levando-se em conta que, em um TBR, a fase líquida escoa de forma não uniforme, a determinação do molhamento do catalisador é uma tarefa bastante difícil \cite{Ranade2011}
+Dentre os difersos tipos de reatores multifásicos, o molhamento das partículas
+de catalisador é um fenômeno exclusivo em TBR. Levando-se em conta que, em um
+TBR, a fase líquida escoa de forma não uniforme, a determinação do molhamento do
+catalisador é uma tarefa bastante difícil \cite{Ranade2011}
 
-Na literatura são definidos dois tipos de molhamento. \citeonline{Colombo1976} os descreve assim:
+Na literatura são definidos dois tipos de molhamento. \citeonline{Colombo1976}
+os descreve assim:
 
 \begin{itemize}
-	\item Molhamento interno ou enchimento de poro: é o volume de líquido dentro dos poros do catalisador. Como as partículas de catalisador são quase sempre porosas, o molhamento interno é considerado total devido ao efeito de capilaridade.
-	\item Molhamento externo: é a área externa à partícula de catalisador efetivamente em contato com o líquido que escoa. Praticamente toda a transferência de massa entre o líquido presente nos poros do catalisador e o líquido que escoa por sobre as partículas ocorre nessa área.
+	\item Molhamento interno ou enchimento de poro: é o volume de líquido dentro
+	dos poros do catalisador. Como as partículas de catalisador são quase sempre
+	porosas, o molhamento interno é considerado total devido ao efeito de
+	capilaridade.
+	\item Molhamento externo: é a área externa à partícula de catalisador
+	efetivamente em contato com o líquido que escoa. Praticamente toda a
+	transferência de massa entre o líquido presente nos poros do catalisador e o
+	líquido que escoa por sobre as partículas ocorre nessa área.
+\end{itemize}
 
-Isso posto, a \emph{eficiência de molhamento} ($\eta_{CE}$) deriva da definição de molhamento externo. Em outras palabras, ela é definida como sendo a porcentagem da área superficial externa do catalisador que está efetivamente em contato com o líquido que escoa \apud{Schwartz1976}{Ranade2011}.
+Isto posto, a \emph{eficiência de molhamento} ($\eta_{CE}$) deriva da definição
+de molhamento externo. Em outras palabras, ela é definida como sendo a
+porcentagem da área superficial externa do catalisador que está efetivamente em
+contato com o líquido que escoa \cite{Schwartz1976}.
 
-De uma forma geral, a medição da eficiência de molhamento pode ser direta e indireta. Entre os métodos diretos estão técnicas fotográficas, método de injeção de corante, imagem de ressonância magnética, entre outros (fonte). Já os métodos indiretos são aplicáveis a unidades industriais além de possuirem melhor custo-benefício \cite{Ranade2011}. \citeonline{Colombo1976}, por exemplo, utiliza métodos baseados tanto em taxa de reação quanto em transferência de massa. 
+De uma forma geral, a medição da eficiência de molhamento pode ser direta e
+indireta. Entre os métodos diretos estão técnicas fotográficas, método de
+injeção de corante, imagem de ressonância magnética, entre outros
+\apud{Sederman2001}{Ranade2011}. Já os métodos indiretos são aplicáveis a
+unidades industriais além de possuirem melhor custo-benefício \cite{Ranade2011}.
+\citeonline{Colombo1976} e \citeonline{Schwartz1976}, por exemplo, utilizaram
+métodos baseados tanto em taxa de reação quanto em transferência de massa para
+determinar a eficiência de molhamento.
 
 \nomenclature[G]{$\eta_{CE}$}{Eficiência de molhamento}
 
 \subsubsection{Coeficientes de Transferência de Massa}
 \label{sec:coeficientes}
 
-Em reatores com escoamento gotejante não há um mecanismo severo de mistura como em outros tipos de escoamento (tanques de mistura ou regimes de alta interação). Logo, as taxas de transferência de massa são menores em TBRs do que em outros reatores, podendo limitar a taxa das reações. Os três tipos de taxas de transferência de massa relevantes nos TBRs são: gás-líquido, líquido-sólido e gás-sólido \cite{Ranade2011}.
+Em reatores com escoamento gotejante não há um mecanismo severo de mistura como
+em outros tipos de escoamento (tanques de mistura ou regimes de alta interação).
+Logo, as taxas de transferência de massa são menores em TBRs do que em outros
+reatores, podendo limitar a taxa das reações. Os três tipos de taxas de
+transferência de massa relevantes nos TBRs são: gás-líquido, líquido-sólido e
+gás-sólido \cite{Ranade2011}.
 
-A ocorrências desses tipos de transferência de massa dependerá da eficiência de molhamento e da retenção de líquido. Em reatores com eficiência de molhamento próxima a totalidade, por exemplo, desconsidera-se a transferência de massa gás-sólido. 
+A ocorrências desses tipos de transferência de massa dependerá da eficiência de
+molhamento e da retenção de líquido. Em reatores com eficiência de molhamento
+próxima a totalidade, por exemplo, desconsidera-se a transferência de massa
+gás-sólido.
 
 \subsubsection{Dispersões Axial e Radial de Massa}
 \label{sec:dispersoes}
 
-As dispersões axial e radial são dois fenômenos que ocorrem em TBRs, desviando-os da idealidade de escoamento contida no conceito de PFR (PFR - \emph{Plug-flow Reactor}). 
+As dispersões axial e radial são dois fenômenos que ocorrem em TBRs,
+desviando-os da idealidade de escoamento contida no conceito de PFR (PFR -
+\emph{Plug-flow Reactor}).
 
 \nomenclature[Z]{PFR}{Reator de escoamento empistonado}
 
-A dispersão radial está diretamente ligada a distribuição de líquido na entrada do reator. Esse efeito possui uma quantidade pequena de estudos na literatura. Isso acontece porque, em reatores industriais, a instalação de distribuidores de carga na entrada dos TBR (topo) promove uma distribuição radial de massa uniforme. A razão entre o diâmetro do reator e diâmetro da partícula de catalisador ($D_R/d_p$) tem se mostrado influente na distribuição radial de massa \cite{Saroha1998}. \citeonline{Al-Dahhan1994}, por exemplo, sugerem que, mesmo para reatores em alta pressão, um valor de $D_R/d_p > 20$ minimiza a má distribuição de líquido.
+A dispersão radial está diretamente ligada a distribuição de líquido na entrada
+do reator. Esse efeito possui uma quantidade pequena de estudos na literatura.
+Isso acontece porque, em reatores industriais, a instalação de distribuidores de
+carga na entrada dos TBR (topo) promove uma distribuição radial de massa
+uniforme. A razão entre o diâmetro do reator e diâmetro da partícula de
+catalisador ($D_R/d_p$) tem se mostrado influente na distribuição radial de
+massa \cite{Saroha1998}. \citeonline{Al-Dahhan1994}, por exemplo, sugerem que,
+mesmo para reatores em alta pressão, um valor de $D_R/d_p > 20$ minimiza a má
+distribuição de líquido.
 
-Diferente do que ocorre com a dispersão radial, a dispersão axial é um fenômeno amplamente estudado, com várias referências na literatura. Esse fenômeno está ligado a retromistura de líquido dentro do leito catalítico e está relacionado com a razão entre o comprimento do reator e diâmetro da partícula de catalisador ($L_R/d_p$) \cite{Ancheyta2011}.
+Diferente do que ocorre com a dispersão radial, a dispersão axial é um fenômeno
+amplamente estudado, com várias referências na literatura. Esse fenômeno está
+ligado a retromistura de líquido dentro do leito catalítico e está relacionado
+com a razão entre o comprimento do reator e diâmetro da partícula de catalisador
+($L_R/d_p$) \cite{Ancheyta2011}.
 
 \nomenclature{$D_{R}$}{Diâmetro do reator \nomunit{m}}
 \nomenclature{$L_{R}$}{Comprimento do reator \nomunit{m}}
 \nomenclature{$D_{R}$}{Diâmetro da partícula de catalisador \nomunit{m}}
 
-Alguns fatores que contribuem na distribuição de líquido e na retromistura são: capilaridade, zonas-morta, molhamento parcial e caminhos preferenciais \cite{Ranade2011}.
+Alguns fatores que contribuem na distribuição de líquido e na retromistura são:
+capilaridade, zonas-morta, molhamento parcial e caminhos preferenciais
+\cite{Ranade2011}.
 
 \subsection{Reações Químicas em TBR} \label{sec:reacoes}
  
@@ -292,6 +348,8 @@ seguintes fenômenos:
 
 modelos cinéticos simplificados que não descrevem o comportamento real na
 superfície do catalisador.
+
+%Daqui para baixo é a dissertação da Paula, mantida por questões de praticidade
 
 O equilíbrio termodinâmico é alcançado quando são satisfeitas as condições de equilíbrio químico, térmico e
 mecânico entre as fases:
