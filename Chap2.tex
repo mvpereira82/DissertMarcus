@@ -332,7 +332,7 @@ Alguns fatores que contribuem na distribuição de líquido e na retromistura s�
 capilaridade, zonas-morta, molhamento parcial e caminhos preferenciais
 \cite{Ranade2011}.
 
-\subsection{Reações Químicas em TBR} \label{sec:reacoes}
+\subsection{Reações Químicas em TBR} \label{sec:reacoestbr}
  
 As reações químicas em FBRs possuem uma complexidade maior ante as reações
 homogêneas justamente pela presença de um catalisador sólido. A superfície
@@ -392,41 +392,33 @@ dependerá da fase em que está o reagente limitante \cite{Ranade2011}.
 \section {Modelagem de Reatores} \label{sec:modelagemreatores}
 
 Várias formas de modelagem de FBRs podem ser encontradas na literatura.
-Segundo \citeonline{Froment2011}, os modelos são categorizados em dois grandes
-grupos: pseudo-homogêneos e heterogêneos. Os modelos pseudo-homogêneos não fazem
+Segundo \citeonline{Froment2011}, os modelos podem ser categorizados em dois grandes
+grupos: pseudo-homogêneos e heterogêneos. Por modelos pseudo-homogêneos entende-se aqueles que não fazem
 distinção entre as fases, i.e., não considera a presença do catalisador. Em se
 tratando de um TBR, não há também distinção entre as fases líquida e gasosa. Já
-modelos heterogêneos distinguem, no mínimo, as partículas de catalisador como
-sendo uma fase distinta.
+modelos heterogêneos distinguem, no mínimo, as partículas de catalisador como uma fase distinta.
 
 Ainda de acordo com \citeonline{Froment2011}, tanto os modelos pseudo-homogêneos
 quanto os heterogêneos podem ser classificados em unidimensionais e
 bidimensionais. Os modelos bidimensionais consideram gradientes radiais de massa
-e/ou calor. Já os unidimensionais consideram escoamento empistonado, com ou sem
-dispersão axial.
+e/ou calor. Já modelos unidimensionais consideram a idealidade de escoamento empistonado, podendo ou não contemplar a dispersão axial.
 
 Os modelos também podem ser de treinamento (aprendizagem) ou de predição.
 Modelos de treinamento são baseados em redes neurais, ao passo que modelos de
-predição são divididos em estocásticos e determinísticos. Os modelos
+predição podem ser divididos em estocásticos e determinísticos. Os modelos
 estocásticos possuem a característica de considerar o arranjo aleatórios das
 partículas de catalisador e dos espaços vazios no leito do reator
-\cite{Ancheyta2011}.
+\cite{Ancheyta2011}. 
 
-Dentro dos modelos determinísticos surgem outros dois grupos: modelos contínuos
-e modelos discretos. Os modelos contínuos contém um conjunto de equações
-diferenciais com uma ou mais variáveis independentes. Já os modelos discretos
-são representados por um número finito de elementos de reator para descrever o
-processo como um todo \cite{Ancheyta2011}.
+Dentro da categoria de modelos determinísticos há os modelos contínuos e modelos discretos. Os modelos contínuos contém um conjunto de equações diferenciais com uma ou mais variáveis independentes, onde todas devem ser resolvidas simultaneamente. Já nos modelos discretos o reator é representado por um número finito de elementos de reator \cite{Ancheyta2011}. Diferentemente dos modelos contínuos (equações diferenciais), a modelagem discreta encarrega-se de resolver equações algébricas para o caso de estado estacionário, ou equações diferenciais ordinária quando se trata de simulação dinâmica \cite{Schnitzlein1987}.
 
-\citeonline{Deans1960} construiram um modelo baseado em estágios discretos,
-chamado de rede de células de mistura por alguns
+\citeonline{Deans1960} são apontados como os primeiros a construir um modelo baseado em estágios discretos em TBRs,
+chamado de \emph{rede de células} por alguns
 autores (\citeonline{Schnitzlein1987} e \citeonline{Ancheyta2011}, por exemplo).
-O método de modelagem por células, neste caso, foi aplicado para estudar os
-fenômenos de dispersão axial e radial. Independente do arranjo das células, a
-descrição do sistema reacional dentro de cada célula pode ser pseudo-homogêneo
-ou heterogêneo \cite{Schnitzlein1987}.
+Nesse trabalho, o método de modelagem por rede de células foi aplicado para estudar os
+fenômenos de dispersão axial e radial. Segundo \citeonline{Schnitzlein1987}, independente do arranjo das células, a descrição do sistema reacional dentro de cada célula pode ser pseudo-homogêneo ou heterogêneo.
 
-Outra abordagem discreta são os modelos baseados em estágios. Nesses modelos há
+Outra abordagem de modelagem discreta são os modelos \emph{baseados em estágios}. Nesses modelos há
 a utilização da \emph{abordagem baseada em taxa}. Esta última é fundamentada na
 aplicação direta dos fenômenos de difusão, transferência de calor e dos efeitos
 de interação multicomponente no cálculo de cada segmento (estágio)
@@ -434,8 +426,20 @@ de interação multicomponente no cálculo de cada segmento (estágio)
 modelou reatores de hidrotratamento de diesel, em suas operações
 contracorrente e cocorrente.
 
-\section {Modelagem de Reatores de Hidrogenação de Gasolina de Pirólise}
+\section {Modelagem e Simulação de Hidrogenação Seletiva de Gasolina de Pirólise}
 \label{sec:hidrogenacaopygas}
+
+O primeiro estágio de hidrogenação da gasolina de pirólise, também conhecido como hidrogenação seletiva, foi estudado por alguns autores encontrados na literatura, incluindo algumas avaliações de resposta dinâmica. A seguir serão apresentadas algumas informações publicadas.
+
+\subsection{Descrição Geral do Processo} \label{sec:descricaogeral}
+
+A gasolina de pirólise é hidrogenada em um reator tipo TBR, onde o catalisador pode ser de paládio ou níquel suportado em alumina. Normalmente, o reator possui ao menos dois leitos. Devido a exotermicidade das reações, há uma injeção de quench líquido entre os leitos, composta de produto hidrogenado resfriado, que serve para controlar a temperatura do segundo leito e evitar o coqueamento sobre a superfície do catalisador. O produto hidrogenado pode também diluir a carga do reator, retardando o processo de desativação já mencionado \cite{Cheng1986,Derrien1986,Arpornwichanop2002,Rojas2014a}.
+
+\subsection{Cinética das Reações} \label{sec:cineticadasreacoes}
+
+As duas principais reações que ocorrem em reatores de hidrogenação de gasolina de pirólise são: conversão de diolefinas em olefinas e olefinas em parafinas. Como já mencionado, o grau de hidrogenação dependerá da utilização final da corrente hidrogenada \citeonline{Cheng1986}. 
+
+Em termos cinéticos, \citeonline{Cheng1986} e \citeonline{Hanika1999} consideraram que as reações de hidrogenação são de primeira ordem e sequenciais. realizaram estudos considerando que as reações 
 
 		d. Hidrogenação de gasolina de pirólise
 			i. Premissas utilizadas (Comparação entre artigos)
