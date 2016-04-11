@@ -33,7 +33,7 @@ de hidrogenação (hidrogenação de olefinas e hidrodessulfurização)
 
 \subsection{Definição} \label{sec:definicao}
 
-Na literatura encontram-se vários autores que trataram das definições de
+Na literatura há vários autores que trataram das definições de
 reatores catalíticos multifásicos de leito empacotado (PBR - \emph{Packed Bed
 Reactors}).
 \nomenclature[Z]{PBR}{Reator de leito empacotado}
@@ -50,8 +50,11 @@ transferência de massa está na fase gasosa; e (ii) em regime de borbulhamento,
 com a fase gás distribuída e a fase líquida contínua, e a principal resistência
 a transferência de massa localiza-se na fase líquida.
 
-Os reatores de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem uma família de
-PBRs nos quais as fases gasosa e líquida escoam através de um leito catalítico fixo, sendo eles assim classificados como reatores de leito fixo (FBR - \emph{Fixed Bed Reactors}). O TBR ainda possui as seguintes características, segundo \citeonline{Ancheyta2011}.
+Os reatores de leito gotejante (TBR - \emph{Trickle Bed Reactor}) compreendem
+uma família de PBRs nos quais as fases gasosa e líquida escoam através de um
+leito catalítico fixo, sendo eles assim classificados como reatores de leito
+fixo (FBR - \emph{Fixed Bed Reactors}). O TBR ainda possui as seguintes
+características, segundo \citeonline{Ancheyta2011}.
 \nomenclature[Z]{TBR}{Reator de leito gotejante}
 \nomenclature[Z]{FBR}{Reator de leito fixo}
 
@@ -270,14 +273,14 @@ de molhamento externo. Em outras palabras, ela é definida como sendo a
 porcentagem da área superficial externa do catalisador que está efetivamente em
 contato com o líquido que escoa \cite{Schwartz1976}.
 
-De uma forma geral, a medição da eficiência de molhamento pode ser direta e
-indireta. Entre os métodos diretos estão técnicas fotográficas, método de
-injeção de corante, imagem de ressonância magnética, entre outros
-\apud{Sederman2001}{Ranade2011}. Já os métodos indiretos são aplicáveis a
-unidades industriais além de possuirem melhor custo-benefício \cite{Ranade2011}.
-\citeonline{Colombo1976} e \citeonline{Schwartz1976}, por exemplo, utilizaram
-métodos baseados tanto em taxa de reação quanto em transferência de massa para
-determinar a eficiência de molhamento.
+De acordo com a literatura disponível, a medição da eficiência de molhamento
+pode ser direta e indireta. Entre os métodos diretos estão técnicas
+fotográficas, método de injeção de corante, imagem de ressonância magnética,
+entre outros \apud{Sederman2001}{Ranade2011}. Já os métodos indiretos são
+aplicáveis a unidades industriais além de possuirem melhor custo-benefício
+\cite{Ranade2011}. \citeonline{Colombo1976} e \citeonline{Schwartz1976}, por
+exemplo, utilizaram métodos baseados tanto em taxa de reação quanto em
+transferência de massa para determinar a eficiência de molhamento.
 
 \nomenclature[G]{$\eta_{CE}$}{Eficiência de molhamento}
 
@@ -331,23 +334,116 @@ capilaridade, zonas-morta, molhamento parcial e caminhos preferenciais
 
 \subsection{Reações Químicas em TBR} \label{sec:reacoes}
  
-Os TBRs diferem dos reatores monofásicos de leito fixo exatamente pela presença
-de uma terceira fase. Em outras palavras, uma camada a mais de resistência a
-transferência de massa, tanto de reagentes quanto de produtos, é adicionada
-ao sistema. 
+As reações químicas em FBRs possuem uma complexidade maior ante as reações
+homogêneas justamente pela presença de um catalisador sólido. A superfície
+de uma partícula de catalisador, em toda a sua complexidade, se apresenta
+como o local onde as reações ocorrem. Além disso, fenêmenos de transporte
+de massa podem influenciar na taxa global da reação \cite{Froment2011}. 
 
-Sendo assim, segundo\ldots, itens sequenciais (figura?)
+Sendo assim, os passos envolvidos em uma reação química, na superfície de um
+catalisador, para um reator cujo escoamento é monofásico são \cite{Froment2011}: 
 
-Nos FBRs, a reação química intrínseca é aquela que considera os
-seguintes fenômenos:
 \begin{enumerate}
-\item Adsorção dos reagentes na superfície catalítica; 
-\item Reação química propriamente dita entre os reagentes; e
-\item Desorção
-\end{enumerate}  
+\item Transporte dos reagentes do seio do fluido para a superfície
+do catalisador;
+\item Transporte dos reagentes nos poros do catalisador;
+\item Adsorção dos reagentes no sítio catalítico;
+\item Reação química entre os átomos ou moléculas;
+\item Dessorção dos produtos;
+\item Transporte dos produtos da reação dos poros de volta à
+superfície do catalisador;
+\item Transporte dos produtos da superfície das partículas para o seio do
+fluido.
+\end{enumerate} 
 
-modelos cinéticos simplificados que não descrevem o comportamento real na
-superfície do catalisador.
+Segundo \apud{Ramachandran1983}{Ranade2011}, para os TBRs onde as partículas de
+catalisador estão completamente molhados (velocidade espacial de líquido $>0.5
+cm/s$), os passos apontados por \citeonline{Froment2011} ganham novas etapas,
+como segue:
+
+\begin{enumerate}
+\item Transporte dos reagentes presentes na fase gasosa para o seio da
+fase líquida;
+\item Transporte dos reagentes presentes na fase líquida para a superfície do
+catalisador;
+\item Transporte dos reagentes nos poros do catalisador;
+\item Adsorção dos reagentes no sítio catalítico;
+\item Reação química entre os átomos ou moléculas;
+\item Dessorção dos produtos;
+\item Transporte dos produtos da reação dos poros de volta à
+superfície do catalisador;
+\item Transporte dos produtos da superfície das partículas para o seio da fase
+líquida;
+\end{enumerate} 
+
+Ainda pode haver mais um passo em que um dos produtos, se termodinamicamente
+favorável, passasse para a fase gasosa. Em reatores de hidrotratamento de
+diesel, por exemplo, o $H_2S$ produto descola-se parcialmente para a fase
+gasosa, diminuindo a pressão parcial de hidrogênio. O hidrogênio nesse caso é
+o reagente em excesso \cite{Ancheyta2011}.
+
+Entretanto, muitos TBRs comerciais operam com velocidades superficiais de
+líquido baixas $(<0.5 cm/s)$. Isso faz com que o regime de escoamento seja
+classificado como de baixa interação e, consequentemente, não molha
+completamente a superfície das partículas. Nesse caso, a taxa de reação
+dependerá da fase em que está o reagente limitante \cite{Ranade2011}. 
+
+
+\section {Modelagem de Reatores} \label{sec:modelagemreatores}
+
+Várias formas de modelagem de FBRs podem ser encontradas na literatura.
+Segundo \citeonline{Froment2011}, os modelos são categorizados em dois grandes
+grupos: pseudo-homogêneos e heterogêneos. Os modelos pseudo-homogêneos não fazem
+distinção entre as fases, i.e., não considera a presença do catalisador. Em se
+tratando de um TBR, não há também distinção entre as fases líquida e gasosa. Já
+modelos heterogêneos distinguem, no mínimo, as partículas de catalisador como
+sendo uma fase distinta.
+
+Ainda de acordo com \citeonline{Froment2011}, tanto os modelos pseudo-homogêneos
+quanto os heterogêneos podem ser classificados em unidimensionais e
+bidimensionais. Os modelos bidimensionais consideram gradientes radiais de massa
+e/ou calor. Já os unidimensionais consideram escoamento empistonado, com ou sem
+dispersão axial.
+
+Os modelos também podem ser de treinamento (aprendizagem) ou de predição.
+Modelos de treinamento são baseados em redes neurais, ao passo que modelos de
+predição são divididos em estocásticos e determinísticos. Os modelos
+estocásticos possuem a característica de considerar o arranjo aleatórios das
+partículas de catalisador e dos espaços vazios no leito do reator
+\cite{Ancheyta2011}.
+
+Dentro dos modelos determinísticos surgem outros dois grupos: modelos contínuos
+e modelos discretos. Os modelos contínuos contém um conjunto de equações
+diferenciais com uma ou mais variáveis independentes. Já os modelos discretos
+são representados por um número finito de elementos de reator para descrever o
+processo como um todo \cite{Ancheyta2011}.
+
+\citeonline{Deans1960} construiram um modelo baseado em estágios discretos,
+chamado de rede de células de mistura por alguns
+autores (\citeonline{Schnitzlein1987} e \citeonline{Ancheyta2011}, por exemplo).
+O método de modelagem por células, neste caso, foi aplicado para estudar os
+fenômenos de dispersão axial e radial. Independente do arranjo das células, a
+descrição do sistema reacional dentro de cada célula pode ser pseudo-homogêneo
+ou heterogêneo \cite{Schnitzlein1987}.
+
+Outra abordagem discreta são os modelos baseados em estágios. Nesses modelos há
+a utilização da \emph{abordagem baseada em taxa}. Esta última é fundamentada na
+aplicação direta dos fenômenos de difusão, transferência de calor e dos efeitos
+de interação multicomponente no cálculo de cada segmento (estágio)
+\cite{Jakobsson2004}. Foi com essa abordagem que \citeonline{Jakobsson2004}
+modelou reatores de hidrotratamento de diesel, em suas operações
+contracorrente e cocorrente.
+
+\section {Modelagem de Reatores de Hidrogenação de Gasolina de Pirólise}
+\label{sec:hidrogenacaopygas}
+
+		d. Hidrogenação de gasolina de pirólise
+			i. Premissas utilizadas (Comparação entre artigos)
+			ii. Cinética (idem)
+			iii. Termodinâmica (ibidem, enfatizando o ELV)
+			iv. Hidrodinâmica (?)
+			v. Abordagens mais utilizadas (citar o item c)
+
 
 %Daqui para baixo é a dissertação da Paula, mantida por questões de praticidade
 
