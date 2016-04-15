@@ -447,19 +447,29 @@ Diolefinas -> Olefinas -> Parafinas
 
 Enfim, \citeonline{Cheng1986}	apurou as constantes cinéticas de assummindo que as reações fossem de pseudo-primeira ordem, ou seja, a concentração de hidrogênio na fase líquida foi tida como constante.
 
-\citeonline{Authayanun2008} publicaram uma simulação de um reator de hidrogenação parcial de gasolina de pirólise, cujo um dos objetivos foi a determinação das constantes de velocidade específicas, assumindo as mesmas considerações feitas por \citeonline{Cheng1986}, exceto que as as reações fossem de pseudo-primeira ordem, i.e., a concentração de hidrogênio compôs a equação da velocidade da reação.
+\citeonline{Authayanun2008} publicaram uma simulação de um reator de hidrogenação parcial de gasolina de pirólise, cujo um dos objetivos foi a determinação das constantes de velocidade específicas, assumindo as mesmas considerações feitas por \citeonline{Cheng1986}, exceto que as as reações fossem de pseudo-primeira ordem, i.e., a concentração de hidrogênio compôs a equação da velocidade da reação. Além disso, foi adicionado um termo de adsorção à cinética de reação das olefinas, uma vez que a reação destas é fortemente influenciada pela concentração de diolefinas.
 
 \citeonline{Rojas2014a} e \citeonline{Mostoufi2005a} utilizaram as mesmas premissas apresentadas por \citeonline{Cheng1986}, contudo sem agrupar os compostos em diolefinas, olefinas e parafinas; as reações consideradas estavem entre aquelas apresentadas por \citeonline{Hanika1999}. 
 
-\subsection{Considerações sobre Equilíbrio Líquido-Vapor} \label{sec:consideracoeselv}
+\subsection{Considerações sobre Propriedades Físicas e Equilíbrio Líquido-Vapor} \label{sec:consideracoeselv}
 
 Como já mencionado na seção \autoref{sec:modelagemreatores}, modelos de reatores determinísticos contínuos necessitam resolver um sistema de equações diferenciais para obter os resultados de simulação. Nesses modelos, a inserção de equações que descrevam o equilíbrio líquido-vapor é trabalhoso. Em TBRs de hidrotatamento de diesel, segundo \citeonline{Ancheyta2011}, as premissa de (i) fase gasosa em excesso, cuja composição é próxima a de hidrogênio puro, e (ii) de que os compostos em fase líquida não mudam de fase, facilitam os cálculos por essa abordagem.
 
+Nos estudos realizados por \citeonline{Authayanun2008}, \citeonline{Arpornwichanop2002}, \citeonline{Arpornwichanop2008} e \citeonline{Mostoufi2005a} as propriedades das fases gasosa e líquida foram mantidas constantes ao longo de todo o reator, inclusive a concentração de hidrogênio na fase líquida. A consequência disso é que, nesses trabalho, os efeitos de aquecimento tanto na taxa da reação quanto nos fenômenos hidrodinâmicos permanece desconhecida. 
+
 Entretanto, \citeonline{Rojas2014a} considera em sua modelagem de um reator de gasolina de pirólise o equilíbrio líquido- vapor, calculando um flash adiabático, utilizando a abordagem \phi-\phi. Isso foi feito porque um dos objetivos desse trabalho foi comparar diferentes modelos equações de estado (e seus parâmetros) quanto a solubilidade de hidrogênio em gasolina de pirólise. A base termodinâmica da solubilidade de hidrogênio em gasolina de pirólise  utilizada por \citeonline{Rojas2014a} está nos trabalhos de \citeonline{Rojas2014a}, que nada mais é do que uma extensão do estudo feito por \citeonline{Zhou2006}. 
 
-\subsection{Abordagens de Modelagem e Premissas} \label{sec:abordagenspremissas}
+\subsection{Hidrodinâmica} \label{sec:hidrodinamica}
 
+Os autores são unânimes em considerar o processo de hidrogenação de gasolina de pirólise como sendo um TBR \cite{...}. \citeonline{Rojas2014a} destoam dos demais quando consideram o regime de escoamento do reator como sendo do tipo por borbulhamento, ainda que ambas as fases estejam em escoamento descendente.
 
+\subsection{Transferência de Massa} \label{sec:transferenciamassa}
+
+Alguns consideram a transferência de massa na fase gasosa, outros na fase líquida...
+
+\subsection{Abordagens de Modelagen} \label{sec:hidrodinamica}
+
+Todos os autores pesquisados utilizam modelos determinísticos contínuos para simular os reatores \cite{...}. A modelagem por rede de células não apareceu em qualquer fonte pesquisada. 
 
 \section{Considerações Finais} \label{sec:consideracoesfinais}
 
