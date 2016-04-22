@@ -2,7 +2,7 @@
 \nomenclatureentry{ZPBR@[{PBR}]\begingroup Reator de leito empacotado\nomeqref {2.0}|nompageref}{6}
 \nomenclatureentry{ZTBR@[{TBR}]\begingroup Reator de leito gotejante\nomeqref {2.0}|nompageref}{6}
 \nomenclatureentry{ZFBR@[{FBR}]\begingroup Reator de leito fixo\nomeqref {2.0}|nompageref}{6}
-\nomenclatureentry{G$\Delta P/l$@[{$\Delta P/l$}]\begingroup Perda de carga específica \nomunit{kPa/m}\nomeqref {2.0}|nompageref}{9}
+\nomenclatureentry{G$\Delta P/L$@[{$\Delta P/L$}]\begingroup Perda de carga específica por \nomunit{kPa/m}\nomeqref {2.0}|nompageref}{9}
 \nomenclatureentry{G$\epsilon_{L}$@[{$\epsilon_{L}$}]\begingroup Retenção total de líquido\nomeqref {2.0}|nompageref}{10}
 \nomenclatureentry{G$\epsilon_{Ls}$@[{$\epsilon_{Ls}$}]\begingroup Retenção estática de líquido\nomeqref {2.0}|nompageref}{10}
 \nomenclatureentry{G$\epsilon_{Ld}$@[{$\epsilon_{Ld}$}]\begingroup Retenção dinâmica de líquido\nomeqref {2.0}|nompageref}{10}
@@ -12,12 +12,14 @@
 \nomenclatureentry{G$\eta_{CE}$@[{$\eta_{CE}$}]\begingroup Eficiência de molhamento\nomeqref {2.0}|nompageref}{11}
 \nomenclatureentry{ZPFR@[{PFR}]\begingroup Reator de escoamento empistonado\nomeqref {2.0}|nompageref}{12}
 \nomenclatureentry{a$D_{R}$@[{$D_{R}$}]\begingroup Diâmetro do reator \nomunit{m}\nomeqref {2.0}|nompageref}{12}
-\nomenclatureentry{a$L_{R}$@[{$L_{R}$}]\begingroup Comprimento do reator \nomunit{m}\nomeqref {2.0}|nompageref}{12}
+\nomenclatureentry{a$L_{R}$@[{$L_{R}$}]\begingroup Comprimento total do reator \nomunit{m}\nomeqref {2.0}|nompageref}{12}
 \nomenclatureentry{a$d_{p}$@[{$d_{p}$}]\begingroup Diâmetro da partícula de catalisador \nomunit{m}\nomeqref {2.0}|nompageref}{12}
-\nomenclatureentry{a$ELV$@[{$ELV$}]\begingroup Equilíbrio Líquido-Vapor\nomeqref {2.1}|nompageref}{18}
+\nomenclatureentry{Z$ELV$@[{$ELV$}]\begingroup Equilíbrio Líquido-Vapor\nomeqref {2.1}|nompageref}{18}
 \nomenclatureentry{a$L_{sl1}$@[{$L_{sl1}$}]\begingroup Comprimento do leito solto 1 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{dl1}$@[{$L_{dl1}$}]\begingroup Comprimento do leito denso 1 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{sl2}$@[{$L_{sl2}$}]\begingroup Comprimento do leito solto 2 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{dl2}$@[{$L_{dl2}$}]\begingroup Comprimento do leito denso 2 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{q}$@[{$L_{q}$}]\begingroup Comprimento da zona de quench \nomunit{m}\nomeqref {3.0}|nompageref}{21}
-\nomenclatureentry{S$i$@[{$i$}]\begingroup i-ésimo componente \nomunit{m}\nomeqref {3.0}|nompageref}{22}
+\nomenclatureentry{S$i$@[{$i$}]\begingroup i-ésimo componente\nomeqref {3.0}|nompageref}{22}
+\nomenclatureentry{a$N_{Disc}$@[{$N_{Disc}$}]\begingroup Número de células de um leito do reator\nomeqref {3.0}|nompageref}{26}
+\nomenclatureentry{S$z$@[{$z$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.0}|nompageref}{26}

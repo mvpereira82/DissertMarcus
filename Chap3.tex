@@ -4,7 +4,7 @@
 
 \section{Descrição do Processo} \label{sec:descricaoprocesso}
 
-Como já mencionado no \autoref{chap:introduction}, o processo modelado
+Como já mencionado no \autoref{chap:introducao}, o processo modelado
 neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}. 
 
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
@@ -59,8 +59,7 @@ A composição das correntes de entrada e de quench estão na
 \autoref{tab:composicao}. Para o presente trabalho, utilizou-se
 apenas os valores da primeira corrida publicados por
 \citeonline{Rojas2014a}, já que para essa corrida foram publicados
-também dados industriais. Percebe-se pela composição que a gasolina de pirólise
-é uma mistura bastante complexa.
+também dados industriais.
 
 As propriedades termodinâmicas dos compostos $28$ e $29$ não foram
 encontradas. Assim, eles foram considerados como sendo parte dos compostos
@@ -72,7 +71,7 @@ $26$ e $27$, respectivamente.
 \label{tab:composicao}
 \small
 \begin{tabular}{clcc}
-{Identificador $i$} & {Composto} & {$w$}\%  Entrada & {$w$}\%  Quench
+{Identificador $i$} & {Composto} & Entrada (\% mássica) & Quench (\% mássica)
 \\
 \hline
 1 & Hidrogênio				& $0,48$ & $0,08$ \\
@@ -110,12 +109,15 @@ $26$ e $27$, respectivamente.
 Onde $i$ é o número identificador do composto na simulação a ser apresentada.
 \end{table}
 
-\nomenclature[S]{$i$}{i-ésimo componente \nomunit{m}}
+\nomenclature[S]{$i$}{i-ésimo componente}
 
 \section{Premissas} \label{sec:premissas}
 
+\subsection{Premissas adotadas por \citeonline{Rojas2014a}}
+\label{sec:premissasrojas}
+
 Antes de apresentar as premissas que nortearam o presente trabalho, vale
-aqui definir, para efeito de comparação, as premissas utilizadas por
+aqui apresentar, para efeito de comparação, as premissas utilizadas por
 \citeonline{Rojas2014a}.
 
 \begin{enumerate}
@@ -129,6 +131,8 @@ aqui definir, para efeito de comparação, as premissas utilizadas por
   uniformes.
   \item A transferência de calor entre as fases e no interior das partículas de
   catalisador foram desprezadas.
+  \item A entalpia de dissolução de compostos na fase gás, bem como calor de
+  vaposização de líquido foram desprezadas.
   \item A região do quench é assumida como sendo um tambor flash, que atinge o
   equilíbrio instantaneamente.
   \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
@@ -138,4 +142,150 @@ aqui definir, para efeito de comparação, as premissas utilizadas por
   \item As reações ocorrem somente na interface líquido-sólido.
   \item A desativação catalítica foi desprezada.
 \end{enumerate}
+
+No presente estudo, algumas premissas adotadas por \citeonline{Rojas2014a} serão
+alteradas, como será descrito a seguir. 
+
+\subsection{Premissas deste trabalho} \label{sec:premissasdestetrabalho}
+
+Como já mencionado no \autoref{chap:introducao}, um dos objetivos do presente
+trabalho é avaliar algumas respostas dinâmicas ao processo proposto. Além disso,
+a implementação da modelagem foi feita em \emso, software que avalia respostas
+dinâmicas por concepção. Assim, convenientemente, a premissa de um reator
+operando em estado estacionário foi descartada. Permanece, porém, aqui, a
+premissa de que o equipamento opere de forma adiabática.
+
+A alteração mais importante às premissas adotadas por \citeonline{Rojas2014a}, e
+que representa um avaço por eles publicado, é a consideração tanto da entalpia
+de dissolução do hidrogênio na fase líquida quanto da entalpida de vaporização
+de líquido. Isso foi possível graças à abordagem de modelagem por células,
+assunto da seção \autoref{sec:modelagemredecelulas}.
+
+Portanto, ficam aqui definidas as seguintes premissas:
+
+\begin{enumerate}
+  \item O reator opera adiabaticamente.
+  \item Gradientes radiais são desprezíveis.
+  \item Dispersões axiais foram negligenciadas; portanto, assumiu-se o
+  escoamento empistonado para ambas as fases líquida e gasosa.
+  \item A fase gasosa está em excesso; dessa forma, negligenciou-se a
+  resistência a transferência de massa na fase gasosa.
+  \item Fator de molhamento, atividade catalítica e densidade do leito
+  uniformes.
+  \item A transferência de calor entre as fases e no interior das partículas de
+  catalisador foram desprezadas.
+  \item A região do \emph{quench} é assumida como sendo um tambor flash, que
+  atinge o equilíbrio instantaneamente.
+  \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
+  corrente de \emph{quench}.
+  \item O reator opera em regime de borbulhamento.
+  \item Reações reversíveis e isomerizações foram negligenciadas.
+  \item As reações ocorrem somente na interface líquido-sólido.
+  \item A desativação catalítica foi desprezada.
+\end{enumerate}
+
+Um dos motivos de se manter praticamente inalteradas as premissas adotadas por
+\citeonline{Rojas2014a} foi o de realiar comparações entre os dois estudos.
+
+Negligenciar os gradientes e dispersões de calor e massa, tanto radialmente
+quanto axialmente, é uma recomendação muito comum encontrada na literatura
+\cite{Ancheyta2011, Ranade2011, Froment2011} para simulações cujo objetivo é
+prever o comportamento de um TBR, sob o ponto de vista de liberação de calor e
+conversão das reações. Da mesma forma é a desconsideração da transferência de
+calor entre as fases.
+
+Como já mencionado no \autoref{chap:revisaobibliografica},
+\citeonline{Rojas2014a} utilizaram as reações publicadas por
+\citeonline{Hanika1999}. Isso pode ter motivado os autores a negligenciar a
+resistencia à transferência de massa na fase gasosa.
+
+As premissas assumidas para a região de \emph{quench} são bastante razoáveis, já
+que normalmente os projetistas de reatores TBR desejam a corrente oriunda do
+leito superior se misture rapidamente com a corrente de \emph{quench},
+homogeneizando a carga para o segundo leito. Uma mistura inadequada entre as
+correntes de entrada na região de \emph{quench} pode levar a caminhos
+preferenciais e regiões de estagnação no leito inferior \cite{Ancheyta2011}.
+
+O regime de operação por borbulhamento foi adotado para que as
+equações hidrodinâmicas fossem as mesmas utilizadas por \citeonline{Rojas2014a}.
+Contudo, uma verificação da validade dessa premissa é apresentada no
+\autoref{chap:resultados}.
+
+\section{Modelagem por Rede de Células} \label{sec:modelagemredecelulas}
+
+Para utilizar a abordagem de modelagem por rede de células, cada leito
+catalítico foi subdivido em células em seu comprimento, i.e., discretizado em
+$N_{Disc}$ segumentos de leito. Cada seguimento de leito fica identificado por
+um índice ($z$). A figura \autoref{fig:celula} ilustra uma célula de leito de
+reator. Do ponto de vista reacional, cada célula representará um reator CSTR
+associado a um tambor de flash. Nesse tambor de flash, foi assumido que o
+equilíbrio termodinâmico é atingido instantaneamente.
+
+ \begin{figure}[htb]
+ \centering \includegraphics[scale=0.75]{images/Chap3/celula.png}
+ \caption{Elemento discretizado de leito - célula}
+ \label{fig:celula}
+ \end{figure}
+
+\nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
+\nomenclature[S]{$z$}{z-ésima célula de leito de reator}
+
+Para a região de quench, será usado um tambor de flash, onde o equilíbrio
+termodinâmico é também atingido instantaneamente. A \autoref{fig:quench} ilustra
+a região de quench.
+
+ \begin{figure}[htb]
+ \centering \includegraphics[scale=0.75]{images/Chap3/quench.png}
+ \caption{Região de quench do reator}
+ \label{fig:quench}
+ \end{figure}
+
+Com esse tipo de abordagem, foi possível considerar os efeitos termodinâmicos
+ao longo do reator, como também prever a composição das fases líquida e
+gasosa. As próximas seções apresentam o equacionamento construído
+
+\section{Balanço de Massa e Energia} \label{sec:balancomassaenergia}
+
+Normalmente, para a modelagem de TBR heterogênea, os autores que utilizam
+modelos determinísticos contínuos fazem o balanço de massa para todas as
+fases presentes. \citeonline{Ancheyta2011} apresenta de forma didática as
+equações de balanço de massa de cada fase, explicando todos os seus termos.
+Cada pesquisador, portanto, de acordo com a premissa adotada, elimina muitos dos
+termos das equações de balanço, a fim simplificar o modelo e facilitar a
+solução. 
+
+Para este trabalho, contudo, foi feito o balanço de massa global, sem
+distinção de fase, como mostra a \autoref{eq:balancodemassa}. Nessa equação, há
+o termo de diferenciação da massa de cada componente no tempo. Isso
+foi feito para permitir estudar respostas dinâmicas do processo.
+
+\begin{equation}
+F_zC_{i,z} - F_{z+1}C_{i,z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
+\nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
+\label{eq:balancodemassa}
+\end{equation}
+
+onde $N_{Disc}$ é o número de células de um leito, $N_{reac}$ é o número total
+de reações, $\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $F$ é a
+vazão molar total e $W$ é a massa total de catalisador presente no leito.
+
+
+É importante ressaltar que, da forma como a \autoref{eq:balancodemassa} está
+escrita, a massa contida em cada célula é uma grandeza extensiva. 
+
+\section{Cinética das Reações} \label{sec:cineticadasreacoes}
+
+\section{Termodinâmica} \label{sec:termodinamica}
+
+\section{Hidrodinâmica} \label{sec:hidrodinamica}
+
+incluir cálculo de porosidade, balanço de "espaço", que está no livro do
+Ancheyta, pg 131/132)
+
+\section{Implementação em \emso} \label{sec:implementacao}
+
+
+
+
+
 
