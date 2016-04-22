@@ -248,32 +248,47 @@ gasosa. As próximas seções apresentam o equacionamento construído
 
 Normalmente, para a modelagem de TBR heterogênea, os autores que utilizam
 modelos determinísticos contínuos fazem o balanço de massa para todas as
-fases presentes. \citeonline{Ancheyta2011} apresenta de forma didática as
-equações de balanço de massa de cada fase, explicando todos os seus termos.
+fases separadamente, i.e., para cada fase é feito o balanço de massa por componente. 
+%\citeonline{Ancheyta2011} apresenta de uma forma didática as equações de balanço de massa de cada fase, considerando e explicando todos os efeitos (dispersões, reações, transferências de massa).
 Cada pesquisador, portanto, de acordo com a premissa adotada, elimina muitos dos
 termos das equações de balanço, a fim simplificar o modelo e facilitar a
 solução. 
 
-Para este trabalho, contudo, foi feito o balanço de massa global, sem
-distinção de fase, como mostra a \autoref{eq:balancodemassa}. Nessa equação, há
-o termo de diferenciação da massa de cada componente no tempo. Isso
-foi feito para permitir estudar respostas dinâmicas do processo.
+Para este trabalho, diante das premissas adotadas, a equação de balanço de massa está mostrada na \autoref{eq:balancodemassa}. Nessa equação, foi considerado o termo de diferenciação da massa $M$ de cada componente $i$, em cada célula $z$, no tempo $t$. Dessa forma, é possível o estudo de respostas dinâmicas do processo.
 
 \begin{equation}
-F_zC_{i,z} - F_{z+1}C_{i,z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
+\dfrac{dM_{i,z}}{dt} \equiv F_zC_{i,z} - F_{z+1}C_{i,z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
 \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
 
-onde $N_{Disc}$ é o número de células de um leito, $N_{reac}$ é o número total
-de reações, $\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $F$ é a
-vazão molar total e $W$ é a massa total de catalisador presente no leito.
+onde $M_{i,z}$ é a massa total do componente $i$ na célula $z$, $N_{Disc}$ é o número de células de um leito, $j$ é o número identificador de cada reação, $N_{reac}$ é o número total de reações, $\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $F$ é a vazão molar total e $W$ é a massa total de catalisador presente no leito.
 
+Aqui vale uma observação antecipada do que está na \autoref{sec:termodinâmica}. Da forma como foi implementada em \emso, a corrente $F$ não só contém a informação de vazão molar total, mas tabém possui uma rotina de cálculo de flash. Esse artifício por si só inclui os efeitos de dissolução de hidrogênio no líquido e de vaporização.
 
-É importante ressaltar que, da forma como a \autoref{eq:balancodemassa} está
-escrita, a massa contida em cada célula é uma grandeza extensiva. 
+A \autoref{balancoenergia} mostra o balanço de energia de forma discretizada.
+
+\begin{equation}
+\dfrac{dE_{z}}{dt} \equiv F_zh_{z} - F_{z+1}h_{z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
+\Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
+\label{eq:balancodeenergia}
+\end{equation}
+
+onde $E_{z}$ é a energia total na célula $z$,  $h$ é a entalpia da corrente $F$ na célula $z$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
+
+As \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}, somadas a corrente $F$ e seu cálculo de flaso, possibilitam determinar a fração vaporizada, composição das fases e respectivas propriedades físicas em cada célula $z$.
+
+É importante notar ainda que, da forma como as \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}  estão escritas, massa e energia contidas em cada célula são grandezas extensivas. Isso tem implicações no balanço de espaço dentro de cada célula, como será mostrado na \autoref{sec:hidrodinamica}.
 
 \section{Cinética das Reações} \label{sec:cineticadasreacoes}
+
+As reações de hidrogenação e os parâmetros cinéticos foram os mesmos utilizados estão na \autoref{tab:composicao}.  Conforme já explicado, o sistema reacional foi considerado como sendo um conjunto de hidrogenações irreversíveis e independentes da concentração de hidrogênio. A constante de pseudo-primeira da reação $j$ na célula $z$, $k'_{j,z}$, está definido na \autoref{eq:constantepseudoprimeiraordem}.
+
+\begin{equation}
+\dfrac{dE_{z}}{dt} \equiv F_zh_{z} - F_{z+1}h_{z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
+\Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
+\label{eq:constantepseudoprimeiraordem}
+\end{equation}
 
 \section{Termodinâmica} \label{sec:termodinamica}
 
