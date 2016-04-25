@@ -1,0 +1,290 @@
+#*-------------------------------------------------------------------
+* EMSO Model Library (EML) Copyright (C) 2004 - 2007 ALSOC.
+*
+* This LIBRARY is free software; you can distribute it and/or modify
+* it under the therms of the ALSOC FREE LICENSE as available at
+* http://www.enq.ufrgs.br/alsoc.
+*
+* EMSO Copyright (C) 2004 - 2007 ALSOC, original code
+* from http://www.rps.eng.br Copyright (C) 2002-2004.
+* All rights reserved.
+*
+* EMSO is distributed under the therms of the ALSOC LICENSE as
+* available at http://www.enq.ufrgs.br/alsoc.*
+*
+*--------------------------------------------------------------------
+* Author: Marcus Vinicius Pereira
+*		  Rafael de P. Soares
+* $Id: sample_fbr.mso 814 2014-12-07 19:02:18Z marcus $
+*--------------------------------------------------------------------*#
+
+using "streams";
+
+# reaction heterogeneous
+reaction_mol_mass as Real (Brief = "Molar Reaction Rate (mass)", Default=1, Lower=-1e6, Upper=1e6, final Unit = 'kmol/h/kg');
+reaction_mol_area as Real (Brief = "Molar Reaction Rate (area)", Default=1, Lower=-1e6, Upper=1e6, final Unit = 'kmol/m^2/kg');
+
+
+Model FBR_bifasic
+
+PARAMETERS
+
+outer PP   						as Plugin 		(Brief = "External Physical Properties", Type="PP");
+outer	NComp 					as Integer		(Brief="Number of components");
+		NReac 					as Integer		(Brief="Number of reactions");
+		stoic(NComp, NReac) 	as Real 		(Brief = "Stoichiometric Matrix", Default = 0);
+		NDisc 					as Integer		(Brief="Number of points of discretization", Default=10);
+		Mw(NComp)  				as molweight 	(Brief="Component Mol Weight");
+		L_total					as length		(Brief="Reactor Length");
+		Across 					as area			(Brief="Cross section area");
+		Across_tube				as area			(Brief="Cross section area of one tube", Default = 10);
+		DTube					as length		(Brief="Tube diameter");
+		NTube					as Integer		(Brief="Reactor number of tubes", Default = 10);
+		phi_bed				as coefficient  (Brief = "Bed porosity");
+		rho_bed					as dens_mass	(Brief="Bed mass density");
+		rhocata					as dens_mass	(Brief="Catalyst mass density");
+		Dcata					as length		(Brief="Catalyst diameter");
+		Asurfacecata			as area			(Brief="Catalyst area");
+		Volumecata				as volume		(Brief="Volume of Catalyst particle");
+		Aspecificcata			as spec_surface_vol		(Brief="Specific area");
+		k0(NReac)				as	constant;
+		Ea(NReac)				as	constant;
+
+SET
+	
+	Mw   = PP.MolecularWeight();
+	Across_tube = (3.1416*DTube^2)/4;
+	Across = Across_tube*NTube;
+	Asurfacecata = 4*3.1416*(Dcata/2)^2;
+	Volumecata = (4/3)*3.1416*(Dcata/2)^3;
+	Aspecificcata = 6*(1-phi_bed)/Dcata;
+	
+
+VARIABLES
+
+in	Inlet  	as stream	(Brief = "Inlet Stream");
+out	Outlet 	as streamPH	(Brief = "Outlet Stream");
+
+	str(NDisc+1) 				as streamTP;
+	vol_liquid(NDisc+1) 		as vol_mol;
+	vol_vapour(NDisc+1) 		as vol_mol;
+	rho_liquid(NDisc+1) 		as dens_mass (Default = 700, Lower = 100, Upper = 1300);
+	rho_vapour(NDisc+1) 		as dens_mass (Default = 1, Lower = -1e-6, Upper = 1e8);
+	
+	q(NDisc)	 			as heat_rate (Default = 0);
+	M_tube(NComp, NDisc)	as mol 	(Brief = "Molar holdup", Lower = -1e-6, Default = 0.20, Upper = 100);
+    Mt_tube(NDisc)	 		as mol 	(Brief = "Molar holdup", Lower = -1e-6, Default = 20, Upper = 400);
+	CG(NComp, NDisc)  		as conc_mol	(Brief="Components concentration in gas phase", Lower=-1e-6, Default = 0.1, Upper = 5);
+	CL(NComp, NDisc)  		as conc_mol	(Brief="Components concentration in liquid phase", Lower=-1e-6, Default = 0.1, Upper = 5);
+	CS (NComp, NDisc)		as conc_mol	(Brief="Components concentration in solid surface", Lower=-1e-6, Default = 0.1, Upper = 5);
+	E(NDisc) 				as energy 	(Brief="Total Energy Holdup on element");
+	r(NReac,NDisc)	 		as reaction_mol_mass (Default = 0.2, Lower = -1e-6, Upper = 10);
+	Hr(NReac,NDisc) 		as heat_reaction (Default = 1e5, Lower = -1e-6, Upper = 1e8);
+ 
+	k(NReac,NDisc)			as	constant (Default = 0.2, Unit='m^3/(kg*h)');
+
+	Wcata				as mass;
+	Wcata_tube			as mass;
+	L(NDisc+1)			as length;
+	
+	uL(NDisc)			as velocity;
+	miL(NDisc)			as viscosity (Lower = -1e-6, Default = 1, Upper = 1e6);
+	ReL(NDisc)			as constant (Lower = -1e-6, Default = 1, Upper = 1e15);
+	GaL(NDisc)			as constant (Lower = -1e-6, Default = 1e6, Upper = 1e9);
+	WeL(NDisc)			as constant (Brief = "Weber number", Lower = -1e-6, Default = 1, Upper = 1e9);
+#	PeL(NDisc)			as constant (Brief="Peclet number", Lower = -1e-6, Default = 100, Upper = 1e13);
+	XG(NDisc)			as constant (Brief="Modified Lockhart-Martinelli number", Lower = 1e-6, Default = 1, Upper = 1e6);
+	omega (NReac,NDisc)	as constant (Brief="Mears criterion for external diffusion - Damköhler number", Lower= 1e-6, Default = 0.1, Upper = 1e6);
+	epsilonL(NDisc)		as constant (Brief="Liquid Hold-up", Lower= 1e-6, Default = 0.1, Upper = 10);
+	epsilonL2(NDisc)	as constant (Brief="Liquid Hold-up2", Lower= 1e-6, Default = 0.1, Upper = 10);
+	epsilonG(NDisc)		as constant (Brief="Gas Hold-up", Lower= 1e-6, Default = 0.1, Upper = 10);
+	epsilonG2(NDisc)	as constant (Brief="Gas Hold-up2", Lower= 1e-6, Default = 0.1, Upper = 10);
+	etaCE(NDisc)		as constant (Brief="Wetting efficiency", Lower= -1e-6, Default = 0.1, Upper = 10);
+	
+	DLi(NComp, NDisc)	as diffusivity (Lower = -1e-6, Default = 1, Upper = 1e2);
+	ScLi(NComp, NDisc)	as constant (Lower = -1e-6, Default = 1, Upper = 1e6);
+	ShLi(NComp, NDisc) 	as constant (Lower = -1e-6, Default = 1, Upper = 1e6);
+	KLSi(NComp, NDisc)	as velocity (Lower = -1e-6, Default = 1, Upper = 1e6);
+	
+	uG(NDisc)			as velocity;
+	miG(NDisc)			as viscosity (Lower = -1e-6, Default = 1, Upper = 1e6);
+	ReG(NDisc)			as constant (Lower = -1e-6, Default = 1, Upper = 1e13);
+	
+	deltaP(NDisc)			as pressure (Lower = -1e-6, Default = 1, Upper = 1e3);
+
+	#Lumped compounds variables
+	xparafins(NDisc)	as fraction (Brief="Molar fraction of parafins on liquid phase", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	xolefins(NDisc)		as fraction (Brief="Molar fraction of olefins on liquid phase", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	xdienes(NDisc)		as fraction (Brief="Molar fraction of diolefins on liquid phase", Lower = -1e-6, Default = 0.5, Upper = 1.001);	
+	xaromatics(NDisc)	as fraction (Brief="Molar fraction of diolefins on liquid phase", Lower = -1e-6, Default = 0.5, Upper = 1.001);	
+	
+	CLparafins(NDisc)	as conc_mol	(Brief="Parafins concentration on liquid phase", Lower=-1e-6, Default = 0.1, Upper = 100);
+	CLolefins(NDisc)	as conc_mol	(Brief="Olefins concentration on liquid phase", Lower=-1e-6, Default = 0.1, Upper = 100);
+	CLdienes(NDisc)		as conc_mol	(Brief="Diolefins concentration on liquid phase", Lower=-1e-6, Default = 0.1, Upper = 100);
+	CLaromatics(NDisc)	as conc_mol	(Brief="Aromatics concentration on liquid phase", Lower=-1e-6, Default = 0.1, Upper = 100);
+	
+	zC1C4(NDisc)				as fraction (Brief="Molar fraction of nonreactive C1-C4", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zC6C9(NDisc)				as fraction (Brief="Molar fraction of nonreactive C6-C9", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zBTX(NDisc)					as fraction (Brief="Molar fraction of BTX", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zdienesC5C6(NDisc)			as fraction (Brief="Molar fraction of dienes C5-C6", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zolefinsC5C6(NDisc)			as fraction (Brief="Molar fraction of olefins C5-C6", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zparafinsC5C6(NDisc)		as fraction (Brief="Molar fraction of parafins C5-C6", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zstyrenes(NDisc)			as fraction (Brief="Molar fraction of styrenes", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zaromatics(NDisc)			as fraction (Brief="Molar fraction of aromatics", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zDCD(NDisc)					as fraction (Brief="Molar fraction of dicyclodienes", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	zHDCD(NDisc)				as fraction (Brief="Molar fraction of hydrogenate dicyclodienes", Lower = -1e-6, Default = 0.5, Upper = 1.001);
+	ztotal(NDisc)				as fraction (Brief="Molar fraction of hydrogenate dicyclodienes", Lower = -1e-6, Default = 0.5, Upper = 2);
+	
+	#Flow regime evaluation	
+	sigmaL(NDisc) 			as surf_tens (Brief="Liquid surface tension", Lower = -1e-6, Default = 1e-4, Upper = 1);
+	sigmaWater				as surf_tens (Brief="Water surface tension");
+	rhoWater				as dens_mass (Brief="Water specific gravity");
+	miWater					as viscosity (Brief="Water viscosity");
+	rhoAir					as dens_mass (Brief="Air specific gravity");
+	lambda(NDisc)			as constant (Lower = 1e-6, Default = 1, Upper = 1e6);
+	psi(NDisc)				as constant (Lower = 1e-6, Default = 1, Upper = 1e6);
+	X(NDisc)				as flux_mass (Lower = 1e-6, Default = 1, Upper = 1e6);
+	Y(NDisc)				as constant (Lower = 1e-6, Default = 1, Upper = 1e6);
+	
+EQUATIONS
+
+"Inlet boundary"
+	str(1).F = Inlet.F/NTube;
+	str(1).T = Inlet.T;
+	str(1).P = Inlet.P;
+	str(1).z = Inlet.z;
+
+"Outlet boundary"
+	Outlet.F = str(NDisc+1).F*NTube;
+	Outlet.T = str(NDisc+1).T;
+	Outlet.P = str(NDisc+1).P;
+	Outlet.z = str(NDisc+1).z;
+#	Outlet.h = str(NDisc+1).h;
+#	Outlet.v = str(NDisc+1).v;
+
+	for z in [1:NDisc] do
+		for c in [1:NComp] do
+			"Component Molar Balance"
+			diff(M_tube(c,z)) = (str(z).F*str(z).z(c) - str(z+1).F*str(z+1).z(c))
+				+ sum(stoic(c,:)*r(:, z)) * Wcata_tube/NDisc;
+		end
+
+#		"Molar fraction constraint"
+#		sum(str(z+1).z) = 1;
+		
+		"Energy Balance"
+		diff(E(z)) = str(z).F*str(z).h - str(z+1).F*str(z+1).h +
+			sum(Hr(:,z)*r(:,z)) * Wcata_tube/NDisc - q(z);
+
+		"Energy Holdup"
+		E(z) = Mt_tube(z)*str(z+1).h - str(z+1).P*Across*L_total*phi_bed/NDisc;
+		
+		"Mass flow is considered constant"
+		str(z+1).F*(str(z+1).v*vol_vapour(z+1)*rho_vapour(z+1)+(1-str(z+1).v)*vol_liquid(z+1)*rho_liquid(z+1)) 
+		= str(z).F*(str(z).v*vol_vapour(z)*rho_vapour(z)+(1-str(z).v)*vol_liquid(z)*rho_liquid(z));
+	
+		"Molar concentration"
+		CG(:,z) = str(z+1).y(:)/vol_vapour(z+1);
+		CL(:,z) = str(z+1).x(:)/vol_liquid(z+1);
+		
+		"Geometrical constraint"
+		Across*L_total*phi_bed/NDisc = Mt_tube(z)*(vol_vapour(z+1)*str(z+1).v + vol_liquid(z+1)*(1-str(z+1).v));
+
+		"Molar fraction"
+		str(z+1).z * Mt_tube(z) = M_tube(:,z);
+		
+		"Liquid and Gas Holdup"
+		epsilonL2(z) = (1-str(z+1).v)*Mt_tube(z)*vol_liquid(z+1)/(L_total*Across/NDisc);
+		epsilonG2(z) = (str(z+1).v)*Mt_tube(z)*vol_vapour(z+1)/(L_total*Across/NDisc);
+		
+		
+	end
+
+	for z in [1:NDisc+1] do
+		"Specific Volume"
+		vol_vapour(z) = PP.VapourVolume(str(z).T, str(z).P, str(z).y);
+		vol_liquid(z) = PP.LiquidVolume(str(z).T, str(z).P, str(z).x);
+		
+		"Specific Mass"
+		rho_vapour(z) = PP.VapourDensity(str(z).T, str(z).P, str(z).y);
+		rho_liquid(z) = PP.LiquidDensity(str(z).T, str(z).P, str(z).x);		
+
+	end
+
+	for z in [2:NDisc+1] do
+
+		L(z) = L(z-1) + L_total/NDisc;
+
+	end
+
+		"Reactor design"
+		Wcata = NTube*Wcata_tube;
+		Across_tube*L_total*(1-phi_bed) = Wcata_tube/rhocata;
+end
+
+Model streamTP as stream
+	ATTRIBUTES
+	Brief = "Stream with built-in flash calculation";
+	Info = "
+	This model should be used when the vapourization fraction
+	is unknown.
+	
+	The built-in flash calculation will determine the stream
+	state as a function of the overall composition '''z''', the
+	pressure '''P''' and the enthalpy '''h'''.
+	
+	Additionally, the liquid composition '''x''' and the vapour
+	composition '''y''' are calculated.	
+	";
+	Pallete = false;
+	
+	PARAMETERS
+	outer PP as Plugin(Brief = "External Physical Properties", Type="PP");
+	
+	VARIABLES
+	x(NComp) as fraction	(Brief = "Liquid Molar Fraction",Hidden=true);
+	y(NComp) as fraction	(Brief = "Vapour Molar Fraction",Hidden=true);
+
+	EQUATIONS
+	"Flash Calculation"
+	[v, x, y] = PP.Flash(T, P, z);
+	
+	"Enthalpy"
+	h = (1-v)*PP.LiquidEnthalpy(T, P, x) + v*PP.VapourEnthalpy(T, P, y);
+	
+end
+
+Model mixer2special
+	ATTRIBUTES
+	Pallete 	= true;
+	Icon 		= "icon/mixer"; 
+	Brief 		= "Model of a mixer with 2 inputs";
+	Info 		=
+"== Assumptions ==
+* static
+* adiabatic
+
+== Specify ==
+* the inlet streams";
+	
+VARIABLES
+
+in  Inlet1 as stream (Brief = "Inlet stream 1", PosX=0, PosY=0.25, Symbol="_{in1}");
+in  Inlet2 as stream (Brief = "Inlet stream 2", PosX=0, PosY=0.75, Symbol="_{in2}");
+out Outlet as streamTP (Brief = "Outlet stream", PosX=1, PosY=0.5059, Symbol="_{out}");
+	
+EQUATIONS
+	
+"Flow"
+	Outlet.F = Inlet1.F + Inlet2.F;
+
+"Composition"
+    Outlet.F*Outlet.z = Inlet1.F*Inlet1.z + Inlet2.F*Inlet2.z;
+
+"Energy Balance"
+	Outlet.F*Outlet.h = Inlet1.F*Inlet1.h + Inlet2.F*Inlet2.h;
+
+"Pressure"
+	Outlet.P = min([Inlet1.P, Inlet2.P]);
+	
+end

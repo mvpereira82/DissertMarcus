@@ -1,0 +1,727 @@
+#	Pygas hydrogenation reactor
+
+using "streams.mso";
+using "mixers_splitters/mixer.mso";
+using "mixers_splitters/splitter.mso";
+using "stage_separators/flash.mso";
+using "iise_extra.mso";
+using "FBR_bifasic_model_Pygas.mso";
+
+FlowSheet Reactor
+
+#	General Parameters, Sets, Devices and Connections
+
+	PARAMETERS
+		PP as Plugin(Type="PP", Project = "Streams.ise");
+
+		NComp as Integer;
+		Mw(NComp)  				as molweight 	(Brief="Component Mol Weight");
+		NormalBP(NComp)			as temperature	(Brief="Normal boiling point");
+	
+	SET
+		NComp = PP.NumberOfComponents;
+		Mw   = PP.MolecularWeight();
+		NormalBP = PP.NormalBoilingPoint();
+	
+#	Compounds list
+#	1. Hydrogen
+#	2. Methane 
+#	3. Ethane
+#	4. n-Propane 
+#	5. n-Butane 
+#	6. n-Pentane
+#	7. trans-2-Pentene
+#	8. trans-1,3-Pentadiene 
+#	9. Cyclopentane 
+#	10. Cyclopentene
+#	11. Methyl-1,3-Cyclopentadiene
+#	12. n-Hexane
+#	13. Methylcyclopentane 
+#	14. Methylcyclopentene
+#	15. 1,3-Cyclopentadiene
+#	16. Benzene
+#	17. n-Heptane 
+#	18. Toluene 
+#	19. n-Octane
+#	20. Ethylbenzene 
+#	21. Styrene 
+#	22. Xylene
+#	23. n-Nonane
+#	24. 1-Methyl-3-Ethylbenzene 
+#	25. Methylstyrene
+#	26. Dihydrodicylopentadiene 
+#	27. Dicyclopentadiene
+#	28. Methyldihydrodicyclopentadiene (Compound considered as compound 26)
+#	29. Methyldicyclopentadiene	(Compound considered as compound 27)
+
+	DEVICES
+	Feed					as	source;
+	Quench					as	source;
+	Quench_zone				as	mixer2special;	
+	ReactorA				as  FBR_bifasic;
+	ReactorB				as 	FBR_bifasic;
+	Product					as  sink;
+	
+	CONNECTIONS
+	Feed.Outlet				to	ReactorA.Inlet;		
+	ReactorA.Outlet			to	Quench_zone.Inlet1;
+	Quench.Outlet			to	Quench_zone.Inlet2;
+	Quench_zone.Outlet		to	ReactorB.Inlet;
+	ReactorB.Outlet			to	Product.Inlet;
+
+	SPECIFY
+#	Feed.Fw = 247700 * 'kg/h'; #This is original feed flow
+
+	Feed.Fw = 61924 * 'kg/h'; #	Feed flow is divided by 4	
+	Feed.T = 366.15 * 'K';
+	Feed.P = 5.03E6 * 'Pa';
+	Feed.Composition = [
+						0.1663, 0.0226, 0.0028, 0.0057, 0.0036, 
+						0.0523, 0.0528, 0.0256, 0.0149, 0.0215, 
+						0.0166, 0.0267, 0.0133, 0.017, 0.0201, 
+						0.2583, 0.0195, 0.1212, 0.0079, 0.0224, 
+						0.0134, 0.0355, 0.0036, 0.0168, 0.0083, 
+						0.0172, 0.014
+	];
+	
+
+	
+	SPECIFY
+	Quench.Fw = 20790 * 'kg/h';	
+	Quench.T = 326.15 * 'K';
+#	Quench pressure seems to be wrong in the Rojas' article, because quench pressure 
+#	can't be less than rector pressure in quench region.
+#	Quench.P = 4.6E6 * 'Pa'; It is the original value
+	Quench.P = 5.1E6 * 'Pa';
+	Quench.Composition = [
+						0.0318, 0.035, 0.0029, 0.0049, 0.0033, 
+						0.0622, 0.0868, 0.0027, 0.0297, 0.0353, 
+						0.0021, 0.0307, 0.0162, 0.0254, 2.42408E-4, 
+						0.3087, 0.0232, 0.1417, 0.0091, 0.0408, 
+						8.46181E-4, 0.0415, 0.0045, 0.026, 0.0021, 0.031, 0.0013
+	];	
+
+	SET
+	
+#	Reactor A parameters
+
+	ReactorA.NDisc 	= 10;
+	ReactorA.NReac 	= 9;
+	ReactorA.DTube = 3.047*'m';
+	ReactorA.NTube = 1;
+	ReactorA.rhocata = 1216*'kg/m^3';
+	ReactorA.phi_bed = 0.331;
+	ReactorA.Dcata = 3*'mm';
+	ReactorA.L_total = 3.10 * 'm';
+	ReactorA.rho_bed = 814*'kg/m^3';	
+	ReactorA.stoic(:) 		=  0;	
+	ReactorA.stoic(1,:) 	= -1;
+	ReactorA.stoic(8,1) 	= -1;
+	ReactorA.stoic(7,1) 	= +1;
+	ReactorA.stoic(7,2) 	= -1;
+	ReactorA.stoic(6,2) 	= +1;
+	ReactorA.stoic(15,3) 	= -1;
+	ReactorA.stoic(10,3) 	= +1;
+	ReactorA.stoic(10,4) 	= -1;
+	ReactorA.stoic(9,4) 	= +1;
+	ReactorA.stoic(11,5) 	= -1;
+	ReactorA.stoic(14,5) 	= +1;
+	ReactorA.stoic(14,6) 	= -1;
+	ReactorA.stoic(13,6) 	= +1;
+	ReactorA.stoic(21,7) 	= -1;
+	ReactorA.stoic(20,7) 	= +1;
+	ReactorA.stoic(25,8) 	= -1;
+	ReactorA.stoic(24,8) 	= +1;
+	ReactorA.stoic(27,9) 	= -1;
+	ReactorA.stoic(26,9) 	= +1;	
+	ReactorA.k0(:) = [5.08, 0.32, 12.00, 0.80, 5.08, 0.32, 8.84, 5.08, 8.84];
+	ReactorA.Ea(:) = [24409, 35370, 14947, 24409, 24409, 35370, 14947, 24409, 14947];
+	
+#	Reactor B parameters
+	ReactorB.NDisc 	= ReactorA.NDisc;
+	ReactorB.NReac 	= ReactorA.NReac;
+	ReactorB.DTube = 3.047*'m';
+	ReactorB.NTube = 1;
+	ReactorB.rhocata = 1216*'kg/m^3';
+	ReactorB.phi_bed = 0.331;
+	ReactorB.Dcata = 3*'mm';
+	ReactorB.L_total = (0.38+3.43) * 'm';
+	ReactorB.rho_bed = 813*'kg/m^3';
+	ReactorB.stoic = ReactorA.stoic;
+	ReactorB.k0(:) = ReactorA.k0(:);
+	ReactorB.Ea(:) = ReactorA.Ea(:);
+	
+	SPECIFY
+	
+#	ReactorA variables
+	ReactorA.q = 0 * 'J/s';
+	ReactorA.L(1) = 0*'m';
+	
+#	Reactor B variables
+	ReactorB.q = 0 * 'J/s';	
+	ReactorB.L(1) = 4.52*'m';
+	
+	VARIABLES
+#	Extra variables for special calculation
+	x_aux(NComp,NComp)		as fraction		(Brief="Molar fraction of a pure component");		
+	vol_liquid_Tb (NComp)	as vol_mol	(Brief="Molar volume at normal boiling point");
+	
+	SPECIFY
+	ReactorA.sigmaWater = 9.45e-3*'N/m';
+	ReactorB.sigmaWater = 9.45e-3*'N/m';
+	ReactorA.rhoWater = 1000*'kg/m^3';
+	ReactorB.rhoWater = 1000*'kg/m^3';
+	ReactorA.miWater = 1e-3*'Pa*s';
+	ReactorB.miWater = 1e-3*'Pa*s';
+	ReactorA.rhoAir = 1.2*'kg/m^3';
+	ReactorB.rhoAir = 1.2*'kg/m^3';
+	
+	EQUATIONS	
+
+	for c in [1:NComp] do
+		
+		for d in [1:NComp] do
+			
+			if c equal d then
+				x_aux(c,d) = 1;
+			else
+				x_aux(c,d) = 0;
+			end
+			
+		end
+		
+		"Normal boiling point volume"
+		vol_liquid_Tb(c) = PP.LiquidVolume(NormalBP(c), 1*'atm', x_aux(c,:));
+		
+	end
+
+#============================ReactorA=====================================
+
+	for z in [1:ReactorA.NDisc] do
+		
+	"Reynolds calculation"
+#	Velocities calculated as Froment (volumetric flow/reactor cross-section area)
+	ReactorA.miG(z) = PP.VapourViscosity(ReactorA.str(z+1).T, ReactorA.str(z+1).P, ReactorA.str(z+1).z);
+	ReactorA.uG(z) = ReactorA.str(z+1).F*ReactorA.vol_vapour(z+1)*(ReactorA.str(z+1).v)
+					/((ReactorA.Across_tube));
+	ReactorA.ReG(z) = ReactorA.rho_vapour(z+1)*ReactorA.uG(z)*ReactorA.Dcata/ReactorA.miG(z);
+	
+	ReactorA.miL(z) = PP.LiquidViscosity(ReactorA.str(z+1).T, ReactorA.str(z+1).P, ReactorA.str(z+1).z);
+	ReactorA.uL(z) = ReactorA.str(z+1).F*ReactorA.vol_liquid(z+1)*(1-ReactorA.str(z+1).v)
+					/((ReactorA.Across_tube));
+	ReactorA.ReL(z) = ReactorA.rho_liquid(z+1)*ReactorA.uL(z)*ReactorA.Dcata/ReactorA.miL(z);
+	ReactorA.GaL(z) = (ReactorA.Dcata^3*9.81*'m/s^2'*ReactorA.rho_liquid(z)^2)
+						/ReactorA.miL(z)^2;
+
+#	"Peclet number"
+# 	Cassanello, M. C. (1992) Effect of the liquid axial dispersion on the behavior of fixed bed three phase reactors	
+#	ReactorA.PeL(z) = (ReactorA.L_total/ReactorA.Dcata)*2.3*ReactorA.ReL(z)^0.33
+#						*ReactorA.GaL(z)^(-0.19);
+
+	"Weber number for liquid phase"
+	ReactorA.WeL(z) = ReactorA.rho_liquid(z+1)*ReactorA.uL(z)^2*ReactorA.Dcata/ReactorA.sigmaL(z);
+	
+	"Liquid Hold-up"
+# 	Larachi, F.(1991) - Experimental study of a trickle-bed reactor operating at high pressure: two-phase pressure drop and liquid saturation
+	log(1-ReactorA.epsilonL(z)/ReactorA.phi_bed) = -(1.22*ReactorA.WeL(z)^0.15)/(ReactorA.ReL(z)^0.2*ReactorA.XG(z)^0.15);
+	ReactorA.epsilonG(z) = ReactorA.phi_bed - ReactorA.epsilonL(z);
+
+	"Wetting efficiency"
+#	Al-Dahhan, Muthanna & H.Dudukovic, Milorad P. (1995) - Catalyst wetting efficiency in trickle-bed reactors at high pressure
+	ReactorA.etaCE(z) = 1.104*ReactorA.ReL(z)^(1/3)*((1+(ReactorA.deltaP(z)/(ReactorA.L_total/ReactorA.NDisc))
+						/(ReactorA.rho_liquid(z+1)*9.81*'m/s^2'))/(ReactorA.GaL(z)))^(1/9);
+	"Gas Lockhart-Martinelli number"
+#	Lockhart, R. W., Martinelli, R. C. (1949) - Proposed correlation of data for isothermal two-phase, two-component flow in pipes
+	ReactorA.XG(z) = (ReactorA.uG(z)/ReactorA.uL(z))*sqrt(ReactorA.rho_liquid(z+1)/ReactorA.rho_vapour(z+1));
+	
+	"Molecular Diffusivity - Hydrogen"
+# 	Wilke & Chang (1955) - CORRELATION OF DIFFUSION COEFFICIENTS IN DILUTE SOLUTIONS
+	ReactorA.DLi(1,z)/'cm^2/s' = (7.4e-8*(((ReactorA.str(z+1).T)/(1*'K'))
+						*((ReactorA.vol_liquid(z)*ReactorA.rho_liquid(z+1))
+						/(1*'g/mol'))^0.5)/(ReactorA.miL(z)/(1*'cP')
+						*(vol_liquid_Tb(1)/(1*'m^3/mol')*1e6)^0.6));
+		
+	"Schmidt number - Hydrogen"		
+	ReactorA.ScLi(1,z) = ReactorA.miL(z)/(ReactorA.rho_liquid(z+1)*ReactorA.DLi(1,z));
+	
+#	"Surface tension of liquid phase"
+	ReactorA.sigmaL(z) = 16e-3*'N/m'+ (9e-3 - 16e-3)*'N/m'/ReactorA.NDisc*z;
+
+# 	Hirose et al. (1976)- Liquid-to-particle mass transfer in fixed bed reactor with cocurrent gas-liquid downflow 
+	if ReactorA.ReL(z) < 200 then
+		"Sherwood number - Hydrogen"
+		ReactorA.ShLi(1,z)*ReactorA.phi_bed = 0.8*(ReactorA.ReL(z))^0.5
+			*ReactorA.ScLi(1,z)^(1/3);
+	else
+		"Sherwood number - Hydrogen"
+		ReactorA.ShLi(1,z)*ReactorA.phi_bed = 0.53*(ReactorA.ReL(z))^0.58
+			*ReactorA.ScLi(1,z)^(1/3);
+	end
+	
+	"Mass transfer coefficient - Hydrogen"
+	ReactorA.KLSi(1,z) = ReactorA.ShLi(1,z)*ReactorA.DLi(1,z)/ReactorA.Dcata;
+	
+	"Equation for mass transfer resistance on liquid-solid interface - Hydrogen" 
+	ReactorA.KLSi(1,z)*ReactorA.Aspecificcata
+	*(-ReactorA.CL(1,z)+ReactorA.CS(1,z)) = 
+	ReactorA.rho_bed*sum(ReactorA.stoic(1,:)*ReactorA.r(:, z));	
+
+		for c in [2:NComp] do
+
+			"Diffusivity"
+# 			Wilke & Chang (1955)- CORRELATION OF DIFFUSION COEFFICIENTS IN DILUTE SOLUTIONS
+			ReactorA.DLi(c,z)/'cm^2/s' = (7.4e-8*(((ReactorA.str(z+1).T)/(1*'K'))
+						*((ReactorA.vol_liquid(z)*ReactorA.rho_liquid(z+1))
+						/(1*'g/mol'))^0.5)/(ReactorA.miL(z)/(1*'cP')
+						*(vol_liquid_Tb(c)/(1*'m^3/mol')*1e6)^0.6));			
+			
+			"Schmidt number"
+			ReactorA.ScLi(c,z) = ReactorA.miL(z)/(ReactorA.rho_liquid(z+1)*ReactorA.DLi(c,z));
+			
+# 			Hirose et al. (1976)
+			if ReactorA.ReL(z) < 200 then
+				"Sherwood number"
+				ReactorA.ShLi(c,z)*ReactorA.phi_bed = 0.8*(ReactorA.ReL(z))^0.5 
+				*ReactorA.ScLi(c,z)^(1/3);
+			else
+				"Sherwood number"
+				ReactorA.ShLi(c,z)*ReactorA.phi_bed = 0.53*(ReactorA.ReL(z))^0.58 
+				*ReactorA.ScLi(c,z)^(1/3);
+			end
+			
+			"Mass transfer coefficient"
+			ReactorA.KLSi(c,z) = ReactorA.ShLi(c,z)*ReactorA.DLi(c,z)/ReactorA.Dcata;
+			
+			"Equation for mass transfer resistance on liquid-solid interface" 
+			ReactorA.KLSi(c,z)*ReactorA.Aspecificcata
+			*(-ReactorA.CL(c,z)+ReactorA.CS(c,z)) = 
+			ReactorA.rho_bed*sum(ReactorA.stoic(c,:)*ReactorA.r(:, z));
+
+		end	
+
+	"Pressure profile" 
+	ReactorA.str(z+1).P = ReactorA.str(z).P; # - ReactorA.deltaP(z);
+	
+	"Pressure drop"
+#	Benkrid et al.(1997) - Prediction of pressure drop and liquid saturation in trickle-bed 
+#	reactors operated in high interaction regimes (1997)
+	ReactorA.deltaP(z) = (1/ReactorA.phi_bed^3)*(ReactorA.L_total/ReactorA.NDisc)
+			*((ReactorA.uG(z)/ReactorA.uL(z)+1)
+			/(0.49*ReactorA.uG(z)/ReactorA.uL(z)+1))^3
+			*(((150/36)*(6*(1-ReactorA.phi_bed)/ReactorA.Dcata
+			+ 4/ReactorA.DTube)^2)*ReactorA.miL(z)*ReactorA.uL(z)
+			+ ((1.75/6)*(6*(1-ReactorA.phi_bed)/ReactorA.Dcata
+			+ 4/ReactorA.DTube))*ReactorA.rho_liquid(z+1)*ReactorA.uL(z)^2);
+
+	"Reaction k calculation"
+	ReactorA.k(:,z) = (ReactorA.k0(:)*'kg/(kg*h)'/ReactorA.rho_liquid(z+1))*
+								exp((-ReactorA.Ea(:)*'kJ/kmol'/(8.314*'J/(mol*K)'))*
+								(1/ReactorA.str(z+1).T - 1/(417*'K')));
+	"Reaction Rate"	
+#	1. Trans-1,3-Pentadiene + H2 = trans-2-Pentene 
+#	2. Trans-2-Pentene + H2 = n-Pentane
+#	3. 1,3-Cyclopentadiene + H2 = Cyclopentene 
+#	4. Cyclopentene + H2 = Cyclopentane
+#	5. 1-Methyl-1,3-Cyclopentadiene + H2 = Methylcyclopentene
+#	6. Methylcyclopentene + H2 = Methylcyclopentane 
+#	7. Styrene + H2 = Ethylbenzene
+#	8. Methylstyrene + H2 = 1-Methyl-3-Ethylbenzene
+#	9. Dyciclopentadiene + H2 = Dihydrodicyclopentadiene
+#	10. Methyldicyclopentadiene + H2 = Methyldihydrodicyclopentadiene (This reaction is ignored)	
+	ReactorA.r(1,z) = ReactorA.k(1,z)*ReactorA.CS(8,z);
+	ReactorA.r(2,z) = ReactorA.k(2,z)*ReactorA.CS(7,z);
+	ReactorA.r(3,z) = ReactorA.k(3,z)*ReactorA.CS(15,z);
+	ReactorA.r(4,z) = ReactorA.k(4,z)*ReactorA.CS(10,z);
+	ReactorA.r(5,z) = ReactorA.k(5,z)*ReactorA.CS(11,z);
+	ReactorA.r(6,z) = ReactorA.k(6,z)*ReactorA.CS(14,z);
+	ReactorA.r(7,z) = ReactorA.k(7,z)*ReactorA.CS(21,z);
+	ReactorA.r(8,z) = ReactorA.k(8,z)*ReactorA.CS(25,z);
+	ReactorA.r(9,z) = ReactorA.k(9,z)*ReactorA.CS(27,z);
+	
+	"Mears criterion"
+#	Mears (1971) - Tests for Transport Limitations in Experimental Catalytic Reactors
+#	If this is less than 0.15, mass transfer from the gas phase to catalyst surface can be neglected 
+	ReactorA.omega(1,z) = (ReactorA.r(1,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(8,z)*ReactorA.CL(8,z));
+	ReactorA.omega(2,z) = (ReactorA.r(2,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(7,z)*ReactorA.CL(7,z));
+	ReactorA.omega(3,z) = (ReactorA.r(3,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(15,z)*ReactorA.CL(15,z));
+	ReactorA.omega(4,z) = (ReactorA.r(4,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(10,z)*ReactorA.CL(10,z));
+	ReactorA.omega(5,z) = (ReactorA.r(5,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(11,z)*ReactorA.CL(11,z));
+	ReactorA.omega(6,z) = (ReactorA.r(6,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(14,z)*ReactorA.CL(14,z));
+	ReactorA.omega(7,z) = (ReactorA.r(7,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(21,z)*ReactorA.CL(21,z));
+	ReactorA.omega(8,z) = (ReactorA.r(8,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(25,z)*ReactorA.CL(25,z));
+	ReactorA.omega(9,z) = (ReactorA.r(9,z)*ReactorA.rho_bed*(ReactorA.Dcata/2))/(ReactorA.KLSi(27,z)*ReactorA.CL(27,z));
+
+	"Lumped compounds calculation"
+	ReactorA.xparafins(z) = ReactorA.str(z+1).x(2) + ReactorA.str(z+1).x(3)
+							+ ReactorA.str(z+1).x(4) + ReactorA.str(z+1).x(5)
+							+ ReactorA.str(z+1).x(6) + ReactorA.str(z+1).x(9)
+							+ ReactorA.str(z+1).x(12) + ReactorA.str(z+1).x(13)
+							+ ReactorA.str(z+1).x(17) + ReactorA.str(z+1).x(19)
+							+ ReactorA.str(z+1).x(23);							
+	ReactorA.xolefins(z) = 	ReactorA.str(z+1).x(7) + ReactorA.str(z+1).x(10)
+							+ ReactorA.str(z+1).x(14) + ReactorA.str(z+1).z(26);
+	ReactorA.xdienes(z) = ReactorA.str(z+1).x(8) + ReactorA.str(z+1).x(11)
+							+ ReactorA.str(z+1).x(15) + ReactorA.str(z+1).x(27);
+	ReactorA.xaromatics(z)= ReactorA.str(z+1).x(16) + ReactorA.str(z+1).x(18)
+							+ ReactorA.str(z+1).x(22) + ReactorA.str(z+1).x(20)
+							+ ReactorA.str(z+1).x(24)+ ReactorA.str(z+1).x(21)
+							+ ReactorA.str(z+1).z(25);
+	ReactorA.CLparafins(z) = ReactorA.xparafins(z)
+							   /ReactorA.vol_liquid(z+1);	
+	ReactorA.CLolefins(z) = ReactorA.xolefins(z)
+							   /ReactorA.vol_liquid(z+1);		
+	ReactorA.CLdienes(z)  = ReactorA.xdienes(z)
+							   /ReactorA.vol_liquid(z+1);	
+	ReactorA.CLaromatics(z) = ReactorA.xaromatics(z)
+							   /ReactorA.vol_liquid(z+1);
+		
+	ReactorA.zC1C4(z) 			= ReactorA.str(z+1).z(2) + ReactorA.str(z+1).z(3) + ReactorA.str(z+1).z(4)
+								+ ReactorA.str(z+1).z(5);
+	ReactorA.zC6C9(z) 			= ReactorA.str(z+1).z(17) + ReactorA.str(z+1).z(19) + ReactorA.str(z+1).z(23)
+								+ ReactorA.str(z+1).z(13);
+	ReactorA.zBTX(z)  			= ReactorA.str(z+1).z(16) + ReactorA.str(z+1).z(18) + ReactorA.str(z+1).z(22);
+	ReactorA.zdienesC5C6(z) 	= ReactorA.str(z+1).z(8) + ReactorA.str(z+1).z(15) + ReactorA.str(z+1).z(11);
+	ReactorA.zolefinsC5C6(z)	= ReactorA.str(z+1).z(7) + ReactorA.str(z+1).z(10) + ReactorA.str(z+1).z(14);
+	ReactorA.zparafinsC5C6(z)   = ReactorA.str(z+1).z(6) + ReactorA.str(z+1).z(9) + ReactorA.str(z+1).z(12);
+	ReactorA.zstyrenes(z)		= ReactorA.str(z+1).z(21) + ReactorA.str(z+1).z(25);
+	ReactorA.zaromatics(z)		= ReactorA.str(z+1).z(20) + ReactorA.str(z+1).z(24);
+	ReactorA.zDCD(z)			= ReactorA.str(z+1).z(27);
+	ReactorA.zHDCD(z)			= ReactorA.str(z+1).z(26);
+	ReactorA.ztotal(z)			= ReactorA.zC1C4(z) + ReactorA.zC6C9(z) + ReactorA.zBTX(z) + ReactorA.zdienesC5C6(z)
+								+ ReactorA.zolefinsC5C6(z) + ReactorA.zparafinsC5C6(z)
+								+ ReactorA.zstyrenes(z) + ReactorA.zaromatics(z)
+								+ ReactorA.zDCD(z) + ReactorA.zHDCD(z) + ReactorA.str(z+1).z(1);	
+
+
+	"Heat of reaction"
+	ReactorA.Hr(:,z) = [1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
+	
+	"FLow regime validation"
+#	Ranade, Vivek V; Chaudhari, Raghunath V.; Gunjal, Prashant R. (2011) - Trickle Bed Reactors
+	ReactorA.lambda(z) = sqrt((ReactorA.rho_vapour(z)/ReactorA.rhoAir)
+						*(ReactorA.rho_liquid(z)/ReactorA.rhoWater));
+		
+	ReactorA.psi(z) = (ReactorA.sigmaWater/ReactorA.sigmaL(z))*((ReactorA.miL(z)
+						/ReactorA.miWater)*(ReactorA.rhoWater/ReactorA.rho_liquid(z))^2);
+	
+	ReactorA.Y(z) = ((ReactorA.rho_liquid(z)*ReactorA.uL(z))/(ReactorA.rho_vapour(z)
+					*ReactorA.uG(z)))*ReactorA.lambda(z)*ReactorA.psi(z);
+	ReactorA.X(z) = ReactorA.uG(z)*ReactorA.rho_vapour(z)/(ReactorA.lambda(z)*ReactorA.phi_bed);
+	
+	end
+	
+	
+#============================Reactor B=====================================
+
+	for z in [1:ReactorB.NDisc] do
+		
+	"Reynolds calculation"
+#	Velocities recomended by Froment (volumetric flow/reactor cross-section area)
+	ReactorB.miG(z) = PP.VapourViscosity(ReactorB.str(z+1).T, ReactorB.str(z+1).P, ReactorB.str(z+1).z);
+	ReactorB.uG(z) = ReactorB.str(z+1).F*ReactorB.vol_vapour(z+1)*(ReactorB.str(z+1).v)
+					/((ReactorB.Across_tube));
+	ReactorB.ReG(z) = ReactorB.rho_vapour(z+1)*ReactorB.uG(z)*ReactorB.Dcata/ReactorB.miG(z);
+	
+	ReactorB.miL(z) = PP.LiquidViscosity(ReactorB.str(z+1).T, ReactorB.str(z+1).P, ReactorB.str(z+1).z);
+	ReactorB.uL(z) = ReactorB.str(z+1).F*ReactorB.vol_liquid(z+1)*(1-ReactorB.str(z+1).v)
+					/((ReactorB.Across_tube));
+	ReactorB.ReL(z) = ReactorB.rho_liquid(z+1)*ReactorB.uL(z)*ReactorB.Dcata/ReactorB.miL(z);
+	ReactorB.GaL(z) = (ReactorB.Dcata^3*9.81*'m/s^2'*ReactorB.rho_liquid(z)^2
+						/ReactorB.miL(z)^2);
+
+#	"Peclet number"
+#	Cassanello, M. C. (1992) Effect of the liquid axial dispersion on the behavior of fixed bed three phase reactors	
+#	ReactorB.PeL(z) = (ReactorB.L_total/ReactorB.Dcata)*2.3*ReactorB.ReL(z)^0.33
+#						*ReactorB.GaL(z)^(-0.19);
+
+	"Weber number for liquid phase"
+	ReactorB.WeL(z) = ReactorB.rho_liquid(z+1)*ReactorB.uL(z)^2*ReactorB.Dcata/ReactorB.sigmaL(z);
+
+	"Lockhart-Martinelli number"
+#	Lockhart, R. W., Martinelli, R. C. (1949) - Proposed correlation of data for isothermal two-phase, two-component flow in pipes
+	ReactorB.XG(z) = (ReactorB.uG(z)/ReactorB.uL(z))*sqrt(ReactorB.rho_liquid(z+1)/ReactorB.rho_vapour(z+1));
+	
+	"Liquid and gas Hold-up"
+#	Larachi, F.(1991) - Experimental study of a trickle-bed reactor operating at high pressure: two-phase pressure drop and liquid saturation
+	log(1-ReactorB.epsilonL(z)/ReactorB.phi_bed) = -(1.22*ReactorB.WeL(z)^0.15)/(ReactorB.ReL(z)^0.2*ReactorB.XG(z)^0.15);
+	ReactorB.epsilonG(z) = ReactorB.phi_bed - ReactorB.epsilonL(z);
+	
+	"Wetting efficiency"
+#	Al-Dahhan, Muthanna & H.Dudukovic, Milorad P. (1995) - Catalyst wetting efficiency in trickle-bed reactors at high pressure
+	ReactorB.etaCE(z) = 1.104*ReactorB.ReL(z)^(1/3)*((1+(ReactorB.deltaP(z)/(ReactorB.L_total/ReactorB.NDisc))
+						/(ReactorB.rho_liquid(z+1)*9.81*'m/s^2'))/(ReactorB.GaL(z)))^(1/9);
+		
+	"Molecular Diffusivity - Hydrogen"
+# 	Wilke & Chang (1955) - CORRELATION OF DIFFUSION COEFFICIENTS IN DILUTE SOLUTIONS
+	ReactorB.DLi(1,z)/'cm^2/s' = (7.4e-8*(((ReactorB.str(z+1).T)/(1*'K'))
+						*((ReactorB.vol_liquid(z)*ReactorB.rho_liquid(z+1))
+						/(1*'g/mol'))^0.5)/(ReactorB.miL(z)/(1*'cP')
+						*(vol_liquid_Tb(1)/(1*'m^3/mol')*1e6)^0.6));
+		
+	"Schmidt number - Hydrogen"		
+	ReactorB.ScLi(1,z) = ReactorB.miL(z)/(ReactorB.rho_liquid(z+1)*ReactorB.DLi(1,z));
+	
+#	"Surface tension of liquid phase"
+	ReactorB.sigmaL(z) = 11e-3*'N/m'+ (9e-3 - 11e-3)*'N/m'/ReactorA.NDisc*z; 
+
+# 	Hirose et al. (1976)- Liquid-to-particle mass transfer in fixed bed reactor with cocurrent gas-liquid downflow 
+	if ReactorB.ReL(z) < 200 then
+		"Sherwood number - Hydrogen"
+		ReactorB.ShLi(1,z)*ReactorB.phi_bed = 0.8*(ReactorB.ReL(z))^0.5
+			*ReactorB.ScLi(1,z)^(1/3);
+	else
+		"Sherwood number - Hydrogen"
+		ReactorB.ShLi(1,z)*ReactorB.phi_bed = 0.53*(ReactorB.ReL(z))^0.58
+			*ReactorB.ScLi(1,z)^(1/3);
+	end
+	
+	"Mass transfer coefficient - Hydrogen"
+	ReactorB.KLSi(1,z) = ReactorB.ShLi(1,z)*ReactorB.DLi(1,z)/ReactorB.Dcata;
+	
+	"Equation for mass transfer resistance on liquid-solid interface - Hydrogen" 
+	ReactorB.KLSi(1,z)*ReactorB.Aspecificcata
+	*(-ReactorB.CL(1,z)+ReactorB.CS(1,z)) = 
+	ReactorB.rho_bed*sum(ReactorB.stoic(1,:)*ReactorB.r(:, z));
+	
+
+		for c in [2:NComp] do
+
+			"Diffusivity"
+# 			Wilke & Chang (1955)- CORRELATION OF DIFFUSION COEFFICIENTS IN DILUTE SOLUTIONS 
+			ReactorB.DLi(c,z)/'cm^2/s' = (7.4e-8*(((ReactorB.str(z+1).T)/(1*'K'))
+						*((ReactorB.vol_liquid(z)*ReactorB.rho_liquid(z+1))
+						/(1*'g/mol'))^0.5)/(ReactorB.miL(z)/(1*'cP')
+						*(vol_liquid_Tb(c)/(1*'m^3/mol')*1e6)^0.6));			
+			
+			"Schmidt number"
+			ReactorB.ScLi(c,z) = ReactorB.miL(z)/(ReactorB.rho_liquid(z+1)*ReactorB.DLi(c,z));
+			
+# 			Hirose et al. (1976)
+			if ReactorB.ReL(z) < 200 then
+				"Sherwood number"
+				ReactorB.ShLi(c,z)*ReactorB.phi_bed = 0.8*(ReactorB.ReL(z))^0.5 
+				*ReactorB.ScLi(c,z)^(1/3);
+			else
+				"Sherwood number"
+				ReactorB.ShLi(c,z)*ReactorB.phi_bed = 0.53*(ReactorB.ReL(z))^0.58 
+				*ReactorB.ScLi(c,z)^(1/3);
+			end
+			
+			"Mass transfer coefficient"
+			ReactorB.KLSi(c,z) = ReactorB.ShLi(c,z)*ReactorB.DLi(c,z)/ReactorB.Dcata;
+			
+			"Equation for mass transfer resistance on liquid-solid interface" 
+			ReactorB.KLSi(c,z)*ReactorB.Aspecificcata
+			*(-ReactorB.CL(c,z)+ReactorB.CS(c,z)) = 
+			ReactorB.rho_bed*sum(ReactorB.stoic(c,:)*ReactorB.r(:, z));
+
+		end	
+
+	"Pressure profile" 
+	ReactorB.str(z+1).P = ReactorB.str(z).P; # - ReactorB.deltaP(z);
+	
+	"Pressure drop"
+#	Benkrid et al.(1997) - Prediction of pressure drop and liquid saturation in trickle-bed 
+#	reactors operated in high interaction regimes
+	ReactorB.deltaP(z) = (1/ReactorB.phi_bed^3)*(ReactorB.L_total/ReactorB.NDisc)
+			*((ReactorB.uG(z)/ReactorB.uL(z)+1)
+			/(0.49*ReactorB.uG(z)/ReactorB.uL(z)+1))^3
+			*((150/36*(6*(1-ReactorB.phi_bed)/ReactorB.Dcata
+			+ 4/ReactorB.DTube)^2)*ReactorB.miL(z)*ReactorB.uL(z)
+			+ (1.75/6*(6*(1-ReactorB.phi_bed)/ReactorB.Dcata
+			+ 4/ReactorB.DTube))*ReactorB.rho_liquid(z+1)*ReactorB.uL(z)^2);
+
+	"Reaction k calculation"
+	ReactorB.k(:,z) = (ReactorB.k0(:)*'kg/(kg*h)'/ReactorB.rho_liquid(z+1))*
+								exp((-ReactorB.Ea(:)*'kJ/kmol'/(8.314*'J/(mol*K)'))*
+								(1/ReactorB.str(z+1).T - 1/(417*'K')));
+	"Reaction Rate"	
+#	1. Trans-1,3-Pentadiene + H2 = trans-2-Pentene 
+#	2. Trans-2-Pentene + H2 = n-Pentane
+#	3. 1,3-Cyclopentadiene + H2 = Cyclopentene 
+#	4. Cyclopentene + H2 = Cyclopentane
+#	5. 1-Methyl-1,3-Cyclopentadiene + H2 = Methylcyclopentene
+#	6. Methylcyclopentene + H2 = Methylcyclopentane 
+#	7. Styrene + H2 = Ethylbenzene
+#	8. Methylstyrene + H2 = 1-Methyl-3-Ethylbenzene
+#	9. Dyciclopentadiene + H2 = Dihydrodicyclopentadiene
+#	10. Methyldicyclopentadiene + H2 = Methyldihydrodicyclopentadiene (This reaction is ignored.)	
+	ReactorB.r(1,z) = ReactorB.k(1,z)*ReactorB.CS(8,z);
+	ReactorB.r(2,z) = ReactorB.k(2,z)*ReactorB.CS(7,z);
+	ReactorB.r(3,z) = ReactorB.k(3,z)*ReactorB.CS(15,z);
+	ReactorB.r(4,z) = ReactorB.k(4,z)*ReactorB.CS(10,z);
+	ReactorB.r(5,z) = ReactorB.k(5,z)*ReactorB.CS(11,z);
+	ReactorB.r(6,z) = ReactorB.k(6,z)*ReactorB.CS(14,z);
+	ReactorB.r(7,z) = ReactorB.k(7,z)*ReactorB.CS(21,z);
+	ReactorB.r(8,z) = ReactorB.k(8,z)*ReactorB.CS(25,z);
+	ReactorB.r(9,z) = ReactorB.k(9,z)*ReactorB.CS(27,z);
+	
+	"Mears criterion"
+#	Mears (1971) - Tests for Transport Limitations in Experimental Catalytic Reactors
+#	If this is less than 0.15, mass transfer from the gas phase to catalyst surface can be neglected 
+	ReactorB.omega(1,z) = (ReactorB.r(1,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(8,z)*ReactorB.CL(8,z));
+	ReactorB.omega(2,z) = (ReactorB.r(2,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(7,z)*ReactorB.CL(7,z));
+	ReactorB.omega(3,z) = (ReactorB.r(3,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(15,z)*ReactorB.CL(15,z));
+	ReactorB.omega(4,z) = (ReactorB.r(4,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(10,z)*ReactorB.CL(10,z));
+	ReactorB.omega(5,z) = (ReactorB.r(5,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(11,z)*ReactorB.CL(11,z));
+	ReactorB.omega(6,z) = (ReactorB.r(6,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(14,z)*ReactorB.CL(14,z));
+	ReactorB.omega(7,z) = (ReactorB.r(7,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(21,z)*ReactorB.CL(21,z));
+	ReactorB.omega(8,z) = (ReactorB.r(8,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(25,z)*ReactorB.CL(25,z));
+	ReactorB.omega(9,z) = (ReactorB.r(9,z)*ReactorB.rho_bed*(ReactorB.Dcata/2))/(ReactorB.KLSi(27,z)*ReactorB.CL(27,z));
+
+	"Lumped compounds calculation"
+	ReactorB.xparafins(z) = ReactorB.str(z+1).x(2) + ReactorB.str(z+1).x(3)
+							+ ReactorB.str(z+1).x(4) + ReactorB.str(z+1).x(5)
+							+ ReactorB.str(z+1).x(6) + ReactorB.str(z+1).x(9)
+							+ ReactorB.str(z+1).x(12) + ReactorB.str(z+1).x(13)
+							+ ReactorB.str(z+1).x(17) + ReactorB.str(z+1).x(19)
+							+ ReactorB.str(z+1).x(23);							
+	ReactorB.xolefins(z) = 	ReactorB.str(z+1).x(7) + ReactorB.str(z+1).x(10)
+							+ ReactorB.str(z+1).x(14) + ReactorB.str(z+1).z(26);
+	ReactorB.xdienes(z) = ReactorB.str(z+1).x(8) + ReactorB.str(z+1).x(11)
+							+ ReactorB.str(z+1).x(15) + ReactorB.str(z+1).x(27);
+	ReactorB.xaromatics(z)= ReactorB.str(z+1).x(16) + ReactorB.str(z+1).x(18)
+							+ ReactorB.str(z+1).x(22) + ReactorB.str(z+1).x(20)
+							+ ReactorB.str(z+1).x(24)+ ReactorB.str(z+1).x(21)
+							+ ReactorB.str(z+1).z(25);
+	ReactorB.CLparafins(z) = ReactorB.xparafins(z)
+							   /ReactorB.vol_liquid(z+1);	
+	ReactorB.CLolefins(z) = ReactorB.xolefins(z)
+							   /ReactorB.vol_liquid(z+1);		
+	ReactorB.CLdienes(z)  = ReactorB.xdienes(z)
+							   /ReactorB.vol_liquid(z+1);	
+	ReactorB.CLaromatics(z) = ReactorB.xaromatics(z)
+							   /ReactorB.vol_liquid(z+1);
+		
+	ReactorB.zC1C4(z) 			= ReactorB.str(z+1).z(2) + ReactorB.str(z+1).z(3) + ReactorB.str(z+1).z(4)
+								+ ReactorB.str(z+1).z(5);
+	ReactorB.zC6C9(z) 			= ReactorB.str(z+1).z(17) + ReactorB.str(z+1).z(19) + ReactorB.str(z+1).z(23)
+								+ ReactorB.str(z+1).z(13);
+	ReactorB.zBTX(z)  			= ReactorB.str(z+1).z(16) + ReactorB.str(z+1).z(18) + ReactorB.str(z+1).z(22);
+	ReactorB.zdienesC5C6(z) 	= ReactorB.str(z+1).z(8) + ReactorB.str(z+1).z(15) + ReactorB.str(z+1).z(11);
+	ReactorB.zolefinsC5C6(z)	= ReactorB.str(z+1).z(7) + ReactorB.str(z+1).z(10) + ReactorB.str(z+1).z(14);
+	ReactorB.zparafinsC5C6(z)   = ReactorB.str(z+1).z(6) + ReactorB.str(z+1).z(9) + ReactorB.str(z+1).z(12);
+	ReactorB.zstyrenes(z)		= ReactorB.str(z+1).z(21) + ReactorB.str(z+1).z(25);
+	ReactorB.zaromatics(z)		= ReactorB.str(z+1).z(20) + ReactorB.str(z+1).z(24);
+	ReactorB.zDCD(z)			= ReactorB.str(z+1).z(27);
+	ReactorB.zHDCD(z)			= ReactorB.str(z+1).z(26);
+	ReactorB.ztotal(z)			= ReactorB.zC1C4(z) + ReactorB.zC6C9(z) + ReactorB.zBTX(z) + ReactorB.zdienesC5C6(z)
+								+ ReactorB.zolefinsC5C6(z) + ReactorB.zparafinsC5C6(z)
+								+ ReactorB.zstyrenes(z) + ReactorB.zaromatics(z)
+								+ ReactorB.zDCD(z) + ReactorB.zHDCD(z) + ReactorB.str(z+1).z(1);	
+
+	"Heat of reaction"
+	ReactorB.Hr(:,z) = [1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
+	
+	"FLow regime validation"
+#	Ranade, Vivek V; Chaudhari, Raghunath V.; Gunjal, Prashant R. (2011) - Trickle Bed Reactors
+	ReactorB.lambda(z) = sqrt((ReactorB.rho_vapour(z)/ReactorB.rhoAir)
+						*(ReactorB.rho_liquid(z)/ReactorB.rhoWater));
+		
+	ReactorB.psi(z) = (ReactorB.sigmaWater/ReactorB.sigmaL(z))*((ReactorB.miL(z)
+						/ReactorB.miWater)*(ReactorB.rhoWater/ReactorB.rho_liquid(z))^2);
+	
+	ReactorB.Y(z) = ((ReactorB.rho_liquid(z)*ReactorB.uL(z))/(ReactorB.rho_vapour(z)
+					*ReactorB.uG(z)))*ReactorB.lambda(z)*ReactorB.psi(z);
+	ReactorB.X(z) = ReactorB.uG(z)*ReactorB.rho_vapour(z)/(ReactorB.lambda(z)*ReactorB.phi_bed);
+	
+	end
+	
+#=========================== OPTIONS ================================	
+
+	INITIAL
+	
+	for z in [2:ReactorA.NDisc+1] do
+		ReactorA.str(z).T = 320*'K';
+		ReactorA.str(z).z(1:NComp) = Feed.Composition(1:NComp);
+#		ReactorA.str(z).z(2:NComp) = 0.01;
+#		ReactorA.str(z).z(1) = 1-26*0.01;
+	end
+	
+	for z in [2:ReactorB.NDisc+1] do
+		ReactorB.str(z).T = 320*'K';
+		ReactorB.str(z).z(1:NComp) = Feed.Composition(1:NComp);
+#		ReactorB.str(z).z(2:NComp) = 0.01;
+#		ReactorB.str(z).z(1) = 1-26*0.01;
+	end
+
+	OPTIONS
+	Dynamic = true;
+	InitialFile = "Reactor Guess2";
+	TimeStep = 0.01;
+	TimeEnd = 0.6;
+	TimeUnit = 'h';
+
+	NLASolver(
+	RelativeAccuracy = 1e-1,
+	AbsoluteAccuracy = 1e-2,
+	Maxatbound = 30
+	);
+	DAESolver(
+	RelativeAccuracy = 1e-1,
+	AbsoluteAccuracy = 1e-2
+	,File="sundials"
+	);
+	
+#===========================GUESS LINES================================	
+	GuessFile = "Reactor Guess2";	
+	
+	GUESS
+		
+	Feed.T = 366.15 * 'K';
+	Feed.Outlet.T = 366.15 * 'K';
+	Feed.P = 5.03E6 * 'Pa';
+	Feed.Outlet.P = 5.03E6 * 'Pa';
+	Feed.Outlet.h = -17664.3094 * 'J/mol';
+	Feed.Outlet.v = 0.1676;
+	Feed.Composition = [
+	0.1663, 0.0226, 0.0028, 0.0057, 0.0036, 0.0523, 0.0528, 0.0256, 0.0149, 0.0215, 0.0166, 0.0267, 0.0133, 0.017, 0.0201, 0.2583, 0.0195, 0.1212, 0.0079, 0.0224, 0.0134, 0.0355, 0.0036, 0.0168, 0.0083, 0.0172, 0.014
+	];
+	Feed.Outlet.z = [
+	0.1663, 0.0226, 0.0028, 0.0057, 0.0036, 0.0523, 0.0528, 0.0256, 0.0149, 0.0215, 0.0166, 0.0267, 0.0133, 0.017, 0.0201, 0.2583, 0.0195, 0.1212, 0.0079, 0.0224, 0.0134, 0.0355, 0.0036, 0.0168, 0.0083, 0.0172, 0.014
+	];
+	Feed.x = [
+	0.0263, 0.0111, 0.0024, 0.0059, 0.0041, 0.061, 0.0617, 0.0301, 0.0176, 0.0254, 0.0197, 0.0317, 0.0158, 0.0202, 0.0236, 0.3079, 0.0233, 0.1452, 0.0095, 0.0268, 0.0161, 0.0426, 0.0043, 0.0202, 0.0099, 0.0206, 0.0169
+	];
+	Feed.y = [
+	0.8617, 0.0799, 0.0048, 0.0048, 0.0013, 0.0086, 0.0084, 0.0032, 0.0015, 0.0025, 9.41249E-4, 0.002, 7.81622E-4, 8.75734E-4, 0.0024, 0.0122, 6.54282E-4, 0.0024, 1.22985E-4, 2.10365E-4, 9.61223E-5, 2.59822E-4, 2.57352E-5, 6.75226E-5, 3.13569E-5, 6.34623E-5, 5.19334E-5
+	];
+	
+	Quench.F = 719.2228 * 'mol/s';
+	Quench.T = 366.15 * 'K';
+	Quench.Outlet.T = 366.15 * 'K';
+	Quench.P = 4.6E6 * 'Pa';
+	Quench.Outlet.P = 4.6E6 * 'Pa';
+	Quench.Outlet.h = -27435.2579 * 'J/mol';
+	Quench.Outlet.v = 0.0207;
+	Quench.Composition = [
+	0.0318, 0.035, 0.0029, 0.0049, 0.0033, 0.0622, 0.0868, 0.0027, 0.0297, 0.0353, 0.0021, 0.0307, 0.0162, 0.0254, 2.42408E-4, 0.3087, 0.0232, 0.1417, 0.0091, 0.0408, 8.46181E-4, 0.0415, 0.0045, 0.026, 0.0021, 0.031, 0.0013
+	];
+	Quench.Outlet.z = [
+	0.0318, 0.035, 0.0029, 0.0049, 0.0033, 0.0622, 0.0868, 0.0027, 0.0297, 0.0353, 0.0021, 0.0307, 0.0162, 0.0254, 2.42408E-4, 0.3087, 0.0232, 0.1417, 0.0091, 0.0408, 8.46181E-4, 0.0415, 0.0045, 0.026, 0.0021, 0.031, 0.0013
+	];
+	Quench.x = [
+	0.0164, 0.0311, 0.0029, 0.005, 0.0034, 0.0634, 0.0886, 0.0028, 0.0303, 0.036, 0.0021, 0.0313, 0.0165, 0.0259, 2.47334E-4, 0.3152, 0.0237, 0.1447, 0.0093, 0.0416, 8.64079E-4, 0.0424, 0.0046, 0.0265, 0.0021, 0.0317, 0.0014
+	];
+	Quench.y = [
+	0.7594, 0.2157, 0.0042, 0.0024, 5.53164E-4, 0.0037, 0.005, 1.22804E-4, 0.001, 0.0014, 3.42831E-5, 6.88241E-4, 2.82794E-4, 3.81663E-4, 9.85193E-6, 0.0041, 1.97957E-4, 6.60898E-4, 3.03596E-5, 7.63421E-5, 1.17661E-6, 5.6963E-5, 5.8684E-6, 1.76461E-5, 1.32532E-6, 2.03447E-5, 8.73844E-7
+	];
+	
+	Quench_zone.Outlet.F = 985.4004 * 'mol/s';
+	Quench_zone.Outlet.T = 366.15 * 'K';
+	Quench_zone.Outlet.P = 5.03E6 * 'Pa';
+	Quench_zone.Outlet.P = 5.03E6 * 'Pa';
+	Quench_zone.Outlet.h = -17664.3094 * 'J/mol';
+	Quench_zone.Outlet.v = 0.1676;
+	Quench_zone.Outlet.z = [
+	0.0318, 0.035, 0.0029, 0.0049, 0.0033, 0.0622, 0.0868, 0.0027, 0.0297, 0.0353, 0.0021, 0.0307, 0.0162, 0.0254, 2.42408E-4, 0.3087, 0.0232, 0.1417, 0.0091, 0.0408, 8.46181E-4, 0.0415, 0.0045, 0.026, 0.0021, 0.031, 0.0013
+	];
+	Quench_zone.Outlet.x = [
+	0.0164, 0.0311, 0.0029, 0.005, 0.0034, 0.0634, 0.0886, 0.0028, 0.0303, 0.036, 0.0021, 0.0313, 0.0165, 0.0259, 2.47334E-4, 0.3152, 0.0237, 0.1447, 0.0093, 0.0416, 8.64079E-4, 0.0424, 0.0046, 0.0265, 0.0021, 0.0317, 0.0014
+	];
+	Quench_zone.Outlet.y = [
+	0.7594, 0.2157, 0.0042, 0.0024, 5.53164E-4, 0.0037, 0.005, 1.22804E-4, 0.001, 0.0014, 3.42831E-5, 6.88241E-4, 2.82794E-4, 3.81663E-4, 9.85193E-6, 0.0041, 1.97957E-4, 6.60898E-4, 3.03596E-5, 7.63421E-5, 1.17661E-6, 5.6963E-5, 5.8684E-6, 1.76461E-5, 1.32532E-6, 2.03447E-5, 8.73844E-7
+	];
+	
+
+end

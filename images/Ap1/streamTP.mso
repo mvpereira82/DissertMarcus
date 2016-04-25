@@ -1,0 +1,55 @@
+
+using "types";
+
+Model stream
+	ATTRIBUTES
+	Pallete = false;
+	Brief = "General Material Stream";
+	Info =
+	"This is the basic building block for the EML models.
+	Every model should have input and output streams derived
+	from this model.";
+	
+	PARAMETERS
+	outer NComp as Integer (Brief = "Number of chemical components", Lower = 1); 
+
+	VARIABLES
+	F as flow_mol 			(Brief = "Stream Molar Flow Rate");
+	T as temperature 		(Brief = "Stream Temperature");
+	P as pressure 			(Brief = "Stream Pressure");
+	h as enth_mol 			(Brief = "Stream Enthalpy", Protected = true);
+	v as fraction			(Brief = "Vapourization fraction");
+	z(NComp) as fraction	(Brief = "Stream Molar Fraction");
+end	
+
+Model streamTP as stream
+	ATTRIBUTES
+	Brief = "Stream with built-in flash calculation";
+	Info = "
+	This model should be used when the vapourization fraction
+	is unknown.
+	
+	The built-in flash calculation will determine the stream
+	state as a function of the overall composition '''z''', the
+	pressure '''P''' and the enthalpy '''h'''.
+	
+	Additionally, the liquid composition '''x''' and the vapour
+	composition '''y''' are calculated.	
+	";
+	Pallete = false;
+	
+	PARAMETERS
+	outer PP as Plugin(Brief = "External Physical Properties", Type="PP");
+	
+	VARIABLES
+	x(NComp) as fraction	(Brief = "Liquid Molar Fraction",Hidden=true);
+	y(NComp) as fraction	(Brief = "Vapour Molar Fraction",Hidden=true);
+
+	EQUATIONS
+	"Flash Calculation"
+	[v, x, y] = PP.Flash(T, P, z);
+	
+	"Enthalpy"
+	h = (1-v)*PP.LiquidEnthalpy(T, P, x) + v*PP.VapourEnthalpy(T, P, y);
+	
+end

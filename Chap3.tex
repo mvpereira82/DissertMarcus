@@ -133,11 +133,11 @@ aqui apresentar, para efeito de comparação, as premissas utilizadas por
   catalisador foram desprezadas.
   \item A entalpia de dissolução de compostos na fase gás, bem como calor de
   vaposização de líquido foram desprezadas.
-  \item A região do quench é assumida como sendo um tambor flash, que atinge o
+  \item A região do quench é assumida como sendo um tambor \emph{flash}, que atinge o
   equilíbrio instantaneamente.
   \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
   corrente de quench.
-  \item O reator opera em regime de bolha.
+  \item O reator opera em regime de borbulhamento.
   \item Reações reversíveis e isomerizações foram negligenciadas.
   \item As reações ocorrem somente na interface líquido-sólido.
   \item A desativação catalítica foi desprezada.
@@ -174,7 +174,7 @@ Portanto, ficam aqui definidas as seguintes premissas:
   uniformes.
   \item A transferência de calor entre as fases e no interior das partículas de
   catalisador foram desprezadas.
-  \item A região do \emph{quench} é assumida como sendo um tambor flash, que
+  \item A região do \emph{quench} é assumida como sendo um tambor \emph{flash}, que
   atinge o equilíbrio instantaneamente.
   \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
   corrente de \emph{quench}.
@@ -218,8 +218,8 @@ catalítico foi subdivido em células em seu comprimento, i.e., discretizado em
 $N_{Disc}$ segumentos de leito. Cada seguimento de leito fica identificado por
 um índice ($z$). A figura \autoref{fig:celula} ilustra uma célula de leito de
 reator. Do ponto de vista reacional, cada célula representará um reator CSTR
-associado a um tambor de flash. Nesse tambor de flash, foi assumido que o
-equilíbrio termodinâmico é atingido instantaneamente.
+associado a um tambor de \emph{flash}. Nesse tambor de \emph{flash}, mantém-se a premissa
+de que o equilíbrio termodinâmico é atingido instantaneamente.
 
  \begin{figure}[htb]
  \centering \includegraphics[scale=0.75]{images/Chap3/celula.png}
@@ -230,7 +230,7 @@ equilíbrio termodinâmico é atingido instantaneamente.
 \nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
 \nomenclature[S]{$z$}{z-ésima célula de leito de reator}
 
-Para a região de quench, será usado um tambor de flash, onde o equilíbrio
+Para a região de quench, será usado um tambor de \emph{flash}, onde o equilíbrio
 termodinâmico é também atingido instantaneamente. A \autoref{fig:quench} ilustra
 a região de quench.
 
@@ -248,56 +248,280 @@ gasosa. As próximas seções apresentam o equacionamento construído
 
 Normalmente, para a modelagem de TBR heterogênea, os autores que utilizam
 modelos determinísticos contínuos fazem o balanço de massa para todas as
-fases separadamente, i.e., para cada fase é feito o balanço de massa por componente. 
-%\citeonline{Ancheyta2011} apresenta de uma forma didática as equações de balanço de massa de cada fase, considerando e explicando todos os efeitos (dispersões, reações, transferências de massa).
+fases separadamente, i.e., para cada fase é feito o balanço de massa por
+componente. %\citeonline{Ancheyta2011} apresenta de uma forma didática as
+% equações de balanço de massa de cada fase, considerando e explicando todos os
+% efeitos (dispersões, reações, transferências de massa).
 Cada pesquisador, portanto, de acordo com a premissa adotada, elimina muitos dos
 termos das equações de balanço, a fim simplificar o modelo e facilitar a
 solução. 
 
-Para este trabalho, diante das premissas adotadas, a equação de balanço de massa está mostrada na \autoref{eq:balancodemassa}. Nessa equação, foi considerado o termo de diferenciação da massa $M$ de cada componente $i$, em cada célula $z$, no tempo $t$. Dessa forma, é possível o estudo de respostas dinâmicas do processo.
+Para este trabalho, diante das premissas adotadas, a equação de balanço de massa
+está mostrada na \autoref{eq:balancodemassa}. Nessa equação, foi considerado o
+termo de diferenciação da massa $M$ de cada componente $i$, em cada célula $z$,
+no tempo $t$. Dessa forma, é possível o estudo de respostas dinâmicas do
+processo.
 
 \begin{equation}
-\dfrac{dM_{i,z}}{dt} \equiv F_zC_{i,z} - F_{z+1}C_{i,z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
-\nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
+\dfrac{dM_{i,z}}{dt} = F_zC_{i,z} - F_{z+1}C_{i,z+1} +
+\displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
 
-onde $M_{i,z}$ é a massa total do componente $i$ na célula $z$, $N_{Disc}$ é o número de células de um leito, $j$ é o número identificador de cada reação, $N_{reac}$ é o número total de reações, $\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $F$ é a vazão molar total e $W$ é a massa total de catalisador presente no leito.
+onde $M_{i,z}$ é a massa do componente $i$ na célula $z$, $j$ é o número
+identificador de cada reação, $N_{reac}$ é o número total de reações,
+$\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $r_{j,z}$ é taxa
+da reação $j$ na célula $z$, $F$ é a vazão molar total e $W$ é a massa total de
+catalisador presente no leito.
 
-Aqui vale uma observação antecipada do que está na \autoref{sec:termodinâmica}. Da forma como foi implementada em \emso, a corrente $F$ não só contém a informação de vazão molar total, mas tabém possui uma rotina de cálculo de flash. Esse artifício por si só inclui os efeitos de dissolução de hidrogênio no líquido e de vaporização.
+\nomenclature{$M$}{Massa \nomunit{kmol}}
+\nomenclature{$N_{reac}$}{Número total de reações}
+\nomenclature{$r$}{Taxa de reação \nomunit{kmol/(kg_{cat}.h)}}
+\nomenclature{$F$}{Vazão molar \nomunit{kmol/h}}
+\nomenclature{$W$}{Massa total de catalisador em um leito\nomunit{kg}}
+\nomenclature[S]{$j$}{j-ésima reação}
+\nomenclature[G]{$\nu$}{Coeficiente de reação}
 
-A \autoref{balancoenergia} mostra o balanço de energia de forma discretizada.
+A \autoref{eq:balancodeenergia} mostra o balanço de energia de forma
+discretizada.
 
 \begin{equation}
-\dfrac{dE_{z}}{dt} \equiv F_zh_{z} - F_{z+1}h_{z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
-\Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
+\dfrac{dE_{z}}{dt} = F_zh_{z} - F_{z+1}h_{z+1} +
+\displaystyle\sum_{j=1}^{N_{reac}} \Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodeenergia}
 \end{equation}
 
-onde $E_{z}$ é a energia total na célula $z$,  $h$ é a entalpia da corrente $F$ na célula $z$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
+onde $E_{z}$ é a energia na célula $z$,  $h$ é a entalpia da
+corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
-As \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}, somadas a corrente $F$ e seu cálculo de flaso, possibilitam determinar a fração vaporizada, composição das fases e respectivas propriedades físicas em cada célula $z$.
+\nomenclature{$E$}{Energia \nomunit{kJ}}
+\nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
+\nomenclature[G]{$\Delta H$}{Calor de reação \nomunit{kJ/kmol}}
 
-É importante notar ainda que, da forma como as \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}  estão escritas, massa e energia contidas em cada célula são grandezas extensivas. Isso tem implicações no balanço de espaço dentro de cada célula, como será mostrado na \autoref{sec:hidrodinamica}.
+As \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}, somadas a
+corrente $F$ e seu cálculo de ELV, permitem determinar a fração vaporizada,
+composição das fases e respectivas propriedades físicas em cada célula $z$.
+
+É importante notar ainda que, da forma como as \autoref{eq:balancodemassa} e
+\autoref{eq:balancodeenergia} estão escritas, massa e energia contidas em cada
+célula são grandezas extensivas. 
 
 \section{Cinética das Reações} \label{sec:cineticadasreacoes}
 
-As reações de hidrogenação e os parâmetros cinéticos foram os mesmos utilizados estão na \autoref{tab:composicao}.  Conforme já explicado, o sistema reacional foi considerado como sendo um conjunto de hidrogenações irreversíveis e independentes da concentração de hidrogênio. A constante de pseudo-primeira da reação $j$ na célula $z$, $k'_{j,z}$, está definido na \autoref{eq:constantepseudoprimeiraordem}.
+As reações de hidrogenação e os parâmetros cinéticos estão na
+\autoref{tab:composicao}. Conforme já explicado, o sistema reacional foi
+considerado como sendo um conjunto de hidrogenações irreversíveis e
+independentes da concentração de hidrogênio. A constante de pseudo-primeira
+ordem da reação $j$ na célula $z$, $k^{'}_{j,z}$, está definido na
+\autoref{eq:constantepseudoprimeiraordem}.
 
 \begin{equation}
-\dfrac{dE_{z}}{dt} \equiv F_zh_{z} - F_{z+1}h_{z+1} + \displaystyle\sum_{j=1}^{N_{reac}}
-\Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
+k^{'}_{j,z} = \eta_ik_jC^{*}_{H_2}
 \label{eq:constantepseudoprimeiraordem}
 \end{equation}
 
+sendo $\eta$ o fator de efetividade de intradifusão, $k$ a
+constante de taxa de reação instrínseca e $C^{*}_{H_2}$ a concentração de
+equilíbrio de hidrogênio em fase líquida.
+
+\nomenclature{$k^{'}$}{Constante de taxa de reação de pseudo-primeira
+ordem \nomunit{kg/(kg_{cat}.h)}}
+\nomenclature{$k$}{Constante de taxa de reação intrínseca
+\nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}}
+\nomenclature{$C^{*}_{H_2}$}{Concentração de equilíbrio de hidrogênio em fase
+líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
+\nomenclature[G]{$\eta$}{Fator de efetividade de intradifusão}
+
+Portanto, a taxa $r$ da reação $j$ na célula $z$ será dada pela
+\autoref{eq:taxareacao}:
+
+\begin{equation}
+r_{j,z} = k^{*}_{j,z}C^{S}_{i,z}
+\label{eq:taxareacao}
+\end{equation}
+
+onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
+sólida. Essa concentração é determinada pela transferência de massa
+líquido-sólido, \autoref{sec:interfaceliquidosolido}. Já $C^{L}$ é a
+concentração de qualquer espécie na fase líquida, $\rho_B$ é a densidade do
+leito catalítico (logo após o carregamento) e $k_{LS}$ é o coeficiente de
+transferência de massa.
+
+A constante da taxa de reação específica $k^{*}$ é calculada pela
+equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
+
+\begin{equation}
+k^{*}_{j,z} =
+\dfrac{k^{'}_{j,z}}{\rho^{L}_{z+1}}\exp[{\dfrac{-Ea_j}{R}(\dfrac{1}{T_{z+1}}
+- \dfrac{1}{T^{ref}})}]
+\label{eq:constantetaxareacaoespecifica}
+\end{equation}
+
+sendo $\rho^L$ a massa específica da fase líquida.
+
+Nota-se na equação \autoref{eq:constantetaxareacaoespecifica} que foram usadas
+temperatura e massa específica da corrente de saída da célula ($z+1$). Essa
+opção foi feita de forma abritrária, já que poderiam ser usadas as condições de
+entrada da mesma forma.
+
+\nomenclature{$k^{*}$}{constante da taxa de reação específica
+\nomunit{kmol/(m^3/(kg_{cat}.h)}}
+\nomenclature[R]{$L$}{Designação da fase líquida}
+\nomenclature[R]{$S$}{Designação da fase sólida}
+\nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
+\nomenclature{$\rho$}{Massa específica \nomunit{kg/m^3}}
+\nomenclature{$T$}{Temperatura \nomunit{K}}
+\nomenclature{$R$}{Constante universal dos gases ideais \nomunit{kJ/(kmol.K)}}
+\nomenclature{$Ea$}{Energia de ativação \nomunit{kJ/kmol}}
+\nomenclature[S]{$B$}{Leito catalítico}
+\nomenclature{$C$}{Concentração \nomunit{kmol/m^3}}
+
 \section{Termodinâmica} \label{sec:termodinamica}
 
-\section{Hidrodinâmica} \label{sec:hidrodinamica}
+A abordagem termodinâmica utilizada para prever o ELV foi a $\phi_i$ -
+$\phi_i$, a mesma utilizada por \citeonline{Rojas2014a}, com a EoS de SRK
+\cite{Soave1972}, e seguindo as recomendações e os parâmetros do trabalho feito
+por \citeonline{Zhou2006} para a solubilidade de hidrogênio em gasolina de
+pirólise. Esta recomendação consiste em utilizar a regra de mistura clássica de
+van der Waals \cite{VanderWaals1873}, com parâmetros de interação binária
+específicos para cada um dos pares de hidrogênio/hidrocarboneto. Para o caso da
+regra de mistura escolhida, os parâmetros cruzados $aij$ estão definidos pela
+\autoref{eq:parametroaij} \cite{Peng1976,Soave1972}.
 
+\begin{equation}
+a_{i,j} = \sqrt{a_ia_j}(1-\delta_{ij})
+\label{eq:parametroaij}
+\end{equation}
+
+Para a avaliação do ELV e demais propriedades, foi utilizado o pacote
+termodinâmico do simulador de processos iiSE (\emph{Industrial Integrated
+Simulation Environment}). Para tanto, foi criada uma simulação no iiSE, onde
+foram colocadas as composições da carga e da corrente de quench. O \emso, por
+sua vez, utiliza a simulação criada em iiSE para os cálculos termodinâmicos, e
+somente para este fim. 
+
+Para finalizar esta seção, vale esclarecer que, da forma como foi implementada
+no \emso, a corrente $F$ não só contém a informação de vazão e composição molar
+(total e por componente), mas tabém possui uma rotina de cálculo de
+\emph{flash}, utilizando como variáveis de entrada pressão, temperatura e
+composição global. Dessa forma, ficam incluídos os efeitos de dissolução de
+hidrogênio na fase líquida bem como a vaporização da fase líquida.
+
+\nomenclature[G]{$\phi$}{Coeficiente de fugacidade}
+\nomenclature[G]{$\delta_{ij}$}{Parâmetro de interação binária}
+\nomenclature[Z]{iiSE}{\emph{Industrial Integrated Simulation Environment}}
+\nomenclature{$a_{ij}$}{Parâmetro cruzado entre as espécies $i$ e $j$}
+\nomenclature{$a$}{Parâmetro de atração}
+
+\section{Interface Líquido-Sólido} \label{sec:interfaceliquidosolido}
+
+Como a transferência de massa gás-líquido foi desprezada, compete aqui
+apresentar as equações para determinar a concentração das espécies químicas
+na superfície das partículas de catalisador, $C^S$. 
+
+A primeira dessas equações é a \autoref{eq:transferenciamassa}, resultado de
+balanço de massa na interface líquido-sólido.
+
+\begin{equation}
+k_{LS,z}a_{LS}(C^L_{i,z}-C^S_{i,z}) = \rho_B \displaystyle\sum_{j=1}^{N_{reac}}
+\nu_{i,j}r_{j,z}
+\label{eq:transferenciamassa}
+\end{equation}
+
+O parâmetro $a_{LS}$ é a área específica do catalisador é função do diâmetro das
+partículas $d_p$ de catalisador e da porosidade do leito $\epsilon_B$:
+
+\begin{equation}
+a_{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
+\label{eq:aLS}
+\end{equation}
+
+Para determinar $k_{LS}$, foi utilizada a equação de \cite{Hirose1976} para o
+número de Sherwood dos componentes em fase líquida ($Sh^L$).
+
+\begin{equation}
+\epsilon_BSh^L_{i,z} = 0,8(Re^L_z)^{0,5}(Sc^L_{i,z})^{1/3} \qquad (Re<200)
+\label{eq:Sh1}
+\end{equation}
+\begin{equation}
+\epsilon_BSh^L_{i,z} = 0,53(Re^L_z)^{0,58}(Sc^L_{i,z})^{1/3} \qquad (Re>200)
+\label{eq:Sh2}
+\end{equation}
+
+\begin{equation}
+k_{LS,z} = \dfrac{Sh^L_{i,z}D^L_{i}}{d_p}
+\label{eq:kLS}
+\end{equation}
+ 
+\begin{equation} 
+Sc^L_{i,z} = \dfrac{\mu^L_{z}}{\rho^L_{z+1}D^L_{i,z}}
+\label{eq:Sc}
+\end{equation}
+
+onde $\epsilon_B$ é a porosidade do leito catalítico, $Re^L$ é o número de
+Reynolds da fase líquida, $Sc$ é o número de Schmidt, $D^L$ é a difusão
+efetiva dos compostos na fase líquida e $\mu^L$ é viscosidade da fase líquida.
+
+\section{Hidrodinâmica} \label{sec:hidrodinamica3}
+
+Essa seção tem por objetivo apresentar as principais equações utilizadas no
+cálculo de parâmetros hidrodinâmicos.
+
+Para o cálculo da perda de carga, \citeonline{Rojas2014a} utilizaram uma equação
+do tipo Ergun \apud{Ergun1952}{Holub1993}, com correções e constantes propostas
+por \citeonline{Benkrid1997}. Essa equação é válida para regimes de alta
+interação (borbulhamento, conforme a premissa adotada). Para o presente
+trabalho, portanto, adotou-se a mesma equação, que é mostrada a seguir na forma
+discretizada:
+
+\begin{equation}
+\dfrac{\DeltaP_{z}}{L/N_{Disc}} =
+\dfrac{1}{\epsilon_B^{3}}\left(\dfrac{u^G_z/u^L_z+1}{0,49u^G/u^L+1})^3
+[\dfrac{150}{36}(\dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R})^2
+\mu^L_zu^L_z + \dfrac{1.75}{6} (\dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R})
+\rho^L_{z+1}(u^L{z})^2)]
+\label{deltaP}
+\end{equation}
+
+$\left(\right)$
 incluir cálculo de porosidade, balanço de "espaço", que está no livro do
 Ancheyta, pg 131/132)
 
 \section{Implementação em \emso} \label{sec:implementacao}
+
+Citar o apendice ou a seção de implementação, onde está o código
+que descreve o \emph{flash}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
