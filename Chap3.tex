@@ -7,6 +7,13 @@
 Como já mencionado no \autoref{chap:introducao}, o processo modelado
 neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}. 
 
+\subsection{Catalisador} \label{sec:catalisador}
+
+O catalisador considerado na modelagem contém Pd suportado em alumina ($Al_2O_3$), de formato esférico. Além desses dados, foi fornecida a informação de volume total de poros $Vt_{poros}$ = $5,5.10^{-4}$ $m^3/kg$. O dado de volume total de poros não é suficiente por si só para calcular a porosidade dos leitos, como é apresentado na \autoref{sec:propriedadesleitoscataliticos}. Assim, adotou-se a massa específica do $Al_2O_3$ puro (\rho_{Al_2O_3} = $3940 kg/m^3$) para a massa específica da parte sólida das partículas de catalisador.
+
+\nomenclature {$Vt_{poros}$}{Volume total de poros \nomunit{m^3/kg}}
+\nomenclature {$\rho_{Al_2O_3}$}{Massa específica do óxido de alumínio \nomunit{kg/m^3}}
+
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
 
 O reator é composto de dois leitos catalíticos, carregados de forma densa
@@ -16,9 +23,8 @@ hidrogênio e parte do produto hidrogenado reciclado. Este último é parte da
 corrente líquida oriunda de um vaso de separação, cuja carga é a corrente de
 saída do reator. Parte da corrente líquida do vaso de separação também
 funciona como corrente de resfriamento, que é injetada entre os dois leitos
-catalíticos para controle de temperatura. Um diagrama simplificado que ilustra o
-reator está na \autoref{fig:esquemareator}. A \autoref{tab:dadosreator}
-apresenta as dimensões do reator.
+catalíticos para controle de temperatura (\emph{quench}). Um diagrama simplificado que ilustra o
+reator está na \autoref{fig:esquemareator}. 
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.75]{images/Chap3/esquemareator.png}
@@ -26,6 +32,7 @@ apresenta as dimensões do reator.
 \label{fig:esquemareator}
 \end{figure}
 
+A \autoref{tab:dadosreator} apresenta as dimensões do reator.
 
 \begin{table}[!htb]
 \begin{center}
@@ -36,11 +43,11 @@ apresenta as dimensões do reator.
 {Dimensão} & {Valor}
 \\
 \hline
-{Diâmetro do Reator ($D_R$)} & $3,047$ m \\
-{Leito Solto 1 ($L_{sl1}$)} & $0,13$ m \\
-{Leito Denso 1 ($L_{dl1}$)} & $2,97$ m \\
-{Leito Solto 2 ($L_{sl2}$)} & $0,38$ m \\
-{Leito Denso 2 ($L_{dl2}$)} & $2,97$ m \\
+{Diâmetro do Reator ($D_R$)} & & & $3,047$ m \\
+{Comprimento do Leito Solto 1 ($L_{sl1}$)} & $0,13$ m \\
+{Comprimento do Leito Denso 1 ($L_{dl1}$)} & $2,97$ m \\
+{Comprimento do Leito Solto 2 ($L_{sl2}$)} & $0,38$ m \\
+{Comprimento Leito Denso 2 ($L_{dl2}$)} & $2,97$ m \\
 {Zona de Quench ($L_{q}$)} & $1,55$ m \\
 \bottomrule
 \end{tabular}
@@ -52,6 +59,34 @@ apresenta as dimensões do reator.
 \nomenclature{$L_{sl2}$}{Comprimento do leito solto 2 \nomunit{m}}
 \nomenclature{$L_{dl2}$}{Comprimento do leito denso 2 \nomunit{m}}
 \nomenclature{$L_{q}$}{Comprimento da zona de quench \nomunit{m}}
+
+\subsection{Porosidade dos Leitos Catalíticos} \label{sec:propriedadesleitoscataliticos}
+
+Antes de determinar a porosidade dos leitos catalíticos, é preciso avaliar a massa específica das partículas (\rho_{p}), que inclui o volume vazio interno delas. 
+
+
+
+Assim, com os dados apresentados na \autoref{sec:catalisador} aplicados na \autoref{eq:}, e também os valores de massa específica dos leitos \emph{bulk} publicados por \citelonline{Rojas2014a}, tem-se os valores apresentados na \autoref{tab:dadosdosleitos}. 
+
+\begin{table}[!htb]
+\begin{center}
+\caption{Dados dos Leitos Catalíticos \cite{Rojas2014a}.}
+\label{tab:dadosdosleitos}
+\small
+\begin{tabular}{ccccc}
+{} & {Densidade \emph{bulk} ($kg/m^3$} & {Volume total ({m^3})} & {Valor} & {Valor} & {Valor} 
+\\
+\hline
+Densidade bulk (kg/m³)	Alturas dos leitos (m)	Volume (m³)	Massa (kg)	rho app cata	porosidade leito	rho cata '
+SL 1	684	0,13	0,9	648	1244	45,02%	1244,079571
+Bed 1	814	2,97	21,7	17629	1244	34,57%	1244,079571
+SL 2	702	0,38	2,8	1945	1244	43,57%	1244,079571
+Bed 2	813	3,43	25,0	20334	1244	34,65%	1244,079571
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
 
 \subsection{Composição das Correntes} \label{sec:composicaocorrentes}
 
@@ -483,7 +518,8 @@ discretizada:
 \label{deltaP}
 \end{equation}
 
-$\left(\right)$
+
+
 incluir cálculo de porosidade, balanço de "espaço", que está no livro do
 Ancheyta, pg 131/132)
 
