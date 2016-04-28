@@ -7,13 +7,6 @@
 Como já mencionado no \autoref{chap:introducao}, o processo modelado
 neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}. 
 
-\subsection{Catalisador} \label{sec:catalisador}
-
-O catalisador considerado na modelagem contém Pd suportado em alumina ($Al_2O_3$), de formato esférico. Além desses dados, foi fornecida a informação de volume total de poros $Vt_{poros}$ = $5,5.10^{-4}$ $m^3/kg$. O dado de volume total de poros não é suficiente por si só para calcular a porosidade dos leitos, como é apresentado na \autoref{sec:propriedadesleitoscataliticos}. Assim, adotou-se a massa específica do $Al_2O_3$ puro (\rho_{Al_2O_3} = $3940 kg/m^3$) para a massa específica da parte sólida das partículas de catalisador.
-
-\nomenclature {$Vt_{poros}$}{Volume total de poros \nomunit{m^3/kg}}
-\nomenclature {$\rho_{Al_2O_3}$}{Massa específica do óxido de alumínio \nomunit{kg/m^3}}
-
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
 
 O reator é composto de dois leitos catalíticos, carregados de forma densa
@@ -23,8 +16,8 @@ hidrogênio e parte do produto hidrogenado reciclado. Este último é parte da
 corrente líquida oriunda de um vaso de separação, cuja carga é a corrente de
 saída do reator. Parte da corrente líquida do vaso de separação também
 funciona como corrente de resfriamento, que é injetada entre os dois leitos
-catalíticos para controle de temperatura (\emph{quench}). Um diagrama simplificado que ilustra o
-reator está na \autoref{fig:esquemareator}. 
+catalíticos para controle de temperatura (\emph{quench}). Um diagrama
+simplificado que ilustra o reator está na \autoref{fig:esquemareator}. 
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.75]{images/Chap3/esquemareator.png}
@@ -39,16 +32,16 @@ A \autoref{tab:dadosreator} apresenta as dimensões do reator.
 \caption{Dados do Reator \cite{Rojas2014a}.}
 \label{tab:dadosreator}
 \small
-\begin{tabular}{cc}
-{Dimensão} & {Valor}
+\begin{tabular}{lcc}
+{Dimensão} & {Variável} & {Valor}
 \\
 \hline
-{Diâmetro do Reator ($D_R$)} & $3,047$ m \\
-{Comprimento do Leito Solto 1 ($L_{sl1}$)} & $0,13$ m \\
-{Comprimento do Leito Denso 1 ($L_{dl1}$)} & $2,97$ m \\
-{Comprimento do Leito Solto 2 ($L_{sl2}$)} & $0,38$ m \\
-{Comprimento Leito Denso 2 ($L_{dl2}$)} & $2,97$ m \\
-{Zona de Quench ($L_{q}$)} & $1,55$ m \\
+{Diâmetro do Reator} & {$D_R$} & $3,047$ m \\
+{Comprimento do Leito Solto 1} & {$L_{sl1}$} & $0,13$ m \\
+{Comprimento do Leito Denso 1} & {$L_{dl1}$} & $2,97$ m \\
+{Comprimento do Leito Solto 2} & {$L_{sl2}$} & $0,38$ m \\
+{Comprimento Leito Denso 2} & {$L_{dl2}$} & $2,97$ m \\
+{Zona de Quench} & {$L_{Q}$} & $1,55$ m \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -58,29 +51,51 @@ A \autoref{tab:dadosreator} apresenta as dimensões do reator.
 \nomenclature{$L_{dl1}$}{Comprimento do leito denso 1 \nomunit{m}}
 \nomenclature{$L_{sl2}$}{Comprimento do leito solto 2 \nomunit{m}}
 \nomenclature{$L_{dl2}$}{Comprimento do leito denso 2 \nomunit{m}}
-\nomenclature{$L_{q}$}{Comprimento da zona de quench \nomunit{m}}
+\nomenclature{$L_{Q}$}{Comprimento da zona de quench \nomunit{m}}
 
-\subsection{Porosidade dos Leitos Catalíticos} \label{sec:propriedadesleitoscataliticos}
+\subsection{Catalisador} \label{sec:catalisador}
 
-Antes de determinar a porosidade dos leitos catalíticos, é preciso avaliar a massa específica das partículas (\rho_{p}). Este parâmetro, calculado pela \autoref{eq:rhoparticula}, é estimado em $1244 kg/m^3$. 
+O catalisador considerado na modelagem contém Pd suportado em alumina
+($Al_2O_3$), de formato esférico. Além desses dados, foi fornecida a informação
+de volume total de poros $Vt_{poros}$ = $5,5.10^{-4}$ $m^3/kg$. O dado de volume
+total de poros não é suficiente por si só para calcular a porosidade dos leitos,
+como é apresentado na \autoref{sec:propriedadesleitoscataliticos}. Assim,
+adotou-se a massa específica do $Al_2O_3$ puro ($\rho_{Al_2O_3}$ = $3940$
+$kg/m^3$) para a massa específica da parte sólida das partículas de catalisador.
+
+\nomenclature{$Vt_{poros}$}{Volume total de poros \nomunit{m^3/kg}}
+\nomenclature{$\rho_{Al_2O_3}$}{Massa específica do óxido de alumínio
+\nomunit{kg/m^3}}
+
+\subsection{Porosidade dos Leitos Catalíticos}
+\label{sec:propriedadesleitoscataliticos}
+
+Antes de determinar a porosidade dos leitos catalíticos, é preciso avaliar a
+massa específica das partículas ($\rho_{p}$). Este parâmetro, calculado pela
+\autoref{eq:rhoparticula}, é estimado em $1244 kg/m^3$.
 
 \begin{equation}
 \rho_{p} = \dfrac{1}{Vt_{poros}+\dfrac{1}{\rho_{Al_2O_3}}}
 \label{eq:rhoparticula}
 \end{equation}
 
-\nomenclature {$\rho_{p}$}{Massa específica da partícula de catalisador \nomunit{kg/m^3}}
+\nomenclature{$\rho_{p}$}{Massa específica da partícula de catalisador
+\nomunit{kg/m^3}}
 
-A porosidade de cada um dos leitos pode ser calculada, portanto, pela \autoref{eq:porosidade}, como segue:
+A porosidade de cada um dos leitos pode ser calculada, portanto, pela
+\autoref{eq:porosidade}, como segue:
 
 \begin{equation}
 \epsilon_{B} = \dfrac{V_{l}-\dfrac{\rho_{B}V_l}{\rho_{Al_2O_3}}}{V_l}
-\label{eq:rhoparticula}
+\label{eq:porosidade}
 \end{equation}
 
 sendo $V_l$ o volume do leito e $\epsilon_B$ a porosidade do leito.
 
-Utilizando os dados apresentados na \autoref{sec:catalisador}, e utilizando os valores de massa específica \emph{bulk} dos leitos (\rho_{B}), publicados por \citelonline{Rojas2014a}, chega-se nos valores mostrados na \autoref{tab:dadosdosleitos}. 
+Utilizando os dados apresentados na \autoref{sec:catalisador}, e utilizando os
+valores de massa específica \emph{bulk} dos leitos ($\rho_{B}$), publicados por
+\citeonline{Rojas2014a}, chega-se nos valores mostrados na
+\autoref{tab:dadosdosleitos}.
 
 \begin{table}[!htb]
 \begin{center}
@@ -88,11 +103,11 @@ Utilizando os dados apresentados na \autoref{sec:catalisador}, e utilizando os v
 \label{tab:dadosdosleitos}
 \small
 \begin{tabular}{ccc}
-{} & {Densidade \emph{bulk} ({kg/m^3})} & {Porosidade} 
+{ - } & {Densidade \emph{bulk} ($kg/m^3$)} & {Porosidade} 
 \\
 \hline
-Leito 1	814	0,346
-Leito 2	813	0,347
+{Leito 1} & $814$ & $0,346$ \\
+{Leito 2} & $813$ & $0,347$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -103,7 +118,7 @@ Leito 2	813	0,347
 A composição das correntes de entrada e de quench estão na
 \autoref{tab:composicao}. Para o presente trabalho, utilizou-se
 apenas os valores da primeira corrida publicados por
-\citeonline{Rojas2014a}, já que para essa corrida foram publicados
+\citeonline{Rojas2014a}, já que para este caso foram publicados
 também dados industriais.
 
 As propriedades termodinâmicas dos compostos $28$ e $29$ não foram
@@ -158,23 +173,25 @@ Onde $i$ é o número identificador do composto na simulação a ser apresentada
 
 \subsection{Condições de operação} \label{sec:condicaocomposicaocorrentes}
 
-As condições de operação consideradas inicialmente estão na \autoref{tab:condicoesoperacao}. Na \autoref{sec:resultados} há uma discussão sobre a validade de algumas dessas variáveis aqui apresentadas.
+As condições de operação consideradas inicialmente estão na
+\autoref{tab:condicoesoperacao}. Na \autoref{sec:resultados} há uma discussão
+sobre a validade de algumas dessas variáveis aqui apresentadas.
 
 \begin{table}[!htb]
 \begin{center}
 \caption{Dados do Reator \cite{Rojas2014a}.}
 \label{tab:condicoesoperacao}
 \small
-\begin{tabular}{cc}
-{Dimensão} & {Valor}
+\begin{tabular}{lcc}
+{Dimensão} & {Variável Discretizada} & {Valor}
 \\
 \hline
-{Pressão de entrada ($P_{z}$)} & $5,03$ MPa \\
-{Temperatura de entrada ($T_{z}$)} & $366,15$ K \\
-{Vazão mássica de entrada ($F_{w,z}$)} & $2,477.10^5}$ kg/h \\
-{Pressão da corrente de \emph{quench} ($P_{q}$)} & $4.6$ MPa \\
-{Temperatura da corrente de \emph{quench} ($T_{q}$)} & $326,15$ K \\
-{Vazão mássica da corrente de quench ($F_{w,q}$)} & $2,079.10^4$ kg/h \\
+{Pressão de entrada} & {$P_{1}$} & $5,03$ MPa \\
+{Temperatura de entrada} & {$T_{1}$} & $366,15$ K \\
+{Vazão mássica de entrada} & {$F_{w,1}$} & $2,477.10^5$ kg/h \\
+{Pressão da corrente de \emph{quench}} & {$P_{Q}$} & $4.6$ MPa \\
+{Temperatura da corrente de \emph{quench}} & {$T_{Q}$} & $326,15$ K \\
+{Vazão mássica da corrente de quench} & {$F_{w,Q}$} & $2,079.10^4$ kg/h \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -420,9 +437,9 @@ A constante da taxa de reação específica $k^{*}$ é calculada pela
 equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
 
 \begin{equation}
-k^{*}_{j,z} =
-\dfrac{k^{'}_{j,z}}{\rho^{L}_{z+1}}\exp[{\dfrac{-Ea_j}{R}(\dfrac{1}{T_{z+1}}
-- \dfrac{1}{T^{ref}})}]
+k^{*}_{j,z} = \dfrac{k^{'}_{j,z}} {\rho^{L}_{z+1}} \exp
+\left[{\dfrac{-Ea_j}{R} \left (\dfrac{1}{T_{z+1}} -
+\dfrac{1}{T^{ref}} \right )}\right]
 \label{eq:constantetaxareacaoespecifica}
 \end{equation}
 
@@ -505,8 +522,8 @@ a_{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 \label{eq:aLS}
 \end{equation}
 
-Para determinar $k_{LS}$, foi utilizada a equação de \cite{Hirose1976} para o
-número de Sherwood dos componentes em fase líquida ($Sh^L$).
+Para determinar $k_{LS}$, foi utilizada a equação de \citeonline{Hirose1976}
+para o número de Sherwood dos componentes em fase líquida ($Sh^L$).
 
 \begin{equation}
 \epsilon_BSh^L_{i,z} = 0,8(Re^L_z)^{0,5}(Sc^L_{i,z})^{1/3} \qquad (Re<200)
@@ -521,15 +538,15 @@ número de Sherwood dos componentes em fase líquida ($Sh^L$).
 k_{LS,z} = \dfrac{Sh^L_{i,z}D^L_{i}}{d_p}
 \label{eq:kLS}
 \end{equation}
- 
+
 \begin{equation} 
 Sc^L_{i,z} = \dfrac{\mu^L_{z}}{\rho^L_{z+1}D^L_{i,z}}
 \label{eq:Sc}
 \end{equation}
 
-onde $\epsilon_B$ é a porosidade do leito catalítico, $Re^L$ é o número de
-Reynolds da fase líquida, $Sc$ é o número de Schmidt, $D^L$ é a difusão
-efetiva dos compostos na fase líquida e $\mu^L$ é viscosidade da fase líquida.
+onde $Re^L$ é o número de Reynolds da fase líquida, $Sc$ é o número de Schmidt,
+$D^L$ é a difusão efetiva dos compostos na fase líquida e $\mu^L$ é viscosidade
+da fase líquida.
 
 \section{Hidrodinâmica} \label{sec:hidrodinamica3}
 
@@ -544,37 +561,53 @@ trabalho, portanto, adotou-se a mesma equação, que é mostrada a seguir na for
 discretizada:
 
 \begin{equation}
-\dfrac{\DeltaP_{z}}{L/N_{Disc}} =
-\dfrac{1}{\epsilon_B^{3}}\left(\dfrac{u^G_z/u^L_z+1}{0,49u^G/u^L+1})^3
-[\dfrac{150}{36}(\dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R})^2
-\mu^L_zu^L_z + \dfrac{1.75}{6} (\dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R})
-\rho^L_{z+1}(u^L{z})^2)]
-\label{deltaP}
+\dfrac{\Delta P_{z}}{L/N_{Disc}} = 
+\dfrac{1}{\epsilon_B^{3}} \left ( \dfrac{u^G_z/u^L_z+1}
+{0,49u^G/u^L+1} \right)^3 \left [ \dfrac{150}{36} \left (
+\dfrac{6(1 - \epsilon_B)}{d_p} + \dfrac{4}{D_R} \rigth)^{2} \mu^L_z u^L_z +
+\dfrac{1.75}{6} \left ( \dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R} \right )
+\rho^L_{z+1}(u^L{z})^2) \right] 
+\label{eq:deltaP}
 \end{equation}
 
-Visto que a pressão de operação do reator é muito acima da pressão atmosféricas, a equação usada para estimar a retenção de líquido \epsilon_L foi a proposta por \citeonline{Larachi1991}, que, \citeonline{Ranade2011}, é uma dentre outras equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
+onde $u$ é a velocidade da fase.
+
+\nomenclature{u}{Velocidade da fase \nomunit{m/s}}
+
+Visto que a pressão de operação do reator é muito acima da pressão atmosféricas,
+a equação usada para estimar a retenção de líquido $\epsilon_L$ foi a proposta
+por \citeonline{Larachi1991}, que, \citeonline{Ranade2011}, é uma dentre outras
+equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
 
 \begin{equation}
-log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B}) = -\dfrac{1,22We_{L,z}^{0,15}}{Re_{L,z}^{0,20}X_{G,z}^{0,15}}
+log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B} \right) =
+-\dfrac{1,22(We_{z}^L)^{0,15}}{(Re_{z}^L)^{0,20}(X_{z}^G)^{0,15}}
 \label{eq:epsilonL}
 \end{equation}
 
-onde $We$ é o número de Webber e $X$ é o número de Lockhart-Martinelli \cite{Lockhart1949}. Ambos são definidos como segue:
+onde $We$ é o número de Webber e $X^G$ é o número de Lockhart-Martinelli
+\cite{Lockhart1949} para a fase gás. Ambos são definidos a seguir.
 
 \begin{equation}
-We_{L,z} = \dfrac{u_{L,z}^2d_p\rho_{L,z}}{\sigma_{L,z}}
+We_{z}^L = \dfrac{(u_{z}^L)^2d_p\rho_{z}^L}{\sigma_{z}^L}
 \label{eq:webber}
 \end{equation}
 
 \begin{equation}
-We_{L,z} = \dfrac{u_{L,z}^2d_p\rho_{L,z}}{\sigma_{L,z}}
+X_{z}^G = \dfrac{u_{z}^G}{u_z^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
 \label{eq:X}
 \end{equation}
+
+sendo que $\sigma^L$ é a tensão superficial da fase líquida.
+
+\nomenclature{$\sigma$}{Tensão superficial \nomunit{N/m}}
 
 incluir cálculo de porosidade, balanço de "espaço", que está no livro do
 Ancheyta, pg 131/132)
 
 \section{Implementação em \emso} \label{sec:implementacao}
+
+Arrumar nomenclatura desde a seção hidrodinâmica.
 
 Citar o apendice ou a seção de implementação, onde está o código
 que descreve o \emph{flash}.

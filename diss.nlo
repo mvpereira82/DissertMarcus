@@ -19,36 +19,41 @@
 \nomenclatureentry{a$L_{dl1}$@[{$L_{dl1}$}]\begingroup Comprimento do leito denso 1 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{sl2}$@[{$L_{sl2}$}]\begingroup Comprimento do leito solto 2 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
 \nomenclatureentry{a$L_{dl2}$@[{$L_{dl2}$}]\begingroup Comprimento do leito denso 2 \nomunit{m}\nomeqref {3.0}|nompageref}{21}
-\nomenclatureentry{a$L_{q}$@[{$L_{q}$}]\begingroup Comprimento da zona de quench \nomunit{m}\nomeqref {3.0}|nompageref}{21}
-\nomenclatureentry{S$i$@[{$i$}]\begingroup i-ésimo componente\nomeqref {3.0}|nompageref}{22}
-\nomenclatureentry{a$N_{Disc}$@[{$N_{Disc}$}]\begingroup Número de células de um leito do reator\nomeqref {3.0}|nompageref}{26}
-\nomenclatureentry{S$z$@[{$z$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.0}|nompageref}{26}
-\nomenclatureentry{a$M$@[{$M$}]\begingroup Massa \nomunit{kmol}\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{a$N_{reac}$@[{$N_{reac}$}]\begingroup Número total de reações\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{a$r$@[{$r$}]\begingroup Taxa de reação \nomunit{kmol/(kg_{cat}.h)}\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{a$F$@[{$F$}]\begingroup Vazão molar \nomunit{kmol/h}\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{a$W$@[{$W$}]\begingroup Massa total de catalisador em um leito\nomunit{kg}\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{S$j$@[{$j$}]\begingroup j-ésima reação\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{G$\nu$@[{$\nu$}]\begingroup Coeficiente de reação\nomeqref {3.1}|nompageref}{28}
-\nomenclatureentry{a$E$@[{$E$}]\begingroup Energia \nomunit{kJ}\nomeqref {3.2}|nompageref}{28}
-\nomenclatureentry{a$h$@[{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.2}|nompageref}{28}
-\nomenclatureentry{G$\Delta H$@[{$\Delta H$}]\begingroup Calor de reação \nomunit{kJ/kmol}\nomeqref {3.2}|nompageref}{28}
-\nomenclatureentry{a$k^{'}$@[{$k^{'}$}]\begingroup Constante de taxa de reação de pseudo-primeira ordem \nomunit{kg/(kg_{cat}.h)}\nomeqref {3.3}|nompageref}{29}
-\nomenclatureentry{a$k$@[{$k$}]\begingroup Constante de taxa de reação intrínseca \nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}\nomeqref {3.3}|nompageref}{29}
-\nomenclatureentry{a$C^{*}_{H_2}$@[{$C^{*}_{H_2}$}]\begingroup Concentração de equilíbrio de hidrogênio em fase líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}\nomeqref {3.3}|nompageref}{29}
-\nomenclatureentry{G$\eta$@[{$\eta$}]\begingroup Fator de efetividade de intradifusão\nomeqref {3.3}|nompageref}{29}
-\nomenclatureentry{a$k^{*}$@[{$k^{*}$}]\begingroup constante da taxa de reação específica \nomunit{kmol/(m^3/(kg_{cat}.h)}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{R$L$@[{$L$}]\begingroup Designação da fase líquida\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{R$S$@[{$S$}]\begingroup Designação da fase sólida\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$T^{ref}$@[{$T^{ref}$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Massa específica \nomunit{kg/m^3}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$T$@[{$T$}]\begingroup Temperatura \nomunit{K}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$R$@[{$R$}]\begingroup Constante universal dos gases ideais \nomunit{kJ/(kmol.K)}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$Ea$@[{$Ea$}]\begingroup Energia de ativação \nomunit{kJ/kmol}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{S$B$@[{$B$}]\begingroup Leito catalítico\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{a$C$@[{$C$}]\begingroup Concentração \nomunit{kmol/m^3}\nomeqref {3.5}|nompageref}{29}
-\nomenclatureentry{G$\phi$@[{$\phi$}]\begingroup Coeficiente de fugacidade\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{G$\delta_{ij}$@[{$\delta_{ij}$}]\begingroup Parâmetro de interação binária\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{ZiiSE@[{iiSE}]\begingroup \emph{Industrial Integrated Simulation Environment}\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{a$a_{ij}$@[{$a_{ij}$}]\begingroup Parâmetro cruzado entre as espécies $i$ e $j$\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{a$a$@[{$a$}]\begingroup Parâmetro de atração\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$L_{Q}$@[{$L_{Q}$}]\begingroup Comprimento da zona de quench \nomunit{m}\nomeqref {3.0}|nompageref}{21}
+\nomenclatureentry{a$Vt_{poros}$@[{$Vt_{poros}$}]\begingroup Volume total de poros \nomunit{m^3/kg}\nomeqref {3.0}|nompageref}{22}
+\nomenclatureentry{a$\rho_{Al_2O_3}$@[{$\rho_{Al_2O_3}$}]\begingroup Massa específica do óxido de alumínio \nomunit{kg/m^3}\nomeqref {3.0}|nompageref}{22}
+\nomenclatureentry{a$\rho_{p}$@[{$\rho_{p}$}]\begingroup Massa específica da partícula de catalisador \nomunit{kg/m^3}\nomeqref {3.1}|nompageref}{23}
+\nomenclatureentry{S$i$@[{$i$}]\begingroup i-ésimo componente\nomeqref {3.2}|nompageref}{24}
+\nomenclatureentry{a$N_{Disc}$@[{$N_{Disc}$}]\begingroup Número de células de um leito do reator\nomeqref {3.2}|nompageref}{28}
+\nomenclatureentry{S$z$@[{$z$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.2}|nompageref}{28}
+\nomenclatureentry{a$M$@[{$M$}]\begingroup Massa \nomunit{kmol}\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{a$N_{reac}$@[{$N_{reac}$}]\begingroup Número total de reações\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{a$r$@[{$r$}]\begingroup Taxa de reação \nomunit{kmol/(kg_{cat}.h)}\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{a$F$@[{$F$}]\begingroup Vazão molar \nomunit{kmol/h}\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{a$W$@[{$W$}]\begingroup Massa total de catalisador em um leito\nomunit{kg}\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{S$j$@[{$j$}]\begingroup j-ésima reação\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{G$\nu$@[{$\nu$}]\begingroup Coeficiente de reação\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{a$E$@[{$E$}]\begingroup Energia \nomunit{kJ}\nomeqref {3.4}|nompageref}{30}
+\nomenclatureentry{a$h$@[{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.4}|nompageref}{30}
+\nomenclatureentry{G$\Delta H$@[{$\Delta H$}]\begingroup Calor de reação \nomunit{kJ/kmol}\nomeqref {3.4}|nompageref}{30}
+\nomenclatureentry{a$k^{'}$@[{$k^{'}$}]\begingroup Constante de taxa de reação de pseudo-primeira ordem \nomunit{kg/(kg_{cat}.h)}\nomeqref {3.5}|nompageref}{30}
+\nomenclatureentry{a$k$@[{$k$}]\begingroup Constante de taxa de reação intrínseca \nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}\nomeqref {3.5}|nompageref}{30}
+\nomenclatureentry{a$C^{*}_{H_2}$@[{$C^{*}_{H_2}$}]\begingroup Concentração de equilíbrio de hidrogênio em fase líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}\nomeqref {3.5}|nompageref}{30}
+\nomenclatureentry{G$\eta$@[{$\eta$}]\begingroup Fator de efetividade de intradifusão\nomeqref {3.5}|nompageref}{30}
+\nomenclatureentry{a$k^{*}$@[{$k^{*}$}]\begingroup constante da taxa de reação específica \nomunit{kmol/(m^3/(kg_{cat}.h)}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{R$L$@[{$L$}]\begingroup Designação da fase líquida\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{R$S$@[{$S$}]\begingroup Designação da fase sólida\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$T^{ref}$@[{$T^{ref}$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$\rho$@[{$\rho$}]\begingroup Massa específica \nomunit{kg/m^3}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$T$@[{$T$}]\begingroup Temperatura \nomunit{K}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$R$@[{$R$}]\begingroup Constante universal dos gases ideais \nomunit{kJ/(kmol.K)}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$Ea$@[{$Ea$}]\begingroup Energia de ativação \nomunit{kJ/kmol}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{S$B$@[{$B$}]\begingroup Leito catalítico\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{a$C$@[{$C$}]\begingroup Concentração \nomunit{kmol/m^3}\nomeqref {3.7}|nompageref}{31}
+\nomenclatureentry{G$\phi$@[{$\phi$}]\begingroup Coeficiente de fugacidade\nomeqref {3.8}|nompageref}{32}
+\nomenclatureentry{G$\delta_{ij}$@[{$\delta_{ij}$}]\begingroup Parâmetro de interação binária\nomeqref {3.8}|nompageref}{32}
+\nomenclatureentry{ZiiSE@[{iiSE}]\begingroup \emph{Industrial Integrated Simulation Environment}\nomeqref {3.8}|nompageref}{32}
+\nomenclatureentry{a$a_{ij}$@[{$a_{ij}$}]\begingroup Parâmetro cruzado entre as espécies $i$ e $j$\nomeqref {3.8}|nompageref}{32}
+\nomenclatureentry{a$a$@[{$a$}]\begingroup Parâmetro de atração\nomeqref {3.8}|nompageref}{32}
+\nomenclatureentry{au@[{u}]\begingroup Velocidade da fase \nomunit{m/s}\nomeqref {3.15}|nompageref}{33}
+\nomenclatureentry{a$\sigma$@[{$\sigma$}]\begingroup Tensão superficial \nomunit{N/m}\nomeqref {3.18}|nompageref}{34}
