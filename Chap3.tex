@@ -64,7 +64,7 @@ adotou-se a massa específica do $Al_2O_3$ puro ($\rho_{Al_2O_3}$ = $3940$
 $kg/m^3$) para a massa específica da parte sólida das partículas de catalisador.
 
 \nomenclature{$Vt_{poros}$}{Volume total de poros \nomunit{m^3/kg}}
-\nomenclature{$\rho_{Al_2O_3}$}{Massa específica do óxido de alumínio
+\nomenclature[G]{$\rho_{Al_2O_3}$}{Massa específica do óxido de alumínio
 \nomunit{kg/m^3}}
 
 \subsection{Porosidade dos Leitos Catalíticos}
@@ -79,7 +79,7 @@ massa específica das partículas ($\rho_{p}$). Este parâmetro, calculado pela
 \label{eq:rhoparticula}
 \end{equation}
 
-\nomenclature{$\rho_{p}$}{Massa específica da partícula de catalisador
+\nomenclature[G]{$\rho_{p}$}{Massa específica da partícula de catalisador
 \nomunit{kg/m^3}}
 
 A porosidade de cada um dos leitos pode ser calculada, portanto, pela
@@ -90,10 +90,11 @@ A porosidade de cada um dos leitos pode ser calculada, portanto, pela
 \label{eq:porosidade}
 \end{equation}
 
-sendo $V_l$ o volume do leito e $\epsilon_B$ a porosidade do leito.
+sendo $V_l$ o volume do leito e $\rho_B$ a
+massa específica de um leito catalítico logo após o seu carregamento. 
 
 Utilizando os dados apresentados na \autoref{sec:catalisador}, e utilizando os
-valores de massa específica \emph{bulk} dos leitos ($\rho_{B}$), publicados por
+valores de massa específica \emph{bulk} dos leitos $\rho_{B}$ publicados por
 \citeonline{Rojas2014a}, chega-se nos valores mostrados na
 \autoref{tab:dadosdosleitos}.
 
@@ -174,7 +175,7 @@ Onde $i$ é o número identificador do composto na simulação a ser apresentada
 \subsection{Condições de operação} \label{sec:condicaocomposicaocorrentes}
 
 As condições de operação consideradas inicialmente estão na
-\autoref{tab:condicoesoperacao}. Na \autoref{sec:resultados} há uma discussão
+\autoref{tab:condicoesoperacao}. No \autoref{chap:resultados} há uma discussão
 sobre a validade de algumas dessas variáveis aqui apresentadas.
 
 \begin{table}[!htb]
@@ -428,10 +429,7 @@ r_{j,z} = k^{*}_{j,z}C^{S}_{i,z}
 
 onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
 sólida. Essa concentração é determinada pela transferência de massa
-líquido-sólido, \autoref{sec:interfaceliquidosolido}. Já $C^{L}$ é a
-concentração de qualquer espécie na fase líquida, $\rho_B$ é a densidade do
-leito catalítico (logo após o carregamento) e $k_{LS}$ é o coeficiente de
-transferência de massa.
+líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
 equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
@@ -455,7 +453,7 @@ entrada da mesma forma.
 \nomenclature[R]{$L$}{Designação da fase líquida}
 \nomenclature[R]{$S$}{Designação da fase sólida}
 \nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
-\nomenclature{$\rho$}{Massa específica \nomunit{kg/m^3}}
+\nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
 \nomenclature{$R$}{Constante universal dos gases ideais \nomunit{kJ/(kmol.K)}}
 \nomenclature{$Ea$}{Energia de ativação \nomunit{kJ/kmol}}
@@ -505,22 +503,34 @@ Como a transferência de massa gás-líquido foi desprezada, compete aqui
 apresentar as equações para determinar a concentração das espécies químicas
 na superfície das partículas de catalisador, $C^S$. 
 
-A primeira dessas equações é a \autoref{eq:transferenciamassa}, resultado de
-balanço de massa na interface líquido-sólido.
+A primeira dessas equações é a \autoref{eq:transferenciamassa}, na qual a
+transferência de massa na interface líquido-sólido de um reagente é igual a
+velocidade com que ele é consumido reacionalmente:
 
 \begin{equation}
-k_{LS,z}a_{LS}(C^L_{i,z}-C^S_{i,z}) = \rho_B \displaystyle\sum_{j=1}^{N_{reac}}
+k_{i,z}^{LS}a^{LS}(C^L_{i,z}-C^S_{i,z}) = \rho_B
+\displaystyle\sum_{j=1}^{N_{reac}}
 \nu_{i,j}r_{j,z}
 \label{eq:transferenciamassa}
 \end{equation}
 
-O parâmetro $a_{LS}$ é a área específica do catalisador é função do diâmetro das
+sendo $C^{L}$ a concentração de qualquer espécie química presenta na fase
+líquida e $k^{LS}$ o coeficiente de transferência de massa na interface líquido
+sólido, calculado para cada reagente.
+
+\nomenclature{$k^{LS}$}{Coeficiente de transferência de massa líquido-sólido
+\nomunit{m/h}}
+
+O parâmetro $a^{LS}$ é a área específica do catalisador é função do diâmetro das
 partículas $d_p$ de catalisador e da porosidade do leito $\epsilon_B$:
 
 \begin{equation}
-a_{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
+a^{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 \label{eq:aLS}
 \end{equation}
+
+\nomenclature{$a^{LS}$}{Área suferficial específica do catalisador
+\nomunit{m^2/m^3}}
 
 Para determinar $k_{LS}$, foi utilizada a equação de \citeonline{Hirose1976}
 para o número de Sherwood dos componentes em fase líquida ($Sh^L$).
@@ -529,6 +539,7 @@ para o número de Sherwood dos componentes em fase líquida ($Sh^L$).
 \epsilon_BSh^L_{i,z} = 0,8(Re^L_z)^{0,5}(Sc^L_{i,z})^{1/3} \qquad (Re<200)
 \label{eq:Sh1}
 \end{equation}
+
 \begin{equation}
 \epsilon_BSh^L_{i,z} = 0,53(Re^L_z)^{0,58}(Sc^L_{i,z})^{1/3} \qquad (Re>200)
 \label{eq:Sh2}
@@ -545,8 +556,14 @@ Sc^L_{i,z} = \dfrac{\mu^L_{z}}{\rho^L_{z+1}D^L_{i,z}}
 \end{equation}
 
 onde $Re^L$ é o número de Reynolds da fase líquida, $Sc$ é o número de Schmidt,
-$D^L$ é a difusão efetiva dos compostos na fase líquida e $\mu^L$ é viscosidade
-da fase líquida.
+$D^L_{i}$ é difusividade molecular do composto $i$ na fase líquida e $\mu^L$ é
+viscosidade da fase líquida.
+
+\nomenclature{$Sh$}{Número de Sherwood}
+\nomenclature{$Re$}{Número de Reynolds}
+\nomenclature{$Sh$}{Número de Schmidt}
+\nomenclature{$D^L$}{Difusividade molecular \nomunit{m^2/s}}
+\nomenclature[G]{$\mu$}{Viscosidade \nomunit{cP}}
 
 \section{Hidrodinâmica} \label{sec:hidrodinamica3}
 
@@ -561,21 +578,22 @@ trabalho, portanto, adotou-se a mesma equação, que é mostrada a seguir na for
 discretizada:
 
 \begin{equation}
-\dfrac{\Delta P_{z}}{L/N_{Disc}} = 
+\dfrac{\Delta P_{z}}{L_z} = 
 \dfrac{1}{\epsilon_B^{3}} \left ( \dfrac{u^G_z/u^L_z+1}
 {0,49u^G/u^L+1} \right)^3 \left [ \dfrac{150}{36} \left (
 \dfrac{6(1 - \epsilon_B)}{d_p} + \dfrac{4}{D_R} \rigth)^{2} \mu^L_z u^L_z +
-\dfrac{1.75}{6} \left ( \dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R} \right )
+\dfrac{1,75}{6} \left ( \dfrac{6(1-\epsilon_B)}{d_p} + \dfrac{4}{D_R} \right )
 \rho^L_{z+1}(u^L{z})^2) \right] 
 \label{eq:deltaP}
 \end{equation}
 
-onde $u$ é a velocidade da fase.
+onde $u$ é a velocidade da fase e $L_z$ é dado por $L/N_{Disc}$ de cada leito.
 
-\nomenclature{u}{Velocidade da fase \nomunit{m/s}}
+\nomenclature{u}{Velocidade superficial da fase \nomunit{m/s}}
+\nomenclature[S]{R}{Reator}
 
 Visto que a pressão de operação do reator é muito acima da pressão atmosféricas,
-a equação usada para estimar a retenção de líquido $\epsilon_L$ foi a proposta
+a equação usada para estimar a retenção de líquido $\epsilon^L$ foi a proposta
 por \citeonline{Larachi1991}, que, \citeonline{Ranade2011}, é uma dentre outras
 equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
 
@@ -586,7 +604,7 @@ log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B} \right) =
 \end{equation}
 
 onde $We$ é o número de Webber e $X^G$ é o número de Lockhart-Martinelli
-\cite{Lockhart1949} para a fase gás. Ambos são definidos a seguir.
+para a fase gás. Ambos são definidos a seguir.
 
 \begin{equation}
 We_{z}^L = \dfrac{(u_{z}^L)^2d_p\rho_{z}^L}{\sigma_{z}^L}
@@ -600,17 +618,95 @@ X_{z}^G = \dfrac{u_{z}^G}{u_z^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
 
 sendo que $\sigma^L$ é a tensão superficial da fase líquida.
 
-\nomenclature{$\sigma$}{Tensão superficial \nomunit{N/m}}
+\nomenclature[G]{$\sigma$}{Tensão superficial \nomunit{N/m}}
+\nomenclature{We}{Número de Webber}
+\nomenclature{X}{Número de Lockhart-Martinelli}
 
-incluir cálculo de porosidade, balanço de "espaço", que está no livro do
-Ancheyta, pg 131/132)
+Para verificar a premissa de que o molhamento do catalisador é completo
+($\eta_{CE} = 1$), será utilizada a equação proposta por
+\citeonline{Al-Dahhan1995} para sistemas de alta pressão, como segue:
 
-\section{Implementação em \emso} \label{sec:implementacao}
+\begin{equation}
+\eta_{CE,z} = 1,104(Re_z^L)^{1/3} \left [
+\dfrac{1 + [(\Delta P_z/L_{z})/(\rho_{z}^L g)]}{Ga_{z}^{L}} \right ]
+\label{eq:molhamento}
+\end{equation}
 
-Arrumar nomenclatura desde a seção hidrodinâmica.
+sendo $Ga$ o número de Galileo e $g$ a aceleração da gravidade.
 
-Citar o apendice ou a seção de implementação, onde está o código
-que descreve o \emph{flash}.
+\nomenclature{Ga}{Número de Galileo}
+\nomenclature{g}{Aceleração da gravidade \nomunit{m/s^2}}
+
+Um parâmetro utilizado na literatura para verificar se, na modelagem do reator,
+o fenômeno de dispersão axial é relevante, é o número de Peclet ($Pe$).
+A \autoref{eq:numerodepeclet} apresenta a correlação para o número de
+Peclet utilizada neste trabalho, e que foi proposta por
+\citeonline{Cassanello1992}.
+
+\begin{equation}
+Pe_z^L = \dfrac{L_z}{d_p} 2,3(Re_z^L)^{0,33}(Ga_{z}^{L})^{-0,19}
+\label{eq:numerodepeclet}
+\end{equation}
+
+\nomenclature{Pe}{Número de Peclet}
+
+\section{Implementação da Modelagem} \label{sec:implementacao}
+
+Para a implementação da modelagem, foram usados dois softwares: iiSE e \emso. 
+
+\subsection{iiSE} \label{sec:iise}
+
+O iiSE é uma ferramenta de simulação desenvolvida pela empresa VRTech para a
+simulação de processos químicos e petroquímicos. Além de ser possibilitar a
+montagem das simulações de maneira gráfica, permite a comunicação com o
+Microsoft Excel. Além disso, há também a possibilidade de exportar os resultados
+de alguns equipamentos no formato .mso (para o simulador \emso).
+
+Como já explicado na \autoref{sec:termodinamica}, o iiSe serviu como uma
+ferramenta para o cálculo de ELV das correntes $F$, dados $T_z$, $P_z$ e
+composição. Nele não foram implementadas quaisquer equações de balanço ou
+correlações; ele apenas é chamado pelo \emso para solucionar os cálculos de
+\emph{flash} necessários.
+
+Ao pacote termodinâmico do iiSE foram adicionadas as constantes da equação de
+SRK levantadas por \citeonline{Zhou2006} para a solubilidade de hidrogênio em
+gasolina de pirólise.
+
+\subsection{EMSO} \label{sec:EMSO}
+
+O simulador \emso é uma ferramenta para modelagem, simulação e otimização de
+sistemas, com foco principal em respostas dinâmicas. O \emso realiza a
+verificação da consistência das unidades de medida, da solvabilidade do sistema
+de equações e das condições iniciais. As três entidades principais dessa
+linguagem de modelagem são: modelos (\emph{models}), equipamentos
+(\emph{devices}) e fluxograma (\emph{flowsheet}) \cite{Soares2003}.
+
+\textit{Modelos} são descrições matemáticas de um tipo de equipamento (bomba,
+reator, corrente de fluxo); um \textit{equipamento} é uma instância de um de um
+\textit{modelo}; e o \textit{fluxograma} representa o processo a ser analisado,
+que é composto por um conjunto de \textit{equipamentos} \cite{Soares2003}.
+
+O \emso já possui uma biblioteca de modelos prontos para o uso (EML -
+\emph{\emso  Model Library}. Para a solução do presente trabalho, dois modelos
+extras foram criados.
+
+O primeiro modelo é o de corrente cujo cálculo de \emph{flash} interno
+utilizasse temperatura, pressão e composição, chamado \emph{streamTP.mso}. Esse
+modelo baseou-se nos modelos já criados para corrente, e que estão na EML. Esses
+modelos calculam o \emph{flash} pela entalpia. A alteração foi necessária para
+facilitar a convergência da simulação. O código o objeto \emph{streamTP.mso}
+está no \autoref{chap:streamTP}
+
+O segundo modelo (\autoref{chap:modeloleitofixo}) foi o de um reator de leito
+fixo, cujas correntes de entrada podem ou não conter duas fases. Nesse modelo
+foram declaradas as variáveis envolvidas no processo e as principais equações
+(balanços de massa e energia, por exemplo).
+
+Foi criado, finalmente, o fluxograma do processo, que está disponível no
+\autoref{chap:fluxogramaprocesso}. Nesse fluxograma foram utilizados os modelos
+mencionados nesse seção e outros modelos já disponíveis na EML.
+
+\nomenclature[Z]{EML}{\emso  Model Library}
 
 
 

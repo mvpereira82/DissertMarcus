@@ -212,7 +212,7 @@ em pressões de até $8.1$ MPa.
 \label{sec:retencaodeliquido}
 
 A retenção de líquido (\emph{liquid holdup})em um leito de TBR  pode ser
-expressada de duas maneiras: (i) retenção total ($\epsilon_L$), definida
+expressada de duas maneiras: (i) retenção total ($\epsilon^L$), definida
 como o volume de líquido por unidade de volume de leito e (ii) saturação de líquido
 ($\beta_L$), definida como o volume de líquido por unidade de volume vazio
 (ao invés de volume total de leito). 
@@ -239,7 +239,17 @@ de molhabilidade e coefientes de transferência de massa e calor. A retenção d
 líquido também determina o tempo de residência de líquido dentro do reator e,
 portanto, a conversão dos reagentes \cite{Ranade2011}.
 
-\nomenclature[G]{$\epsilon_{L}$}{Retenção total de líquido}
+A consequência das definições apresentadas nessa seção são as equações
+\autoref{eq:balancoespaco1}:
+
+\begin{equation}
+\epsilon^L \epsilon^G = \epsilon_B
+\label{eq:balancoespaco1}
+\end{equation}
+
+sendo $\epsilon_B$ a porosidade do leito e $\epsilon^G$ a retenção de gás.
+
+\nomenclature[G]{$\epsilon^{L}$}{Retenção total de líquido}
 \nomenclature[G]{$\epsilon_{Ls}$}{Retenção estática de líquido}
 \nomenclature[G]{$\epsilon_{Ld}$}{Retenção dinâmica de líquido}
 \nomenclature[G]{$\beta_L$}{Saturação de líquido}
