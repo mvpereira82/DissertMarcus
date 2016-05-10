@@ -202,6 +202,9 @@ sobre a validade de algumas dessas variáveis aqui apresentadas.
 \end{center}
 \end{table}
 
+\nomenclature{$F_w$}{Vazão mássica \nomunit{kg/h}}
+\nomenclature[S]{$w$}{Referente à massa}
+
 \section{Premissas} \label{sec:premissas}
 
 \subsection{Premissas adotadas por \citeonline{Rojas2014a}}
@@ -694,21 +697,21 @@ O \emso já possui uma biblioteca de modelos prontos para o uso (EML -
 \emph{\emso  Model Library}. Para a solução do presente trabalho, dois modelos
 extras foram criados.
 
-O primeiro modelo é o de corrente cujo cálculo de \emph{flash} interno
-utilizasse temperatura, pressão e composição, chamado \emph{streamTP.mso}. Esse
-modelo baseou-se nos modelos já criados para corrente, e que estão na EML. Esses
-modelos calculam o \emph{flash} pela entalpia. A alteração foi necessária para
-facilitar a convergência da simulação. O código o objeto \emph{streamTP.mso}
-está no \autoref{chap:streamTP}
+O primeiro modelo representa as correntes de fluxo que entram e saem de
+cada célula, incluindo o cálculo de \emph{flash}. Esse modelo foi chamado de
+\emph{streamTP.mso} e baseou-se nos modelos já criados para corrente na EML, com
+a peculiaridade de receber como parâmetros de entrada temperatura, pressão e
+composição. O código o objeto \emph{streamTP.mso} está no
+\autoref{chap:streamTP}
 
 O segundo modelo (\autoref{chap:modeloleitofixo}) foi o de um reator de leito
-fixo, cujas correntes de entrada podem ou não conter duas fases. Nesse modelo
-foram declaradas as variáveis envolvidas no processo e as principais equações
-(balanços de massa e energia, por exemplo).
+fixo. Nele é possível utilizar tanto fluxo monofásico quanto fluxo bifásico.
+Esse modelo contém a declaração das principais variáveis, além das principais
+equações (balanços de massa e energia, por exemplo).
 
-Foi criado, finalmente, o fluxograma do processo, que está disponível no
-\autoref{chap:fluxogramaprocesso}. Nesse fluxograma foram utilizados os modelos
-mencionados nesse seção e outros modelos já disponíveis na EML.
+Por fim, para unir todos os modelos e inserir equações e variáveis
+específicas para a finalidade do presente trabalho, foi criado o fluxograma do
+processo, que está disponível no \autoref{chap:fluxogramaprocesso}.
 
 \nomenclature[Z]{EML}{\emso  Model Library}
 
