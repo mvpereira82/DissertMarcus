@@ -1,6 +1,6 @@
 %
-\chapter{Metodologia}
-\label{chap:metodologia}
+\chapter{Modelo Desenvolvido}
+\label{chap:moddesenvolvidos}
 
 \section{Descrição do Processo} \label{sec:descricaoprocesso}
 
@@ -279,7 +279,7 @@ Portanto, ficam aqui definidas as seguintes premissas:
 \end{enumerate}
 
 Um dos motivos de se manter praticamente inalteradas as premissas adotadas por
-\citeonline{Rojas2014a} foi o de realiar comparações entre os dois estudos.
+\citeonline{Rojas2014a} foi o de realizar comparações entre os dois estudos.
 
 Negligenciar os gradientes e dispersões de calor e massa, tanto radialmente
 quanto axialmente, é uma recomendação muito comum encontrada na literatura
@@ -294,7 +294,7 @@ Como já mencionado no \autoref{chap:revisaobibliografica},
 resistencia à transferência de massa na fase gasosa.
 
 As premissas assumidas para a região de \emph{quench} são bastante razoáveis, já
-que normalmente os projetistas de reatores TBR desejam a corrente oriunda do
+que normalmente os projetistas de reatores TBR desejam que a corrente oriunda do
 leito superior se misture rapidamente com a corrente de \emph{quench},
 homogeneizando a carga para o segundo leito. Uma mistura inadequada entre as
 correntes de entrada na região de \emph{quench} pode levar a caminhos
@@ -310,7 +310,7 @@ Contudo, uma verificação da validade dessa premissa é apresentada no
 Para utilizar a abordagem de modelagem por rede de células, cada leito
 catalítico foi subdivido em células em seu comprimento, i.e., discretizado em
 $N_{Disc}$ segumentos de leito. Cada seguimento de leito fica identificado por
-um índice ($z$). A figura \autoref{fig:celula} ilustra uma célula de leito de
+um índice ($z$). A \autoref{fig:celula} ilustra uma célula de leito de
 reator. Do ponto de vista reacional, cada célula representará um reator CSTR
 associado a um tambor de \emph{flash}. Nesse tambor de \emph{flash}, mantém-se a premissa
 de que o equilíbrio termodinâmico é atingido instantaneamente.
@@ -361,11 +361,10 @@ processo.
 \displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
-
 onde $M_{i,z}$ é a massa do componente $i$ na célula $z$, $j$ é o número
 identificador de cada reação, $N_{reac}$ é o número total de reações,
-$\nu_{i,j}$ é o coeficiente do componente $i$ na reação $j$, $r_{j,z}$ é taxa
-da reação $j$ na célula $z$, $F$ é a vazão molar total e $W$ é a massa total de
+$\nu_{i,j}$ é o coeficiente estequiométrico do componente $i$ na reação $j$,
+$r_{j,z}$ é taxa da reação $j$ na célula $z$, $F$ é a vazão molar total e $W$ é a massa total de
 catalisador presente no leito.
 
 \nomenclature{$M$}{Massa \nomunit{kmol}}
@@ -376,17 +375,18 @@ catalisador presente no leito.
 \nomenclature[S]{$j$}{j-ésima reação}
 \nomenclature[G]{$\nu$}{Coeficiente de reação}
 
-A \autoref{eq:balancodeenergia} mostra o balanço de energia de forma
-discretizada.
-
+De forma similar, o seguinte balanço de energia de forma
+discretizada foi considerado:
 \begin{equation}
 \dfrac{dE_{z}}{dt} = F_zh_{z} - F_{z+1}h_{z+1} +
 \displaystyle\sum_{j=1}^{N_{reac}} \Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodeenergia}
 \end{equation}
-
 onde $E_{z}$ é a energia na célula $z$,  $h$ é a entalpia da
 corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
+?? Faltou aqui a relação entre $E_z$ e a energia da massa que se encontra na
+célula. Esta equação que vai mostrar se a inércia térmica do catalisador
+está ou não sendo considerada no modelo ??
 
 \nomenclature{$E$}{Energia \nomunit{kJ}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
@@ -402,8 +402,8 @@ célula são grandezas extensivas.
 
 \section{Cinética das Reações} \label{sec:cineticadasreacoes}
 
-As reações de hidrogenação e os parâmetros cinéticos estão na
-\autoref{tab:composicao}. Conforme já explicado, o sistema reacional foi
+As reações de hidrogenação e os parâmetros cinéticos considerados estão
+listados na \autoref{tab:composicao}. Conforme já explicado, o sistema reacional foi
 considerado como sendo um conjunto de hidrogenações irreversíveis e
 independentes da concentração de hidrogênio. A constante de pseudo-primeira
 ordem da reação $j$ na célula $z$, $k^{'}_{j,z}$, está definido na
@@ -462,7 +462,7 @@ entrada da mesma forma.
 \nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
 \nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
-\nomenclature{$R$}{Constante universal dos gases ideais \nomunit{kJ/(kmol.K)}}
+\nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol.K)}}
 \nomenclature{$Ea$}{Energia de ativação \nomunit{kJ/kmol}}
 \nomenclature[S]{$B$}{Leito catalítico}
 \nomenclature{$C$}{Concentração \nomunit{kmol/m^3}}
@@ -476,11 +476,10 @@ por \citeonline{Zhou2006} para a solubilidade de hidrogênio em gasolina de
 pirólise. Esta recomendação consiste em utilizar a regra de mistura clássica de
 van der Waals \cite{VanderWaals1873}, com parâmetros de interação binária
 específicos para cada um dos pares de hidrogênio/hidrocarboneto. Para o caso da
-regra de mistura escolhida, os parâmetros cruzados $aij$ estão definidos pela
-\autoref{eq:parametroaij} \cite{Peng1976,Soave1972}.
-
+regra de mistura escolhida, os parâmetros cruzados $a_{ij}$ estão definidos
+da seguinte forma\cite{Peng1976,Soave1972}:
 \begin{equation}
-a_{i,j} = \sqrt{a_ia_j}(1-\delta_{ij})
+a_{ij} = \sqrt{a_ia_j}(1-\delta_{ij})
 \label{eq:parametroaij}
 \end{equation}
 
@@ -664,7 +663,7 @@ montagem das simulações de maneira gráfica, permite a comunicação com o
 Microsoft Excel. Além disso, há também a possibilidade de exportar os resultados
 de alguns equipamentos no formato .mso (para o simulador \emso).
 
-Como já explicado na \autoref{sec:termodinamica}, o iiSe serviu como uma
+Como já explicado na \autoref{sec:termodinamica}, o iiSE serviu como uma
 ferramenta para o cálculo de ELV das correntes $F$, dados $T_z$, $P_z$ e
 composição. Nele não foram implementadas quaisquer equações de balanço ou
 correlações; ele apenas é chamado pelo \emso para solucionar os cálculos de
@@ -676,7 +675,7 @@ gasolina de pirólise.
 
 \subsection{EMSO} \label{sec:EMSO}
 
-O simulador \emso é uma ferramenta para modelagem, simulação e otimização de
+O simulador \emso{} é uma ferramenta para modelagem, simulação e otimização de
 sistemas, com foco principal em respostas dinâmicas. O \emso realiza a
 verificação da consistência das unidades de medida, da solvabilidade do sistema
 de equações e das condições iniciais. As três entidades principais dessa
@@ -708,7 +707,7 @@ Por fim, para unir todos os modelos e inserir equações e variáveis
 específicas para a finalidade do presente trabalho, foi criado o fluxograma do
 processo, que está disponível no \autoref{chap:fluxogramaprocesso}.
 
-\nomenclature[Z]{EML}{\emso  Model Library}
+\nomenclature[Z]{EML}{\emso{} Model Library}
 
 
 

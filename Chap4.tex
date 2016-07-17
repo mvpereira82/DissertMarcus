@@ -10,14 +10,14 @@
 
 Após a implementação da metodologia descrita no \autoref{chap:metodologia}, os
 resultados encontrados foram significativamente diferentes daqueles apresentados
-por \citeonline{Rojas2014a}. A figura \autoref{fig:perfilTvalidacao}, por
+por \citeonline{Rojas2014a}. A \autoref{fig:perfilTvalidacao}, por
 exemplo, compara o perfil de temperatura dos leitos reais (de planta) com os
 resultados da simulação implementada por \citeonline{Rojas2014a} e com os
 resultados do trabalho aqui apresentado.
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.4]{images/Chap4/perfilTvalidacao.png}
-\caption{Perfil de temperatura dos leitos}
+\caption{Perfil de temperatura dos leitos.}
 \label{fig:perfilTvalidacao}
 \end{figure}
 
@@ -29,23 +29,22 @@ por rede de células não fora bem equacionada ou a abordagem é inadequada para
 sistema estudado.
 
 A segunda questão refere-se ao resfriamento na região zona de \emph{quench}. O
-dado de planta apresenta um resfriamento de $25,7 K$ entre os leitos
+dado de planta apresenta um resfriamento de \SI{25,7}{K} entre os leitos
+?? colocar este comando 'SI' para os outros valores no documento ??
 catalíticos; a simulação de \citeonline{Rojas2014a} apresenta resfriamento de
 $21,6 K$ para a região; e o valor encontrado no presente trabalho foi de $4,1
 K$. Essa situação torna-se mais enigmática ao se constatar que o balanço de
 energia proposto por \citeonline{Rojas2014a} para a região de \emph{quench}
 contém simplificações não realizadas neste estudo.
 
-Uma análise do valor de $LHSV$ (\emph{Liquid Hourly Space Velocity} foi feita
+Uma análise do valor de $LHSV$ (\emph{Liquid Hourly Space Velocity}) foi feita
 na tentativa de trazer um esclarecimento às discrepâncias encontradas. O
 parâmetro $LHSV$ pode ser definido como: 
-
 \begin{equation}
 LHSV = F_{vol}^L/{V_{R}}
 \label{eq:LHSV}
 \end{equation}
-
-onde $F_{v}^L$ é a vazão volumétrica em $m^3/h$ de líquido e $V_{R}$ é o
+onde $F_{v}^L$ é a vazão volumétrica em \si{m^3/h} de líquido e $V_{R}$ é o
 volume total do reator (somados os dois leitos).
 
 \nomenclature{$F_v$}{Vazão volumétrica \nomunit{m^3/h}}
