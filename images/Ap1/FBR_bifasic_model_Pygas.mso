@@ -94,7 +94,7 @@ out	Outlet 	as streamPH	(Brief = "Outlet Stream");
 	WeL(NDisc)			as constant (Brief = "Weber number", Lower = -1e-6, Default = 1, Upper = 1e9);
 #	PeL(NDisc)			as constant (Brief="Peclet number", Lower = -1e-6, Default = 100, Upper = 1e13);
 	XG(NDisc)			as constant (Brief="Modified Lockhart-Martinelli number", Lower = 1e-6, Default = 1, Upper = 1e6);
-	omega (NReac,NDisc)	as constant (Brief="Mears criterion for external diffusion - Damköhler number", Lower= 1e-6, Default = 0.1, Upper = 1e6);
+	omega (NReac,NDisc)	as constant (Brief="Mears criterion for external diffusion - Damkohler number", Lower= 1e-6, Default = 0.1, Upper = 1e6);
 	epsilonL(NDisc)		as constant (Brief="Liquid Hold-up", Lower= 1e-6, Default = 0.1, Upper = 10);
 	epsilonL2(NDisc)	as constant (Brief="Liquid Hold-up2", Lower= 1e-6, Default = 0.1, Upper = 10);
 	epsilonG(NDisc)		as constant (Brief="Gas Hold-up", Lower= 1e-6, Default = 0.1, Upper = 10);

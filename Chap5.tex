@@ -3,3 +3,45 @@
 %
 \chapter{Conclusões e Sugestões} \label{chap:conclusoes}
 % 
+A aplicação da modelagem por células no reator estudado neste trabalho permitiu
+conhecer melhor o comportamento das propriedades termodinâmicas e hidrodinâmicas
+das fases líquida e gasosa ao longo dos leitos. Além disso, o modelo aqui
+apresentado mostrou uma evolução à modelagem feita por \citeonline{Rojas2014a},
+já que algumas simplificações não precisaram ser feitas. Além disso,
+diferentemente de \citeonline{Rojas2014a}, os balanços de massa e energia foram
+incrementados com a energia envolvida na mudança de fase dos componentes. Para
+modelagens dessa natureza (por células), o \emso se mostrou uma ferramenta
+poderosa, prática e de rápida convergência.
+
+A utilização da ferramenta \emso para a modelagem por células mostrou-se
+ainda mais vantajosa ao permitir a avaliação do comportamento dinâmico do reator
+em algumas situações hipotéticas, mas que são bem comuns na industria.
+
+É bem verdade que a alteração da vazão de carga do reator, necessária para
+tornar o processo coerente, colocou incerteza nas comparações apresentadas.
+Mesmo assim, pode-se dizer que este trabalho cumpriu com seus objetivos,
+quais sejam:
+
+\begin{enumerate}
+  \item Apresentar o desenvolvimento de um modelo matemático genérico para
+  reatores de leito fixo, bifásico ou trifásicos, aplicando a abordagem de
+  modelagem por rede de células; e 
+  \item Mostrar modelagem e a simulação de um reator de hidrogenação seletiva
+  de gasolina de pirólise, utilizando dados publicados por
+  \citeonline{Rojas2014a}.
+\end{enumerate}
+
+Considerando que o \emso é um simulador voltado para equações, algumas
+sugestões para melhorar a modelagem aqui apresentada emergem, quais sejam:
+
+\begin{itemize}
+\item {Realizar o balanço de massa separadamente para as fases}
+\item {Alterar o balaço de espaços a cada célula, considerando não mais o
+equilíbrio termodinâmico mas, sim, as retenções de líquido e gás}
+\end{itemize}
+
+Uma sugestão que alteraria completamente as equações aqui apresentadas seria
+aplicar a modelagem baseada em estágios. Com a utilização do \emso atrelado ao
+iiSE, essa abordagem tende a ser mais completa do que a que foi apresentada
+aqui. Contudo, a desvantagem dela é a necessidade de correlações nem sempre
+adequadas para determinar os coeficientes de transferência de massa.
