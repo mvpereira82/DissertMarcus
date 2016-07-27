@@ -34,17 +34,15 @@ catalíticos; a simulação de \citeonline{Rojas2014a} apresenta resfriamento de
 \SI{21,6}{K} para a região; e o valor encontrado no presente trabalho foi de
 \SI{4,1}{K}. Essa situação torna-se mais enigmática ao se constatar que o
 balanço de energia proposto por \citeonline{Rojas2014a} para a região de \emph{quench}
-contém simplificações não realizadas neste estudo.
+é ainda mais simplificado que o proposto neste estudo.
 
-Uma análise do valor de $LHSV$ (\emph{Liquid Hourly Space Velocity}) foi feita
+Uma análise do valor de LHSV (\emph{Liquid Hourly Space Velocity}) foi feita
 na tentativa de trazer um esclarecimento às discrepâncias encontradas. O
-parâmetro $LHSV$ pode ser definido como: 
-
+parâmetro LHSV pode ser definido como: 
 \begin{equation}
-LHSV = F_{vol}^L/{V_{R}}
+\textrm{LHSV} = F_{vol}^L/{V_{R}}
 \label{eq:LHSV}
 \end{equation}
-
 onde $F_{v}^L$ é a vazão volumétrica em \si{m^3/h} de líquido e $V_{R}$ é o
 volume total do reator (somados os dois leitos).
 
@@ -58,12 +56,12 @@ para LHSV, incluindo o trabalho de \citeonline{Rojas2014a}.
 
 \begin{table}[!htb]
 \begin{center}
-\caption{Comparação entre valores de $LHSV$ publicados na literatura}
+\caption{Comparação entre valores de LHSV calculados com base em dados publicados na literatura.}
 \label{tab:comparacaoLHSV}
 \small
 \begin{tabular}{lccc}
-{Autor} & {$F_v^L$($m^3/h$)} & {$V_R$ ($m^3$)} &
-{LHSV ($1/h$)}
+{Autor} & {$F_v^L$ (\si{m^3/h})} & {$V_R$ (\si{m^3})} &
+{LHSV (\si{1/h})}
 \\
 \hline
 {\citeonline{Arpornwichanop2008}} & 69 & 60 & 1.14 \\
@@ -78,12 +76,17 @@ Comparativamente fica claro que o valor de LHSV do trabalho de
 \citeonline{Rojas2014a} está uma ordem de grandeza acima dos valores
 comumente empregados nos projetos de reatores TBR.
 
+?? Comentar algo do tipo:
+Infelizmente, até o presente momento, não foi possível contactar os
+autores do trabalho de \citeonline{Rojas2014a} para a verificação
+dos valores publicados.
+??
 Sendo assim, foi necessário ajustar o valor da vazão de alimentação de gasolina
 de pirólise para que os dados apresentassem coerência. O critério utilizado foi
 o grau de resfriamento que ocorre na região de \emph{quench}. De maneira mais
-direta, a vazão foi modificata até que a diferença de temperatura entre a saída
+direta, a vazão ?? de \emph{quench} ?? foi modificata até que a diferença de temperatura entre a saída
 do primeiro leito e entrada do segundo fossem semelhantes aos dados de planta e,
-também, aos dados calculados por \citeonline{Rojas2014a}.
+também, aos demais dados calculados por \citeonline{Rojas2014a}.
 
 Após várias tentativas, o valor de $F_{w,1}$ foi alterado para \SI{2,079e4}
 {kg/h}. Com essa nova vazão, tanto o resfriamento da região de \emph{quench}
@@ -100,8 +103,8 @@ após o ajuste da vazão de carga do reator.
 \label{tab:comparacaoLHSV2}
 \small
 \begin{tabular}{lccc}
-{Autor} & {$F_v^L$ ($m^3/h$)} & {$V_R$ ($m^3$)} &
-{LHSV ($1/h$)}
+{Autor} & {$F_v^L$ (\si{m^3/h})} & {$V_R$ (\si{m^3})} &
+{LHSV (\si{1/h})}
 \\
 \hline
 {\citeonline{Arpornwichanop2008}} & 69 & 60 & 1.14 \\
@@ -115,7 +118,7 @@ após o ajuste da vazão de carga do reator.
 
 \subsection{Determinação do Valor de $N_{Disc}$} \label{sec:determinacaoNDisc}
 
-Nesta seção será apresentado a maneira como foi escolhido o valor ideal de
+Nesta seção será apresentada a maneira como foi escolhido o valor ideal de
 $N_{Disc}$. O valor escolhido foi utilizado em todas as simulações doravante
 apresentadas.
 
@@ -125,14 +128,14 @@ verificar os resultados de algumas variáveis chave. Duas variáveis
 foram escolhidas: temperatura e fração molar global de hidrogênio.
 
 A \autoref{fig:NDiscT} mostra o perfil de temperatura do leito superior, para
-diferentes valores de $N_{Disc}$. Percebe-se que, para entre $N_{Disc} = 4$ e
+diferentes valores de $N_{Disc}$. Percebe-se que, entre $N_{Disc} = 4$ e
 $N_{Disc} = 8$ ainda há alguma diferença no comportamento do perfil de
 temperatura. Contudo, é imperceptível a diferença entre os perfis resultantes de
 $N_{Disc} = 8$ e $N_{Disc} = 16$. 
 
 \begin{figure}[htb] \centering
 \includegraphics[scale=0.4]{images/Chap4/NDiscT.png}
-\caption{Avaliação de NDisc pelo perfil de temperatura}
+\caption{Avaliação de NDisc pelo perfil de temperatura.}
 \label{fig:NDiscT}
 \end{figure}
 
@@ -143,14 +146,18 @@ diferença entre $N_{Disc} = 4$ e $N_{Disc} = 8$, como mostra a
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.4]{images/Chap4/NDiscz.png}
-\caption{Avaliação de NDisc pela fração molar total de hidrogênio}
+\caption{Avaliação de NDisc pela fração molar total de hidrogênio.}
 \label{fig:NDiscz}
 \end{figure}
 
 Assim, discretizar cada leito catalítico em $8$ células pareceria uma escolha
 razoável e suficiente para o objetivo deste trabalho. Entretanto, para
 garantir a representação dos leitos como contínuos, foi utilizado um valor um
-pouco maior, $N_{Disc} = 10$. !!
+pouco maior, $N_{Disc} = 10$.
+Esta escolha faz com que o modelo apresente um total de ?? variáveis quando
+computadas todas as variáveis intermediárias relacionadas com a hidrodinâmica.
+E um todal de ?? variáveis quando as variáveis relacionadas com a hidrodinâmica
+são ignoradas e a perda de carga é desprezada.
 
 \subsection{Avaliação da Perda de Carga} \label{sec:avaliacaoperdadecarga}
 
@@ -167,12 +174,12 @@ inalterada. Sendo assim, o reator foi simulado desprezando-se a perda de carga.
 
 \begin{table}[!htb]
 \begin{center}
-\caption{Perda de Carga dos Leitos}
+\caption{Avaliação da perda de carga dos leitos.}
 \label{tab:perdadecarga}
 \small
 \begin{tabular}{lccc}
-{} & {$\Delta P/L$ ($atm/m$)} & {Pressão de entrada (atm)} & {Pressão de saída
-(atm)}
+{} & {$\Delta P/L$ (\si{atm/m})} & {Pressão de entrada (\si{atm})} & {Pressão de saída
+(\si{atm})}
 \\
 \hline
 {Leito 1} & \num{3.4e-3} & 49.64 & 49.63 \\
@@ -188,22 +195,22 @@ trabalho pode não ser a mais adequada, já que houve uma alteração da vazão 
 carga do reator. Está mostrado na \autoref{sec:estadoestacionario} que o regime
 de escoamento do reator se altera de regime de bolha (alta interação),
 considerado por \citeonline{Rojas2014a}, para regime de escoamento gotejante
-(baixa interação). Assim, sendo, a equação para avaliação da perda de carga no
+(baixa interação). Assim sendo, a equação para avaliação da perda de carga no
 reator deveria ter sido outra mais adequada às características do sistema.
 
 \section{Estado Estacionário} \label{sec:estadoestacionario}
 
 \subsection{Perfil de Temperatura} \label{sec:perfildetemperatura}
 
-A figura \autoref{fig:perfilT} mostra o perfil de temperatura dos leitos
+A \autoref{fig:perfilT} mostra o perfil de temperatura dos leitos
 calculado por este trabalho, além daquele calculado por \citeonline{Rojas2014a}
 e pelos dados de planta por eles publicados.  
 
-A diminuição drástica do valor da vazão de alimentação está refletida na alteração
-do perfil de temperatura primeiramente encontrado (Figura 4.1). Sendo o perfil
-de temperatura obtido neste trabalho semelhante tanto aos dados de planta quando
-aos valores calculados por \citeonline{Rojas2014a}, é
-possível apresentar os demais resultados e efetuar mais comparações.
+\begin{figure}[htb]
+\centering \includegraphics[width=0.8\textwidth]{images/Chap4/perfilT.png}
+\caption{Perfil de temperatura dos leitos.}
+\label{fig:perfilT}
+\end{figure}
 
 A diminuição drástica do valor da vazão de alimentação está refletida na alteração
 do perfil de temperatura primeiramente encontrado
@@ -212,11 +219,6 @@ trabalho semelhante tanto aos dados de planta quando aos valores calculados por
 \citeonline{Rojas2014a}, é possível apresentar os demais resultados e efetuar
 mais comparações.
 
-\begin{figure}[htb]
-\centering \includegraphics[scale=0.4]{images/Chap4/perfilT.png}
-\caption{Perfil de temperatura dos leitos}
-\label{fig:perfilT}
-\end{figure}
 
 \subsection{Composição da Corrente Efluente do Reator}
 \label{composicaodacorrenteefluentedoreator}
@@ -225,7 +227,7 @@ mais comparações.
 alguns compostos. Assim sendo, foi implementado o mesmo agrupamento para fins de
 comparação, como mostra a \autoref{tab:composicaodoefluente}. Pela comparação
 entre os dados composicionais do efluente do reator, corrobora-se a opção de se
-alterar a vazão de alimentação
+alterar a vazão de alimentação.
 
 \begin{table}[!htb]
 \begin{center}
@@ -256,7 +258,7 @@ alterar a vazão de alimentação
 
 Como está mencionado no \autoref{chap:moddesenvolvidos}, a fração de vapor
 em cada célula $z$ é determinada por um cálculo de \emph{flash}, implementado no
-modelo \emph{streamTP.mso} \autoref{chap:streamTP}. A
+modelo \code{streamTP}, detalhado no \autoref{chap:streamTP}. A
 \autoref{fig:perfilfracaovaporizada} mostra o perfil da fração de vapor (base
 molar) ao longo do leito catalítico.
 
@@ -269,7 +271,7 @@ molar) ao longo do leito catalítico.
 É possível perceber pela \autoref{fig:perfilfracaovaporizada} que a fração
 vaporizada na entrada do primeiro leito calculada neste trabalho é muito próxima
 daquela calculada por \citeonline{Rojas2014a}. Já para o segundo leito, há uma
-diferença próxima a $20 \%$ entre os dois conjuntos de resultados.
+diferença próxima a 20\% entre os dois conjuntos de resultados.
 
 Duas questões entre o presente trabalho e o publicado por
 \citeonline{Rojas2014a} podem justificar essa diferença.
@@ -303,17 +305,19 @@ praticamente constante, como também aumenta ao longo do reator. A
 comportamento do hidrogênio de ser tanto mais solúvel em hidrocarbonetos
 líquidos quanto maior for a temperatura, como mostra melhor a
 \autoref{fig:perfilfracaoh2temperatura}.
+?? como foi construida esta última figura, detalhar no texto se é apenas
+uma reorganização da anterior com outras variáveis. Se sim, para qual leito ??
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.4]{images/Chap4/perfilfracaoh2liquido.png}
-\caption{Perfil de fração de hidrogênio em fase líquida}
+\caption{Perfil de fração ?? molar ?? de hidrogênio em fase líquida.}
 \label{fig:perfilfracaoh2liquido}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.4]{images/Chap4/perfilfracaoh2temperatura.png}
-\caption{Fração de h2 em fase líquida \emph{vs.} da temperatura}
+\caption{Fração ?? molar ?? de hidrogênio em fase líquida \emph{vs.} da temperatura.}
 \label{fig:perfilfracaoh2temperatura}
 \end{figure}
 
@@ -344,10 +348,10 @@ propriedades termodinâmicas calculadas neste trabalho.
 {Saída Leito 2}
 \\
 \hline
-{${MW^{L} (kg/kmol)}$} & 82.5 & 81.6 & 81.6 & 81.2 \\
-{${MW^{G} (kg/kmol)}$} & 7.0 & 18.4 & 13.6 & 18.8 \\
-{$\rho^{L}(kg/m^{3})$} & 728.7 & 639.9 & 668.9 & 635.3 \\
-{$\rho^{G}(kg/m^{3})$} & 11.4 & 26.4 & 20.3 & 27.2 \\
+{$MW^{L}$ (\si{kg/kmol})} & 82.5 & 81.6 & 81.6 & 81.2 \\
+{$MW^{G}$ (\si{kg/kmol})} & 7.0 & 18.4 & 13.6 & 18.8 \\
+{$\rho^{L}$(\si{kg/m^3})} & 728.7 & 639.9 & 668.9 & 635.3 \\
+{$\rho^{G}$ (\si{kg/m^3})} & 11.4 & 26.4 & 20.3 & 27.2 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -359,6 +363,7 @@ temperatura), aumenta na região de \emph{quench} (devido à injeção de líqui
 frio), e volta a diminuir ao longo do segundo leito. A densidade da fase gasosa
 tem o comportamento inverso, já que conforme a temperatura aumenta, para uma
 mesma pressão, a densidade de um gás tende a aumentar.
+?? esta última explicação não está coerente ??
 
 A massa molar do líquido tende a permanecer constante ao longo de todo o
 reator, mostrando que o aumento da concentração de hidrogênio não é relevante
@@ -392,10 +397,10 @@ transferência de massa e perda de carga.
 {Saída Leito 2}
 \\
 \hline
-{${u^{L} (m/s)}$} & \num{3.2e-3} & \num{3,6e-3} & \num{4,7e-3} & \num{4,9e-3} \\
-{${u^{G} (m/s)}$} & \num{3,3e-3} & \num{1,7e-3} & \num{1,5E-3} & \num{0,5E-3} \\
-{$\mu^{L}(cP)$} & \num{0,128} & \num{0,103} & \num{0,130} & \num{0,121} \\
-{$\mu^{G}(cP)$} & \num{0,012} & \num{0,013} & \num{0,012} & \num{0,013} \\
+{$u^{L}$ (\si{m/s})} & \num{3.2e-3} & \num{3,6e-3} & \num{4,7e-3} & \num{4,9e-3} \\
+{$u^{G}$ (\si{m/s})} & \num{3,3e-3} & \num{1,7e-3} & \num{1,5E-3} & \num{0,5E-3} \\
+{$\mu^{L}$(\si{cP})} & \num{0,128} & \num{0,103} & \num{0,130} & \num{0,121} \\
+{$\mu^{G}$ (\si{cP})} & \num{0,012} & \num{0,013} & \num{0,012} & \num{0,013} \\
 {$Re^{L}$} & \num{54,4} & \num{67,6} & \num{72,1} & \num{78,0} \\
 {$Re^{G}$} & \num{10,6} & \num{10,1} & \num{7,6} & \num{3,0} \\
 {$Ga^{L}$} & \num{8,6e6} & \num{10,4e6} & \num{7,0e6} & \num{7,4e6} \\
@@ -449,7 +454,7 @@ Como já explicado no \autoref{chap:moddesenvolvidos}, a variável $\epsilon^{L}
 possui como dimensão o valor de $N_{Disc}$.
 
 Os valores $\epsilon^{L}$ encontrados por \citeonline{Rojas2014a} foram de
-\SI{0,14} e \SI{0,17} para a entrada do Leito 1 e saída do Leito 2,
+0,14 e 0,17 para a entrada do Leito 1 e saída do Leito 2,
 respectivamente. A diferença entre os resultados pode ser explicada pela
 incerteza quanto à vazão de carga no reator, que neste trabalho precisou ser
 modificada por motivos já explicados. Contudo, a diferença não é tão
@@ -586,7 +591,7 @@ após o degrau de temperatura na carga está mostrado na
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.8]{images/Chap4/FeedT300K.png}
-\caption{Resposta dinâmica a um degrau de temperatura na carga}
+\caption{Resposta dinâmica a um degrau (queda) de temperatura na carga.}
 \label{fig:FeedT300K}
 \end{figure}
 
@@ -619,7 +624,7 @@ por problema de instrumentação ou equipameto, quer seja por erro humano, o Lei
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.8]{images/Chap4/QuenchF30790.png}
-\caption{Resposta dinâmica a um degrau (a maior) na vazão de \emph{quench}}
+\caption{Resposta dinâmica a um degrau (a maior) na vazão de \emph{quench}.}
 \label{fig:QuenchF30790}
 \end{figure}
 

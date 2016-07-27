@@ -103,7 +103,7 @@ valores de massa específica \emph{bulk} dos leitos $\rho_{B}$ publicados por
 \label{tab:dadosdosleitos}
 \small
 \begin{tabular}{ccc}
-{ - } & {Densidade \emph{bulk} ($kg/m^3$)} & {Porosidade} 
+{ - } & {Densidade \emph{bulk} (\si{kg/m^3})} & {Porosidade} 
 \\
 \hline
 {Leito 1} & 814 & 0.346 \\
@@ -330,6 +330,14 @@ premissa de que o equilíbrio termodinâmico é atingido instantaneamente.
 \nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
 \nomenclature[S]{$z$}{z-ésima célula de leito de reator}
 
+É importante notar que as variáveis que fazem parte das correntes que
+entram e saem das células na \autoref{fig:celula} (temperatura,
+pressão, composição, fração vaporizada, fração dos compostos em fase líquida e
+gasosa, por exemplo) são vetores de dimensão $N_{Disc}+1$.
+Ao passo que as variáveis avaliadas internamente em cada célula (?? colocar aqui
+alguns exemplos de variáveis, talvez até adicionar na própria figura algumas
+delas??) possuem dimensão $N_{Disc}$.
+
 Para a região de \emph{quench}, será usado um tambor de \emph{flash}, onde o
 equilíbrio termodinâmico é também atingido instantaneamente. A
 \autoref{fig:quench} ilustra a região de \emph{quench}.
@@ -340,17 +348,11 @@ equilíbrio termodinâmico é também atingido instantaneamente. A
  \label{fig:quench}
  \end{figure}
 
-!! É preciso que fique claro que, observando as duas figuras mostradas nessa
-seção, as variáveis que fazem parte do objeto de corrente $F$ possuem dimensão
-$N_{Disc}$ + $1$ (temperatura, pressão, composição, fração vaporizada, fração
-dos compostos em fase líquida e gasosa, por exemplo), ao passo que as demais
-variáveis possuem dimensão $N_{Disc}$ (variáveis hidrodinâmicas). !!
-
 Com esse tipo de abordagem, foi possível considerar os efeitos termodinâmicos
 ao longo do reator, como também prever a composição das fases líquida e
-gasosa. As próximas seções apresentam o equacionamento construído
+gasosa. As próximas seções apresentam o equacionamento construído.
 
-\section{Balanço de Massa e Energia} \label{sec:balancomassaenergia}
+\section{Balanços de Massa e Energia} \label{sec:balancomassaenergia}
 
 Normalmente, para a modelagem heterogênea de TBR, os autores que
 utilizam modelos determinísticos contínuos fazem o balanço de massa para todas as
@@ -371,7 +373,6 @@ célula $z$, no tempo $t$:
 \displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
-
 onde $M_{i,z}$ é a massa do componente $i$ na célula $z$, $j$ é o número
 identificador de cada reação, $N_{reac}$ é o número total de reações,
 $\nu_{i,j}$ é o coeficiente estequiométrico do componente $i$ na reação $j$,
@@ -391,26 +392,26 @@ processo estudado.
 
 De forma similar, o seguinte balanço de energia de forma
 discretizada foi considerado:
-
 \begin{equation}
 \dfrac{dE_{z}}{dt} = F_zh_{z} - F_{z+1}h_{z+1} +
 \displaystyle\sum_{j=1}^{N_{reac}} \Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodeenergia}
 \end{equation}
-onde $E_{z}$ é a energia na célula $z$, $h$ é a entalpia da corrente $F$ e
-$\Delta H_{j}$ o calor envolvido na reação $j$.
+onde $E_{z}$ representa a energia acumulada na célula $z$, $h$ é a entalpia da
+corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
-A equação apresentada a seguir representa a relação entre a energia e a massa
-que se encontra em cada célula.
-!! 
+Para a relação entre a energia aculumada em cada célula, a seguinte relação
+foi considerada:
 \begin{equation}
-E_{z} = M_{z}h_{z+1} - P{z+1}A*L_{leito}*\epsilon_{B}/N_{Disc}
+E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
 \label{eq:holdupenergia}
 \end{equation}
+onde $V_{z} = AL_{leito}\epsilon_{B}/N_{Disc}$ é o volume disponível para as
+fases líquida e gasosa na célula $z$.
 
 A \autoref{eq:holdupenergia} e a \autoref{eq:balancodeenergia} mostram que
 apenas as fases líquida e gasosa interferem na inercia térmica do sistema,
-como está apresentado nas premissas deste trabalho. !!
+como está apresentado nas premissas deste trabalho.
 
 \nomenclature{$E$}{Energia \nomunit{kJ}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
@@ -430,13 +431,11 @@ As reações de hidrogenação e os parâmetros cinéticos considerados estão
 listados na \autoref{tab:composicao}. Conforme já explicado, o sistema reacional
 foi considerado como sendo um conjunto de hidrogenações irreversíveis e
 independentes da concentração de hidrogênio. A constante de pseudo-primeira
-ordem da reação $j$ na célula $z$, $k^{'}_{j,z}$, é definido como segue:
-
+ordem da reação $j$ na célula $z$, $k^{'}_{j,z}$, é definida como segue:
 \begin{equation}
 k^{'}_{j,z} = \eta_ik_jC^{*}_{H_2}
 \label{eq:constantepseudoprimeiraordem}
 \end{equation}
-
 sendo $\eta$ o fator de efetividade de intradifusão, $k$ a
 constante de taxa de reação instrínseca e $C^{*}_{H_2}$ a concentração de
 equilíbrio de hidrogênio em fase líquida.
@@ -451,15 +450,14 @@ líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
 
 Portanto, a taxa $r$ da reação $j$ na célula $z$ é apresentada da seguinte
 forma:
-
 \begin{equation}
 r_{j,z} = k^{*}_{j,z}C^{S}_{i,z}
 \label{eq:taxareacao}
 \end{equation}
-
 onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
 sólida. Essa concentração é determinada pela transferência de massa
 líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
+?? tirar o 'enter' antes das equações e antes dos 'sendo/onde', como feito acima ??
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
 equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
@@ -474,9 +472,11 @@ k^{*}_{j,z} = \dfrac{k^{'}_{j,z}} {\rho^{L}_{z+1}} \exp
 sendo $\rho^L$ a massa específica da fase líquida.
 
 Nota-se na equação \autoref{eq:constantetaxareacaoespecifica} que foram usadas
-temperatura e massa específica da corrente de saída da célula ($z+1$). Essa
-opção foi feita de forma abritrária, já que poderiam ser usadas as condições de
-entrada da mesma forma.
+temperatura e massa específica da corrente de saída da célula ($z+1$).
+Essa opção foi feita de forma a que a premissa de que cada célula
+é um CSTR (mistura perfeita) é respeitada.
+De qualquer maneira, para um número grande de células, a utilização das propriedades
+avaliadas em $z$ ou $z+1$ traria pouca diferença aos resultados finais.
 
 \nomenclature{$k^{*}$}{constante da taxa de reação específica
 \nomunit{kmol/(m^3/(kg_{cat}.h)}}
@@ -501,11 +501,16 @@ van der Waals \cite{VanderWaals1873}, com parâmetros de interação binária
 específicos para cada um dos pares de hidrogênio/hidrocarboneto. Para o caso da
 regra de mistura escolhida, os parâmetros cruzados $a_{ij}$ estão definidos
 da seguinte forma\cite{Peng1976,Soave1972}:
-
 \begin{equation}
 a_{ij} = \sqrt{a_ia_j}(1-\delta_{ij})
 \label{eq:parametroaij}
 \end{equation}
+
+?? colocar aqui ou em algum outro lugar exatamente o deltaij utilizado.
+Pode pegar nas referencias originais ou na eq. 2.21 do documento
+http://www.lume.ufrgs.br/bitstream/handle/10183/143899/000998153.pdf?sequence=1
+(não citar o TCC, mas sim a fonte original)
+??
 
 Para a avaliação do ELV e demais propriedades, foi utilizado o pacote
 termodinâmico do simulador de processos iiSE (\emph{Industrial Integrated
@@ -536,14 +541,12 @@ na superfície das partículas de catalisador, $C^S$.
 A primeira dessas equações é fruto de um balanço de massa, onde a
 transferência de massa na interface líquido-sólido de um reagente é igual a
 velocidade com que ele é consumido na reação:
-
 \begin{equation}
 k_{i,z}^{LS}a^{LS}(C^L_{i,z}-C^S_{i,z}) = \rho_B
 \displaystyle\sum_{j=1}^{N_{reac}}
 \nu_{i,j}r_{j,z}
 \label{eq:transferenciamassa}
 \end{equation}
-
 sendo $C^{L}$ a concentração de qualquer espécie química presenta na fase
 líquida e $k^{LS}$ o coeficiente de transferência de massa na interface líquido
 sólido, calculado para cada reagente.
@@ -553,7 +556,6 @@ sólido, calculado para cada reagente.
 
 O parâmetro $a^{LS}$ é a área específica do catalisador é função do diâmetro
 das partículas $d_p$ de catalisador e da porosidade do leito $\epsilon_B$:
-
 \begin{equation}
 a^{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 \label{eq:aLS}
@@ -710,27 +712,28 @@ gasolina de pirólise.
 \subsection{EMSO} \label{sec:EMSO}
 
 O simulador \emso{} é uma ferramenta para modelagem, simulação e otimização de
-sistemas, com foco principal em respostas dinâmicas. O \emso realiza a
-verificação da consistência das unidades de medida, da solvabilidade do sistema
+sistemas, com foco principal em respostas dinâmicas. O \emso{} realiza a
+verificação da consistência das unidades de medida, da resolubilidade do sistema
 de equações e das condições iniciais. As três entidades principais dessa
-linguagem de modelagem são: modelos (\emph{models}), equipamentos
-(\emph{devices}) e fluxograma (\emph{flowsheet}) \cite{Soares2003}.
+linguagem de modelagem são: modelos (\code{Model}), equipamentos
+(\code{Device}) e fluxograma (\code{FlowSheet}) \cite{Soares2003}.
+?? Veja se gostou desta formatação com 'code' para aplicar no resto, você escolhe ??
 
-\textit{Modelos} são descrições matemáticas de um tipo de equipamento (bomba,
+\code{Model}s são descrições matemáticas de um tipo de equipamento (bomba,
 reator, corrente de fluxo); um \textit{equipamento} é uma instância de um
 \textit{modelo}; e o \textit{fluxograma} representa o processo a ser analisado,
 que é composto por um conjunto de \textit{equipamentos} \cite{Soares2003}.
 
-O \emso já possui uma biblioteca de modelos prontos para o uso (EML -
-\emph{\emso  Model Library}. Para a solução do presente trabalho, dois modelos
+O \emso{} já possui uma biblioteca de modelos prontos para o uso (EML -
+\emph{\emso{} Model Library}). Para a solução do presente trabalho, dois modelos
 extras foram criados.
 
 O primeiro modelo representa as correntes de fluxo que entram e saem de
 cada célula, incluindo o cálculo de \emph{flash}. Esse modelo foi chamado de
-\emph{streamTP.mso} e baseou-se nos modelos já criados para corrente na EML, com
+\code{streamTP} e baseou-se nos modelos já criados para corrente na EML, com
 a peculiaridade de receber como parâmetros de entrada temperatura, pressão e
-composição. O código do objeto \emph{streamTP.mso} está no
-\autoref{chap:streamTP}
+composição. O código do modelo \code{streamTP} está no
+\autoref{chap:streamTP}.
 
 O segundo modelo (\autoref{chap:modeloleitofixo}) foi o de um reator de leito
 fixo. Nele é possível utilizar tanto fluxo monofásico quanto fluxo bifásico.
