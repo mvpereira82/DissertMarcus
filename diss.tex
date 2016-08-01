@@ -41,34 +41,33 @@ Agradecimentos
 }
 
 \resumo{
-?? Adicionar aqui algumas frases com uma mini introdução/motivação ??
-A modelagem e simulação de reatores trifásicos representa um grande
-desafio tanto para simuladores comerciais quanto para estudos acadêmicos.
-Várias são as ferramentas e abordagens disponíveis para superar tais desafios.
-Neste trabalho, um reator de hidrogenação de nafta
-de pirólise foi simulado baseado em dados publicados na literatura. O reator
-é do tipo leito gotejante (trifásico), e as reações consideradas são de
-pseudo-primeira ordem. A técnica aplicada foi a de modelagem matemática por
-células, onde os leitos catalíticos foram subdivididos em reatores tipo CSTR
-dinâmicos associados em série. A cada célula, um cálculo de flash foi feito,
-aperfeiçoando os balanços de massa e energia comumente empregados em reatores de
-leito gotejante. A abordagem termodinâmica utilizada para prever o ELV foi a $\phi_i$ -
-$\phi_i$, com a EoS de SRK \cite{Soave1972}, e seguindo as recomendações e os
-parâmetros do trabalho feito por \citeonline{Zhou2006} para a solubilidade de
-hidrogênio em gasolina de pirólise.
-?? Comentar aqui o modelo termodinâmico utilizado ??
-O modelo foi implementado no software \emso{}
-(\emsoname{}) cerca de 9000 equações e variáveis. Os resultados foram comparados
-com disponíveis na literatura.
-?? Colocar as conclusões aqui ??
-A aplicação de modelagem por células mostrou-se não só aplicável mas mais
-robusta do que abordagens tradicionais quen utilizam EDOs. Os resultados obtidos
-foram similares ao encontrados por \citeonline{Rojas2014a}.A utilização da
-ferramenta EMSOpara a modelagem por células mostrou-se ainda mais vantajosa ao
-permitir a avaliação do comportamento dinâmico do reator em algumas situações
-hipotética, mas que são bem comuns na industria.}
- \palavraschave{1.~Gasolina de Pirólise. 2.~Hidrogenação. 3.~Reatores de leito
- fixo 4.~Modelagem. 5.~Simulação}
+!! A modelagem e simulação de reatores trifásicos representa um grande
+desafio para simuladores de processo. Muitos estudos academicos tem
+sido desenvolvidos com o objetivo de descrever e prever o comportamento desses
+equipamentos, quer seja em seu estado estacionários, quer seja as respostas
+dinâmicas. E várias são as abordagens aplicadas para tentar melhor refletir os
+fenômenos envolvidos nos reatores trifásicos, ponderando sempre o custo
+computacional de cada abordagem. !! Neste trabalho, um reator de hidrogenação
+seletiva de nafta de pirólise foi simulado baseado em dados publicados na
+literatura. O reator é do tipo leito gotejante (trifásico), e as reações
+consideradas são de pseudo-primeira ordem. A técnica aplicada foi a de modelagem
+matemática por células, onde os leitos catalíticos foram subdivididos em
+reatores tipo CSTR dinâmicos associados em série. A cada célula, um cálculo de
+flash foi feito, aperfeiçoando os balanços de massa e energia comumente
+empregados em reatores de leito gotejante. !! A abordagem termodinâmica
+utilizada para prever o ELV foi a $\phi_i$ - $\phi_i$, com a EoS de SRK
+\cite{Soave1972}, e seguindo as recomendações e os parâmetros do trabalho feito
+por \citeonline{Zhou2006} para a solubilidade de hidrogênio em gasolina de
+pirólise. !! O modelo foi implementado no software \emso{} (\emsoname{}) cerca
+de 9000 equações e variáveis. Os resultados foram comparados com disponíveis na
+literatura. !! A aplicação de modelagem por células mostrou-se não só aplicável
+mas também mais robusta do que abordagens tradicionais quen utilizam EDOs. Os
+resultados obtidos foram similares ao encontrados por \citeonline{Rojas2014a}. A
+utilização da ferramenta \emso{} para a modelagem por células mostrou-se ainda
+mais vantajosa ao permitir a avaliação do comportamento dinâmico do reator em
+algumas situações hipotética, mas que são bem comuns na industria. !! }
+\palavraschave{1.~Gasolina de Pirólise.
+2.~Hidrogenação. 3.~Reatores de leito fixo 4.~Modelagem. 5.~Simulação}
 
 \abstract{Abstract here.}
 \keywords{1.~PYGAS 2.~Hydrogenation 3.~Fixed-bed Reactors 4.~Modeling

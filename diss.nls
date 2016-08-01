@@ -2,41 +2,43 @@
 
  \nomgroup{A}
 
-  \item [{$a$}]\begingroup Parâmetro de atração\nomeqref {3.9}
+  \item [{$a$}]\begingroup Parâmetro de atração\nomeqref {3.12}
 		\nompageref{33}
-  \item [{$a^{LS}$}]\begingroup Área suferficial específica do catalisador \nomunit{m^2/m^3}\nomeqref {3.11}
+  \item [{$a^{LS}$}]\begingroup Área suferficial específica do catalisador \nomunit{m^2/m^3}\nomeqref {3.14}
 		\nompageref{33}
-  \item [{$a_{ij}$}]\begingroup Parâmetro cruzado entre as espécies $i$ e $j$\nomeqref {3.9}
+  \item [{$a_{ij}$}]\begingroup Parâmetro cruzado entre as espécies $i$ e $j$\nomeqref {3.12}
 		\nompageref{33}
-  \item [{$C$}]\begingroup Concentração \nomunit{kmol/m^3}\nomeqref {3.8}
+  \item [{$C$}]\begingroup Concentração \nomunit{kmol/m^3}\nomeqref {3.9}
 		\nompageref{32}
-  \item [{$C^{*}_{H_2}$}]\begingroup Concentração de equilíbrio de hidrogênio em fase líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}\nomeqref {3.6}
+  \item [{$C^{*}_{H_2}$}]\begingroup Concentração de equilíbrio de hidrogênio em fase líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}\nomeqref {3.7}
 		\nompageref{31}
-  \item [{$D$}]\begingroup Difusividade molecular \nomunit{m^2/s}\nomeqref {3.15}
+  \item [{$C_p$}]\begingroup Capacidade calorífica a pressão constante \nomunit{J/(kg.K)}\nomeqref {3.6}
+		\nompageref{31}
+  \item [{$D$}]\begingroup Difusividade molecular \nomunit{m^2/s}\nomeqref {3.18}
 		\nompageref{34}
   \item [{$d_{p}$}]\begingroup Diâmetro da partícula de catalisador \nomunit{m}\nomeqref {2.4}
 		\nompageref{13}
   \item [{$D_{R}$}]\begingroup Diâmetro do reator \nomunit{m}\nomeqref {2.4}
 		\nompageref{13}
-  \item [{$E$}]\begingroup Energia \nomunit{kJ}\nomeqref {3.5}
-		\nompageref{30}
-  \item [{$Ea$}]\begingroup Energia de ativação \nomunit{kJ/kmol}\nomeqref {3.8}
+  \item [{$E$}]\begingroup Energia \nomunit{kJ}\nomeqref {3.6}
+		\nompageref{31}
+  \item [{$Ea$}]\begingroup Energia de ativação \nomunit{kJ/kmol}\nomeqref {3.9}
 		\nompageref{32}
   \item [{$F$}]\begingroup Vazão molar \nomunit{kmol/h}\nomeqref {3.3}
 		\nompageref{30}
   \item [{$F_v$}]\begingroup Vazão volumétrica \nomunit{m^3/h}\nomeqref {4.1}
 		\nompageref{40}
   \item [{$F_w$}]\begingroup Vazão mássica \nomunit{kg/h}\nomeqref {3.2}
-		\nompageref{24}
-  \item [{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.5}
-		\nompageref{30}
-  \item [{$k$}]\begingroup Constante de taxa de reação intrínseca \nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}\nomeqref {3.6}
+		\nompageref{25}
+  \item [{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.6}
 		\nompageref{31}
-  \item [{$k^{'}$}]\begingroup Constante de taxa de reação de pseudo-primeira ordem \nomunit{kg/(kg_{cat}.h)}\nomeqref {3.6}
+  \item [{$k$}]\begingroup Constante de taxa de reação intrínseca \nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}\nomeqref {3.7}
 		\nompageref{31}
-  \item [{$k^{*}$}]\begingroup constante da taxa de reação específica \nomunit{kmol/(m^3/(kg_{cat}.h)}\nomeqref {3.8}
+  \item [{$k^{'}$}]\begingroup Constante de taxa de reação de pseudo-primeira ordem \nomunit{kg/(kg_{cat}.h)}\nomeqref {3.7}
+		\nompageref{31}
+  \item [{$k^{*}$}]\begingroup constante da taxa de reação específica \nomunit{kmol/(m^3/(kg_{cat}.h)}\nomeqref {3.9}
 		\nompageref{32}
-  \item [{$k^{LS}$}]\begingroup Coeficiente de transferência de massa líquido-sólido \nomunit{m/h}\nomeqref {3.10}
+  \item [{$k^{LS}$}]\begingroup Coeficiente de transferência de massa líquido-sólido \nomunit{m/h}\nomeqref {3.13}
 		\nompageref{33}
   \item [{$L_{dl1}$}]\begingroup Comprimento do leito denso 1 \nomunit{m}\nomeqref {3.0}
 		\nompageref{21}
@@ -56,20 +58,22 @@
 		\nompageref{28}
   \item [{$N_{reac}$}]\begingroup Número total de reações\nomeqref {3.3}
 		\nompageref{30}
-  \item [{$R$}]\begingroup Constante universal dos gases \nomunit{kJ/(kmol.K)}\nomeqref {3.8}
+  \item [{$R$}]\begingroup Constante universal dos gases \nomunit{kJ/(kmol.K)}\nomeqref {3.9}
 		\nompageref{32}
   \item [{$r$}]\begingroup Taxa de reação \nomunit{kmol/(kg_{cat}.h)}\nomeqref {3.3}
 		\nompageref{30}
-  \item [{$Re$}]\begingroup Número de Reynolds\nomeqref {3.15}
+  \item [{$Re$}]\begingroup Número de Reynolds\nomeqref {3.18}
 		\nompageref{34}
-  \item [{$Sh$}]\begingroup Número de Schmidt\nomeqref {3.15}
+  \item [{$Sh$}]\begingroup Número de Schmidt\nomeqref {3.18}
 		\nompageref{34}
-  \item [{$Sh$}]\begingroup Número de Sherwood\nomeqref {3.15}
+  \item [{$Sh$}]\begingroup Número de Sherwood\nomeqref {3.18}
 		\nompageref{34}
-  \item [{$T$}]\begingroup Temperatura \nomunit{K}\nomeqref {3.8}
+  \item [{$T$}]\begingroup Temperatura \nomunit{K}\nomeqref {3.9}
 		\nompageref{32}
-  \item [{$T^{ref}$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.8}
+  \item [{$T^{ref}$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.9}
 		\nompageref{32}
+  \item [{$T_{ref}$}]\begingroup Temperatura de referência, \si{320.15}{K}\nomeqref {3.6}
+		\nompageref{31}
   \item [{$V$}]\begingroup Volume \nomunit{m^3}\nomeqref {4.1}
 		\nompageref{40}
   \item [{$V_R$}]\begingroup Volume total do reator \nomunit{m^3}\nomeqref {4.1}
@@ -78,17 +82,17 @@
 		\nompageref{22}
   \item [{$W$}]\begingroup Massa total de catalisador em um leito\nomunit{kg}\nomeqref {3.3}
 		\nompageref{30}
-  \item [{g}]\begingroup Aceleração da gravidade \nomunit{m/s^2}\nomeqref {3.20}
+  \item [{g}]\begingroup Aceleração da gravidade \nomunit{m/s^2}\nomeqref {3.23}
 		\nompageref{35}
-  \item [{Ga}]\begingroup Número de Galileo\nomeqref {3.20}
+  \item [{Ga}]\begingroup Número de Galileo\nomeqref {3.23}
 		\nompageref{35}
-  \item [{Pe}]\begingroup Número de Peclet\nomeqref {3.21}
+  \item [{Pe}]\begingroup Número de Peclet\nomeqref {3.24}
 		\nompageref{35}
-  \item [{u}]\begingroup Velocidade superficial da fase \nomunit{m/s}\nomeqref {3.16}
+  \item [{u}]\begingroup Velocidade superficial da fase \nomunit{m/s}\nomeqref {3.19}
 		\nompageref{34}
-  \item [{We}]\begingroup Número de Webber\nomeqref {3.19}
+  \item [{We}]\begingroup Número de Webber\nomeqref {3.22}
 		\nompageref{35}
-  \item [{X}]\begingroup Número de Lockhart-Martinelli\nomeqref {3.19}
+  \item [{X}]\begingroup Número de Lockhart-Martinelli\nomeqref {3.22}
 		\nompageref{35}
 
  \nomgroup{G}
@@ -99,11 +103,11 @@
 		\nompageref{11}
   \item [{$\beta_{Ls}$}]\begingroup Saturação de líquido estática\nomeqref {2.1}
 		\nompageref{11}
-  \item [{$\Delta H$}]\begingroup Calor de reação \nomunit{kJ/kmol}\nomeqref {3.5}
-		\nompageref{30}
+  \item [{$\Delta H$}]\begingroup Calor de reação \nomunit{kJ/kmol}\nomeqref {3.6}
+		\nompageref{31}
   \item [{$\Delta P/L$}]\begingroup Perda de carga por unidade de comprimento de reator \nomunit{kPa/m}\nomeqref {2.0}
 		\nompageref{9}
-  \item [{$\delta_{ij}$}]\begingroup Parâmetro de interação binária\nomeqref {3.9}
+  \item [{$\delta_{ij}$}]\begingroup Parâmetro de interação binária\nomeqref {3.12}
 		\nompageref{33}
   \item [{$\epsilon^{L}$}]\begingroup Retenção total de líquido\nomeqref {2.1}
 		\nompageref{11}
@@ -113,35 +117,35 @@
 		\nompageref{11}
   \item [{$\epsilon_{Ls}$}]\begingroup Retenção estática de líquido\nomeqref {2.1}
 		\nompageref{11}
-  \item [{$\eta$}]\begingroup Fator de efetividade de intradifusão\nomeqref {3.6}
+  \item [{$\eta$}]\begingroup Fator de efetividade de intradifusão\nomeqref {3.7}
 		\nompageref{31}
   \item [{$\eta_{CE}$}]\begingroup Eficiência de molhamento\nomeqref {2.1}
 		\nompageref{12}
-  \item [{$\mu$}]\begingroup Viscosidade \nomunit{cP}\nomeqref {3.15}
+  \item [{$\mu$}]\begingroup Viscosidade \nomunit{cP}\nomeqref {3.18}
 		\nompageref{34}
   \item [{$\nu$}]\begingroup Coeficiente de reação\nomeqref {3.3}
 		\nompageref{30}
-  \item [{$\phi$}]\begingroup Coeficiente de fugacidade\nomeqref {3.9}
+  \item [{$\phi$}]\begingroup Coeficiente de fugacidade\nomeqref {3.12}
 		\nompageref{33}
-  \item [{$\rho$}]\begingroup Massa específica \nomunit{kg/m^3}\nomeqref {3.8}
+  \item [{$\rho$}]\begingroup Massa específica \nomunit{kg/m^3}\nomeqref {3.9}
 		\nompageref{32}
   \item [{$\rho_{\ce{Al_2O_3}}$}]\begingroup Massa específica do óxido de alumínio \nomunit{kg/m^3}\nomeqref {3.0}
 		\nompageref{22}
   \item [{$\rho_{p}$}]\begingroup Massa específica da partícula de catalisador \nomunit{kg/m^3}\nomeqref {3.1}
 		\nompageref{23}
-  \item [{$\sigma$}]\begingroup Tensão superficial \nomunit{N/m}\nomeqref {3.19}
+  \item [{$\sigma$}]\begingroup Tensão superficial \nomunit{N/m}\nomeqref {3.22}
 		\nompageref{35}
 
  \nomgroup{R}
 
-  \item [{$L$}]\begingroup Designação da fase líquida\nomeqref {3.8}
+  \item [{$L$}]\begingroup Designação da fase líquida\nomeqref {3.9}
 		\nompageref{32}
-  \item [{$S$}]\begingroup Designação da fase sólida\nomeqref {3.8}
+  \item [{$S$}]\begingroup Designação da fase sólida\nomeqref {3.9}
 		\nompageref{32}
 
  \nomgroup{S}
 
-  \item [{$B$}]\begingroup Leito catalítico\nomeqref {3.8}
+  \item [{$B$}]\begingroup Leito catalítico\nomeqref {3.9}
 		\nompageref{32}
   \item [{$i$}]\begingroup i-ésimo componente\nomeqref {3.2}
 		\nompageref{24}
@@ -150,20 +154,20 @@
   \item [{$v$}]\begingroup Referente ao volume\nomeqref {4.1}
 		\nompageref{40}
   \item [{$w$}]\begingroup Referente à massa\nomeqref {3.2}
-		\nompageref{24}
+		\nompageref{25}
   \item [{$z$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.2}
 		\nompageref{28}
-  \item [{R}]\begingroup Reator\nomeqref {3.16}\nompageref{34}
+  \item [{R}]\begingroup Reator\nomeqref {3.19}\nompageref{34}
 
  \nomgroup{Z}
 
   \item [{$ELV$}]\begingroup Equilíbrio Líquido-Vapor\nomeqref {2.5}
 		\nompageref{19}
-  \item [{EML}]\begingroup \emso{} Model Library\nomeqref {3.21}
+  \item [{EML}]\begingroup \emso{} Model Library\nomeqref {3.24}
 		\nompageref{37}
   \item [{FBR}]\begingroup Reator de leito fixo\nomeqref {2.0}
 		\nompageref{6}
-  \item [{iiSE}]\begingroup \emph{Industrial Integrated Simulation Environment}\nomeqref {3.9}
+  \item [{iiSE}]\begingroup \emph{Industrial Integrated Simulation Environment}\nomeqref {3.12}
 		\nompageref{33}
   \item [{PBR}]\begingroup Reator de leito empacotado\nomeqref {2.0}
 		\nompageref{6}

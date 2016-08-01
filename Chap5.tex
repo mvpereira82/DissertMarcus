@@ -4,7 +4,13 @@
 \chapter{Conclusões e Sugestões} \label{chap:conclusoes}
 %
 
-?? Adicionar um parágrafo de introdução/motivação novamente aqui.
+!! A modelagem e simulação de reatores trifásicos representa um grande
+desafio para simuladores de processo. Muitos estudos academicos tem
+sido desenvolvidos com o objetivo de descrever e prever o comportamento desses
+equipamentos, quer seja em seu estado estacionários, quer seja as respostas
+dinâmicas. E várias são as abordagens aplicadas para tentar melhor refletir os
+fenômenos envolvidos nos reatores trifásicos, ponderando sempre o custo
+computacional de cada abordagem. !!
 
 A aplicação da modelagem por células no reator estudado neste trabalho permitiu
 conhecer melhor o comportamento das propriedades termodinâmicas e hidrodinâmicas
@@ -22,9 +28,9 @@ em algumas situações hipotéticas, mas que são bem comuns na industria.
 
 É bem verdade que a utilização de uma vazão de carga do reator superior à
 reportada no trabalho de \citeonline{Rojas2014a}, necessária para
-tornar o processo coerente, colocou incerteza nas comparações apresentadas.
-Mesmo assim, pode-se dizer que este trabalho cumpriu com seus objetivos,
-quais sejam:
+tornar o processo coerente, prejudicou melhores avaliações nas comparações
+apresentadas. Mesmo assim, pode-se dizer que este trabalho cumpriu
+com seus objetivos, quais sejam:
 
 \begin{enumerate}
   \item Apresentar o desenvolvimento de um modelo matemático genérico para
@@ -35,8 +41,14 @@ quais sejam:
   \citeonline{Rojas2014a}.
 \end{enumerate}
 
-Considerando que o \emso{} é um simulador voltado para equações, algumas
-sugestões para melhorar a modelagem aqui apresentada emergem, quais sejam:
+!! O aspecto a ser melhorado neste trabalho é a aplicação de equações
+hidrodinâmicas mais adequadas à faixa de operação do reator. De acordo
+com os resultados aqui alcançados, este se apresenta operando em regime de
+gotejamento, e não em regime de borbulhamento. !!
+
+!! Considerando a flexibilidade que o \emso{} possui por ser um simulador
+voltado para equações, duas sugestões para melhorar a modelagem aqui apresentada
+emergem, quais sejam: !!
 
 \begin{itemize}
 \item {Realizar o balanço de massa separadamente para as fases}
@@ -50,5 +62,3 @@ iiSE, essa abordagem tende a ser mais completa do que a que foi apresentada
 aqui. Contudo, a desvantagem dela é a necessidade de correlações nem sempre
 adequadas para determinar os coeficientes de transferência de massa.
 
-?? Faltou falar em algum lugar que a avaliação da hidrodinâmica precisaria ser
-melhorada ??

@@ -73,7 +73,6 @@ adotou-se a massa específica do \ce{Al2O3} puro ($\rho_{\ce{Al2O3}}$ = \SI{3940
 Antes de determinar a porosidade dos leitos catalíticos, é preciso avaliar a
 massa específica das partículas ($\rho_{p}$). Este parâmetro é estimado em
 \SI{1244}{kg/m^3} pela seguinte equação:
-
 \begin{equation}
 \rho_{p} = \dfrac{1}{Vt_{poros}+\dfrac{1}{\rho_{\ce{Al2O3}}}}
 \label{eq:rhoparticula}
@@ -83,12 +82,10 @@ massa específica das partículas ($\rho_{p}$). Este parâmetro é estimado em
 \nomunit{kg/m^3}}
 
 A porosidade de cada um dos leitos pode ser calculada como segue:
-
 \begin{equation}
 \epsilon_{B} = \dfrac{V_{l}-\dfrac{\rho_{B}V_l}{\rho_{\ce{Al_2O_3}}}}{V_l}
 \label{eq:porosidade}
 \end{equation}
-
 sendo $V_l$ o volume do leito e $\rho_B$ a massa específica de um leito
 catalítico logo após o seu carregamento.
 
@@ -323,20 +320,20 @@ premissa de que o equilíbrio termodinâmico é atingido instantaneamente.
 
  \begin{figure}[htb]
  \centering \includegraphics[scale=0.75]{images/Chap3/celula.png}
- \caption{Elemento discretizado de leito - célula}
+ \caption{Elemento discretizado de leito - célula.}
  \label{fig:celula}
  \end{figure}
 
 \nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
 \nomenclature[S]{$z$}{z-ésima célula de leito de reator}
 
-É importante notar que as variáveis que fazem parte das correntes que
+!! É importante notar que as variáveis que fazem parte das correntes que
 entram e saem das células na \autoref{fig:celula} (temperatura,
 pressão, composição, fração vaporizada, fração dos compostos em fase líquida e
 gasosa, por exemplo) são vetores de dimensão $N_{Disc}+1$.
-Ao passo que as variáveis avaliadas internamente em cada célula (?? colocar aqui
-alguns exemplos de variáveis, talvez até adicionar na própria figura algumas
-delas??) possuem dimensão $N_{Disc}$.
+Ao passo que as variáveis avaliadas internamente em cada célula (massa e energia
+totais contidas em cada célula, taxa e entalpia des reações, parâmetros
+hidrodinâmicos, por exemplo) possuem dimensão $N_{Disc}$. !!
 
 Para a região de \emph{quench}, será usado um tambor de \emph{flash}, onde o
 equilíbrio termodinâmico é também atingido instantaneamente. A
@@ -344,7 +341,7 @@ equilíbrio termodinâmico é também atingido instantaneamente. A
 
  \begin{figure}[htb]
  \centering \includegraphics[scale=0.75]{images/Chap3/quench.png}
- \caption{Região de quench do reator}
+ \caption{Região de quench do reator.}
  \label{fig:quench}
  \end{figure}
 
@@ -367,7 +364,6 @@ solução.
 Para este trabalho, diante das premissas adotadas, a equação de balanço de massa
 considera o termo de diferenciação da massa $M$ de cada componente $i$, em cada
 célula $z$, no tempo $t$: 
-
 \begin{equation}
 \dfrac{dM_{i,z}}{dt} = F_zC_{i,z} - F_{z+1}C_{i,z+1} +
 \displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
@@ -401,7 +397,7 @@ onde $E_{z}$ representa a energia acumulada na célula $z$, $h$ é a entalpia da
 corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
 Para a relação entre a energia aculumada em cada célula, a seguinte relação
-foi considerada:
+foi considerada para o estado estacionário:
 \begin{equation}
 E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
 \label{eq:holdupenergia}
@@ -409,11 +405,26 @@ E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
 onde $V_{z} = AL_{leito}\epsilon_{B}/N_{Disc}$ é o volume disponível para as
 fases líquida e gasosa na célula $z$.
 
-A \autoref{eq:holdupenergia} e a \autoref{eq:balancodeenergia} mostram que
-apenas as fases líquida e gasosa interferem na inercia térmica do sistema,
-como está apresentado nas premissas deste trabalho.
+!! Para avaliação de respostas dinâmicas, a relação entre a energia aculumada em
+cada célula é a seguinte:
+\begin{equation}
+E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z} +  \dfrac{W}{N_{Disc}}C_{p,p}(T_{z}-T_{ref})
+\label{eq:holdupenergiadinamica}
+\end{equation}
+onde $C_{p,p}$ é o $C_p$ do catalisador, \si{880}{J/(kg*K)} e $T_{ref}$ é a
+temperatura de referência, \si{320.15}{K} !!.
+
+A \autoref{eq:holdupenergia} mostra que, para obtenção dos resultados em estado
+estacionário, apenas as fases líquida e gasosa interferem na inercia térmica do
+sistema. Já a \autoref{eq:holdupenergiadinamica} apresenta a inserção do
+catalisador na inércia térmica do sistema. A relevância dessa consideração é
+discutida na \autoref{chap:resultados}.
 
 \nomenclature{$E$}{Energia \nomunit{kJ}}
+\nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
+\nomenclature{$C_p$}{Capacidade calorífica a pressão constante
+\nomunit{J/(kg.K)}}
+\nomenclature{$T_{ref}$}{Temperatura de referência, \si{320.15}{K}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
 \nomenclature[G]{$\Delta H$}{Calor de reação \nomunit{kJ/kmol}}
 
@@ -457,18 +468,15 @@ r_{j,z} = k^{*}_{j,z}C^{S}_{i,z}
 onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
 sólida. Essa concentração é determinada pela transferência de massa
 líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
-?? tirar o 'enter' antes das equações e antes dos 'sendo/onde', como feito acima ??
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
 equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
-
 \begin{equation}
 k^{*}_{j,z} = \dfrac{k^{'}_{j,z}} {\rho^{L}_{z+1}} \exp
 \left[{\dfrac{-Ea_j}{R} \left (\dfrac{1}{T_{z+1}} -
 \dfrac{1}{T^{ref}} \right )}\right]
 \label{eq:constantetaxareacaoespecifica}
 \end{equation}
-
 sendo $\rho^L$ a massa específica da fase líquida.
 
 Nota-se na equação \autoref{eq:constantetaxareacaoespecifica} que foram usadas
@@ -505,12 +513,21 @@ da seguinte forma\cite{Peng1976,Soave1972}:
 a_{ij} = \sqrt{a_ia_j}(1-\delta_{ij})
 \label{eq:parametroaij}
 \end{equation}
+onde o parâmetro de interação binária $\delta_{ij}$ sugerido por
+\apud{Gray1985}{Rojas2014} é definido por:
+\begin{equation}
+\delta_{ij} = 0.0067+\dfrac{0.63375S^3}{1+S^3}
+\label{eq:deltaij}
+\end{equation}
+e
+\begin{equation}
+S = \dfrac{T_{c,j}-50}{1000-T_{c,j}}
+\label{eq:deltaij}
+\end{equation}
 
-?? colocar aqui ou em algum outro lugar exatamente o deltaij utilizado.
-Pode pegar nas referencias originais ou na eq. 2.21 do documento
-http://www.lume.ufrgs.br/bitstream/handle/10183/143899/000998153.pdf?sequence=1
-(não citar o TCC, mas sim a fonte original)
-??
+!! Não encontrei o artigo original de \cite{Gray1985}. Conferi a equação dele
+publicada por \cite{Rojas2014} e o TCC que você sugeriu, e encontrei diferença.
+Escrevi a equação conforme a fonte citada. !!
 
 Para a avaliação do ELV e demais propriedades, foi utilizado o pacote
 termodinâmico do simulador de processos iiSE (\emph{Industrial Integrated
@@ -566,29 +583,23 @@ a^{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 
 Para determinar $k_{LS}$, foi utilizada a equação de \citeonline{Hirose1976}
 para o número de Sherwood dos componentes em fase líquida ($Sh^L$):
-
 \begin{equation}
 \epsilon_BSh^L_{i,z} = 0.8(Re^L_z)^{0.5}(Sc^L_{i,z})^{1/3} \qquad (Re<200)
 \label{eq:Sh1}
 \end{equation}
-
 \begin{equation}
 \epsilon_BSh^L_{i,z} = 0.53(Re^L_z)^{0.58}(Sc^L_{i,z})^{1/3} \qquad (Re>200)
 \label{eq:Sh2}
 \end{equation}
-
 sendo que
-
 \begin{equation}
 k_{LS,z} = \dfrac{Sh^L_{i,z}D^L_{i}}{d_p}
 \label{eq:kLS}
 \end{equation}
-
 \begin{equation} 
 Sc^L_{i,z} = \dfrac{\mu^L_{z}}{\rho^L_{z+1}D^L_{i,z}}
 \label{eq:Sc}
 \end{equation}
-
 $Re^L$ é o número de Reynolds da fase líquida, $Sc$ é o número de Schmidt,
 $D^L_{i}$ é difusividade molecular do composto $i$ na fase líquida e $\mu^L$ é
 viscosidade da fase líquida.
@@ -610,7 +621,6 @@ por \citeonline{Benkrid1997}. Essa equação é válida para regimes de alta
 interação (borbulhamento, conforme a premissa adotada). Para o presente
 trabalho, portanto, adotou-se a mesma equação, que é mostrada a seguir na forma
 discretizada:
-
 \begin{equation}
 \label{eq:deltaP}
 \begin{split}
@@ -621,8 +631,6 @@ discretizada:
 \dfrac{4}{D_R}\right)\rho^{L}(u^{L})^2 \right]
 \end{split}
 \end{equation}
-
-
 onde $u$ é a velocidade da fase e $L_z$ é dado por $L/N_{Disc}$ de cada leito.
 
 \nomenclature{u}{Velocidade superficial da fase \nomunit{m/s}}
@@ -632,26 +640,21 @@ Visto que a pressão de operação do reator é muito acima da pressão atmosfé
 a equação usada para estimar a retenção de líquido $\epsilon^L$ foi a proposta
 por \citeonline{Larachi1991}, que é uma dentre outras
 equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
-
 \begin{equation}
 log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B} \right) =
 -\dfrac{1.22(We_{z}^L)^{0.15}}{(Re_{z}^L)^{0.20}(X_{z}^G)^{0.15}}
 \label{eq:epsilonL}
 \end{equation}
-
 onde $We$ é o número de Webber e $X^G$ é o número de Lockhart-Martinelli
 para a fase gás. Ambos são definidos a seguir.
-
 \begin{equation}
 We_{z}^L = \dfrac{(u_{z}^L)^2d_p\rho_{z}^L}{\sigma_{z}^L}
 \label{eq:webber}
 \end{equation}
-
 \begin{equation}
 X_{z}^G = \dfrac{u_{z}^G}{u_z^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
 \label{eq:X}
 \end{equation}
-
 sendo que $\sigma^L$ é a tensão superficial da fase líquida.
 
 \nomenclature[G]{$\sigma$}{Tensão superficial \nomunit{N/m}}
@@ -661,13 +664,11 @@ sendo que $\sigma^L$ é a tensão superficial da fase líquida.
 Para verificar a premissa de que o molhamento do catalisador é completo
 ($\eta_{CE} = 1$), será utilizada a equação proposta por
 \citeonline{Al-Dahhan1995} para sistemas de alta pressão, como segue:
-
 \begin{equation}
 \eta_{CE,z} = 1.104(Re_z^L)^{1/3} \left [
 \dfrac{1 + [(\Delta P_z/L_{z})/(\rho_{z}^L g)]}{Ga_{z}^{L}} \right ]
 \label{eq:molhamento}
 \end{equation}
-
 sendo $Ga$ o número de Galileo e $g$ a aceleração da gravidade.
 
 \nomenclature{Ga}{Número de Galileo}
@@ -675,7 +676,6 @@ sendo $Ga$ o número de Galileo e $g$ a aceleração da gravidade.
 
 O número Peclet ($Pe$) é o parâmetro utilizado na literatura para verificar
 se na modelagem do reator o fenômeno de dispersão axial é relevante ou não.
-
 \begin{equation}
 Pe_z^L = \dfrac{L_z}{d_p} 2.3(Re_z^L)^{0,33}(Ga_{z}^{L})^{-0.19}
 \label{eq:numerodepeclet}
@@ -717,7 +717,6 @@ verificação da consistência das unidades de medida, da resolubilidade do sist
 de equações e das condições iniciais. As três entidades principais dessa
 linguagem de modelagem são: modelos (\code{Model}), equipamentos
 (\code{Device}) e fluxograma (\code{FlowSheet}) \cite{Soares2003}.
-?? Veja se gostou desta formatação com 'code' para aplicar no resto, você escolhe ??
 
 \code{Model}s são descrições matemáticas de um tipo de equipamento (bomba,
 reator, corrente de fluxo); um \textit{equipamento} é uma instância de um
