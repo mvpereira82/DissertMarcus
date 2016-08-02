@@ -118,8 +118,24 @@
 
 \ProcessOptions
 
+% ------------------------------------------------------------------------------
+% Fonts
+% ------------------------------------------------------------------------------
+%\usepackage{lmodern}
+\usepackage{palatino}
+\renewcommand{\textsc}[1]{\fontshape{sc} \fontfamily{\sfdefault} \selectfont #1}
+% chapter fonts
+\renewcommand*{\chapnumfont}{\normalfont\HUGE\bfseries\sffamily}
+\renewcommand*{\chaptitlefont}{\chapnumfont}
+\renewcommand*{\chapnamefont}{\chapnumfont}
+\renewcommand*{\printchapternum}{\chapnumfont \thechapter\space}
+\renewcommand{\cftchapterfont}{\normalfont\bfseries\sffamily}   
+\renewcommand{\cftsectionfont}{\normalfont}
+\renewcommand{\cftsubsectionfont}{\normalfont}
+
 %+++++++++++++++++++++++++++++++++++++++ Lista de Símbolos ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \usepackage{siunitx}
+\sisetup{detect-all}
 \renewcommand\nomgroup[1]{%
   \ifthenelse{\equal{#1}{A}}{%
    \item[\textbf{}] }{%             A - Romanas
@@ -351,21 +367,6 @@ como requisito parcial para obtenção do Grau de \thecategorytitle.
 \headheight 15pt
 \pagenumbering{arabic}
 } % end maketitle
-
-% ------------------------------------------------------------------------------
-% Fonts
-% ------------------------------------------------------------------------------
-%\usepackage{lmodern}
-\usepackage{palatino}
-\renewcommand{\textsc}[1]{\fontshape{sc} \fontfamily{\sfdefault} \selectfont #1}
-% chapter fonts
-\renewcommand*{\chapnumfont}{\normalfont\HUGE\bfseries\sffamily}
-\renewcommand*{\chaptitlefont}{\chapnumfont}
-\renewcommand*{\chapnamefont}{\chapnumfont}
-\renewcommand*{\printchapternum}{\chapnumfont \thechapter\space}
-\renewcommand{\cftchapterfont}{\normalfont\bfseries\sffamily}   
-\renewcommand{\cftsectionfont}{\normalfont}
-\renewcommand{\cftsubsectionfont}{\normalfont}
 
 \usepackage{titlesec}
 \titleformat*{\section}{\sffamily\Large\bfseries}

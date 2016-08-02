@@ -9,8 +9,11 @@ neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}.
 
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
 
-O reator é composto de dois leitos catalíticos, carregados de forma densa
-(\emph{dense loading}). No topo de ambos os leitos há catalisador carregado de
+?? Em algum lugar ficou faltando um esquema mostrando como os leitos estão
+conectados em sequencia e como o reciclo entra na forma de quench ??
+
+O reator é composto de dois leitos catalíticos, carregados de forma
+densa (\emph{dense loading}). No topo de ambos os leitos há catalisador carregado de
 forma solta (\emph{sock loading}). A carga é composta de gasolina de pirólise,
 hidrogênio e parte do produto hidrogenado reciclado. Este último é parte da
 corrente líquida oriunda de um vaso de separação, cuja carga é a corrente de
@@ -327,13 +330,13 @@ premissa de que o equilíbrio termodinâmico é atingido instantaneamente.
 \nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
 \nomenclature[S]{$z$}{z-ésima célula de leito de reator}
 
-!! É importante notar que as variáveis que fazem parte das correntes que
+É importante notar que as variáveis que fazem parte das correntes que
 entram e saem das células na \autoref{fig:celula} (temperatura,
 pressão, composição, fração vaporizada, fração dos compostos em fase líquida e
 gasosa, por exemplo) são vetores de dimensão $N_{Disc}+1$.
 Ao passo que as variáveis avaliadas internamente em cada célula (massa e energia
 totais contidas em cada célula, taxa e entalpia des reações, parâmetros
-hidrodinâmicos, por exemplo) possuem dimensão $N_{Disc}$. !!
+hidrodinâmicos, por exemplo) possuem dimensão $N_{Disc}$.
 
 Para a região de \emph{quench}, será usado um tambor de \emph{flash}, onde o
 equilíbrio termodinâmico é também atingido instantaneamente. A
@@ -365,7 +368,7 @@ Para este trabalho, diante das premissas adotadas, a equação de balanço de ma
 considera o termo de diferenciação da massa $M$ de cada componente $i$, em cada
 célula $z$, no tempo $t$: 
 \begin{equation}
-\dfrac{dM_{i,z}}{dt} = F_zC_{i,z} - F_{z+1}C_{i,z+1} +
+\dfrac{dM_{i,z}}{dt} = F_z C_{i,z} - F_{z+1} C_{i,z+1} +
 \displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
@@ -374,6 +377,8 @@ identificador de cada reação, $N_{reac}$ é o número total de reações,
 $\nu_{i,j}$ é o coeficiente estequiométrico do componente $i$ na reação $j$,
 $r_{j,z}$ é taxa da reação $j$ na célula $z$, $F$ é a vazão molar total e $W$ é
 a massa total de catalisador presente no leito.
+?? O acúmulo no seu modelo ficou para a massa M mesmo ou número de mols N,
+nesta linha, não seria F multiplicado pela fração molar e não concentração ??
 
 Com a \autoref{eq:balancodemassa} é possível o estudo de respostas dinâmicas do
 processo estudado.
@@ -396,7 +401,7 @@ discretizada foi considerado:
 onde $E_{z}$ representa a energia acumulada na célula $z$, $h$ é a entalpia da
 corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
-Para a relação entre a energia aculumada em cada célula, a seguinte relação
+Para a expressão da energia aculumada em cada célula, a seguinte relação
 foi considerada para o estado estacionário:
 \begin{equation}
 E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
@@ -405,20 +410,20 @@ E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
 onde $V_{z} = AL_{leito}\epsilon_{B}/N_{Disc}$ é o volume disponível para as
 fases líquida e gasosa na célula $z$.
 
-!! Para avaliação de respostas dinâmicas, a relação entre a energia aculumada em
+Para avaliação de respostas dinâmicas, a relação entre a energia aculumada em
 cada célula é a seguinte:
 \begin{equation}
 E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z} +  \dfrac{W}{N_{Disc}}C_{p,p}(T_{z}-T_{ref})
 \label{eq:holdupenergiadinamica}
 \end{equation}
-onde $C_{p,p}$ é o $C_p$ do catalisador, \si{880}{J/(kg*K)} e $T_{ref}$ é a
-temperatura de referência, \si{320.15}{K} !!.
+onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)} e $T_{ref}$ é a
+temperatura de referência, \SI{320,15}{K}.
 
 A \autoref{eq:holdupenergia} mostra que, para obtenção dos resultados em estado
 estacionário, apenas as fases líquida e gasosa interferem na inercia térmica do
 sistema. Já a \autoref{eq:holdupenergiadinamica} apresenta a inserção do
 catalisador na inércia térmica do sistema. A relevância dessa consideração é
-discutida na \autoref{chap:resultados}.
+discutida no \autoref{chap:resultados}.
 
 \nomenclature{$E$}{Energia \nomunit{kJ}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
@@ -428,8 +433,8 @@ discutida na \autoref{chap:resultados}.
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
 \nomenclature[G]{$\Delta H$}{Calor de reação \nomunit{kJ/kmol}}
 
-As \autoref{eq:balancodemassa} e \autoref{eq:balancodeenergia}, somadas à
-corrente $F$ e seu cálculo de ELV, permitem determinar a fração vaporizada,
+As equações \ref{eq:balancodemassa} e \ref{eq:balancodeenergia}, somadas
+à corrente $F$ e seu cálculo de ELV, permitem determinar a fração vaporizada,
 a composição das fases e respectivas propriedades físicas em cada célula $z$.
 
 É importante notar ainda que, da forma como as \autoref{eq:balancodemassa} e
@@ -452,9 +457,9 @@ constante de taxa de reação instrínseca e $C^{*}_{H_2}$ a concentração de
 equilíbrio de hidrogênio em fase líquida.
 
 \nomenclature{$k^{'}$}{Constante de taxa de reação de pseudo-primeira
-ordem \nomunit{kg/(kg_{cat}.h)}}
+ordem \nomunit{kg/(kg_{cat} h)}}
 \nomenclature{$k$}{Constante de taxa de reação intrínseca
-\nomunit{kg.m^3/(kg_{cat}.h.kmol_{H_2})}}
+\nomunit{kg m^3/(kg_{cat} h kmol_{H2})}}
 \nomenclature{$C^{*}_{H_2}$}{Concentração de equilíbrio de hidrogênio em fase
 líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
 \nomenclature[G]{$\eta$}{Fator de efetividade de intradifusão}
@@ -486,14 +491,14 @@ Essa opção foi feita de forma a que a premissa de que cada célula
 De qualquer maneira, para um número grande de células, a utilização das propriedades
 avaliadas em $z$ ou $z+1$ traria pouca diferença aos resultados finais.
 
-\nomenclature{$k^{*}$}{constante da taxa de reação específica
-\nomunit{kmol/(m^3/(kg_{cat}.h)}}
+\nomenclature{$k^{*}$}{Constante da taxa de reação específica
+\nomunit{kmol/(m^3/(kg_{cat} h)}}
 \nomenclature[R]{$L$}{Designação da fase líquida}
 \nomenclature[R]{$S$}{Designação da fase sólida}
 \nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
 \nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
-\nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol.K)}}
+\nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol K)}}
 \nomenclature{$Ea$}{Energia de ativação \nomunit{kJ/kmol}}
 \nomenclature[S]{$B$}{Leito catalítico}
 \nomenclature{$C$}{Concentração \nomunit{kmol/m^3}}
@@ -524,10 +529,6 @@ e
 S = \dfrac{T_{c,j}-50}{1000-T_{c,j}}
 \label{eq:deltaij}
 \end{equation}
-
-!! Não encontrei o artigo original de \cite{Gray1985}. Conferi a equação dele
-publicada por \cite{Rojas2014} e o TCC que você sugeriu, e encontrei diferença.
-Escrevi a equação conforme a fonte citada. !!
 
 Para a avaliação do ELV e demais propriedades, foi utilizado o pacote
 termodinâmico do simulador de processos iiSE (\emph{Industrial Integrated
