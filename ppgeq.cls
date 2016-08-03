@@ -136,6 +136,8 @@
 %+++++++++++++++++++++++++++++++++++++++ Lista de Símbolos ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \usepackage{siunitx}
 \sisetup{detect-all}
+\sisetup{input-decimal-markers = {.,}}
+\sisetup{output-decimal-marker = {,}}
 \renewcommand\nomgroup[1]{%
   \ifthenelse{\equal{#1}{A}}{%
    \item[\textbf{}] }{%             A - Romanas

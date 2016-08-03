@@ -29,12 +29,12 @@ células não fora bem equacionada ou a abordagem é inadequada para o sistema
 estudado.
 
 A segunda questão refere-se ao resfriamento na região zona de \emph{quench}. O
-dado de planta apresenta um resfriamento de \SI{25.7}{K} entre os leitos
+dado de planta apresenta um resfriamento de \SI{25,7}{K} entre os leitos
 catalíticos; a simulação de \citeonline{Rojas2014a} apresenta resfriamento de
-\SI{21,6}{K} para a região; e o valor encontrado no presente trabalho foi de
-\SI{4,1}{K}. Essa situação torna-se mais enigmática ao se constatar que o
-balanço de energia proposto por \citeonline{Rojas2014a} para a região de \emph{quench}
-é ainda mais simplificado que o proposto neste estudo.
+\SI{21,6}{K} para a região; e o valor encontrado no
+presente trabalho foi de \SI{4,1}{K}. Essa situação torna-se mais enigmática ao
+se constatar que o balanço de energia proposto por \citeonline{Rojas2014a} para
+a região de \emph{quench} é ainda mais simplificado que o proposto neste estudo.
 
 Uma análise do valor de LHSV (\emph{Liquid Hourly Space Velocity}) foi feita
 na tentativa de trazer um esclarecimento às discrepâncias encontradas. O
@@ -65,9 +65,9 @@ publicados na literatura.}
 {LHSV (\si{1/h})}
 \\
 \hline
-{\citeonline{Arpornwichanop2008}} & 69 & 60 & 1.14 \\
-{\citeonline{Mederos2007}} & 165 & 62 & 2.66 \\
-{\citeonline{Rojas2014a}} & 347 & 18 & 19.76 \\
+{\citeonline{Arpornwichanop2008}} & \num{69} & \num{60} & \num{1,14} \\
+{\citeonline{Mederos2007}} & \num{165} & \num{62} & \num{2,66} \\
+{\citeonline{Rojas2014a}} & \num{347} & \num{18} & \num{19,76} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -95,8 +95,6 @@ Após várias tentativas, o valor de $F_{w,1}$ foi alterado para \SI{2,079e4}
 {kg/h}. Com essa nova vazão, tanto o resfriamento da região de \emph{quench}
 quando a exotermia dos leitos tornaram-se aderentes aos dados de planta e de
 literatura, como está mostrado na \autoref{sec:estadoestacionario}.
-?? O comando SI está colocando '.' e não ',' que é o correto em Português.
-Procurar uma opção para corrigir isto ??
 
 A \autoref{tab:comparacaoLHSV2} repete os valores da
 \autoref{tab:comparacaoLHSV}, mas agora com a inclusão do valor de LHSV
@@ -112,10 +110,10 @@ após o ajuste da vazão de carga do reator.
 {LHSV (\si{1/h})}
 \\
 \hline
-{\citeonline{Arpornwichanop2008}} & 69 & 60 & 1.14 \\
-{\citeonline{Mederos2007}} & 165 & 62 & 2.66 \\
-{\citeonline{Rojas2014a}} & 347 & 18 & 19.76 \\
-{Dados ajustados} & 76 & 18 & 4.34 \\
+{\citeonline{Arpornwichanop2008}} & \num{69} & \num{60} & \num{1,14} \\
+{\citeonline{Mederos2007}} & \num{165} & \num{62} & \num{2,66} \\
+{\citeonline{Rojas2014a}} & \num{347} & \num{18} & \num{19,76} \\
+{Dados ajustados} & \num{76} & \num{18} & \num{4,34} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -155,18 +153,18 @@ diferença entre $N_{Disc} = 4$ e $N_{Disc} = 8$, como mostra a
 \label{fig:NDiscz}
 \end{figure}
 
-Assim, discretizar cada leito catalítico em $8$ células pareceria uma escolha
-razoável e suficiente para o objetivo deste trabalho. Entretanto, para
+Assim, discretizar cada leito catalítico em \num{8} células pareceria uma
+escolha razoável e suficiente para o objetivo deste trabalho. Entretanto, para
 garantir a representação dos leitos como contínuos, foi utilizado um valor um
-pouco maior, $N_{Disc}$ = 10. Esta escolha faz com que o modelo apresente um
-total de 9299 variáveis.
+pouco maior, $N_{Disc}$ = \num{10}. Esta escolha faz com que o modelo apresente
+um total de \num{9299} variáveis.
 
 Mesmo não considerando a perda de carga nos resultados finais (como mostra a
 \autoref{sec:avaliacaoperdadecarga}, as equações necessárias para os cálculos
 dela foram mantidas. Além disso, algumas das equações hidrodinâmicas
 influenciam em parâmetros de transferência de massa, que influenciam na taxa da
 reação (Cs). Outras referem-se a avaliação do padrão de escoamento.  Dentro das
-9299, portanto, estão todas as equações, mesmo as não relevantes para os
+\num{9299}, portanto, estão todas as equações, mesmo as não relevantes para os
 resultados.
 
 \subsection{Avaliação da Perda de Carga} \label{sec:avaliacaoperdadecarga}
@@ -192,8 +190,8 @@ inalterada. Sendo assim, o reator foi simulado desprezando-se a perda de carga.
 (\si{atm})}
 \\
 \hline
-{Leito 1} & \num{3.4e-3} & 49.64 & 49.63 \\
-{Leito 2} & \num{3.7e-3} & 49.63 & 49.61 \\
+{Leito 1} & \num{3,4e-3} & \num{49,64} & \num{49,63} \\
+{Leito 2} & \num{3,7e-3} & \num{49,63} & \num{49,61} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -248,17 +246,17 @@ alterar a vazão de alimentação.
 {Compostos} & {Dados de Planta} & {\citeonline{Rojas2014a}} & {Este Trabalho}
 \\
 \hline
-{Hidrogênio} & 0.06 & 0.05 & 0.04 \\
-{C1-C4 não reativos} & 0.05 & 0.04 & 0.04 \\
-{C6-C9 não reativos} & 0.06 & 0.07 & 0.06 \\
-{Benzeno-Tolueno-Xileno} & 0.48 & 0.47 & 0.48 \\
-{Dienos C5-C6} & 0.00 & 0.00 & 0.00 \\
-{Olefinas C5-C6} & 0.14 & 0.15 & 0.14 \\
-{Parafinas C5-C6} & 0.10 & 0.12 & 0.14 \\
-{Estirenos} & 0.00 & 0.00 & 0.00 \\
-{Aromáticos reativos} & 0.06 & 0.07 & 0.07 \\
-{Diciclodienos} & 0.00 & 0.00 & 0.00 \\
-{Diciclodienos hidrogenados} & 0.03 & 0.03 & 0.03 \\
+{Hidrogênio} & \num{0,06} & \num{0,05} & \num{0,04} \\
+{C1-C4 não reativos} & \num{0,05} & \num{0,04} & \num{0,04} \\
+{C6-C9 não reativos} & \num{0,06} & \num{0,07} & \num{0,06} \\
+{Benzeno-Tolueno-Xileno} & \num{0,48} & \num{0,47} & \num{0,48} \\
+{Dienos C5-C6} & \num{0,00} & \num{0,00} & \num{0,00} \\
+{Olefinas C5-C6} & \num{0,14} & \num{0,15} & \num{0,14} \\
+{Parafinas C5-C6} & \num{0,10} & \num{0,12} & \num{0,14} \\
+{Estirenos} & \num{0,00} & \num{0,00} & \num{0,00} \\
+{Aromáticos reativos} & \num{0,06} & \num{0,07} & \num{0,07} \\
+{Diciclodienos} & \num{0,00} & \num{0,00} & \num{0,00} \\
+{Diciclodienos hidrogenados} & \num{0,03} & \num{0,03} & \num{0,03} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -359,10 +357,13 @@ propriedades termodinâmicas calculadas neste trabalho.
 {Saída Leito 2}
 \\
 \hline
-{$MW^{L}$ (\si{kg/kmol})} & 82.5 & 81.6 & 81.6 & 81.2 \\
-{$MW^{G}$ (\si{kg/kmol})} & 7.0 & 18.4 & 13.6 & 18.8 \\
-{$\rho^{L}$(\si{kg/m^3})} & 728.7 & 639.9 & 668.9 & 635.3 \\
-{$\rho^{G}$ (\si{kg/m^3})} & 11.4 & 26.4 & 20.3 & 27.2 \\
+{$MW^{L}$ (\si{kg/kmol})} & \num{82,5} & \num{81,6} & \num{81,6} & \num{81,2} \\
+{$MW^{G}$ (\si{kg/kmol})} & \num{7,0} & \num{18,4} & \num{13,6} & \num{18,8} \\
+{$\rho^{L}$(\si{kg/m^3})} & \num{728,7} & \num{639,9} & \num{668,9} &
+\num{635,3}
+\\
+{$\rho^{G}$ (\si{kg/m^3})} & \num{11,4} & \num{26,4} & \num{20,3} & \num{27,2}
+\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -407,7 +408,8 @@ transferência de massa e perda de carga.
 {Saída Leito 2}
 \\
 \hline
-{$u^{L}$ (\si{m/s})} & \num{3.2e-3} & \num{3,6e-3} & \num{4,7e-3} & \num{4,9e-3} \\
+{$u^{L}$ (\si{m/s})} & \num{3,2e-3} & \num{3,6e-3} & \num{4,7e-3} & \num{4,9e-3}
+\\
 {$u^{G}$ (\si{m/s})} & \num{3,3e-3} & \num{1,7e-3} & \num{1,5E-3} & \num{0,5E-3} \\
 {$\mu^{L}$(\si{cP})} & \num{0,128} & \num{0,103} & \num{0,130} & \num{0,121} \\
 {$\mu^{G}$ (\si{cP})} & \num{0,012} & \num{0,013} & \num{0,012} & \num{0,013} \\
@@ -434,8 +436,8 @@ constante).
 Um resultado que chama a atenção na \autoref{tab:propriedadeshidrodinamicas}
 refere-se à velocidade de escoamento das fases e, consequentemente, ao número de
 Reynolds delas. A velocidade da fase líquida divulgada por
-\citeonline{Rojas2014a}, por exemplo, esteve entre \SI{1,2e-2}{m/s} e
-\SI{1,5e-2}{m/s}, o que é cerca de cinco vezes maior do que os valores
+\citeonline{Rojas2014a}, por exemplo, esteve entre \si{1,2e-2}{m/s} e
+\si{1,5e-2}{m/s}, o que é cerca de cinco vezes maior do que os valores
 encontrados neste trabalho. Aqui, portanto, fica clara a divergência da vazão de
 carga do reator utilizada neste trabalho e no trabalho original.
 
@@ -464,7 +466,7 @@ Como já explicado no \autoref{chap:moddesenvolvidos}, a variável $\epsilon^{L}
 possui como dimensão o valor de $N_{Disc}$.
 
 Os valores $\epsilon^{L}$ encontrados por \citeonline{Rojas2014a} foram de
-0,14 e 0,17 para a entrada do Leito 1 e saída do Leito 2,
+\num{0,14} e \num{0,17} para a entrada do Leito 1 e saída do Leito 2,
 respectivamente. A diferença entre os resultados pode ser explicada pela
 incerteza quanto à vazão de carga no reator, que neste trabalho precisou ser
 modificada por motivos já explicados. Contudo, a diferença não é tão
@@ -533,33 +535,45 @@ interface líquido-sólido.
 {Composto} & {$C^{L}_{1}$} & {$C^{S}_{1}$} & {$C^{L}_{11}$} & {$C^{S}_{11}$}
 \\
 \hline
-{Hidrogênio} & 0.2397 & 0.2367 & 0.2656 & 0.2644 \\
-{Metano} & 0.1002 & 0.1002 & 0.1304 & 0.1304 \\
-{Etano} & 0.0210 & 0.0210 & 0.0208 & 0.0208 \\
-{n-Propano} & 0.0511 & 0.0511 & 0.0468 & 0.0468 \\
-{n-Butano} & 0.0352 & 0.0352 & 0.0312 & 0.0312 \\
-{n-Pentano} & 0.5327 & 0.5328 & 0.5070 & 0.5073 \\
-{trans-2-Penteno} & 0.5512 & 0.5519 & 0.5876 & 0.5879 \\
-{trans-1.3-Pentadieno} & 0.2455 & 0.2447 & 0.0739 & 0.0734 \\
-{Ciclopentano} & 0.1557 & 0.1559 & 0.1911 & 0.1914 \\
-{Ciclopenteno} & 0.2539 & 0.2554 & 0.3054 & 0.3053 \\
-{Metil-1.3-Ciclopentadieno} & 0.1611 & 0.0210 & 0.0208 & 0.0208 \\
-{n-Hexano} & 0.2757 & 0.2757 & 0.2424 & 0.2424 \\
-{Metilciclopentano} & 0.1383 & 0.1383 & 0.1370 & 0.1371 \\
-{Metilciclopenteno} & 0.1866 & 0.1871 & 0.2428 & 0.2430 \\
-{1.3-Ciclopentadieno} & 0.1695 & 0.1680 & 0.0128 & 0.0126 \\
-{Benzeno} & 2.6803 & 2.6803 & 2.3579 & 2.3579 \\
-{n-Heptano} & 0.2029 & 0.2029 & 0.1786 & 0.1786 \\
-{Tolueno} & 1.2642 & 1.2642 & 1.1141 & 1.1141 \\
-{n-Octano} & 0.0825 & 0.0825 & 0.0727 & 0.0727 \\
-{Etilbenzeno} & 0.2536 & 0.2546 & 0.3146 & 0.3148 \\
-{Estireno} & 0.1207 & 0.1197 & 0.0156 & 0.0155 \\
-{Xileno} & 0.3712 & 0.3712 & 0.3277 & 0.3277 \\
-{n-Nonano} & 0.0376 & 0.0376 & 0.0332 & 0.0332 \\
-{1-Metil-3-Etilbenzeno} & 0.1813 & 0.1816 & 0.2081 & 0.2083 \\
-{Metilestireno} & 0.0813 & 0.0810 & 0.0239 & 0.0237 \\
-{Dihidrodiciclopentadieno} & 0.2003 & 0.2014 & 0.2721 & 0.2724 \\
-{Diciclopentadieno} & 0.1262 & 0.1251 & 0.0164 & 0.0161 \\
+{Hidrogênio} & \num{0,2397} & \num{0,2367} & \num{0,2656} & \num{0,2644} \\
+{Metano} & \num{0,1002} & \num{0,1002} & \num{0,1304} & \num{0,1304} \\
+{Etano} & \num{0,0210} & \num{0,0210} & \num{0,0208} & \num{0,0208} \\
+{n-Propano} & \num{0,0511} & \num{0,0511} & \num{0,0468} & \num{0,0468} \\
+{n-Butano} & \num{0,0352} & \num{0,0352} & \num{0,0312} & \num{0,0312} \\
+{n-Pentano} & \num{0,5327} & \num{0,5328} & \num{0,5070} & \num{0,5073} \\
+{trans-2-Penteno} & \num{0,5512} & \num{0,5519} & \num{0,5876} & \num{0,5879} \\
+{trans-1,3-Pentadieno} & \num{0,2455} & \num{0,2447} & \num{0,0739} &
+\num{0,0734}
+\\
+{Ciclopentano} & \num{0,1557} & \num{0,1559} & \num{0,1911} & \num{0,1914} \\
+{Ciclopenteno} & \num{0,2539} & \num{0,2554} & \num{0,3054} & \num{0,3053} \\
+{Metil-1,3-Ciclopentadieno} & \num{0,1611} & \num{0,0210} & \num{0,0208} &
+\num{0,0208}
+\\
+{n-Hexano} & \num{0,2757} & \num{0,2757} & \num{0,2424} & \num{0,2424} \\
+{Metilciclopentano} & \num{0,1383} & \num{0,1383} & \num{0,1370} & \num{0,1371}
+\\
+{Metilciclopenteno} & \num{0,1866} & \num{0,1871} & \num{0,2428} & \num{0,2430}
+\\
+{1,3-Ciclopentadieno} & \num{0,1695} & \num{0,1680} & \num{0,0128} &
+\num{0,0126}
+\\
+{Benzeno} & \num{2,6803} & \num{2,6803} & \num{2,3579} & \num{2,3579} \\
+{n-Heptano} & \num{0,2029} & \num{0,2029} & \num{0,1786} & \num{0,1786} \\
+{Tolueno} & \num{1,2642} & \num{1,2642} & \num{1,1141} & \num{1,1141} \\
+{n-Octano} & \num{0,0825} & \num{0,0825} & \num{0,0727} & \num{0,0727} \\
+{Etilbenzeno} & \num{0,2536} & \num{0,2546} & \num{0,3146} & \num{0,3148} \\
+{Estireno} & \num{0,1207} & \num{0,1197} & \num{0,0156} & \num{0,0155} \\
+{Xileno} & \num{0,3712} & \num{0,3712} & \num{0,3277} & \num{0,3277} \\
+{n-Nonano} & \num{0,0376} & \num{0,0376} & \num{0,0332} & \num{0,0332} \\
+{1-Metil-3-Etilbenzeno} & \num{0,1813} & \num{0,1816} & \num{0,2081} &
+\num{0,2083}
+\\
+{Metilestireno} & \num{0,0813} & \num{0,0810} & \num{0,0239} & \num{0,0237} \\
+{Dihidrodiciclopentadieno} & \num{0,2003} & \num{0,2014} & \num{0,2721} &
+\num{0,2724} \\
+{Diciclopentadieno} & \num{0,1262} & \num{0,1251} & \num{0,0164} & \num{0,0161}
+\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -583,8 +597,8 @@ saber:
 As seções a seguir apresentam uma breve discussão para cada um dos casos
 mencionados.
 
-\subsection{Resposta a   um degrau na temperatura da carga, de \SI{366}{K} para
-\SI{300}{K} - Avaliação da importância da inércia térmica do catalisador}
+\subsection{Resposta a   um degrau na temperatura da carga, de \si{366}{K} para
+\si{300}{K} - Avaliação da importância da inércia térmica do catalisador}
 \label{sec:respostaaumdegrautemp}
 
 Este primeiro caso reflete o comportamento do reator no caso da perda de
@@ -625,8 +639,8 @@ temperatura na carga, considerando a inércia térmica do catalisador.}
 \label{fig:Feed_T_300K_catalyst_influence}
 \end{figure}
 
-% A concentração de diolefinas na saída do reator passa de \si{0.0305}{kmol/m^3}
-% para \si{0.2868}{kmol/m^3}; 
+% A concentração de diolefinas na saída do reator passa de \si{0,0305}{kmol/m^3}
+% para \si{0,2868}{kmol/m^3}; 
 % 
 % \begin{figure}[htb]
 % \centering
@@ -639,9 +653,9 @@ temperatura na carga, considerando a inércia térmica do catalisador.}
 Além do perfil de temperatura, vale aqui apresentar o efeito do resfriamento da
 carga do reator na concentração de estireno. A diminuição da temperatura de
 entrada faz com que a fração molar total de estireno na saída do reator aumente
-de \SI{1.96e-4}{} para \SI{0.0026}{}, cerca de $13.3$ vezes maior. Considerando
-que o estireno é um composto que precisa ser eliminado da nafta de pirólise, a
-queda de temperatura em questão é inaceitável. A
+de \num{1,96e-4} para \num{0,0026}, cerca de \num{13,3} vezes maior.
+Considerando que o estireno é um composto que precisa ser eliminado da nafta de
+pirólise, a queda de temperatura em questão é inaceitável. A
 \autoref{fig:Feed_T_300K_catalyst_influence_styrene} mostra como seria a
 resposta dinâmica do perfil da concentração de estireno ao degrau de temperatura
 (a menor) da carga.
@@ -657,8 +671,9 @@ temperatura na carga.}
 As duas próximas avaliações de respostas dinâmicas foram feitas considerando o
 catalisador no cálculo da energia acumulada nas células.
 
-\subsection{Resposta a um degrau na vazão da corrente de \emph{quench}, de 20790
-kg h para 10790 kg} \label{sec:respostaaumdegrauvazao1}
+\subsection{Resposta a um degrau na vazão da corrente de \emph{quench}, de
+\SI{20790}{kg/h} para \SI{10790}{kg/h}}
+\label{sec:respostaaumdegrauvazao1}
 
 A perda de parte da vazão da corrente de \emph{quench} tem efeito imediato no
 Leito 2 do reator, como mostra a \autoref{fig:Quench_F_10790_catalyst_influence}.
@@ -676,8 +691,8 @@ disparos de temperatura. De qualquer forma, a exotermia observada significa
 também maior conversão de olefinas que, para o objetivo desse processo (produzir
 gasolina automotiva), tem efeito deletério quanto à octanagem.
 
-\subsection{Resposta a um degrau na vazão da corrente de \emph{quench}, de 20790
-kg h para 30790 kg} \label{sec:respostaaumdegrauvazao3}
+\subsection{Resposta a um degrau na vazão da corrente de \emph{quench}, de
+\SI{20790}{kg/h} para \SI{30790}{kg/h}} \label{sec:respostaaumdegrauvazao3}
 
 Para a situação em que a vazão da corrente de \emph{quench} aumenta, quer seja
 por problema de instrumentação ou equipameto, quer seja por erro humano, o Leito

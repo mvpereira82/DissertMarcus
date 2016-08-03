@@ -9,9 +9,6 @@ neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}.
 
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
 
-?? Em algum lugar ficou faltando um esquema mostrando como os leitos estão
-conectados em sequencia e como o reciclo entra na forma de quench ??
-
 O reator é composto de dois leitos catalíticos, carregados de forma
 densa (\emph{dense loading}). No topo de ambos os leitos há catalisador carregado de
 forma solta (\emph{sock loading}). A carga é composta de gasolina de pirólise,
@@ -23,7 +20,7 @@ para controle de temperatura (\emph{quench}). Um diagrama simplificado que
 ilustra o reator está na \autoref{fig:esquemareator}.
 
 \begin{figure}[htb]
-\centering \includegraphics[scale=0.75]{images/Chap3/esquemareator.png}
+\centering \includegraphics[scale=0.75]{images/Chap3/esquemareatorb.png}
 \caption{Diagrama esquemático do reator \cite{Rojas2014a}.}
 \label{fig:esquemareator}
 \end{figure}
@@ -60,11 +57,12 @@ A \autoref{tab:dadosreator} apresenta as dimensões do reator.
 
 O catalisador considerado na modelagem contém Pd suportado em alumina
 (\ce{Al2O3}), de formato esférico. Além desses dados, foi fornecida a informação
-de volume total de poros $Vt_{poros}$ = \SI{5,5e-4}{m^3/kg}. O dado
-de volume total de poros não é suficiente por si só para calcular a porosidade dos leitos,
-como é apresentado na \autoref{sec:propriedadesleitoscataliticos}. Assim,
-adotou-se a massa específica do \ce{Al2O3} puro ($\rho_{\ce{Al2O3}}$ = \SI{3940}
-{kg/m^3}) para a massa específica da parte sólida das partículas de catalisador.
+de volume total de poros $Vt_{poros}$ = \SI{5,5e-4}{\cubic\meter\per\kg}. O
+dado de volume total de poros não é suficiente por si só para calcular a
+porosidade dos leitos, como é apresentado na \autoref{sec:propriedadesleitoscataliticos}.
+Assim, adotou-se a massa específica do \ce{Al2O3} puro ($\rho_{\ce{Al2O3}}$ =
+\SI{3940} {kg/m^3}) para a massa específica da parte sólida das partículas de
+catalisador.
 
 \nomenclature{$Vt_{poros}$}{Volume total de poros \nomunit{m^3/kg}}
 \nomenclature[G]{$\rho_{\ce{Al_2O_3}}$}{Massa específica do óxido de alumínio
@@ -106,8 +104,8 @@ valores de massa específica \emph{bulk} dos leitos $\rho_{B}$ publicados por
 { - } & {Densidade \emph{bulk} (\si{kg/m^3})} & {Porosidade} 
 \\
 \hline
-{Leito 1} & 814 & 0.346 \\
-{Leito 2} & 813 & 0.347 \\
+{Leito 1} & \num{814} & \num{0,346} \\
+{Leito 2} & \num{813} & \num{0,347} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -128,12 +126,6 @@ As propriedades termodinâmicas dos compostos $28$ e $29$ não foram
 encontradas. Assim, eles foram considerados como sendo parte dos compostos
 $26$ e $27$, respectivamente.
 
-\subsection{Condições de operação} \label{sec:condicoesdeoperacao}
-
-As condições de operação consideradas inicialmente estão na
-\autoref{tab:condicoesoperacao}. No \label{chap:resultados} há uma discussão
-sobre a validade de algumas dessas variáveis aqui apresentadas.
-
 \begin{table}[!htb]
 \begin{center}
 \caption{Composição das correntes de entrada e de \emph{quench}
@@ -144,35 +136,35 @@ sobre a validade de algumas dessas variáveis aqui apresentadas.
 {Identificador $i$} & {Composto} & Entrada (\% mássica) & Quench (\% mássica)
 \\
 \hline
-1 & Hidrogênio				& 0.48 & 0.08 \\
-2 & Metano					& 0.52 & 0.70 \\
-3 & Etano					& 0.12 & 0.11 \\
-4 & n-Propano				& 0.36 & 0.27 \\
-5 & n-Butano				& 0.30 & 0.24 \\
-6 & n-Pentano				& 5.40 & 5.60 \\
-7 & trans-2-Penteno			& 5.30 & 7.60\\
-8 & trans-1.3-Pentadieno	& 2.50 & 0.23 \\
-9 & Ciclopentano			& 1.50 & 2.60 \\
-10& Ciclopenteno			& 2.10 & 3.00 \\
-11& Metil-1.3-Ciclopentadieno	& 1.90 & 0.21 \\
-12& n-Hexano				& 3.30 & 3.30 \\
-13& Metilciclopentano		& 1.60 & 1.70 \\
-14& Metilciclopenteno		& 2.00 & 2.60 \\
-15& 1.3-Ciclopentadieno		& 1.90 & 0.02 \\
-16& Benzeno					& 28.90 & 30.10 \\
-17& n-Heptano				& 2.80 & 2.90 \\
-18& Tolueno					& 16.00 & 16.30 \\
-19& n-Octano				& 1.30 & 1.30 \\
-20& Etilbenzeno				& 3.40 & 5.40 \\
-21& Estireno				& 2.00 & 0.11 \\
-22& Xileno					& 5.40 & 5.50 \\
-23& n-Nonano				& 0.66 & 0.72 \\
-24& 1-Metil-3-Etilbenzeno	& 2.90 & 3.90 \\
-25& Metilestireno			& 1.40 & 0.31 \\
-26& Dihidrodiciclopentadieno	& 1.80 & 3.00 \\
-27& Diciclopentadieno		& 1.80 & 0.12 \\
-28& Metildihidrodiciclopentadieno	& 1.50 & 2.20 \\
-29& Metildiciclopentadieno	& 0.88 & 0.11 \\
+1 & Hidrogênio				& \num{0,48} & \num{0,08} \\
+2 & Metano					& \num{0,52} & \num{0,70} \\
+3 & Etano					& \num{0,12} & \num{0,11} \\
+4 & n-Propano				& \num{0,36} & \num{0,27} \\
+5 & n-Butano				& \num{0,30} & \num{0,24} \\
+6 & n-Pentano				& \num{5,40} & \num{5,60} \\
+7 & trans-2-Penteno			& \num{5,30} & \num{7,60} \\
+8 & trans-1,3-Pentadieno	& \num{2,50} & \num{0,23} \\
+9 & Ciclopentano			& \num{1,50} & \num{2,60} \\
+10& Ciclopenteno			& \num{2,10} & \num{3,00} \\
+11& Metil-1,3-Ciclopentadieno	& \num{1,90} & \num{0,21} \\
+12& n-Hexano				& \num{3,30} & \num{3,30} \\
+13& Metilciclopentano		& \num{1,60} & \num{1,70} \\
+14& Metilciclopenteno		& \num{2,00} & \num{2,60} \\
+15& 1,3-Ciclopentadieno		& \num{1,90} & \num{0,02} \\
+16& Benzeno					& \num{28,90} & \num{30,10} \\
+17& n-Heptano				& \num{2,80} & \num{2,90} \\
+18& Tolueno					& \num{16,00} & \num{16,30} \\
+19& n-Octano				& \num{1,30} & \num{1,30} \\
+20& Etilbenzeno				& \num{3,40} & \num{5,40} \\
+21& Estireno				& \num{2,00} & \num{0,11} \\
+22& Xileno					& \num{5,40} & \num{5,50} \\
+23& n-Nonano				& \num{0,66} & \num{0,72} \\
+24& 1-Metil-3-Etilbenzeno	& \num{2,90} & \num{3,90} \\
+25& Metilestireno			& \num{1,40} & \num{0,31} \\
+26& Dihidrodiciclopentadieno	& \num{1,80} & \num{3,00} \\
+27& Diciclopentadieno		& \num{1,80} & \num{0,12} \\
+28& Metildihidrodiciclopentadieno	& \num{1,50} & \num{2,20} \\
+29& Metildiciclopentadieno	& \num{0,88} & \num{0,11} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -199,7 +191,7 @@ sobre a validade de algumas dessas variáveis aqui apresentadas.
 {Pressão de entrada} & {$P_{1}$} & \SI{5,03}{MPa} \\
 {Temperatura de entrada} & {$T_{1}$} & \SI{366,15}{K} \\
 {Vazão mássica de entrada} & {$F_{w,1}$} & \SI{2,477e5}{kg/h} \\
-{Pressão da corrente de \emph{quench}} & {$P_{Q}$} & \SI{4.6}{MPa} \\
+{Pressão da corrente de \emph{quench}} & {$P_{Q}$} & \SI{4,6}{MPa} \\
 {Temperatura da corrente de \emph{quench}} & {$T_{Q}$} & \SI{326,15}{K} \\
 {Vazão mássica da corrente de \emph{quench}} & {$F_{w,Q}$} & \SI{2,079e4}{kg/h}
 \\
@@ -368,17 +360,16 @@ Para este trabalho, diante das premissas adotadas, a equação de balanço de ma
 considera o termo de diferenciação da massa $M$ de cada componente $i$, em cada
 célula $z$, no tempo $t$: 
 \begin{equation}
-\dfrac{dM_{i,z}}{dt} = F_z C_{i,z} - F_{z+1} C_{i,z+1} +
+\dfrac{dM_{i,z}}{dt} = F_z \theta_{i,z} - F_{z+1} \theta_{i,z+1} +
 \displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
 onde $M_{i,z}$ é a massa do componente $i$ na célula $z$, $j$ é o número
 identificador de cada reação, $N_{reac}$ é o número total de reações,
 $\nu_{i,j}$ é o coeficiente estequiométrico do componente $i$ na reação $j$,
-$r_{j,z}$ é taxa da reação $j$ na célula $z$, $F$ é a vazão molar total e $W$ é
-a massa total de catalisador presente no leito.
-?? O acúmulo no seu modelo ficou para a massa M mesmo ou número de mols N,
-nesta linha, não seria F multiplicado pela fração molar e não concentração ??
+$r_{j,z}$ é taxa da reação $j$ na célula $z$, $F$ é a vazão molar total,
+$\theta$ é a fração molar total do composto $i$ e $W$ é a massa total de
+catalisador presente no leito.
 
 Com a \autoref{eq:balancodemassa} é possível o estudo de respostas dinâmicas do
 processo estudado.
@@ -390,6 +381,9 @@ processo estudado.
 \nomenclature{$W$}{Massa total de catalisador em um leito\nomunit{kg}}
 \nomenclature[S]{$j$}{j-ésima reação}
 \nomenclature[G]{$\nu$}{Coeficiente de reação}
+\nomenclature[G]{$\theta$}{Fração molar total de um composto}
+\nomenclature{$y$}{Fração molar de um composto em fase gasosa}
+\nomenclature{$x$}{Fração molar de um composto em fase líquida}
 
 De forma similar, o seguinte balanço de energia de forma
 discretizada foi considerado:
@@ -413,10 +407,11 @@ fases líquida e gasosa na célula $z$.
 Para avaliação de respostas dinâmicas, a relação entre a energia aculumada em
 cada célula é a seguinte:
 \begin{equation}
-E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z} +  \dfrac{W}{N_{Disc}}C_{p,p}(T_{z}-T_{ref})
+E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z} + 
+\dfrac{W}{N_{Disc}}C_{p,p}(T_{z}-T^{ref}_2)
 \label{eq:holdupenergiadinamica}
 \end{equation}
-onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)} e $T_{ref}$ é a
+onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)} e $T^{ref}_2$ é a
 temperatura de referência, \SI{320,15}{K}.
 
 A \autoref{eq:holdupenergia} mostra que, para obtenção dos resultados em estado
@@ -429,7 +424,7 @@ discutida no \autoref{chap:resultados}.
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
 \nomenclature{$C_p$}{Capacidade calorífica a pressão constante
 \nomunit{J/(kg.K)}}
-\nomenclature{$T_{ref}$}{Temperatura de referência, \si{320.15}{K}}
+\nomenclature{$T^{ref}_2$}{Temperatura de referência, \SI{320,15}{K}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
 \nomenclature[G]{$\Delta H$}{Calor de reação \nomunit{kJ/kmol}}
 
@@ -475,11 +470,11 @@ sólida. Essa concentração é determinada pela transferência de massa
 líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
-equação de van't Hoff, na $T^{ref}$ = $417 K$, como segue:
+equação de van't Hoff, na $T^{ref}_1$ = \SI{417}{K}, como segue:
 \begin{equation}
 k^{*}_{j,z} = \dfrac{k^{'}_{j,z}} {\rho^{L}_{z+1}} \exp
 \left[{\dfrac{-Ea_j}{R} \left (\dfrac{1}{T_{z+1}} -
-\dfrac{1}{T^{ref}} \right )}\right]
+\dfrac{1}{T^{ref}_1} \right )}\right]
 \label{eq:constantetaxareacaoespecifica}
 \end{equation}
 sendo $\rho^L$ a massa específica da fase líquida.
@@ -495,7 +490,7 @@ avaliadas em $z$ ou $z+1$ traria pouca diferença aos resultados finais.
 \nomunit{kmol/(m^3/(kg_{cat} h)}}
 \nomenclature[R]{$L$}{Designação da fase líquida}
 \nomenclature[R]{$S$}{Designação da fase sólida}
-\nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
+\nomenclature{$T^{ref}_1$}{Temperatura de referência, $417 K$}
 \nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
 \nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol K)}}
@@ -521,12 +516,12 @@ a_{ij} = \sqrt{a_ia_j}(1-\delta_{ij})
 onde o parâmetro de interação binária $\delta_{ij}$ sugerido por
 \apud{Gray1985}{Rojas2014} é definido por:
 \begin{equation}
-\delta_{ij} = 0.0067+\dfrac{0.63375S^3}{1+S^3}
+\delta_{ij} = \num{0,0067}+\dfrac{\num{0,63375}S^3}{1+S^3}
 \label{eq:deltaij}
 \end{equation}
 e
 \begin{equation}
-S = \dfrac{T_{c,j}-50}{1000-T_{c,j}}
+S = \dfrac{T_{c,j}-\num{50}}{\num{1000}-T_{c,j}}
 \label{eq:deltaij}
 \end{equation}
 
@@ -585,11 +580,13 @@ a^{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 Para determinar $k_{LS}$, foi utilizada a equação de \citeonline{Hirose1976}
 para o número de Sherwood dos componentes em fase líquida ($Sh^L$):
 \begin{equation}
-\epsilon_BSh^L_{i,z} = 0.8(Re^L_z)^{0.5}(Sc^L_{i,z})^{1/3} \qquad (Re<200)
+\epsilon_BSh^L_{i,z} = \num{0,8}(Re^L_z)^{\num{0,5}}(Sc^L_{i,z})^{1/3} \qquad
+(Re<200)
 \label{eq:Sh1}
 \end{equation}
 \begin{equation}
-\epsilon_BSh^L_{i,z} = 0.53(Re^L_z)^{0.58}(Sc^L_{i,z})^{1/3} \qquad (Re>200)
+\epsilon_BSh^L_{i,z} = \num{0,53}(Re^L_z)^{\num{0,58}}(Sc^L_{i,z})^{1/3} \qquad
+(Re>200)
 \label{eq:Sh2}
 \end{equation}
 sendo que
@@ -626,10 +623,10 @@ discretizada:
 \label{eq:deltaP}
 \begin{split}
 \dfrac{\Delta P }{L/N_{Disc}} = \dfrac{1}{\epsilon_B^{3}}
-\left(\dfrac{\dfrac{u^{G}}{u^{L}} + 1}{0.49\dfrac{u^{G}}{u^{L}} + 1}\right)
-\left[\dfrac{150}{36}\left(\dfrac{6(1-\epsilon_B)}{d_P}+\dfrac{4}{D_R}
-\right)^2\mu^{L}u^{L} + \dfrac{1.75}{6} \left(\dfrac{6(1-\epsilon_B)}{d_P} +
-\dfrac{4}{D_R}\right)\rho^{L}(u^{L})^2 \right]
+\left(\dfrac{\dfrac{u^{G}}{u^{L}} + 1}{\num{0,49}\dfrac{u^{G}}{u^{L}} +
+1}\right) \left[\dfrac{150}{36}\left(\dfrac{6(1-\epsilon_B)}{d_P}+\dfrac{4}{D_R}
+\right)^2\mu^{L}u^{L} + \dfrac{\num{1,75}}{6} \left(\dfrac{6(1-\epsilon_B)}{d_P}
++ \dfrac{4}{D_R}\right)\rho^{L}(u^{L})^2 \right]
 \end{split}
 \end{equation}
 onde $u$ é a velocidade da fase e $L_z$ é dado por $L/N_{Disc}$ de cada leito.
@@ -643,7 +640,7 @@ por \citeonline{Larachi1991}, que é uma dentre outras
 equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
 \begin{equation}
 log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B} \right) =
--\dfrac{1.22(We_{z}^L)^{0.15}}{(Re_{z}^L)^{0.20}(X_{z}^G)^{0.15}}
+-\dfrac{\num{1,22}(We_{z}^L)^{\num{0,15}}}{(Re_{z}^L)^{\num{0,20}}(X_{z}^G)^{\num{0,15}}}
 \label{eq:epsilonL}
 \end{equation}
 onde $We$ é o número de Webber e $X^G$ é o número de Lockhart-Martinelli
@@ -666,7 +663,7 @@ Para verificar a premissa de que o molhamento do catalisador é completo
 ($\eta_{CE} = 1$), será utilizada a equação proposta por
 \citeonline{Al-Dahhan1995} para sistemas de alta pressão, como segue:
 \begin{equation}
-\eta_{CE,z} = 1.104(Re_z^L)^{1/3} \left [
+\eta_{CE,z} = \num{1,104}(Re_z^L)^{1/3} \left [
 \dfrac{1 + [(\Delta P_z/L_{z})/(\rho_{z}^L g)]}{Ga_{z}^{L}} \right ]
 \label{eq:molhamento}
 \end{equation}
@@ -678,7 +675,8 @@ sendo $Ga$ o número de Galileo e $g$ a aceleração da gravidade.
 O número Peclet ($Pe$) é o parâmetro utilizado na literatura para verificar
 se na modelagem do reator o fenômeno de dispersão axial é relevante ou não.
 \begin{equation}
-Pe_z^L = \dfrac{L_z}{d_p} 2.3(Re_z^L)^{0,33}(Ga_{z}^{L})^{-0.19}
+Pe_z^L = \dfrac{L_z}{d_p}
+\num{2,3}(Re_z^L)^{\num{0,33}}(Ga_{z}^{L})^{\num{-0,19}}
 \label{eq:numerodepeclet}
 \end{equation}
 
