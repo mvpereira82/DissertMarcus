@@ -182,7 +182,7 @@
 \newcommand{\thecoadvisor}{}
 \newcommand{\coadvisor}[1]{\renewcommand{\thecoadvisor}{#1}}
 \newcommand{\coadvisorCitation}[1]{\newcommand{\thecoadvisorCitation}{#1}}
-%\newcommand{\coadvisor}[1]{\renewcommand{\thecoadvisor}{Colaborador: \\ #1 \\*}}
+\newcommand{\coadvisor}[1]{\renewcommand{\thecoadvisor}{Colaborador: \\ #1 \\*}}
 \newcommand{\totalPages}[1]{\newcommand{\thetotalPages}{#1}}
 \newcommand{\bancai}[1]{\newcommand{\thebancai}{#1}}
 \newcommand{\bancaii}[1]{\newcommand{\thebancaii}{#1}}
