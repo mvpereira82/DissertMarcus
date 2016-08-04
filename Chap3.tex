@@ -84,7 +84,7 @@ massa específica das partículas ($\rho_{p}$). Este parâmetro é estimado em
 
 A porosidade de cada um dos leitos pode ser calculada como segue:
 \begin{equation}
-\epsilon_{B} = \dfrac{V_{l}-\dfrac{\rho_{B}V_l}{\rho_{\ce{Al_2O_3}}}}{V_l}
+\epsilon_{B} = \dfrac{V_{l}-\dfrac{\rho_{B}V_l}{\rho_{\ce{Al2O3}}}}{V_l}
 \label{eq:porosidade}
 \end{equation}
 sendo $V_l$ o volume do leito e $\rho_B$ a massa específica de um leito
@@ -308,7 +308,7 @@ Contudo, uma verificação da validade dessa premissa é apresentada no
 Para utilizar a abordagem de modelagem por rede de células, cada leito
 catalítico foi subdivido em células em seu comprimento, i.e., discretizado em
 $N_{Disc}$ seguimentos de leito. Cada seguimento de leito fica identificado por
-um índice ($z$). A \autoref{fig:celula} ilustra uma célula de leito de
+um índice ($n$). A \autoref{fig:celula} ilustra uma célula de leito de
 reator. Do ponto de vista reacional, cada célula representará um reator CSTR
 associado a um tambor de \emph{flash}. Nesse tambor de \emph{flash}, mantém-se a
 premissa de que o equilíbrio termodinâmico é atingido instantaneamente.
@@ -320,7 +320,7 @@ premissa de que o equilíbrio termodinâmico é atingido instantaneamente.
  \end{figure}
 
 \nomenclature{$N_{Disc}$}{Número de células de um leito do reator}
-\nomenclature[S]{$z$}{z-ésima célula de leito de reator}
+\nomenclature[S]{$n$}{z-ésima célula de leito de reator}
 
 É importante notar que as variáveis que fazem parte das correntes que
 entram e saem das células na \autoref{fig:celula} (temperatura,
@@ -358,17 +358,17 @@ solução.
 
 Para este trabalho, diante das premissas adotadas, a equação de balanço de massa
 considera o termo de diferenciação da massa $M$ de cada componente $i$, em cada
-célula $z$, no tempo $t$: 
+célula $n$, no tempo $t$: 
 \begin{equation}
-\dfrac{dM_{i,z}}{dt} = F_z \theta_{i,z} - F_{z+1} \theta_{i,z+1} +
-\displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,z} \dfrac{W}{N_{Disc}}
+\dfrac{dM_{i,n}}{dt} = F_n z_{i,n} - F_{n+1} z_{i,n+1} +
+\displaystyle\sum_{j=1}^{N_{reac}} \nu_{i,j}r_{j,n} \dfrac{W}{N_{Disc}}
 \label{eq:balancodemassa}
 \end{equation}
-onde $M_{i,z}$ é a massa do componente $i$ na célula $z$, $j$ é o número
+onde $M_{i,n}$ é a massa do componente $i$ na célula $n$, $j$ é o número
 identificador de cada reação, $N_{reac}$ é o número total de reações,
 $\nu_{i,j}$ é o coeficiente estequiométrico do componente $i$ na reação $j$,
-$r_{j,z}$ é taxa da reação $j$ na célula $z$, $F$ é a vazão molar total,
-$\theta$ é a fração molar total do composto $i$ e $W$ é a massa total de
+$r_{j,n}$ é taxa da reação $j$ na célula $n$, $F$ é a vazão molar total,
+$z$ é a fração molar global do composto $i$ e $W$ é a massa total de
 catalisador presente no leito.
 
 Com a \autoref{eq:balancodemassa} é possível o estudo de respostas dinâmicas do
@@ -381,38 +381,37 @@ processo estudado.
 \nomenclature{$W$}{Massa total de catalisador em um leito\nomunit{kg}}
 \nomenclature[S]{$j$}{j-ésima reação}
 \nomenclature[G]{$\nu$}{Coeficiente de reação}
-\nomenclature[G]{$\theta$}{Fração molar total de um composto}
+\nomenclature{$z$}{Fração molar global de um composto}
 \nomenclature{$y$}{Fração molar de um composto em fase gasosa}
 \nomenclature{$x$}{Fração molar de um composto em fase líquida}
 
 De forma similar, o seguinte balanço de energia de forma
 discretizada foi considerado:
 \begin{equation}
-\dfrac{dE_{z}}{dt} = F_zh_{z} - F_{z+1}h_{z+1} +
-\displaystyle\sum_{j=1}^{N_{reac}} \Delta H_{j}r_{j,z} \dfrac{W}{N_{Disc}}
+\dfrac{dE_{n}}{dt} = F_nh_{n} - F_{n+1}h_{n+1} +
+\displaystyle\sum_{j=1}^{N_{reac}} \Delta H_{j}r_{j,n} \dfrac{W}{N_{Disc}}
 \label{eq:balancodeenergia}
 \end{equation}
-onde $E_{z}$ representa a energia acumulada na célula $z$, $h$ é a entalpia da
+onde $E_{n}$ representa a energia acumulada na célula $n$, $h$ é a entalpia da
 corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
 Para a expressão da energia aculumada em cada célula, a seguinte relação
 foi considerada para o estado estacionário:
 \begin{equation}
-E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z}
+E_{n} = M_{n}h_{n+1} - P_{n+1}V_{n}
 \label{eq:holdupenergia}
 \end{equation}
-onde $V_{z} = AL_{leito}\epsilon_{B}/N_{Disc}$ é o volume disponível para as
-fases líquida e gasosa na célula $z$.
+onde $V_{n} = AL_{leito}\epsilon_{B}/N_{Disc}$ é o volume disponível para as
+fases líquida e gasosa na célula $n$.
 
 Para avaliação de respostas dinâmicas, a relação entre a energia aculumada em
 cada célula é a seguinte:
 \begin{equation}
-E_{z} = M_{z}h_{z+1} - P_{z+1}V_{z} + 
-\dfrac{W}{N_{Disc}}C_{p,p}(T_{z}-T^{ref}_2)
+E_{n} = M_{n}h_{n+1} - P_{n+1}V_{n} + 
+\dfrac{W}{N_{Disc}}C_{p,p}T_{n}
 \label{eq:holdupenergiadinamica}
 \end{equation}
-onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)} e $T^{ref}_2$ é a
-temperatura de referência, \SI{320,15}{K}.
+onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)}.
 
 A \autoref{eq:holdupenergia} mostra que, para obtenção dos resultados em estado
 estacionário, apenas as fases líquida e gasosa interferem na inercia térmica do
@@ -422,15 +421,15 @@ discutida no \autoref{chap:resultados}.
 
 \nomenclature{$E$}{Energia \nomunit{kJ}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
-\nomenclature{$C_p$}{Capacidade calorífica a pressão constante
-\nomunit{J/(kg.K)}}
-\nomenclature{$T^{ref}_2$}{Temperatura de referência, \SI{320,15}{K}}
+\nomenclature{$C_{p,p}$}{Capacidade calorífica a pressão constante do
+catalisador \nomunit{J/(kg.K)}}
+%\nomenclature{$T^{ref}_2$}{Temperatura de referência, \SI{320,15}{K}}
 \nomenclature{$h$}{Entalpia \nomunit{kJ/kmol}}
 \nomenclature[G]{$\Delta H$}{Calor de reação \nomunit{kJ/kmol}}
 
 As equações \ref{eq:balancodemassa} e \ref{eq:balancodeenergia}, somadas
 à corrente $F$ e seu cálculo de ELV, permitem determinar a fração vaporizada,
-a composição das fases e respectivas propriedades físicas em cada célula $z$.
+a composição das fases e respectivas propriedades físicas em cada célula $n$.
 
 É importante notar ainda que, da forma como as \autoref{eq:balancodemassa} e
 \autoref{eq:balancodeenergia} estão escritas, massa e energia contidas em cada
@@ -442,13 +441,13 @@ As reações de hidrogenação e os parâmetros cinéticos considerados estão
 listados na \autoref{tab:composicao}. Conforme já explicado, o sistema reacional
 foi considerado como sendo um conjunto de hidrogenações irreversíveis e
 independentes da concentração de hidrogênio. A constante de pseudo-primeira
-ordem da reação $j$ na célula $z$, $k^{'}_{j,z}$, é definida como segue:
+ordem da reação $j$ na célula $n$, $k^{'}_{j,n}$, é definida como segue:
 \begin{equation}
-k^{'}_{j,z} = \eta_ik_jC^{*}_{H_2}
+k^{'}_{j,n} = \eta_ik_jC^{*}_{\ce{H2}}
 \label{eq:constantepseudoprimeiraordem}
 \end{equation}
 sendo $\eta$ o fator de efetividade de intradifusão, $k$ a
-constante de taxa de reação instrínseca e $C^{*}_{H_2}$ a concentração de
+constante de taxa de reação instrínseca e $C^{*}_{\ce{H2}}$ a concentração de
 equilíbrio de hidrogênio em fase líquida.
 
 \nomenclature{$k^{'}$}{Constante de taxa de reação de pseudo-primeira
@@ -459,10 +458,10 @@ ordem \nomunit{kg/(kg_{cat} h)}}
 líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
 \nomenclature[G]{$\eta$}{Fator de efetividade de intradifusão}
 
-Portanto, a taxa $r$ da reação $j$ na célula $z$ é apresentada da seguinte
+Portanto, a taxa $r$ da reação $j$ na célula $n$ é apresentada da seguinte
 forma:
 \begin{equation}
-r_{j,z} = k^{*}_{j,z}C^{S}_{i,z}
+r_{j,n} = k^{*}_{j,n}C^{S}_{i,n}
 \label{eq:taxareacao}
 \end{equation}
 onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
@@ -470,27 +469,28 @@ sólida. Essa concentração é determinada pela transferência de massa
 líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
-equação de van't Hoff, na $T^{ref}_1$ = \SI{417}{K}, como segue:
+equação de van't Hoff, na $T^{ref}$ = \SI{417}{K}, como segue:
 \begin{equation}
-k^{*}_{j,z} = \dfrac{k^{'}_{j,z}} {\rho^{L}_{z+1}} \exp
-\left[{\dfrac{-Ea_j}{R} \left (\dfrac{1}{T_{z+1}} -
-\dfrac{1}{T^{ref}_1} \right )}\right]
+k^{*}_{j,n} = \dfrac{k^{'}_{j,n}} {\rho^{L}_{n+1}} \exp
+\left[{\dfrac{-Ea_j}{R} \left (\dfrac{1}{T_{n+1}} -
+\dfrac{1}{T^{ref}} \right )}\right]
 \label{eq:constantetaxareacaoespecifica}
 \end{equation}
 sendo $\rho^L$ a massa específica da fase líquida.
 
 Nota-se na equação \autoref{eq:constantetaxareacaoespecifica} que foram usadas
-temperatura e massa específica da corrente de saída da célula ($z+1$).
+temperatura e massa específica da corrente de saída da célula ($n+1$).
 Essa opção foi feita de forma a que a premissa de que cada célula
 é um CSTR (mistura perfeita) é respeitada.
 De qualquer maneira, para um número grande de células, a utilização das propriedades
-avaliadas em $z$ ou $z+1$ traria pouca diferença aos resultados finais.
+avaliadas na célula $n$ ou na célula $n+1$ traria pouca diferença aos resultados
+finais.
 
 \nomenclature{$k^{*}$}{Constante da taxa de reação específica
 \nomunit{kmol/(m^3/(kg_{cat} h)}}
 \nomenclature[R]{$L$}{Designação da fase líquida}
 \nomenclature[R]{$S$}{Designação da fase sólida}
-\nomenclature{$T^{ref}_1$}{Temperatura de referência, $417 K$}
+\nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
 \nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
 \nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol K)}}
@@ -555,9 +555,9 @@ A primeira dessas equações é fruto de um balanço de massa, onde a
 transferência de massa na interface líquido-sólido de um reagente é igual a
 velocidade com que ele é consumido na reação:
 \begin{equation}
-k_{i,z}^{LS}a^{LS}(C^L_{i,z}-C^S_{i,z}) = \rho_B
+k_{i,n}^{LS}a^{LS}(C^L_{i,n}-C^S_{i,n}) = \rho_B
 \displaystyle\sum_{j=1}^{N_{reac}}
-\nu_{i,j}r_{j,z}
+\nu_{i,j}r_{j,n}
 \label{eq:transferenciamassa}
 \end{equation}
 sendo $C^{L}$ a concentração de qualquer espécie química presenta na fase
@@ -580,22 +580,22 @@ a^{LS} = 6 \dfrac{(1-\epsilon_B)}{d_p}
 Para determinar $k_{LS}$, foi utilizada a equação de \citeonline{Hirose1976}
 para o número de Sherwood dos componentes em fase líquida ($Sh^L$):
 \begin{equation}
-\epsilon_BSh^L_{i,z} = \num{0,8}(Re^L_z)^{\num{0,5}}(Sc^L_{i,z})^{1/3} \qquad
+\epsilon_BSh^L_{i,n} = \num{0,8}(Re^L_n)^{\num{0,5}}(Sc^L_{i,n})^{1/3} \qquad
 (Re<200)
 \label{eq:Sh1}
 \end{equation}
 \begin{equation}
-\epsilon_BSh^L_{i,z} = \num{0,53}(Re^L_z)^{\num{0,58}}(Sc^L_{i,z})^{1/3} \qquad
+\epsilon_BSh^L_{i,n} = \num{0,53}(Re^L_n)^{\num{0,58}}(Sc^L_{i,n})^{1/3} \qquad
 (Re>200)
 \label{eq:Sh2}
 \end{equation}
 sendo que
 \begin{equation}
-k_{LS,z} = \dfrac{Sh^L_{i,z}D^L_{i}}{d_p}
+k_{LS,n} = \dfrac{Sh^L_{i,n}D^L_{i}}{d_p}
 \label{eq:kLS}
 \end{equation}
 \begin{equation} 
-Sc^L_{i,z} = \dfrac{\mu^L_{z}}{\rho^L_{z+1}D^L_{i,z}}
+Sc^L_{i,n} = \dfrac{\mu^L_{n}}{\rho^L_{n+1}D^L_{i,n}}
 \label{eq:Sc}
 \end{equation}
 $Re^L$ é o número de Reynolds da fase líquida, $Sc$ é o número de Schmidt,
@@ -622,14 +622,16 @@ discretizada:
 \begin{equation}
 \label{eq:deltaP}
 \begin{split}
-\dfrac{\Delta P }{L/N_{Disc}} = \dfrac{1}{\epsilon_B^{3}}
-\left(\dfrac{\dfrac{u^{G}}{u^{L}} + 1}{\num{0,49}\dfrac{u^{G}}{u^{L}} +
-1}\right) \left[\dfrac{150}{36}\left(\dfrac{6(1-\epsilon_B)}{d_P}+\dfrac{4}{D_R}
-\right)^2\mu^{L}u^{L} + \dfrac{\num{1,75}}{6} \left(\dfrac{6(1-\epsilon_B)}{d_P}
-+ \dfrac{4}{D_R}\right)\rho^{L}(u^{L})^2 \right]
+\dfrac{\Delta P_{n}}{L/N_{Disc}} = \dfrac{1}{\epsilon_B^{3}}
+\left(\dfrac{\dfrac{u^{G}_{n}}{u^{L}_{n}} +
+1}{\num{0,49}\dfrac{u^{G}_{n}}{u^{L}_{n}} + 1}\right)
+\left[\dfrac{150}{36}\left(\dfrac{6(1-\epsilon_B)} {d_P}+\dfrac{4}{D_R}
+\right)^2\mu^{L}_{n}u^{L}_{n} + \dfrac{\num{1,75}}{6}
+\left(\dfrac{6(1-\epsilon_B)} {d_P} + \dfrac{4}{D_R}\right)
+\rho^{L}_{n}(u^{L}_{n})^2 \right]
 \end{split}
 \end{equation}
-onde $u$ é a velocidade da fase e $L_z$ é dado por $L/N_{Disc}$ de cada leito.
+onde $u$ é a velocidade da fase e $L_n$ é dado por $L/N_{Disc}$ de cada leito.
 
 \nomenclature{u}{Velocidade superficial da fase \nomunit{m/s}}
 \nomenclature[S]{R}{Reator}
@@ -639,18 +641,18 @@ a equação usada para estimar a retenção de líquido $\epsilon^L$ foi a propo
 por \citeonline{Larachi1991}, que é uma dentre outras
 equações levantadas para sistemas de alta pressão \cite{Ancheyta2011}.
 \begin{equation}
-log \left (1-\dfrac{\epsilon_{z}^L}{\epsilon_B} \right) =
--\dfrac{\num{1,22}(We_{z}^L)^{\num{0,15}}}{(Re_{z}^L)^{\num{0,20}}(X_{z}^G)^{\num{0,15}}}
+log \left (1-\dfrac{\epsilon_{n}^L}{\epsilon_B} \right) =
+-\dfrac{\num{1,22}(We_{n}^L)^{\num{0,15}}}{(Re_{n}^L)^{\num{0,20}}(X_{n}^G)^{\num{0,15}}}
 \label{eq:epsilonL}
 \end{equation}
 onde $We$ é o número de Webber e $X^G$ é o número de Lockhart-Martinelli
 para a fase gás. Ambos são definidos a seguir.
 \begin{equation}
-We_{z}^L = \dfrac{(u_{z}^L)^2d_p\rho_{z}^L}{\sigma_{z}^L}
+We_{n}^L = \dfrac{(u_{n}^L)^2d_p\rho_{n}^L}{\sigma_{n}^L}
 \label{eq:webber}
 \end{equation}
 \begin{equation}
-X_{z}^G = \dfrac{u_{z}^G}{u_z^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
+X_{n}^G = \dfrac{u_{n}^G}{u_n^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
 \label{eq:X}
 \end{equation}
 sendo que $\sigma^L$ é a tensão superficial da fase líquida.
@@ -663,20 +665,20 @@ Para verificar a premissa de que o molhamento do catalisador é completo
 ($\eta_{CE} = 1$), será utilizada a equação proposta por
 \citeonline{Al-Dahhan1995} para sistemas de alta pressão, como segue:
 \begin{equation}
-\eta_{CE,z} = \num{1,104}(Re_z^L)^{1/3} \left [
-\dfrac{1 + [(\Delta P_z/L_{z})/(\rho_{z}^L g)]}{Ga_{z}^{L}} \right ]
+\eta_{CE,n} = \num{1,104}(Re_n^L)^{1/3} \left [
+\dfrac{1 + [(\Delta P_n/L_{n})/(\rho_{n}^L g)]}{Ga_{n}^{L}} \right ]
 \label{eq:molhamento}
 \end{equation}
-sendo $Ga$ o número de Galileo e $g$ a aceleração da gravidade.
+sendo $Ga$ o número de Galileu e $g$ a aceleração da gravidade.
 
-\nomenclature{Ga}{Número de Galileo}
+\nomenclature{Ga}{Número de Galileu}
 \nomenclature{g}{Aceleração da gravidade \nomunit{m/s^2}}
 
 O número Peclet ($Pe$) é o parâmetro utilizado na literatura para verificar
 se na modelagem do reator o fenômeno de dispersão axial é relevante ou não.
 \begin{equation}
-Pe_z^L = \dfrac{L_z}{d_p}
-\num{2,3}(Re_z^L)^{\num{0,33}}(Ga_{z}^{L})^{\num{-0,19}}
+Pe_n^L = \dfrac{L_n}{d_p}
+\num{2,3}(Re_n^L)^{\num{0,33}}(Ga_{n}^{L})^{\num{-0,19}}
 \label{eq:numerodepeclet}
 \end{equation}
 

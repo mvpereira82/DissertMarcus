@@ -28,7 +28,7 @@
 \nomenclatureentry{a$F_w$@[{$F_w$}]\begingroup Vazão mássica \nomunit{kg/h}\nomeqref {3.2}|nompageref}{24}
 \nomenclatureentry{S$w$@[{$w$}]\begingroup Referente à massa\nomeqref {3.2}|nompageref}{24}
 \nomenclatureentry{a$N_{Disc}$@[{$N_{Disc}$}]\begingroup Número de células de um leito do reator\nomeqref {3.2}|nompageref}{28}
-\nomenclatureentry{S$z$@[{$z$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.2}|nompageref}{28}
+\nomenclatureentry{S$n$@[{$n$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.2}|nompageref}{28}
 \nomenclatureentry{a$M$@[{$M$}]\begingroup Massa \nomunit{kmol}\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{a$N_{reac}$@[{$N_{reac}$}]\begingroup Número total de reações\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{a$r$@[{$r$}]\begingroup Taxa de reação \nomunit{kmol/(kg_{cat}.h)}\nomeqref {3.3}|nompageref}{30}
@@ -36,13 +36,12 @@
 \nomenclatureentry{a$W$@[{$W$}]\begingroup Massa total de catalisador em um leito\nomunit{kg}\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{S$j$@[{$j$}]\begingroup j-ésima reação\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{G$\nu$@[{$\nu$}]\begingroup Coeficiente de reação\nomeqref {3.3}|nompageref}{30}
-\nomenclatureentry{G$\theta$@[{$\theta$}]\begingroup Fração molar total de um composto\nomeqref {3.3}|nompageref}{30}
+\nomenclatureentry{a$z$@[{$z$}]\begingroup Fração molar global de um composto\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{a$y$@[{$y$}]\begingroup Fração molar de um composto em fase gasosa\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{a$x$@[{$x$}]\begingroup Fração molar de um composto em fase líquida\nomeqref {3.3}|nompageref}{30}
 \nomenclatureentry{a$E$@[{$E$}]\begingroup Energia \nomunit{kJ}\nomeqref {3.6}|nompageref}{30}
 \nomenclatureentry{a$h$@[{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{a$C_p$@[{$C_p$}]\begingroup Capacidade calorífica a pressão constante \nomunit{J/(kg.K)}\nomeqref {3.6}|nompageref}{30}
-\nomenclatureentry{a$T^{ref}_2$@[{$T^{ref}_2$}]\begingroup Temperatura de referência, \SI{320,15}{K}\nomeqref {3.6}|nompageref}{30}
+\nomenclatureentry{a$C_{p,p}$@[{$C_{p,p}$}]\begingroup Capacidade calorífica a pressão constante do catalisador \nomunit{J/(kg.K)}\nomeqref {3.6}|nompageref}{30}
 \nomenclatureentry{a$h$@[{$h$}]\begingroup Entalpia \nomunit{kJ/kmol}\nomeqref {3.6}|nompageref}{30}
 \nomenclatureentry{G$\Delta H$@[{$\Delta H$}]\begingroup Calor de reação \nomunit{kJ/kmol}\nomeqref {3.6}|nompageref}{30}
 \nomenclatureentry{a$k^{'}$@[{$k^{'}$}]\begingroup Constante de taxa de reação de pseudo-primeira ordem \nomunit{kg/(kg_{cat} h)}\nomeqref {3.7}|nompageref}{31}
@@ -52,7 +51,7 @@
 \nomenclatureentry{a$k^{*}$@[{$k^{*}$}]\begingroup Constante da taxa de reação específica \nomunit{kmol/(m^3/(kg_{cat} h)}\nomeqref {3.9}|nompageref}{31}
 \nomenclatureentry{R$L$@[{$L$}]\begingroup Designação da fase líquida\nomeqref {3.9}|nompageref}{31}
 \nomenclatureentry{R$S$@[{$S$}]\begingroup Designação da fase sólida\nomeqref {3.9}|nompageref}{31}
-\nomenclatureentry{a$T^{ref}_1$@[{$T^{ref}_1$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.9}|nompageref}{31}
+\nomenclatureentry{a$T^{ref}$@[{$T^{ref}$}]\begingroup Temperatura de referência, $417 K$\nomeqref {3.9}|nompageref}{31}
 \nomenclatureentry{G$\rho$@[{$\rho$}]\begingroup Massa específica \nomunit{kg/m^3}\nomeqref {3.9}|nompageref}{31}
 \nomenclatureentry{a$T$@[{$T$}]\begingroup Temperatura \nomunit{K}\nomeqref {3.9}|nompageref}{31}
 \nomenclatureentry{a$R$@[{$R$}]\begingroup Constante universal dos gases \nomunit{kJ/(kmol K)}\nomeqref {3.9}|nompageref}{31}
@@ -76,7 +75,7 @@
 \nomenclatureentry{G$\sigma$@[{$\sigma$}]\begingroup Tensão superficial \nomunit{N/m}\nomeqref {3.22}|nompageref}{34}
 \nomenclatureentry{aWe@[{We}]\begingroup Número de Webber\nomeqref {3.22}|nompageref}{34}
 \nomenclatureentry{aX@[{X}]\begingroup Número de Lockhart-Martinelli\nomeqref {3.22}|nompageref}{34}
-\nomenclatureentry{aGa@[{Ga}]\begingroup Número de Galileo\nomeqref {3.23}|nompageref}{35}
+\nomenclatureentry{aGa@[{Ga}]\begingroup Número de Galileu\nomeqref {3.23}|nompageref}{35}
 \nomenclatureentry{ag@[{g}]\begingroup Aceleração da gravidade \nomunit{m/s^2}\nomeqref {3.23}|nompageref}{35}
 \nomenclatureentry{aPe@[{Pe}]\begingroup Número de Peclet\nomeqref {3.24}|nompageref}{35}
 \nomenclatureentry{ZEML@[{EML}]\begingroup \emso{} Model Library\nomeqref {3.24}|nompageref}{36}

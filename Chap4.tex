@@ -265,7 +265,7 @@ alterar a vazão de alimentação.
 \subsection{ELV} \label{elv}
 
 Como está mencionado no \autoref{chap:moddesenvolvidos}, a fração de vapor
-em cada célula $z$ é determinada por um cálculo de \emph{flash}, implementado no
+em cada célula $n$ é determinada por um cálculo de \emph{flash}, implementado no
 modelo \code{streamTP}, detalhado no \autoref{chap:streamTP}. A
 \autoref{fig:perfilfracaovaporizada} mostra o perfil da fração de vapor (base
 molar) ao longo do leito catalítico.
@@ -638,6 +638,19 @@ considerando a inércia térmica do catalisador.
 temperatura na carga, considerando a inércia térmica do catalisador.}
 \label{fig:Feed_T_300K_catalyst_influence}
 \end{figure}
+
+!! Esse resultado faz um contraponto ao trabalho feito por
+\citeonline{Arpornwichanop2002}. Neste trabalho, foi simulado um
+reator de hidrogenação de gasolina de pirólise onde, no balanço de energia, a
+inércia térmica dos leitos catalíticos nas respostas dinâmicas foi desprezada.
+\citeonline{Arpornwichanop2002} não publicaram dados de planta para verificar se
+a modelagem por eles proposta representa o reator modelado.
+
+Recentemente, \citeonline{Elizalde2016} apresentam a modelagem dinâmica de um
+reator de hidrocraquemento catalítico. Este trabalho também deixou de considerar a
+presença do catalisador no balanço de energia.
+
+!!
 
 % A concentração de diolefinas na saída do reator passa de \si{0,0305}{kmol/m^3}
 % para \si{0,2868}{kmol/m^3}; 
