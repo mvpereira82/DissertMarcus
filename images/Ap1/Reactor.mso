@@ -394,7 +394,7 @@ FlowSheet Reactor
 
 
 	"Heat of reaction"
-	ReactorA.Hr(:,z) = [1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
+	ReactorA.Hr(:,z) = 1.10*[1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
 	
 	"FLow regime validation"
 #	Ranade, Vivek V; Chaudhari, Raghunath V.; Gunjal, Prashant R. (2011) - Trickle Bed Reactors
@@ -611,7 +611,7 @@ FlowSheet Reactor
 								+ ReactorB.zDCD(z) + ReactorB.zHDCD(z) + ReactorB.str(z+1).z(1);	
 
 	"Heat of reaction"
-	ReactorB.Hr(:,z) = [1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
+	ReactorB.Hr(:,z) = 1.10*[1.058, 1.155, 1.016, 1.102, 1.038, 1.013, 1.158, 1.161, 1.161]*1e5 * 'kJ/kmol';	
 	
 	"FLow regime validation"
 #	Ranade, Vivek V; Chaudhari, Raghunath V.; Gunjal, Prashant R. (2011) - Trickle Bed Reactors
@@ -634,37 +634,33 @@ FlowSheet Reactor
 	for z in [2:ReactorA.NDisc+1] do
 		ReactorA.str(z).T = 320*'K';
 		ReactorA.str(z).z(1:NComp) = Feed.Composition(1:NComp);
-#		ReactorA.str(z).z(2:NComp) = 0.01;
-#		ReactorA.str(z).z(1) = 1-26*0.01;
+
 	end
 	
 	for z in [2:ReactorB.NDisc+1] do
 		ReactorB.str(z).T = 320*'K';
 		ReactorB.str(z).z(1:NComp) = Feed.Composition(1:NComp);
-#		ReactorB.str(z).z(2:NComp) = 0.01;
-#		ReactorB.str(z).z(1) = 1-26*0.01;
+
 	end
 
 	OPTIONS
 	Dynamic = true;
-	InitialFile = "Reactor Guess2";
 	TimeStep = 0.01;
 	TimeEnd = 0.6;
 	TimeUnit = 'h';
 
 	NLASolver(
-	RelativeAccuracy = 1e-1,
+	RelativeAccuracy = 1e-2,
 	AbsoluteAccuracy = 1e-2,
 	Maxatbound = 30
 	);
 	DAESolver(
-	RelativeAccuracy = 1e-1,
+	RelativeAccuracy = 1e-2,
 	AbsoluteAccuracy = 1e-2
 	,File="sundials"
 	);
 	
 #===========================GUESS LINES================================	
-	GuessFile = "Reactor Guess2";	
 	
 	GUESS
 		

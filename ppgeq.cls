@@ -273,16 +273,17 @@ Orientador: \\ Prof.~\theadvisor \\*[1em]
 \hspace*{2em}\thetotalPages~f.
 \\ \\
 \hspace*{2em}Orientador: \theadvisor \\
-\ifthenelse{\isempty{\thecoadvisor}}{}{\hspace*{2em}Coorientador:~\thecoadvisor \\}
+%\ifthenelse{\isempty{\thecoadvisor}}{}{\hspace*{2em}Coorientador:~\thecoadvisor
+% \\}
 \\
 \hspace*{2em}\thecategory{} (\thecategorylevel) - Universidade Federal do Rio Grande
 do Sul, Escola de Engenharia, Programa de Pós-Graduação em Engenharia Química,
 Porto Alegre, BR-RS, \theyear.
 \\ \\
 \hspace*{2em}\thepalavras~I.~\theadvisorCitation, orient.
-%\ifthenelse{\equal{\thecoadvisor}{}}{}{Coorientador:\\ Prof.~\thecoadvisor}
-\ifthenelse{\equal{\thecoadvisor}{}}{II.~Título.}{II.~\thecoadvisorCitation, coorient.~III.~Título.}
-\vspace*{0.5cm}
+\ifthenelse{\equal{\thecoadvisor}{}}{}{Coorientador:\\ Prof.~\thecoadvisor}
+\ifthenelse{\equal{\thecoadvisor}{}}{II.~Título.}{II.~\thecoadvisorCitation,
+ coorient.~III.~Título.} \vspace*{0.5cm}
 \end{minipage}
 \end{center}
 \end{minipage}

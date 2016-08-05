@@ -12,8 +12,8 @@ neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}.
 O reator é composto de dois leitos catalíticos, carregados de forma
 densa (\emph{dense loading}). No topo de ambos os leitos há catalisador carregado de
 forma solta (\emph{sock loading}). A carga é composta de gasolina de pirólise,
-hidrogênio e parte do produto hidrogenado reciclado. Este último é parte da
-corrente líquida oriunda de um vaso de separação, cuja carga é a corrente de
+hidrogênio e parte do produto hidrogenado reciclado (diluente). Este último é
+parte da corrente líquida oriunda de um vaso de separação, cuja carga é a corrente de
 saída do reator. Parte da corrente líquida do vaso de separação também funciona
 como corrente de resfriamento, que é injetada entre os dois leitos catalíticos
 para controle de temperatura (\emph{quench}). Um diagrama simplificado que
@@ -114,6 +114,19 @@ valores de massa específica \emph{bulk} dos leitos $\rho_{B}$ publicados por
 Visto que o topo dos leitos, carregados de maneira solta, não são partes
 significativas dos leitos, a porosidade destas seções foi
 considerada a mesma de carregamento denso para fins de simplificação. 
+
+A massa de catalisador contida em cada leito catalítico pode ser expressa,
+então, por:
+\begin{equation}
+W = \rho_pA_RL_{dl}(1-\epsilon_{B})
+\label{eq:massacatalisador}
+\end{equation}
+sendo $A_R$ a área da seção transversal do reator.
+
+\nomenclature{$A_R$}{Área da seção transversal do reator \nomunit{m^2}}
+
+Para o Leito 1, a massa foi estimada em \SI{18389}{kg}; para o Leito 2, o valor
+é de \SI{22601}{kg}.
 
 \subsection{Composição das Correntes} \label{sec:composicaocorrentes}
 
@@ -437,11 +450,62 @@ célula são grandezas extensivas.
 
 \section{Cinética das Reações} \label{sec:cineticadasreacoes}
 
-As reações de hidrogenação e os parâmetros cinéticos considerados estão
-listados na \autoref{tab:composicao}. Conforme já explicado, o sistema reacional
-foi considerado como sendo um conjunto de hidrogenações irreversíveis e
-independentes da concentração de hidrogênio. A constante de pseudo-primeira
-ordem da reação $j$ na célula $n$, $k^{'}_{j,n}$, é definida como segue:
+As reações de hidrogenação estão na \autoref{tab:parametroscineticos1}. Os
+parâmetros cinéticos e entalpias das reações estão listados na
+\autoref{tab:parametroscineticos2}. Os parâmetros das reações utilizados aqui
+são os mesmos utilizados por \citeonline{Rojas2014a} em seus cálculos.
+
+\begin{table}[!htb]
+\begin{center}
+\caption{Reações \cite{Rojas2014a}.}
+\label{tab:parametroscineticos1}
+\small
+\begin{tabular}{cl}
+{$Identificador j$} & {Reação} \\
+\hline
+1 & trans-1,3-Pentadieno + $\ce{H2} \rightarrow$ trans-2-Penteno \\
+2 & trans-2-Penteno + $\ce{H2} \rightarrow$ n-Pentano \\
+3 & 1,3-Ciclopentadieno + $\ce{H2} \rightarrow$ Ciclopenteno \\
+4 & Ciclopenteno + $\ce{H2} \rightarrow$ Ciclopentano \\
+5 & Metil-1,3-Ciclopentadieno + $\ce{H2} \rightarrow$ Metilciclopenteno \\
+6 & Metilciclopenteno + $\ce{H2} \rightarrow$ Metilciclopentano \\
+7 & Estireno + $\ce{H2} \rightarrow$ Etilbenzeno \\
+8 & Metilestireno + $\ce{H2} \rightarrow$ 1-Metil-3-Etilbenzeno \\
+9 & Diciclopentadieno + $\ce{H2} \rightarrow$ Dihidrodiciclopentadieno \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table} 
+
+\begin{table}[!htb]
+\begin{center}
+\caption{Parâmetros cinéticos e entalpias de reação \cite{Rojas2014a}.}
+\label{tab:parametroscineticos2}
+\small
+\begin{tabular}{cccc}
+{$j$} & {$k^{'}_{j}$} & {$\Delta H_{j}$} & {$Ea_{j}$}
+\\
+{} & {$(\SI{417}{K},\SI{4,3}{MPa})(\si{h^{-1}})$} & {$(\SI{298}{K})
+(\si{kJ/kmol})$} & {$(\si{kJ/kmol})$} \\
+\hline
+1 & \num{5.08} & \num{-1.058e5} & \num{24409} \\
+2 & \num{0.32} & \num{-1.155e5} & \num{35370} \\
+3 & \num{12,0} & \num{-1.016e5} & \num{14947} \\
+4 & \num{0,80} & \num{-1.102e5} & \num{24409} \\
+5 & \num{5.08} & \num{-1.038e5} & \num{24409} \\
+6 & \num{0.32} & \num{-1.013e5} & \num{35370} \\
+7 & \num{8.84} & \num{-1.158e5} & \num{14947} \\
+8 & \num{5.08} & \num{-1.161e5} & \num{24409} \\
+9 & \num{5.08} & \num{-1.161e5} & \num{14947} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table} 
+
+Conforme já explicado, o sistema reacional foi considerado como sendo um
+conjunto de hidrogenações irreversíveis e independentes da concentração de
+hidrogênio. A constante de pseudo-primeira ordem da reação $j$ na célula $n$,
+$k^{'}_{j,n}$, é definida como segue:
 \begin{equation}
 k^{'}_{j,n} = \eta_ik_jC^{*}_{\ce{H2}}
 \label{eq:constantepseudoprimeiraordem}
@@ -701,7 +765,7 @@ com o Microsoft Excel. Há também a possibilidade de exportar os resultados
 de alguns equipamentos no formato .mso para serem usando no simulador \emso.
 
 Como já explicado na \autoref{sec:termodinamica}, o iiSE serviu como uma
-ferramenta para o cálculo de ELV das correntes $F$, dados $T_z$, $P_z$ e
+ferramenta para o cálculo de ELV das correntes $F$, dados $T_n$, $P_n$ e
 composição. Nele não foram implementadas quaisquer equações de balanço ou
 correlações; ele apenas é chamado pelo \emso para solucionar os cálculos de
 \emph{flash} necessários.
