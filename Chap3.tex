@@ -522,16 +522,6 @@ ordem \nomunit{kg/(kg_{cat} h)}}
 líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
 \nomenclature[G]{$\eta$}{Fator de efetividade de intradifusão}
 
-Portanto, a taxa $r$ da reação $j$ na célula $n$ é apresentada da seguinte
-forma:
-\begin{equation}
-r_{j,n} = k^{*}_{j,n}C^{S}_{i,n}
-\label{eq:taxareacao}
-\end{equation}
-onde o vetor $C^{S}$ representa a concentração das espécies químicas na fase
-sólida. Essa concentração é determinada pela transferência de massa
-líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
-
 A constante da taxa de reação específica $k^{*}$ é calculada pela
 equação de van't Hoff, na $T^{ref}$ = \SI{417}{K}, como segue:
 \begin{equation}
@@ -541,6 +531,16 @@ k^{*}_{j,n} = \dfrac{k^{'}_{j,n}} {\rho^{L}_{n+1}} \exp
 \label{eq:constantetaxareacaoespecifica}
 \end{equation}
 sendo $\rho^L$ a massa específica da fase líquida.
+
+Portanto, a taxa $r$ da reação $j$ na célula $n$ é apresentada da seguinte
+forma:
+\begin{equation}
+r_{j,n} = k^{*}_{j,n}C^{S}_{i,n}
+\label{eq:taxareacao}
+\end{equation}
+onde o vetor $C^{S}$ representa a concentração das espécies químicas na
+superfície da fase sólida. Essa concentração é determinada pela transferência de
+massa líquido-sólido, como está apresentado na \autoref{sec:interfaceliquidosolido}.
 
 Nota-se na equação \autoref{eq:constantetaxareacaoespecifica} que foram usadas
 temperatura e massa específica da corrente de saída da célula ($n+1$).
