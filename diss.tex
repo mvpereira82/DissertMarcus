@@ -58,9 +58,9 @@ E por tudo acima escrito, grato sou ao Eterno.}
 
 \resumo{
 A modelagem e simulação de reatores trifásicos representa um grande
-desafio para simuladores de processo. Muitos estudos academicos tem
+desafio para simuladores de processo. Muitos estudos acadêmicos tem
 sido desenvolvidos com o objetivo de descrever e prever o comportamento desses
-equipamentos, quer seja em seu estado estacionários, quer seja as respostas
+equipamentos, quer seja em seu estado estacionário, quer seja as respostas
 dinâmicas. E várias são as abordagens aplicadas para tentar melhor refletir os
 fenômenos envolvidos nos reatores trifásicos, ponderando sempre o custo
 computacional de cada abordagem. Neste trabalho, um reator de hidrogenação
@@ -73,22 +73,43 @@ flash foi associado, aperfeiçoando os balanços de massa e energia comumente
 empregados em reatores de leito gotejante. A abordagem termodinâmica
 utilizada para prever o equilíbrio líquido-vapor foi a $\phi_i$ - $\phi_i$, com
 a equação de estado SRK associada a parâmetros de interação binária específicos
-para a solubilidade de hidrogênio em gasolina de
-pirólise provenientes do pacote termodinâmico do simulador iiSE.
+para a solubilidade de hidrogênio em gasolina de pirólise. Os parâmetros de
+interação binária são provenientes do pacote termodinâmico do simulador iiSE.
 O modelo do reator foi implementado no software \emso{} (\emsoname{})
-consistindo em cerca de 9000 equações e variáveis.
-Os resultados obtidos com o modelo construído foram similares aos
-reportados na literatura.
-A aplicação de modelagem por células mostrou-se não só aplicável
-mas também mais robusta do que abordagens tradicionais que utilizam
-equações diferenciais ordinárias.
+consistindo em cerca de 9000 equações e variáveis. Os resultados obtidos com o
+modelo contruído foram similares aos reportados na literatura. A aplicação de
+modelagem por células mostrou-se não só aplicável mas também mais robusta do que
+as abordagens tradicionais que utilizam equações diferenciais ordinárias.
 A utilização da ferramenta \emso{} para a modelagem por células mostrou-se ainda
 mais vantajosa ao permitir a avaliação do comportamento dinâmico do reator em
 algumas situações hipotéticas, mas que são bem comuns na industria. }
 \palavraschave{1.~Gasolina de Pirólise.
 2.~Hidrogenação. 3.~Reatores de leito fixo 4.~Modelagem. 5.~Simulação}
 
-\abstract{Abstract here.}
+\abstract{Modeling and simulation of three-phase reactors is a challenge for
+process simulators. Many academic studies have been developed in order to
+describe and predict the behavior of these equipments for both steady states or
+dynamic responses. There are several approaches applied trying to reflect 
+better the phenomena involved in three-phase reactors, always considering the
+computational cost of each approach. In this work a selective hydrogenation
+reactor for pyrolysis naphtha was simulated based on published literature
+data.The reactor is trickle bed type and the reactions are considered
+pseudo-first order. The technique used is cell-network modeling, where the
+catalyst beds were subdivided into dynamics CSTR reactors linked in series. To
+each cell there is a calculation Flash associated, enhancing mass and energy
+balances commonly applied in TBR. The thermodynamic approach used to predict the
+vapor-liquid equilibrium was $\phi_i$-$\phi_i$ with SRK equation of state,
+associated to specific binary interaction parameters for the solubility of
+hydrogen in pygas from the thermodynamic simulator package iiSE. The binary
+interaction parameters come from the thermodynamic package of IISE simulator.
+The reactor model was implemented in software \emso{} (\emsoname{}) and consists
+of 9,000 equations and variables approximately. The results obtained with the
+model constructed here were similar to those reported in the literature. The use
+of cell-network modeling proved to be not only applicable but also more robust
+than the traditional approaches that use ordinary differential equations. The
+use of \emso{} tool for cell-network modeling proved to be even more
+advantageous because allows the evaluation of some dynamic behavior of the
+reactor for hypothetical situations but quite common in the industry.} 
 \keywords{1.~PYGAS 2.~Hydrogenation 3.~Fixed-bed Reactors 4.~Modeling
 5.~Simulation}
 
