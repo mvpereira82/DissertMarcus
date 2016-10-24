@@ -5,9 +5,9 @@
 %
 
 A modelagem e simulação de reatores trifásicos representa um grande
-desafio para simuladores de processo. Muitos estudos academicos tem
+desafio para simuladores de processo. Muitos estudos acadêmicos têm
 sido desenvolvidos com o objetivo de descrever e prever o comportamento desses
-equipamentos, quer seja em seu estado estacionários, quer seja as respostas
+equipamentos, quer seja em seu estado estacionário, quer seja as respostas
 dinâmicas. E várias são as abordagens aplicadas para tentar melhor refletir os
 fenômenos envolvidos nos reatores trifásicos, ponderando sempre o custo
 computacional de cada abordagem.
@@ -19,12 +19,12 @@ apresentado mostrou uma evolução à modelagem feita por \citeonline{Rojas2014a
 já que algumas simplificações foram removidas. Além disso,
 diferentemente de \citeonline{Rojas2014a}, os balanços de massa e energia foram
 incrementados com a energia envolvida na mudança de fase dos componentes. Para
-modelagens dessa natureza (por células), o \emso{} se mostrou uma ferramenta
-poderosa, prática e de rápida convergência.
+a criação de modelos dessa natureza (por células), o \emso{} se
+mostrou uma ferramenta poderosa, prática e de rápida convergência.
 
 A utilização da ferramenta \emso{} para a modelagem por células mostrou-se
 ainda mais vantajosa ao permitir a avaliação do comportamento dinâmico do reator
-em algumas situações hipotéticas, mas que são bem comuns na industria.
+em algumas situações hipotéticas, mas que são bem comuns na indústria.
 
 É bem verdade que a utilização de uma vazão de carga do reator superior à
 reportada no trabalho de \citeonline{Rojas2014a}, necessária para
@@ -36,22 +36,25 @@ com seus objetivos, quais sejam:
   \item Apresentar o desenvolvimento de um modelo matemático genérico para
   reatores de leito fixo, bifásico ou trifásicos, aplicando a abordagem de
   modelagem por rede de células; e 
-  \item Mostrar modelagem e a simulação de um reator de hidrogenação seletiva
-  de gasolina de pirólise, utilizando dados publicados por
+  \item Aplicar este modelo para e a simulação de um reator de
+  hidrogenação seletiva de gasolina de pirólise, utilizando dados publicados por
   \citeonline{Rojas2014a}.
+  \item Validação do modelo aqui proposto com os dados disponibilizados por
+  \citeonline{Rojas2014a}
 \end{enumerate}
 
-O aspecto a ser melhorado neste trabalho é a aplicação de equações
-hidrodinâmicas mais adequadas à faixa de operação do reator. De acordo
-com os resultados aqui alcançados, este se apresenta operando em regime de
-gotejamento, e não em regime de borbulhamento.
+O aspecto a ser melhorado neste trabalho refere-se a adquação das equações
+hidrodinâmicas ao regime de operação do reator, especialmente a perda de carga.
+De acordo com os resultados aqui alcançados, o reator se apresenta operando em
+regime de gotejamento, e não em regime de borbulhamento como o proposto por
+\citeonline{Rojas2014a}.
 
 Considerando a flexibilidade que o \emso{} possui por ser um simulador
 voltado para equações, duas sugestões para melhorar a modelagem aqui apresentada
 emergem, quais sejam:
 
 \begin{itemize}
-\item {Realizar o balanço de massa separadamente para as fases}
+\item {Realizar o balanço de massa separadamente para as fases; e}
 \item {Alterar o balaço de espaços a cada célula, considerando não mais o
 equilíbrio termodinâmico mas, sim, as retenções de líquido e gás}
 \end{itemize}

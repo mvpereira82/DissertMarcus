@@ -5,7 +5,9 @@
 \section{Descrição do Processo} \label{sec:descricaoprocesso}
 
 Como já mencionado no \autoref{chap:introducao}, o processo modelado
-neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a}. 
+neste trabalho utilizou os dados publicados por \citeonline{Rojas2014a} tais
+como: composição das correntes de carga, \emph{quench} e produto; dados
+construtivos do reator; e dados de processo.
 
 \subsection{Diagrama Esquemático} \label{sec:diagramaesquematico}
 
@@ -17,15 +19,14 @@ parte da corrente líquida oriunda de um vaso de separação, cuja carga é a co
 saída do reator. Parte da corrente líquida do vaso de separação também funciona
 como corrente de resfriamento, que é injetada entre os dois leitos catalíticos
 para controle de temperatura (\emph{quench}). Um diagrama simplificado que
-ilustra o reator está na \autoref{fig:esquemareator}.
+ilustra o reator está na \autoref{fig:esquemareator}. A
+\autoref{tab:dadosreator} apresenta as dimensões do reator.
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.75]{images/Chap3/esquemareatorb.png}
 \caption{Diagrama esquemático do reator \cite{Rojas2014a}.}
 \label{fig:esquemareator}
 \end{figure}
-
-A \autoref{tab:dadosreator} apresenta as dimensões do reator.
 
 \begin{table}[!htb]
 \begin{center}
@@ -84,7 +85,7 @@ massa específica das partículas ($\rho_{p}$). Este parâmetro é estimado em
 
 A porosidade de cada um dos leitos pode ser calculada como segue:
 \begin{equation}
-\epsilon_{B} = \dfrac{V_{l}-\dfrac{\rho_{B}V_l}{\rho_{\ce{Al2O3}}}}{V_l}
+\epsilon_{B} = {1 - \dfrac{\rho_{B}}{\rho_{\ce{Al2O3}}}}
 \label{eq:porosidade}
 \end{equation}
 sendo $V_l$ o volume do leito e $\rho_B$ a massa específica de um leito
@@ -186,6 +187,10 @@ Onde $i$ é o número identificador do composto na simulação a ser apresentada
 
 \nomenclature[S]{$i$}{i-ésimo componente}
 
+Considerando a composição da corrente de carga apresentada na
+\autoref{tab:composicao}, a relação entre a vazão de hidrogênio e da carga
+(combinada com o reciclo) é de \SI{40,97}{Nm^3/m^3}
+
 \subsection{Condições de operação} \label{sec:condicaocomposicaocorrentes}
 
 As condições de operação consideradas inicialmente estão na
@@ -216,10 +221,7 @@ sobre a validade de algumas dessas variáveis aqui apresentadas.
 \nomenclature{$F_w$}{Vazão mássica \nomunit{kg/h}}
 \nomenclature[S]{$w$}{Referente à massa}
 
-\section{Premissas} \label{sec:premissas}
-
-\subsection{Premissas adotadas por \citeonline{Rojas2014a}}
-\label{sec:premissasrojas}
+\section{Hipóteses do Modelo} \label{sec:premissas}
 
 Antes de apresentar as premissas que nortearam o presente trabalho, vale
 aqui apresentar, para efeito de comparação, as premissas utilizadas por
@@ -248,11 +250,6 @@ aqui apresentar, para efeito de comparação, as premissas utilizadas por
   \item A desativação catalítica foi desprezada.
 \end{enumerate}
 
-No presente estudo, algumas premissas adotadas por \citeonline{Rojas2014a} serão
-alteradas, como será descrito a seguir. 
-
-\subsection{Premissas deste trabalho} \label{sec:premissasdestetrabalho}
-
 Como já mencionado no \autoref{chap:introducao}, um dos objetivos do presente
 trabalho é avaliar algumas respostas dinâmicas ao processo proposto. Além disso,
 a implementação da modelagem foi feita em \emso, software que avalia respostas
@@ -261,36 +258,36 @@ operando em estado estacionário foi descartada. Permanece, porém, aqui, a
 premissa de que o equipamento opere de forma adiabática.
 
 A alteração mais importante às premissas adotadas por \citeonline{Rojas2014a}, e
-que representa um avaço por eles publicado, é a consideração tanto da entalpia
+que representa um avanço por eles publicado, é a consideração tanto da entalpia
 de dissolução do hidrogênio na fase líquida quanto da entalpida de vaporização
 de líquido. Isso foi possível graças à abordagem de modelagem por células,
 assunto da \autoref{sec:modelagemredecelulas}.
 
-Portanto, ficam aqui definidas as seguintes premissas:
+Portanto, todas as hipóteses do trabalho de \citeonline{Rojas2014a} foram
+mantidas, exceto a hipótese $7$. Um dos motivos de se manter praticamente
+inalteradas as premissas adotadas por \citeonline{Rojas2014a} foi o de realizar
+comparações entre os dois estudos.
 
-\begin{enumerate}
-  \item O reator opera adiabaticamente;
-  \item Gradientes radiais são desprezíveis;
-  \item Dispersões axiais foram negligenciadas; portanto, assumiu-se o
-  escoamento empistonado para ambas as fases líquida e gasosa;
-  \item A fase gasosa está em excesso; dessa forma, negligenciou-se a
-  resistência à transferência de massa na fase gasosa;
-  \item Fator de molhamento, atividade catalítica e densidade do leito
-  uniformes;
-  \item A transferência de calor entre as fases e no interior das partículas de
-  catalisador foram desprezadas;
-  \item A região de \emph{quench} é assumida como sendo um tambor \emph{flash},
-  que atinge o equilíbrio instantaneamente;
-  \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
-  corrente de \emph{quench};
-  \item O reator opera em regime de borbulhamento;
-  \item Reações reversíveis e isomerizações foram negligenciadas;
-  \item As reações ocorrem somente na interface líquido-sólido;
-  \item A desativação catalítica foi desprezada.
-\end{enumerate}
-
-Um dos motivos de se manter praticamente inalteradas as premissas adotadas por
-\citeonline{Rojas2014a} foi o de realizar comparações entre os dois estudos.
+% \begin{enumerate}
+%   \item O reator opera adiabaticamente;
+%   \item Gradientes radiais são desprezíveis;
+%   \item Dispersões axiais foram negligenciadas; portanto, assumiu-se o
+%   escoamento empistonado para ambas as fases líquida e gasosa;
+%   \item A fase gasosa está em excesso; dessa forma, negligenciou-se a
+%   resistência à transferência de massa na fase gasosa;
+%   \item Fator de molhamento, atividade catalítica e densidade do leito
+%   uniformes;
+%   \item A transferência de calor entre as fases e no interior das partículas de
+%   catalisador foram desprezadas;
+%   \item A região de \emph{quench} é assumida como sendo um tambor \emph{flash},
+%   que atinge o equilíbrio instantaneamente;
+%   \item A corrente de saída do primeiro leito mistura-se instantaneamente com a
+%   corrente de \emph{quench};
+%   \item O reator opera em regime de borbulhamento;
+%   \item Reações reversíveis e isomerizações foram negligenciadas;
+%   \item As reações ocorrem somente na interface líquido-sólido;
+%   \item A desativação catalítica foi desprezada.
+% \end{enumerate}
 
 Negligenciar os gradientes e dispersões de calor e massa, tanto radialmente
 quanto axialmente, é uma recomendação muito comum encontrada na literatura
@@ -320,7 +317,7 @@ Contudo, uma verificação da validade dessa premissa é apresentada no
 
 Para utilizar a abordagem de modelagem por rede de células, cada leito
 catalítico foi subdivido em células em seu comprimento, i.e., discretizado em
-$N_{Disc}$ seguimentos de leito. Cada seguimento de leito fica identificado por
+$N_{Disc}$ segmentos de leito. Cada segmento de leito fica identificado por
 um índice ($n$). A \autoref{fig:celula} ilustra uma célula de leito de
 reator. Do ponto de vista reacional, cada célula representará um reator CSTR
 associado a um tambor de \emph{flash}. Nesse tambor de \emph{flash}, mantém-se a
@@ -362,12 +359,8 @@ gasosa. As próximas seções apresentam o equacionamento construído.
 Normalmente, para a modelagem heterogênea de TBR, os autores que
 utilizam modelos determinísticos contínuos fazem o balanço de massa para todas as
 fases separadamente, i.e., para cada fase é feito o balanço de massa por
-componente. %\citeonline{Ancheyta2011} apresenta de uma forma didática as
-% equações de balanço de massa de cada fase, considerando e explicando todos os
-% efeitos (dispersões, reações, transferências de massa).
-Cada pesquisador, portanto, de acordo com a premissa adotada, elimina muitos dos
-termos das equações de balanço, a fim simplificar o modelo e facilitar a
-solução. 
+componente. Desta forma, elimina-se muitos dos termos das equações de balanço a
+fim simplificar o modelo e facilitar a solução. 
 
 Para este trabalho, diante das premissas adotadas, a equação de balanço de massa
 considera o termo de diferenciação da massa $M$ de cada componente $i$, em cada
@@ -408,7 +401,7 @@ discretizada foi considerado:
 onde $E_{n}$ representa a energia acumulada na célula $n$, $h$ é a entalpia da
 corrente $F$ e $\Delta H_{j}$ o calor envolvido na reação $j$.
 
-Para a expressão da energia aculumada em cada célula, a seguinte relação
+Para a expressão da energia acumulada em cada célula, a seguinte relação
 foi considerada para o estado estacionário:
 \begin{equation}
 E_{n} = M_{n}h_{n+1} - P_{n+1}V_{n}
@@ -424,7 +417,7 @@ E_{n} = M_{n}h_{n+1} - P_{n+1}V_{n} +
 \dfrac{W}{N_{Disc}}C_{p,p}T_{n}
 \label{eq:holdupenergiadinamica}
 \end{equation}
-onde $C_{p,p}$ é o $C_p$ do catalisador, \SI{880}{J/(kg K)}.
+onde $C_{p,p}$ é a capacidade calorífica do catalisador, \SI{880}{J/(kg K)}.
 
 A \autoref{eq:holdupenergia} mostra que, para obtenção dos resultados em estado
 estacionário, apenas as fases líquida e gasosa interferem na inercia térmica do
@@ -450,8 +443,9 @@ célula são grandezas extensivas.
 
 \section{Cinética das Reações} \label{sec:cineticadasreacoes}
 
-As reações de hidrogenação estão na \autoref{tab:parametroscineticos1}. Os
-parâmetros cinéticos e entalpias das reações estão listados na
+As reações de hidrogenação estão mostradas na
+\autoref{tab:parametroscineticos1}.
+Os parâmetros cinéticos e entalpias das reações estão listados na
 \autoref{tab:parametroscineticos2}. Os parâmetros das reações utilizados aqui
 são os mesmos utilizados por \citeonline{Rojas2014a} em seus cálculos.
 
@@ -519,7 +513,7 @@ ordem \nomunit{kg/(kg_{cat} h)}}
 \nomenclature{$k$}{Constante de taxa de reação intrínseca
 \nomunit{kg m^3/(kg_{cat} h kmol_{H2})}}
 \nomenclature{$C^{*}_{H_2}$}{Concentração de equilíbrio de hidrogênio em fase
-líquida \nomunit{kmol/m^3} \nomunit{kJ/kmol}}
+líquida \nomunit{kmol/m^3}}
 \nomenclature[G]{$\eta$}{Fator de efetividade de intradifusão}
 
 A constante da taxa de reação específica $k^{*}$ é calculada pela
@@ -554,7 +548,7 @@ finais.
 \nomunit{kmol/(m^3/(kg_{cat} h)}}
 \nomenclature[R]{$L$}{Designação da fase líquida}
 \nomenclature[R]{$S$}{Designação da fase sólida}
-\nomenclature{$T^{ref}$}{Temperatura de referência, $417 K$}
+\nomenclature{$T^{ref}$}{Temperatura de referência \nomunit{K}}
 \nomenclature[G]{$\rho$}{Massa específica \nomunit{kg/m^3}}
 \nomenclature{$T$}{Temperatura \nomunit{K}}
 \nomenclature{$R$}{Constante universal dos gases \nomunit{kJ/(kmol K)}}
@@ -562,7 +556,7 @@ finais.
 \nomenclature[S]{$B$}{Leito catalítico}
 \nomenclature{$C$}{Concentração \nomunit{kmol/m^3}}
 
-\section{Termodinâmica} \label{sec:termodinamica}
+\section{Equilíbrio de Fases} \label{sec:termodinamica}
 
 A abordagem termodinâmica utilizada para prever o ELV foi a $\phi_i$ -
 $\phi_i$, a mesma utilizada por \citeonline{Rojas2014a}, com a EoS de SRK
@@ -594,11 +588,13 @@ termodinâmico do simulador de processos iiSE (\emph{Industrial Integrated
 Simulation Environment}). Para tanto, foi criada uma simulação no iiSE, onde
 foram colocadas as composições da carga e da corrente de \emph{quench}. O \emso,
 por sua vez, utiliza a simulação criada em iiSE para os cálculos termodinâmicos,
-e somente para este fim. 
+e somente para este fim. Vale aqui explicar que o índice $j$ na
+\autoref{eq:deltaij} refere-se especialmente a componente, e não a reação
+química.
 
 Para finalizar esta seção, vale esclarecer que, da forma como foi implementada
 no \emso, a corrente $F$ não só contém a informação de vazão e composição molar
-(total e por componente), mas tabém possui uma rotina de cálculo de
+(total e por componente), mas também possui uma rotina de cálculo de
 \emph{flash}, utilizando como variáveis de entrada pressão, temperatura e
 composição global. Dessa forma, ficam incluídos os efeitos de dissolução de
 hidrogênio na fase líquida bem como a vaporização da fase líquida.
@@ -609,14 +605,15 @@ hidrogênio na fase líquida bem como a vaporização da fase líquida.
 \nomenclature{$a_{ij}$}{Parâmetro cruzado entre as espécies $i$ e $j$}
 \nomenclature{$a$}{Parâmetro de atração}
 
-\section{Interface Líquido-Sólido} \label{sec:interfaceliquidosolido}
+\section{Transferência de Massa na Interface Líquido-Sólido}
+\label{sec:interfaceliquidosolido}
 
 Como a transferência de massa gás-líquido foi desprezada, compete aqui
 apresentar as equações para determinar a concentração das espécies químicas
 na superfície das partículas de catalisador, $C^S$. 
 
 A primeira dessas equações é fruto de um balanço de massa, onde a
-transferência de massa na interface líquido-sólido de um reagente é igual a
+transferência de massa na interface líquido-sólido de um reagente é igual à
 velocidade com que ele é consumido na reação:
 \begin{equation}
 k_{i,n}^{LS}a^{LS}(C^L_{i,n}-C^S_{i,n}) = \rho_B
@@ -668,11 +665,11 @@ viscosidade da fase líquida.
 
 \nomenclature{$Sh$}{Número de Sherwood}
 \nomenclature{$Re$}{Número de Reynolds}
-\nomenclature{$Sh$}{Número de Schmidt}
+\nomenclature{$Sc$}{Número de Schmidt}
 \nomenclature{$D$}{Difusividade molecular \nomunit{m^2/s}}
 \nomenclature[G]{$\mu$}{Viscosidade \nomunit{cP}}
 
-\section{Hidrodinâmica} \label{sec:hidrodinamica3}
+\section{Parâmetros Hidrodinâmicos} \label{sec:hidrodinamica3}
 
 Essa seção tem por objetivo apresentar as principais equações utilizadas no
 cálculo de parâmetros hidrodinâmicos.
@@ -697,8 +694,8 @@ discretizada:
 \end{equation}
 onde $u$ é a velocidade da fase e $L_n$ é dado por $L/N_{Disc}$ de cada leito.
 
-\nomenclature{u}{Velocidade superficial da fase \nomunit{m/s}}
-\nomenclature[S]{R}{Reator}
+\nomenclature{$u$}{Velocidade superficial da fase \nomunit{m/s}}
+\nomenclature[S]{$R$}{Reator}
 
 Visto que a pressão de operação do reator é muito acima da pressão atmosféricas,
 a equação usada para estimar a retenção de líquido $\epsilon^L$ foi a proposta
@@ -722,8 +719,8 @@ X_{n}^G = \dfrac{u_{n}^G}{u_n^L} \sqrt{\dfrac{\rho^L}{\rho^G}}
 sendo que $\sigma^L$ é a tensão superficial da fase líquida.
 
 \nomenclature[G]{$\sigma$}{Tensão superficial \nomunit{N/m}}
-\nomenclature{We}{Número de Webber}
-\nomenclature{X}{Número de Lockhart-Martinelli}
+\nomenclature{$We$}{Número de Webber}
+\nomenclature{$X$}{Número de Lockhart-Martinelli}
 
 Para verificar a premissa de que o molhamento do catalisador é completo
 ($\eta_{CE} = 1$), será utilizada a equação proposta por
@@ -735,13 +732,13 @@ Para verificar a premissa de que o molhamento do catalisador é completo
 \end{equation}
 sendo $Ga$ o número de Galileu e $g$ a aceleração da gravidade.
 
-\nomenclature{Ga}{Número de Galileu}
-\nomenclature{g}{Aceleração da gravidade \nomunit{m/s^2}}
+\nomenclature{$Ga$}{Número de Galileu}
+\nomenclature{$g$}{Aceleração da gravidade \nomunit{m/s^2}}
 
-O número Peclet ($Pe$) é o parâmetro utilizado na literatura para verificar
-se na modelagem do reator o fenômeno de dispersão axial é relevante ou não.
+O número Peclet (neste caso, $Bo$) é o parâmetro utilizado na literatura para
+verificar se na modelagem do reator o fenômeno de dispersão axial é relevante ou não.
 \begin{equation}
-Pe_n^L = \dfrac{L_n}{d_p}
+Bo_n^L = \dfrac{L_n}{d_p}
 \num{2,3}(Re_n^L)^{\num{0,33}}(Ga_{n}^{L})^{\num{-0,19}}
 \label{eq:numerodepeclet}
 \end{equation}
@@ -750,11 +747,11 @@ A \autoref{eq:numerodepeclet} apresenta a correlação para o número de
 Peclet utilizada neste trabalho, e que foi proposta por
 \citeonline{Cassanello1992}.
 
-\nomenclature{Pe}{Número de Peclet}
+\nomenclature{$Pe$}{Número de Peclet}
 
-\section{Implementação da Modelagem} \label{sec:implementacao}
+\section{Implementação do Modelo} \label{sec:implementacao}
 
-Para a implementação da modelagem, foram usados dois softwares: iiSE e \emso. 
+Para a implementação do modelo foram usados dois softwares: iiSE e \emso. 
 
 \subsection{iiSE} \label{sec:iise}
 

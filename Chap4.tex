@@ -1,7 +1,7 @@
 %
 % 
 %
-\chapter{Resultados e Discussões} \label{chap:resultados}
+\chapter{Resultados e Discussão} \label{chap:resultados}
 
 \section{Avaliações Preliminares} \label{sec:avaliacoesespreliminares}
 
@@ -46,7 +46,8 @@ volume total do reator (somados os dois leitos).
 \nomenclature{$V_R$}{Volume total do reator \nomunit{m^3}}
 
 A \autoref{tab:comparacaoLHSV} mostra alguns valores encontrados na literatura
-para LHSV, incluindo o trabalho de \citeonline{Rojas2014a}.
+para LHSV, incluindo o trabalho de \citeonline{Rojas2014a}. Os valores de vazão
+de líquido nesta tabela referem-se à carga combinada e reciclo, se houver.
 
 \begin{table}[!htb]
 \begin{center}
@@ -61,7 +62,7 @@ publicados na literatura.}
 \hline
 {\citeonline{Arpornwichanop2008}} & \num{69} & \num{60} & \num{1,14} \\
 {\citeonline{Mederos2007}} & \num{165} & \num{62} & \num{2,66} \\
-{\citeonline{Rojas2014a}} & \num{347} & \num{18} & \num{19,76} \\
+{\citeonline{Rojas2014a}} & \num{347} & \num{48} & \num{7,28} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -88,7 +89,7 @@ corrente de \emph{quench}, adequando o grau de resfriamento na região de
 Após várias tentativas, o valor de $F_{w,1}$ foi alterado para \SI{2,079e4}
 {kg/h}. Com essa nova vazão, tanto o resfriamento da região de \emph{quench}
 quando a exotermia dos leitos tornaram-se aderentes aos dados de planta e de
-literatura, como está mostrado na \autoref{sec:estadoestacionario}.
+literatura, como será mostrado na \autoref{sec:estadoestacionario}.
 
 A \autoref{tab:comparacaoLHSV2} repete os valores da
 \autoref{tab:comparacaoLHSV}, mas agora com a inclusão do valor de LHSV
@@ -106,8 +107,8 @@ após o ajuste da vazão de carga do reator.
 \hline
 {\citeonline{Arpornwichanop2008}} & \num{69} & \num{60} & \num{1,14} \\
 {\citeonline{Mederos2007}} & \num{165} & \num{62} & \num{2,66} \\
-{\citeonline{Rojas2014a}} & \num{347} & \num{18} & \num{19,76} \\
-{Dados ajustados} & \num{76} & \num{18} & \num{4,34} \\
+{\citeonline{Rojas2014a}} & \num{347} & \num{18} & \num{7,28} \\
+{Dados ajustados} & \num{76} & \num{48} & \num{1,59} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -153,13 +154,12 @@ garantir a representação dos leitos como contínuos, foi utilizado um valor um
 pouco maior, $N_{Disc}$ = \num{10}. Esta escolha faz com que o modelo apresente
 um total de \num{9299} variáveis.
 
-Mesmo não considerando a perda de carga nos resultados finais (como mostra a
-\autoref{sec:avaliacaoperdadecarga}, as equações necessárias para os cálculos
-dela foram mantidas. Além disso, algumas das equações hidrodinâmicas
-influenciam em parâmetros de transferência de massa, que influenciam na taxa da
-reação (Cs). Outras referem-se a avaliação do padrão de escoamento.  Dentro das
-\num{9299}, portanto, estão todas as equações, mesmo as não relevantes para os
-resultados.
+Mesmo não considerando a perda de carga nos resultados finais, as equações
+necessárias para os cálculos dela foram mantidas. Além disso, algumas das
+equações hidrodinâmicas influenciam em parâmetros de transferência de massa, que
+influenciam na taxa da reação (Cs). Outras referem-se a avaliação do padrão de
+escoamento. Dentro das \num{9299}, portanto, estão todas as equações, mesmo as
+menos relevantes para os resultados.
 
 \subsection{Avaliação da Perda de Carga} \label{sec:avaliacaoperdadecarga}
 
@@ -214,9 +214,9 @@ calculado pela modelagem aqui proposta, além daquele calculado por
 \label{fig:perfilT}
 \end{figure}
 
-Pode-se perceber pela \autoref{fig:perfilT} que, mesmo após o ajuste da vazão
-de carga, a modelagem aqui desenvolvida apresenta exortemia nos leitos inferior aos
-dados de planta. Observando os valores de entalpias de reação usados por
+É possível perceber pela \autoref{fig:perfilT} que, mesmo após o ajuste da vazão
+de carga, a modelagem aqui desenvolvida apresenta exotermia nos leitos inferior
+aos dados de planta. Observando os valores de entalpias de reação usados por
 \citeonline{Rojas2014a}, eles apresentam-se inferiores aos valores publicados
 por \citeonline{Skala2003} (hidrogenação do ciclopentadieno) e
 \citeonline{Nijhuis2003} (hidrogenação de gasolina de pirólise).
@@ -291,20 +291,18 @@ daquela calculada por \citeonline{Rojas2014a}. Já para o segundo leito, há uma
 diferença próxima a 20\% entre os dois conjuntos de resultados.
 
 Duas questões entre o presente trabalho e o publicado por
-\citeonline{Rojas2014a} podem justificar essa diferença.
-
-A primeira delas é a questão da perda de carga. Neste trabalho, como explicado
-na \autoref{sec:avaliacaoperdadecarga}, a perda de carga fora desprezada. Visto
-que \citeonline{Rojas2014a} não publicaram o valor da perda de carga encontrada nos
+\citeonline{Rojas2014a} podem justificar essa diferença. A primeira delas é a
+questão da perda de carga. Neste trabalho, como explicado na
+\autoref{sec:avaliacaoperdadecarga}, a perda de carga fora desprezada. Visto que
+\citeonline{Rojas2014a} não publicaram o valor da perda de carga encontrada nos
 leitos catalíticos, não é possível avaliar se há ou não uma influência da perda
-de carga na fração vaporizada.
-
-Há ainda outra diferença: o parâmetro de interação binaria $\delta_{ij}$ foi
-calculada por \citeonline{Rojas2014a} utilizando a base de dados do software
-comercial PRO/II 9.0. Ainda, a regra de mistura por eles apontada como a de
-melhor resultado (e, entende-se como sendo a que foi utilizada para gerar os
-resultados publicados) foi a de PA-RESimSci (SimSci-Esscor. PRO/II 9.0 Component
-and Thermophysical Properties Reference Manual (2010)).
+de carga na fração vaporizada. Há ainda outra diferença: o parâmetro de
+interação binaria $\delta_{ij}$ foi calculada por \citeonline{Rojas2014a}
+utilizando a base de dados do software comercial PRO/II 9.0. Ainda, a regra de
+mistura por eles apontada como a de melhor resultado (e, entende-se como sendo a
+que foi utilizada para gerar os resultados publicados) foi a de PA-RESimSci
+(SimSci-Esscor. PRO/II 9.0 Component and Thermophysical Properties Reference
+Manual (2010)).
 
 \subsection{Comportamento do Hidrogênio} \label{comportamentodohidrogenio}
 
@@ -315,16 +313,14 @@ outra premissa também foi considerada, a de que as reações podem ser
 consideradas como de pseudo-primeira ordem, desprezando a concentração de
 hidrogênio.
 
-A \autoref{fig:perfilfracaoh2liquido} confirma a premissa adotada, mostrando
-que a fração molar de hidrogênio em fase líquida ao longo do reator não só é
-praticamente constante, como também aumenta ao longo do reator. O aumento da
-fração molar de hidrogênio na fase líquida é explicado pelo aumento da
-tempeartura ao longo dos leitos, provocado pela liberação de calor das reações
-de hidrogenação. A \autoref{fig:perfilfracaoh2temperatura} apresenta os
-mesmos resultados de fração molar de hidrogênio na fase líquida
-apresentados na \autoref{fig:perfilfracaoh2liquido}, mas desta vez referente à
-temperatura de cada célula dos leitos do reator (relembrando que cada célula
-\emph{n} tem uma temperatura e um comprimento atrelado a ela).
+A \autoref{fig:perfilfracaoh2liquido} mostra que a fração molar de hidrogênio em
+fase líquida aumenta ao longo do reator. Esse aumento é explicado pelo
+aumento da temperatura ao longo dos leitos, provocado pela liberação de calor
+das reações de hidrogenação. A \autoref{fig:perfilfracaoh2temperatura} apresenta
+os mesmos resultados de fração molar de hidrogênio na fase líquida apresentados
+na \autoref{fig:perfilfracaoh2liquido}, mas desta vez referente à temperatura de
+cada célula dos leitos do reator (relembrando que cada célula \emph{n} tem uma
+temperatura e um comprimento atrelado a ela).
 
 \begin{figure}[htb]
 \centering \includegraphics[scale=0.4]{images/Chap4/perfilfracaoh2liquido.png}
@@ -388,7 +384,7 @@ densidade da fase gasosa aumenta a medida que sua massa molar aumenta.
 Mudança mais relevante sofre a massa molar da fase gasosa, que aumenta ao
 longo do primeiro e segundo leitos, diminuindo na zona de \emph{quench}. Esse
 comportamento é reflexo tanto da diminuição da concentração de hidrogênio na
-fase gasosa, que tende a se diluir mais facilmente em fase líquida conforme a
+fase gasosa, que tende a diluir-se mais facilmente em fase líquida conforme a
 temperatura aumenta, quanto da evaporação de compostos leves conforme o fluxo
 aquece ao longo do leito catalítico.
 
@@ -399,7 +395,7 @@ para alterar significativamente essa propriedade.
 \subsection{Propriedades Hidrodinâmicas} \label{propriedadeshidrodinâmicas}
 
 A \autoref{tab:propriedadeshidrodinamicas} mostra o resultado de algumas
-propriedades hidrodinâmicas e números adimencionais utilizados nos cálculos de
+propriedades hidrodinâmicas e números adimensionais utilizados nos cálculos de
 transferência de massa e perda de carga.
 
 \begin{table}[!htb]
@@ -466,16 +462,16 @@ dentro do reator causado pela injeção da corrente líquida de \emph{quench}.
 \label{fig:perfilretencaoliquido}
 \end{figure}
 
-Como já explicado no \autoref{chap:moddesenvolvidos}, a variável $\epsilon^{L}$
+Como explicado no \autoref{chap:moddesenvolvidos}, a variável $\epsilon^{L}$
 possui como dimensão o valor de $N_{Disc}$.
 
 Os valores $\epsilon^{L}$ encontrados por \citeonline{Rojas2014a} foram de
 \num{0,14} e \num{0,17} para a entrada do Leito 1 e saída do Leito 2,
 respectivamente. A diferença entre os resultados pode ser explicada pela
 incerteza quanto à vazão de carga no reator, que neste trabalho precisou ser
-modificada por motivos já explicados. Contudo, a diferença não é tão
-significativa assim, sendo ambos os trabalhos aderentes aos resultados
-encontrados na literatura \cite{Ancheyta2011}.
+modificada por motivos já explicados. Contudo, a diferença entre os trabalhos
+não é tão significativa assim, sendo ambos aderentes aos resultados
+encontrados em literatura \cite{Ancheyta2011}.
 
 \subsubsection{Eficiência de Molhamento} \label{eficienciademolhamento}
 
@@ -486,7 +482,7 @@ para o parâmetro $\eta_{CE}$.
 
 Este é mais um caso onde a incerteza quanto à vazão de carga do reator
 impossibilita uma análise comparativa mais acurada. De qualquer forma, vale a
-observação de que, por possuir uma vazão de líquido maior devido a injeção da
+observação de que, por possuir uma vazão de líquido maior devido à injeção da
 corrente de \emph{quench}, o segundo leito do reator apresenta eficiêcia de
 molhamento maior do que o primeiro, como já era esperado.
 
@@ -502,10 +498,18 @@ enquadra-se como um reator de leito gotejante.
 \citeonline{Saroha1996} publicaram um mapa mais elaborado que classifica o
 escoamento dos reatores trifásicos de leito fixo. De acordo com esse mapa, o
 reator objeto deste estudo é classificado com escoamento tipo leito
-gotejante.
+gotejante, como mostra a figura a seguir:
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.4]{images/Chap4/validacaoescoamento.png}
+\caption{Verificação do perfil de escomento (extraído de
+\citeonline{Rojas2014a})}
+\label{fig:validacaoescoamento}
+\end{figure}
 
 Assim, o tipo de escomento encontrado aqui para o reator é contrário à premissa
-adotada de escoamento por borbulhament, sugerido por \citeonline{Rojas2014a}. É
+adotada de escoamento por borbulhamento, sugerido por \citeonline{Rojas2014a}. É
 preciso lembrar que este trabalho preocupou-se em manter ao máximo as premissas
 e valores publicados por \citeonline{Rojas2014a}. Contudo, a premissa adotada
 para o tipo de escoamento (borbulhamento), que influencia na escolha das
@@ -585,9 +589,9 @@ interface líquido-sólido.
 
 \section{Respostas Dinâmicas} \label{sec:respostasdinamicas}
 
-A simulação concebida neste trabalho nasceu preparada para estudos e avaliações
-de respostas dinâmicas. Quatro avaliações de respostas dinâmicas foram feitas, a
-saber:
+O modelo desenvolvido neste trabalho é própria para estudos e
+avaliações de respostas dinâmicas. Três avaliações de respostas dinâmicas foram
+feitas, a saber:
 
 \begin{enumerate}
   \item Resposta a   um degrau na temperatura da carga, de \SI{366}{K} para
@@ -608,12 +612,23 @@ mencionados.
 Este primeiro caso reflete o comportamento do reator no caso da perda de
 aquecimento da carga, seja por falta de utilidades (vapor para um trocador de
 calor, por exemplo), seja por falha nos elementos primários de uma eventual
-malha de controle. Como consequência dessa perda de aquecimento da carga, o
+malha de controle. Como consequência dessa perda de aquecimento da carga, a
 exotermia vista em operação normal diminui drasticamente, sinal de que a
 conversão dos reagentes passou a patamares inaceitáveis. O perfil de temperatura
 dos leitos do reator após o degrau de temperatura na carga está mostrado na
 \autoref{fig:Feed_T_300K}.
 
+A \autoref{fig:Feed_T_300K} apresenta resultados que não consideram a influência
+do catalisador na inércia térmica de cada célula, i.e., considera a
+\autoref{eq:holdupenergia} para o cálculo da energia acumulada em cada célula.
+Dessa forma, o tempo até o reator atingir o novo estado estacionário após o
+degrau foi de aproximadamente \SI{900}{s} ou \SI{15}{min}. Ao ser calculada a
+energia acumulada em cada célula pela \autoref{eq:holdupenergiadinamica}, que
+considera a presença do catalisador, o tempo para se atingir o novo estado
+estacionário passou a ser de aproximadamente \SI{3000}{s} ou \SI{50}{min}.
+\autoref{fig:Feed_T_300K_catalyst_influence} mostra o perfil de temperatura dos
+leitos do reator após o degrau de temperatura na carga, considerando a inércia
+térmica do catalisador.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.8]{images/Chap4/Feed_T_300K.png}
@@ -621,20 +636,6 @@ dos leitos do reator após o degrau de temperatura na carga está mostrado na
 temperatura na carga.}
 \label{fig:Feed_T_300K}
 \end{figure}
-
-A \autoref{fig:Feed_T_300K} não considera a influência do catalisador na inércia
-térmica, i.e., considera a \autoref{eq:holdupenergia} para o cálculo da energia
-acumulada em cada célula. Dessa forma, o tempo até o reator atingir o novo
-estado estacionário após o degrau foi de aproximadamente \SI{900}{s} ou
-\SI{15}{min}.
-
-Ao ser calculada a energia acumulada em cada célula pela
-\autoref{eq:holdupenergiadinamica}, que considera a presença do catalisador, o
-tempo para se atingir o novo estado estacionário passou a ser de aproximadamente
-\SI{3000}{s} ou \SI{50}{min}! \autoref{fig:Feed_T_300K_catalyst_influence}
-mostra o perfil de temperatura dos leitos do reator após o degrau de temperatura
-na carga, considerando a inércia térmica do catalisador.
-
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.8]{images/Chap4/Feed_T_300K_catalyst_influence.png}
@@ -642,7 +643,6 @@ na carga, considerando a inércia térmica do catalisador.
 temperatura na carga, considerando a inércia térmica do catalisador.}
 \label{fig:Feed_T_300K_catalyst_influence}
 \end{figure}
-
 \citeonline{Arpornwichanop2002} simularam um reator de hidrogenação de
 gasolina de pirólise onde, no balanço de energia, a inércia térmica dos leitos
 catalíticos nas respostas dinâmicas foi desprezada. Segundo os autores, o tempo
@@ -653,7 +653,6 @@ do sistema (\SI{900}{s}). \citeonline{Arpornwichanop2002} não publicaram dados
 de planta que corroborassem a modelagem dinâmica proposta. Contudo, é possível
 concluir que a massa de catalisador influencia fortemente no tempo de resposta
 de reatores de hidrogenação de \emph{pygas}.
-
 % A concentração de diolefinas na saída do reator passa de \si{0,0305}{kmol/m^3}
 % para \si{0,2868}{kmol/m^3}; 
 % 
@@ -664,23 +663,48 @@ de reatores de hidrogenação de \emph{pygas}.
 % de temperatura na carga.}
 % \label{fig:Feed_T_300K_catalyst_influence_dienes}
 % \end{figure}
-
-Além do perfil de temperatura, vale aqui apresentar o efeito do resfriamento da
-carga do reator na concentração de estireno. A diminuição da temperatura de
-entrada faz com que a fração molar total de estireno na saída do reator aumente
-de \num{1,96e-4} para \num{0,0026}, cerca de \num{13,3} vezes maior.
-Considerando que o estireno é um composto que precisa ser eliminado da nafta de
-pirólise, a queda de temperatura em questão é inaceitável. A
-\autoref{fig:Feed_T_300K_catalyst_influence_styrene} mostra como seria a
-resposta dinâmica do perfil da concentração de estireno ao degrau de temperatura
-(a menor) da carga.
-
+A diminuição da temperatura de entrada faz com que a fração molar
+total de estireno na saída do reator aumente de \num{1,96e-4} para \num{0,0026},
+cerca de \num{13,3} vezes maior. Considerando que o estireno é um composto que
+precisa ser eliminado da nafta de pirólise, a queda de temperatura em questão é
+inaceitável. A \autoref{fig:Feed_T_300K_catalyst_influence_styrene} mostra como
+seria a resposta dinâmica do perfil da concentração de estireno ao degrau de
+temperatura (a menor) da carga.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.8]{images/Chap4/Feed_T_300K_catalyst_influence_styrene.png}
-\caption{Resposta dinâmica da concentração de estireno um degrau (a menor) de
+\caption{Resposta dinâmica da concentração de estireno a um degrau (a menor) de
 temperatura na carga.}
 \label{fig:Feed_T_300K_catalyst_influence_styrene}
+\end{figure}
+
+A concentração de diolefinas na saída do reator atinge o estado estacionário em
+valor superior ao estado estacionário anterior. Porém, a tendência de diminuição
+dessa concentração se mantém entre os estados estacionários. O comportamento da
+concentração de diolefinas está mostrado na
+\autoref{fig:Feed_T_300K_catalyst_influence_diolefins}.
+ 
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{images/Chap4/Feed_T_300K_catalyst_influence_diolefins.png}
+\caption{Resposta dinâmica da concentração de diolefinas a um degrau (a menor)
+de temperatura na carga.}
+\label{fig:Feed_T_300K_catalyst_influence_diolefins}
+\end{figure}
+
+Diferentemente da concentração de diolefinas, a tendência da concentração de
+olefinas se altera no leito 2 do reator, passando a aumentar ao longo do leito.
+Isso se deve ao fato de haver diminuição da conversão de olefinas em parafinas
+ante a taxa de hidrogenação de diolefinas. A resposta do perfil de concentração
+de olefinas ao degrau de temperatura estudado aqui está na
+\autoref{fig:Feed_T_300K_catalyst_influence_olefins}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{images/Chap4/Feed_T_300K_catalyst_influence_olefins.png}
+\caption{Resposta dinâmica da concentração de olefinas a um degrau (a menor) de
+temperatura na carga.}
+\label{fig:Feed_T_300K_catalyst_influence_olefins}
 \end{figure}
 
 As duas próximas avaliações de respostas dinâmicas foram feitas considerando o
@@ -701,17 +725,18 @@ Leito 2 do reator, como mostra a \autoref{fig:Quench_F_10790_catalyst_influence}
 \end{figure}
 
 É importante notar aqui que a perda parcial da vazão de \emph{quench} poderia
-levar algumas regiões do reator a temperaturas altas o suficiente para causar
-disparos de temperatura. De qualquer forma, a exotermia observada significa
-também maior conversão de olefinas que, para o objetivo desse processo (produzir
-gasolina automotiva), tem efeito deletério quanto à octanagem.
+levar algumas regiões do reator a temperaturas mais altas do que o
+necessário para o objetivo do processo. Ainda, a exotermia
+observada significa também maior conversão de olefinas que, para o objetivo
+desse processo (produzir gasolina automotiva), tem efeito deletério quanto à
+octanagem.
 
 \subsection{Resposta a um degrau na vazão da corrente de \emph{quench}, de
 \SI{20790}{kg/h} para \SI{30790}{kg/h}} \label{sec:respostaaumdegrauvazao3}
 
 Para a situação em que a vazão da corrente de \emph{quench} aumenta, quer seja
-por problema de instrumentação ou equipameto, quer seja por erro humano, o Leito
-2 é esfriado como mostra a Figura \autoref{fig:Quench_F_30790_catalyst_influence}.
+por problema de instrumentação ou equipamento, quer seja por erro humano, o
+Leito 2 é esfriado como mostra a Figura \autoref{fig:Quench_F_30790_catalyst_influence}.
 
 \begin{figure}[htb]
 \centering
