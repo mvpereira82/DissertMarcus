@@ -30,7 +30,7 @@
 \nomenclatureentry{a$F_w$@[{$F_w$}]\begingroup Vazão mássica \nomunit{kg/h}\nomeqref {3.3}|nompageref}{27}
 \nomenclatureentry{S$w$@[{$w$}]\begingroup Referente à massa\nomeqref {3.3}|nompageref}{27}
 \nomenclatureentry{a$N_{Disc}$@[{$N_{Disc}$}]\begingroup Número de células de um leito do reator\nomeqref {3.3}|nompageref}{29}
-\nomenclatureentry{S$n$@[{$n$}]\begingroup z-ésima célula de leito de reator\nomeqref {3.3}|nompageref}{29}
+\nomenclatureentry{S$n$@[{$n$}]\begingroup n-ésima célula de leito de reator\nomeqref {3.3}|nompageref}{29}
 \nomenclatureentry{a$M$@[{$M$}]\begingroup Massa \nomunit{kmol}\nomeqref {3.4}|nompageref}{31}
 \nomenclatureentry{a$N_{reac}$@[{$N_{reac}$}]\begingroup Número total de reações\nomeqref {3.4}|nompageref}{31}
 \nomenclatureentry{a$r$@[{$r$}]\begingroup Taxa de reação \nomunit{kmol/(kg_{cat}.h)}\nomeqref {3.4}|nompageref}{31}
